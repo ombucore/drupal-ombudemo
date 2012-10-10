@@ -1,0 +1,15 @@
+[submodule "public/sites/all/modules/custom/ombucleanup"]
+	path = public/sites/all/modules/custom/ombucleanup
+	url = git@github.com:ombu/drupal-ombucleanup.git
+[submodule "public/sites/all/modules/custom/ombudashboard"]
+	path = public/sites/all/modules/custom/ombudashboard
+	url = git@github.com:ombu/drupal-ombudashboard.git
+[submodule "public/sites/all/modules/custom/ombuseo"]
+	path = public/sites/all/modules/custom/ombuseo
+	url = git@github.com:ombu/drupal-ombuseo.git
+[submodule "public/sites/all/modules/custom/ombuwire"]
+	path = public/sites/all/modules/custom/ombuwire
+	url = git@github.com:ombu/drupal-ombuwire.git
+[submodule "public/sites/all/themes/ombubase"]
+	path = public/sites/all/themes/ombubase
+	url = git@github.com:ombu/drupal-ombubase.git

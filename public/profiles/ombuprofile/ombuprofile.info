@@ -1,0 +1,47 @@
+; $Id$
+
+name = OmbuProfile
+description = OmbuProfile installation profile.
+version = VERSION
+core = 7.x
+
+; Core dependencies
+dependencies[] = block
+dependencies[] = contextual
+dependencies[] = image
+dependencies[] = list
+dependencies[] = menu
+dependencies[] = number
+dependencies[] = options
+dependencies[] = path
+dependencies[] = taxonomy
+dependencies[] = dblog
+dependencies[] = search
+dependencies[] = overlay
+dependencies[] = field_ui
+dependencies[] = file
+dependencies[] = rdf
+dependencies[] = php
+dependencies[] = statistics
+
+; Contrib dependencies
+dependencies[] = views
+dependencies[] = views_ui
+dependencies[] = views_bulk_operations
+dependencies[] = wysiwyg
+dependencies[] = pathauto
+dependencies[] = context
+dependencies[] = media
+dependencies[] = oembedcore
+dependencies[] = media_internet
+dependencies[] = media_oembed
+
+; Custom dependencies
+dependencies[] = ombucleanup
+dependencies[] = ombudashboard
+dependencies[] = ombuseo
+
+; Features
+;dependencies[] = feature_base
+
+files[] = ombuprofile.profile
