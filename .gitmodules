@@ -13,3 +13,6 @@
 [submodule "public/sites/all/themes/ombubase"]
 	path = public/sites/all/themes/ombubase
 	url = git@github.com:ombu/drupal-ombubase.git
+[submodule "public/sites/all/modules/custom/ombublocks"]
+	path = public/sites/all/modules/custom/ombublocks
+	url = git@github.com:ombu/drupal-ombublocks.git

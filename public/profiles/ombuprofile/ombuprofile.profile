@@ -1,7 +1,7 @@
 <?php
 
 // Main theme for site.
-define('OMBUBASE_DEFAULT_THEME', 'tiles');
+define('OMBUBASE_DEFAULT_THEME', 'tiles_base');
 
 /**
  * Implements hook_install_tasks().

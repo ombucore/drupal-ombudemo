@@ -40,6 +40,7 @@ dependencies[] = media_oembed
 dependencies[] = ombucleanup
 dependencies[] = ombudashboard
 dependencies[] = ombuseo
+dependencies[] = tiles
 
 ; Features
 ;dependencies[] = feature_base
