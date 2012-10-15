@@ -1,0 +1,22 @@
+name = Tiles
+description = Tiles
+base theme = starter_grid
+package = OMBU
+version = 0.3
+core = 7.x
+
+stylesheets[all][] = css/style.css
+scripts[] = js/site.js
+
+features[] = favicon
+
+regions[site_top] = Site Top
+regions[header] = Header
+regions[sidebar_first] = Sidebar First
+regions[header] = Header
+regions[content_top] = Content Top
+regions[content] = Content
+regions[content_bottom] = Content Bottom
+regions[sidebar_second] = Sidebar Second
+regions[footer] = Footer
+regions[site_bottom] = Site Bottom

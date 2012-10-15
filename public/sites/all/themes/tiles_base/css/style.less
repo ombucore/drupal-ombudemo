@@ -1,0 +1,32 @@
+/* This is here to make sure that Starter still compiles it's LESS properly when working on ombubase. Feel free to delete it in favor of the import line below when this this theme is duplicated. */
+@import "../../betterbase/css/betterbase.less";
+@import "../../betterbase/css/layout-sidebars.less"; // Drupal Sidebar Layout
+
+/* Uncomment this when this theme is duplicated as it's own theme at sites/all/themes/
+  @import "../../ombubase/betterbase/css/betterbase.less";
+  @import "../../ombubase/betterbase/css/layout-sidebars.less"; // Drupal Sidebar Layout
+*/
+
+/* Overrive betterbase variables here and define your own */
+@import "variables.less";
+
+/** Site specific mixins & misc rules – may expand into dedicated file if it gets big */
+.sprite() {
+  background-image: url(img/sprite.png);
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+  display: block;
+}
+.pie() {behavior: url(/sites/all/themes/ombubase/betterbase/css/PIE.php);}
+img, embed, object, video {
+	max-width: 100%;
+} 
+
+/* Site specific styles */
+@import "base64.less";
+@import "fonts.less";
+@import "typography.less";
+@import "layout.less";
+@import "common-elements.less";
+@import "nodes.less";
+@import "ie.less";

@@ -35,11 +35,13 @@ dependencies[] = media
 dependencies[] = oembedcore
 dependencies[] = media_internet
 dependencies[] = media_oembed
+dependencies[] = bean
 
 ; Custom dependencies
 dependencies[] = ombucleanup
 dependencies[] = ombudashboard
 dependencies[] = ombuseo
+dependencies[] = ombubeans
 dependencies[] = tiles
 
 ; Features
