@@ -36,25 +36,6 @@ function ombuprofile_setup_blocks($install_state) {
       'pages' => '',
       'cache' => -1,
     ),
-    array(
-      'module' => 'ombuprofile',
-      'delta' => 'login',
-      'theme' => $default_theme,
-      'status' => 1,
-      'weight' => 1,
-      'region' => 'footer',
-      'pages' => '',
-    ),
-    array(
-      'module' => 'search',
-      'delta' => 'form',
-      'theme' => $default_theme,
-      'status' => 1,
-      'weight' => 2,
-      'region' => 'footer',
-      'pages' => '',
-      'title' => 'Search Site:',
-    ),
   );
   foreach ($default_blocks as $record) {
     $query = db_update('block');
@@ -103,26 +84,48 @@ function ombuprofile_setup_blocks($install_state) {
   }
   $query->execute();
 
-  // Create new blocks
-  $delta = db_insert('block_custom')
-    ->fields(array(
-      'body' => 'Block Body',
-      'info' => 'Block Info',
-      'format' => 'php_code',
-    ))
-    ->execute();
-  $query = db_insert('block')
-    ->fields(array(
-      'visibility' => 0,
-      'pages' => '',
-      'title' => 'Block Title',
-      'module' => 'block',
-      'theme' => variable_get('theme_default', ''),
-      'status' => 0,
-      'weight' => 0,
-      'region' => -1,
-      'delta' => $delta,
-      'cache' => DRUPAL_NO_CACHE,
-    ))
-    ->execute();
+  $bean = bean_create(array('type' => 'ombubeans_fpohero'));
+  $bean->label = 'ombubeans_fpohero';
+  $bean->title = '';
+  $bean->delta = 'ombubeans-fpohero';
+  $bean->setValues(array (
+  'view_mode' => 'default',
+  'body' => '<h1>Hello, world!</h1>
+    <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+    <p><a class="btn btn-primary btn-large">Learn more »</a></p>
+  ',
+    'width' => '12',
+  ));
+  bean_save($bean);
+
+
+  for ($i = 0; $i < 6; $i++) {
+    $bean = bean_create(array('type' => 'bean_rte_rte'));
+    $bean->label = 'bean_rte_rte-' . $i;
+    $bean->title = 'Heading';
+    $bean->delta = 'bean-rte-rte-' . $i;
+    $bean->setValues(array (
+      'view_mode' => 'default',
+      'width' => 3,
+    ));
+    $bean->field_description = array (
+      'und' =>
+      array (
+        0 =>
+        array (
+          'value' => '<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn" href="#">View details »</a></p>',
+          'format' => 'comment',
+          'safe_value' => '<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn" href="#">View details »</a></p>
+          ',
+        ),
+      ),
+    );
+    bean_save($bean);
+  }
+
+  bean_reset();
+  drupal_static_reset('bean_get_all_beans');
+  _block_rehash(OMBUBASE_DEFAULT_THEME);
 }

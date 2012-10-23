@@ -1,6 +1,6 @@
 name = Tiles
 description = Tiles
-base theme = starter_grid
+base theme = grid
 package = OMBU
 version = 0.3
 core = 7.x

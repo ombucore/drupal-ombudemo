@@ -13,38 +13,76 @@ function ombuprofile_add_content($install_state) {
   // Create homepage node and set to front
   $node = _ombuprofile_setup_new_node();
   $node->title = 'Home';
-  $node->body[$node->language][0]['value'] = _ombuprofile_lorem();
+  $node->tiles = array(
+    'ombubeans-fpohero' => array(
+      'module' => 'bean',
+      'delta' => 'ombubeans-fpohero',
+      'region' => 'content',
+      'weight' => 0,
+    ),
+    'bean-bean-rte-rte-0' => array(
+      'module' => 'bean',
+      'delta' => 'bean-rte-rte-0',
+      'region' => 'content',
+      'weight' => 1,
+      'width' => 4,
+    ),
+    'bean-bean-rte-rte-1' => array(
+      'module' => 'bean',
+      'delta' => 'bean-rte-rte-1',
+      'region' => 'content',
+      'weight' => 2,
+      'width' => 4,
+    ),
+    'bean-bean-rte-rte-2' => array(
+      'module' => 'bean',
+      'delta' => 'bean-rte-rte-2',
+      'region' => 'content',
+      'weight' => 3,
+      'width' => 4,
+    ),
+    'bean-bean-rte-rte-3' => array(
+      'module' => 'bean',
+      'delta' => 'bean-rte-rte-3',
+      'region' => 'content',
+      'weight' => 3,
+      'width' => 4,
+    ),
+    'bean-bean-rte-rte-4' => array(
+      'module' => 'bean',
+      'delta' => 'bean-rte-rte-4',
+      'region' => 'content',
+      'weight' => 4,
+      'width' => 4,
+    ),
+    'bean-bean-rte-rte-5' => array(
+      'module' => 'bean',
+      'delta' => 'bean-rte-rte-5',
+      'region' => 'content',
+      'weight' => 5,
+      'width' => 4,
+    ),
+  );
   node_save($node);
   variable_set('site_frontpage', 'node/' . $node->nid);
 
-
-  // Build structured nodes into the main menu
-  /* Example structured node menu.
+  // Build structured nodes into the main menu.
   $nodes = array(
-    'About Us' => array(
-      '#children' => array(
-        'Our History' => array(),
-        'Our Culture' => array(),
-        'Our Team' => array(
-          '#children' => array(
-            'How We Work' => array(),
-            // Handle special case of views and taxonomy terms underneath a node 
-            // menu item.
-            'Our Departments' => array(
-              '#link' => array(
-                'link_path' => 'about-us/our-team/our-departments',
-              ),
-              '#callback' => '_ombuprofile_build_taxonomy_menu',
-            ),
-            'Work With Us' => array(),
-          ),
-        ),
-        //'News/Blog' => array(),
+    'Home' => array(
+      '#link' => array(
+        'link_path' => '<front>',
       ),
     ),
+    'About' => array(),
+    'Contact' => array(),
   );
+  _ombuprofile_build_structured_menu_nodes($nodes, 'header-menu');
+
+  $nodes = array();
+  for ($i = 1; $i < 10; $i++) {
+    $nodes['link ' . $i] = array();
+  }
   _ombuprofile_build_structured_menu_nodes($nodes, 'main-menu');
-   */
 }
 
 /**
@@ -133,7 +171,7 @@ function _ombuprofile_setup_new_node($type = 'page') {
 /**
  * Lorem ipsum generator.
  *
- * For now, this is just a static text block.  In the future, it'd be cool to 
+ * For now, this is just a static text block.  In the future, it'd be cool to
  * make this dynamic and configurable.
  */
 function _ombuprofile_lorem() {

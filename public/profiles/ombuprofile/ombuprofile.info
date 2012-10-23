@@ -43,8 +43,9 @@ dependencies[] = ombudashboard
 dependencies[] = ombuseo
 dependencies[] = ombubeans
 dependencies[] = tiles
+dependencies[] = bean_rte
 
 ; Features
-;dependencies[] = feature_base
+; dependencies[] = base
 
 files[] = ombuprofile.profile
