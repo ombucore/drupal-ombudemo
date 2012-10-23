@@ -11,6 +11,11 @@ function ombuprofile_setup_menus($install_state) {
   // Create menus
   $menus = array(
     array(
+      'menu_name' => 'header-menu',
+      'title' => st('Header Menu'),
+      'description' => st('The header menu displays links in the header of the site.'),
+    ),
+    array(
       'menu_name' => 'footer-menu',
       'title' => st('Footer Menu'),
       'description' => st('The footer menu displays links in the footer of the site.'),
@@ -26,6 +31,6 @@ function ombuprofile_setup_menus($install_state) {
   variable_set('menu_main_links_source', 'main-menu');
   variable_set('menu_secondary_links_source', 'footer-menu');
 
-  // Additional menus setup in add_content.php to account for the menu structure 
+  // Additional menus setup in add_content.php to account for the menu structure
   // created by inserting nodes.
 }
