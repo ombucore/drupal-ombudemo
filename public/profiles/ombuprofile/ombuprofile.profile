@@ -1,7 +1,7 @@
 <?php
 
 // Main theme for site.
-define('OMBUBASE_DEFAULT_THEME', 'boots_grid');
+define('OMBUBASE_DEFAULT_THEME', 'bootstrap');
 
 /**
  * Implements hook_install_tasks().
