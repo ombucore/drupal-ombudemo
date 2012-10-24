@@ -19,3 +19,6 @@
 [submodule "public/sites/all/modules/custom/tiles"]
 	path = public/sites/all/modules/custom/tiles
 	url = git@github.com:ombu/drupal-ombublocks.git
+[submodule "public/sites/all/themes/boots"]
+	path = public/sites/all/themes/boots
+	url = git@bitbucket.org:ombu/boots.git
