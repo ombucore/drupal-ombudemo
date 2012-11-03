@@ -78,7 +78,18 @@ function ombuprofile_add_content($install_state) {
   );
   _ombuprofile_build_structured_menu_nodes($nodes, 'header-menu');
 
-  $nodes = array();
+  $nodes = array(
+    'Home' => array(
+      '#link' => array(
+        'link_path' => '<front>',
+      ),
+    ),
+    'About' => array(
+      '#link' => array(
+        'link_path' => 'node/2',
+      ),
+    ),
+  );
   for ($i = 1; $i < 10; $i++) {
     $nodes['link ' . $i] = array();
   }
