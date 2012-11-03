@@ -36,6 +36,7 @@ dependencies[] = oembedcore
 dependencies[] = media_internet
 dependencies[] = media_oembed
 dependencies[] = bean
+dependencies[] = jquery_update
 
 ; Custom dependencies
 dependencies[] = ombucleanup

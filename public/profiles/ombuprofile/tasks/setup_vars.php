@@ -58,6 +58,7 @@ function ombuprofile_setup_vars($install_state) {
     variable_set($k, $v);
   }
 
+  variable_set('jquery_update_jquery_version', '1.8');
 }
 
 function _profile_setup_vars() {
