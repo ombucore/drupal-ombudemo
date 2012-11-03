@@ -18,7 +18,7 @@ function ombuprofile_setup_themes($install_state) {
   variable_set('theme_default', $default_theme);
 
   // Enable the admin theme.
-  $admin_theme = 'ombuadmin';
+  $admin_theme = 'seven';
   db_update('system')
     ->fields(array('status' => 1))
     ->condition('type', 'theme')

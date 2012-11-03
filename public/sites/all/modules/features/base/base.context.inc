@@ -30,7 +30,7 @@ function base_context_default_contexts() {
           'module' => 'ombuprofile',
           'delta' => 'site_logo',
           'region' => 'header',
-          'weight' => '-10',
+          'weight' => '-11',
         ),
         'menu-header-menu' => array(
           'module' => 'menu',

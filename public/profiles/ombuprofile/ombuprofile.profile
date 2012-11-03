@@ -154,7 +154,7 @@ function ombuprofile_block_view($delta = '') {
       $block['content'] = array(
         'foo' => array(
           '#markup' => variable_get('site_name', 'Site Name'),
-          '#prefix' => '<a href="/" id="site_logo">',
+          '#prefix' => '<a href="/" class="brand">',
           '#suffix' => '</a>',
         ),
       );
@@ -250,3 +250,14 @@ function ombuprofile_context_page_condition() {
   }
 }
 
+function ombuprofile_block_widths() {
+  $widths = array();
+
+  $widths['ombuprofile'] = array();
+  $widths['ombuprofile']['site_logo'] = 2;
+
+  $widths['menu'] = array();
+  $widths['menu']['header-menu'] = 6;
+
+  return $widths;
+}

@@ -6,7 +6,7 @@ from fabric.operations import run
 env.repo_type = 'git'
 
 # Global environment settings
-env.site_name = 'Site Name'
+env.site_name = 'Tiles Demo'
 env.db_db = 'tiles'
 env.public_path = 'public'
 env.site_profile = 'ombuprofile'
