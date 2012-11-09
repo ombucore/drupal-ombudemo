@@ -250,7 +250,7 @@ function ombuprofile_context_page_condition() {
   }
 }
 
-function ombuprofile_block_widths() {
+function ombuprofile_tiles_widths() {
   $widths = array();
 
   $widths['ombuprofile'] = array();
