@@ -13,12 +13,12 @@
 [submodule "public/sites/all/themes/ombubase"]
 	path = public/sites/all/themes/ombubase
 	url = git@github.com:ombu/drupal-ombubase.git
-[submodule "public/sites/all/modules/contrib/ombubeans"]
-	path = public/sites/all/modules/contrib/ombubeans
-	url = git@github.com:ombu/drupal-ombubeans.git
 [submodule "public/sites/all/modules/custom/tiles"]
 	path = public/sites/all/modules/custom/tiles
-	url = git@github.com:ombu/drupal-ombublocks.git
+	url = git@github.com:ombu/drupal-tiles.git
 [submodule "public/sites/all/themes/boots"]
 	path = public/sites/all/themes/boots
-	url = git@bitbucket.org:ombu/boots.git
+	url = git@github.com:ombu/drupal-boots.git
+[submodule "public/sites/all/modules/custom/ombubeans"]
+	path = public/sites/all/modules/custom/ombubeans
+	url = git@github.com:ombu/drupal-ombubeans.git
