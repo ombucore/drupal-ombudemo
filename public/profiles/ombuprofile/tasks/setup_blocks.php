@@ -102,7 +102,7 @@ function ombuprofile_setup_blocks($install_state) {
   for ($i = 0; $i < 6; $i++) {
     $bean = bean_create(array('type' => 'bean_rte_rte'));
     $bean->label = 'bean_rte_rte-' . $i;
-    $bean->title = 'Rich Text Block ' . (string) ($i + 1);
+    $bean->title = 'Text Block ' . (string) ($i + 1);
     $bean->delta = 'bean-rte-rte-' . $i;
     $bean->setValues(array (
       'view_mode' => 'default',
