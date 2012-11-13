@@ -43,15 +43,23 @@ function ombuprofile_setup_users($install_state) {
     if (in_array($role_name, array('anonymous user', 'authenticated user'))) {
       continue;
     }
+
+    $user_roles = array(
+      $rid => $role_name,
+    );
+
+    // Grant admin editor role as well.
+    if ($role_name == 'admin') {
+      $user_roles[$roles['editor']] = 'editor';
+    }
+
     $slug = str_replace(' ', '_', $role_name);
     $user = array(
       'name' => 'test_'. $slug,
       'pass' => 'pass',
       'mail' => 'test_'. $slug .'@ombuweb.com',
       'status' => 1,
-        'roles' => array(
-          $rid => $role_name,
-        ),
+        'roles' => $user_roles,
     );
     user_save(new stdClass, $user);
   }
