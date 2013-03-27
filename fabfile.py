@@ -4,6 +4,8 @@ from fabric.contrib import files
 from fabric.operations import run
 
 env.repo_type = 'git'
+env.repo_url = 'git@bitbucket.org:ombu/drupal-tiles-demo.git'
+env.use_ssh_config = 'true'
 
 # Global environment settings
 env.site_name = 'Tiles Demo'
@@ -38,13 +40,13 @@ def staging():
     The staging server definition
     """
     # TODO: fill out this info with the correct Staging specs
-    # env.hosts = ['ombu@paco.ombuweb.com:34165']
-    # env.host_type = 'staging'
-    # env.user = 'ombu'
-    # env.host_webserver_user = 'www-data'
-    # env.host_site_path = '/vol/main/stage/stageX'
-    # env.public_path = 'current'
-    # env.db_db = 'tiles_stage'
-    # env.db_user = 'phpuser'
-    # env.db_pw = 'meh'
-    # env.db_host = 'localhost'
+    env.hosts = ['ombu@d2.ombuweb.com:34165']
+    env.host_type = 'staging'
+    env.user = 'ombu'
+    env.host_webserver_user = 'www-data'
+    env.host_site_path = '/home/ombu/stage/stage5'
+    env.public_path = 'current'
+    env.db_db = 'tiles_stage'
+    env.db_user = 'phpuser'
+    env.db_pw = 'meh'
+    env.db_host = 'localhost'
