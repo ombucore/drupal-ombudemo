@@ -25,4 +25,4 @@ ini_set('session.gc_maxlifetime', 200000);
 ini_set('session.cookie_lifetime', 2000000);
 
 // $conf['googlemap_api_key'] = '';
-$conf['environment'] = 'staging';
+$conf['environment'] = 'development';

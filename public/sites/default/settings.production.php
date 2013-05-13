@@ -26,4 +26,4 @@ ini_set('session.cookie_lifetime', 2000000);
 
 // $conf['googlemap_api_key'] = 'ABQIAAAAzxNz3nbl0rwEoAf5Ppk2qhTFiIG9WPB99zZpPRSYGUEpFLzEuBQY9U1TEzIXsFHiDepQhF83D5C7lA';
 
-$conf['environment'] = 'production';
+$conf['environment'] = 'development';
