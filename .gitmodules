@@ -22,3 +22,6 @@
 [submodule "public/sites/all/modules/custom/ombubeans"]
 	path = public/sites/all/modules/custom/ombubeans
 	url = git@github.com:ombu/drupal-ombubeans.git
+[submodule "public/sites/all/modules/custom/sentry"]
+	path = public/sites/all/modules/custom/sentry
+	url = git@github.com:ombu/drupal-sentry.git

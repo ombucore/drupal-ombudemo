@@ -26,3 +26,6 @@ ini_set('session.cookie_lifetime', 2000000);
 
 // $conf['googlemap_api_key'] = '';
 $conf['environment'] = 'development';
+
+// Sentry DSN.
+$conf['sentry_dsn'] = 'https://cb1a67fc4f31421bb958fcf6167a0f3d:d6e122d152eb42889299366dcecb3aee@app.getsentry.com/8398';
