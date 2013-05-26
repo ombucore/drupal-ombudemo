@@ -1,1 +1,4 @@
 sites/default/settings.php sites/default/settings.php sites/default/files
+bin
+composer.lock
+vendor

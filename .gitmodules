@@ -25,3 +25,6 @@
 [submodule "public/sites/all/modules/custom/sentry"]
 	path = public/sites/all/modules/custom/sentry
 	url = git@github.com:ombu/drupal-sentry.git
+[submodule "public/sites/all/modules/contrib/drupalextension"]
+	path = public/sites/all/modules/contrib/drupalextension
+	url = http://git.drupal.org/project/drupalextension.git
