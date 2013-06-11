@@ -11,7 +11,8 @@ Feature: Demo of Behat for our Drupal core build
     When I visit "/"
     Then I should see "Add Block"
 
-  # Testing steps provided by Tiles as a subcontext
-  Scenario: The tiles module implements its own steps
+# Testing steps provided by Tiles as a subcontext
+  Scenario: The homepage of the core build has "6" RTE tiles.
     When I visit "/"
-    Then There is a tile with title "Text Block 1"
+    Then There are 6 RTE titles
+    And There is a tile with title "Text Block 1"
