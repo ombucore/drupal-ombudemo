@@ -1,13 +1,17 @@
-@api
-Feature: Editors can add or edit pages
-  In order to add pages to this site
-  As an editor
-  I can add a new page and make a change to it
+@api @editor
+Feature: Manage basic pages
+  In order to facilitate content creation
+  As an Editor
+  I need to be able to create, delete, publish, or unpublish pages from the admin menu item 'Core Content > Pages: Manage'
 
   Background:
     Given I am logged in as a user with the "editor" role
 
-  Scenario: Editor can edit a page
-    When I visit "node/add/page"
-    Then I should get a "200" HTTP response
-
+  Scenario: Add a page
+    Given I am on "/node/add/page"
+    When I fill in "Title" with "The page title"
+    And I fill in "Body" with "Some random text of the right length"
+    And I press the "Save" button
+    Then I should see "The page title"
+    And I should see "Some random text of the right length"
+    And show last response
