@@ -1,0 +1,14 @@
+add:
+  'anonymous user':
+    - 'view any ombubeans_fpo bean'
+    - 'view any ombubeans_fpohero bean'
+  'authenticated user':
+    - 'view any ombubeans_fpo bean'
+    - 'view any ombubeans_fpohero bean'
+  editor:
+    - 'create any ombubeans_fpo bean'
+    - 'create any ombubeans_fpohero bean'
+    - 'delete any ombubeans_fpo bean'
+    - 'delete any ombubeans_fpohero bean'
+    - 'edit any ombubeans_fpo bean'
+    - 'edit any ombubeans_fpohero bean'
