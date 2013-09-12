@@ -25,3 +25,6 @@
 [submodule "public/sites/all/modules/custom/sentry"]
 	path = public/sites/all/modules/custom/sentry
 	url = git@github.com:ombu/drupal-sentry.git
+[submodule "public/profiles/ombuprofile/modules/ombucore"]
+	path = public/profiles/ombuprofile/modules/ombucore
+	url = git@github.com:ombu/drupal-ombucore.git
