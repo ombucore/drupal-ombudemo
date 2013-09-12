@@ -5,3 +5,17 @@
  */
 
 include_once 'base.features.inc';
+
+/**
+ * Implements hook_tiles_widths().
+ */
+function base_tiles_widths() {
+  return array(
+    'ombuprofile' => array(
+      'site_logo' => 2,
+    ),
+    'menu' => array(
+      'header-menu' => 10,
+    ),
+  );
+}
