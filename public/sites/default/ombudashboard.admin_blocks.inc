@@ -65,10 +65,11 @@ function _ombudashboard_content_block() {
   $content = array();
 
   $types = array(
+    '' => 'All Content',
     'page' => 'Pages',
   );
   foreach ($types as $type => $name) {
-    if (user_access('administer nodes') ||  user_access("create $type content") ) {
+    if ($type && (user_access('administer nodes') ||  user_access("create $type content"))) {
       $pages = array(
         'title' => $name,
         'operations' => array(
@@ -79,11 +80,15 @@ function _ombudashboard_content_block() {
           ),
         ),
       );
-      if ( user_access('administer nodes') || user_access("delete any $type content") ) {
+      if (!$type || user_access('administer nodes') || user_access("delete any $type content") ) {
         $pages['operations'][] = array(
           'title' => 'Manage',
-          'href' => 'admin/dashboard/manage-content/' . $type,
-          'localized_options' => array(),
+          'href' => 'admin/dashboard/manage-content',
+          'localized_options' => array(
+            'query' => array(
+              'type' => $type,
+            ),
+          ),
         );
       }
 
