@@ -191,6 +191,20 @@ function _ombudashboard_get_admin_nav_block() {
     'localized_options' => array(),
   );
 
+  $content[] = array(
+    'title' => 'Manage the Header Menu',
+    'href' => 'admin/structure/menu/manage/header-menu',
+    'description' => 'Edit, enable and disable items from the site\'s header menu',
+    'localized_options' => array(),
+  );
+
+  $content[] = array(
+    'title' => 'Manage the Footer Menu',
+    'href' => 'admin/structure/menu/manage/footer-menu',
+    'description' => 'Edit, enable and disable items from the site\'s fotoer menu',
+    'localized_options' => array(),
+  );
+
   return $content;
 }
 
