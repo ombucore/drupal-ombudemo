@@ -12,18 +12,14 @@ class AddContent extends \OmbuCore\Task\AddContent {
   protected $menu_nodes = array(
     'header-menu' => array(
       'Home' => array(
-        '#link' => array(
-          'link_path' => '<front>',
-        ),
+        '#link' => '<front>',
       ),
       'About' => array(),
       'Contact' => array(),
     ),
     'main-menu' => array(
       'Home' => array(
-        '#link' => array(
-          'link_path' => '<front>',
-        ),
+        '#link' => '<front>',
       ),
       'About' => array(),
       'link 1' => array(),
