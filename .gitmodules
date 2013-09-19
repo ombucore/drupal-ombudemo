@@ -28,3 +28,9 @@
 [submodule "public/profiles/ombuprofile/modules/ombucore"]
 	path = public/profiles/ombuprofile/modules/ombucore
 	url = git@github.com:ombu/drupal-ombucore.git
+[submodule "public/sites/all/modules/custom/ombuslide"]
+	path = public/sites/all/modules/custom/ombuslide
+	url = git@github.com:ombu/drupal-ombuslide.git
+[submodule "public/sites/all/modules/custom/beancontainer"]
+	path = public/sites/all/modules/custom/beancontainer
+	url = git@github.com:ombu/drupal-beancontainer.git
