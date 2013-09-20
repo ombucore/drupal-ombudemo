@@ -13,8 +13,8 @@
  */
 class EntityTranslationBeanHandler extends EntityTranslationDefaultHandler {
 
-  public function __construct($entity_type, $entity_info, $entity, $entity_id) {
-    parent::__construct('bean', $entity_info, $entity, $entity_id);
+  public function __construct($entity_type, $entity_info, $entity) {
+    parent::__construct('bean', $entity_info, $entity);
   }
 
   public function getAccess($op) {
@@ -22,6 +22,9 @@ class EntityTranslationBeanHandler extends EntityTranslationDefaultHandler {
   }
 
   protected function getEntityId() {
-    return $this->entity->delta;
+    if (isset($this->entity->delta)) {
+      return $this->entity->delta;
+    }
+    return parent::getEntityId();
   }
 }

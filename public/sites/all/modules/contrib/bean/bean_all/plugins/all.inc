@@ -29,6 +29,8 @@ class BeanAll extends BeanPlugin {
     $block_object->title = $block_object->info;
     $block_object->enabled = $block_object->page_match = TRUE;
     $blocks[$this->getBlockInfo('module') . "_" . $this->getBlockInfo('delta')] = $block_object;
+
+    module_load_include('module', 'block', 'block');
     $block_content = _block_render_blocks($blocks);
     $content += _block_get_renderable_array($block_content);
 
