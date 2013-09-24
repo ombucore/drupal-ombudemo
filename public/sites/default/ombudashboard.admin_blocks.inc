@@ -223,14 +223,19 @@ function _ombudashboard_get_admin_nav_block() {
 function _ombudashboard_get_admin_categories_block() {
   $content = array();
 
-  $content[]  = array(
-    'title' => 'Site Sections',
-    'href' => 'admin/structure/taxonomy/site-sections',
-    'description' => 'Manage the site sections.',
-    'localized_options' => array(
-      'query' => drupal_get_destination(),
-    ),
-  );
+  $vocabs = taxonomy_vocabulary_get_names();
+  foreach ($vocabs as $vocab) {
+    if (user_access('edit terms in ' . $vocab->vid)) {
+      $content[]  = array(
+        'title' => $vocab->name,
+        'href' => 'admin/structure/taxonomy/' . $vocab->machine_name,
+        'description' => 'Manage ' . strtolower($vocab->name),
+        'localized_options' => array(
+          'query' => drupal_get_destination(),
+        ),
+      );
+    }
+  }
 
   return $content;
 }
