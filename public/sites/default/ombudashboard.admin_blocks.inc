@@ -166,6 +166,15 @@ function _ombudashboard_get_admin_block3() {
     );
   }
 
+  if ( user_access('administer redirects') ) {
+    $content[] = array(
+      'title' => 'Redirects',
+      'href' => 'admin/config/search/redirect',
+      'description' => 'Edit page redirects',
+      'localized_options' => array(),
+    );
+  }
+
   if ( user_access('administer site configuration') ) {
     $content[] = array(
       'title' => 'Clear Caches',
