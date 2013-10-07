@@ -9,6 +9,7 @@ files[] = theme/oembed.theme.inc
 files[] = oembed.test
 files[] = OEmbedStreamWrapper.inc
 files[] = MediaInternetOEmbedHandler.inc
+hidden = TRUE
 
 ; Information added by drupal.org packaging script on 2013-02-19
 version = "7.x-1.0-rc2"
