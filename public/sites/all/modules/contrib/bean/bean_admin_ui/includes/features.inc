@@ -18,3 +18,11 @@ function bean_admin_ui_features_pipe_bean_type_alter(&$pipe, $data, $export) {
     }
   }
 }
+
+/**
+ * Implements {component}_features_revert().
+ */
+function bean_type_features_revert($module, $component) {
+  ctools_component_features_revert($component, $module);
+  bean_reset();
+}

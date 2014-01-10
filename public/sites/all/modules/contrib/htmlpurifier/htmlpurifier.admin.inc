@@ -13,7 +13,7 @@
  */
 function htmlpurifier_admin_settings($form, &$form_state) {
   $form['htmlpurifier_introduction'] = array(
-    '#markup' => t('<p>This page contains global settings for all HTML Purifier enabled filters.  If you are looking for specific filter configuration options, check <a href="@format">the format configurations page</a> and select the specific format you would like to configure.</p>', array('@filter' => url('admin/config/content/formats'))),
+    '#markup' => t('<p>This page contains global settings for all HTML Purifier enabled filters.  If you are looking for specific filter configuration options, check <a href="@format">the format configurations page</a> and select the specific format you would like to configure.</p>', array('@format' => url('admin/config/content/formats'))),
   );
   $form['htmlpurifier_clear_cache'] = array(
     '#type' => 'submit',
