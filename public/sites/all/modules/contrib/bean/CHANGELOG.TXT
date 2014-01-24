@@ -231,16 +231,6 @@ Added Tests.
   couple of errant block_types (underscore)
 #1345966 by brantwynn, indytechcook: Change bean page to use EntityFieldQuery.
 
-Bean 7.x-1.0-rc1, 2012-02-17
-----------------------------
-Added description to beans.
-Improve block/add and admin/structure/block-types by alphabetizing and making
-  more consistent with node/add
-Added Tests.
-#1389446 by rogical: Added config link in info file.
-#1216572 by duellj: Fixed Block cache not flushed after editing a bean, fixing a
-  couple of errant block_types (underscore)
-#1345966 by brantwynn, indytechcook: Change bean page to use EntityFieldQuery.
 
 Bean 7.x-1.0-beta10, 2011-12-30
 -------------------------------

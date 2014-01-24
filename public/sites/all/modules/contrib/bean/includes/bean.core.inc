@@ -463,8 +463,6 @@ class BeanEntityAPIController extends EntityAPIControllerExportable {
         $deltas[] = $bean->identifier();
       }
     }
-    parent::attachLoad($queried_entities, $revision_id);
-  }
 
     if (!empty($deltas)) {
       try {

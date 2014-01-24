@@ -979,7 +979,6 @@ function views_bulk_operations_active_queue_process($queue_name, $operation, $to
     $context['finished'] = $context['sandbox']['progress'] / $context['sandbox']['max'];
     $context['message'] = t('Processed @current out of @total', array('@current' => $context['sandbox']['progress'], '@total' => $context['sandbox']['max']));
   }
-}
 
   if (!$queue_item || $context['finished'] === 1) {
     // All done. Provide a status message to the user.
@@ -1158,7 +1157,6 @@ function views_bulk_operations_direct_process($operation, $rows, $options) {
     );
     views_bulk_operations_queue_item_process($queue_item_data, $context['results']['log']);
   }
-  $operation->execute($entities, $operation_context);
 
   $context['results']['progress'] += count($rows);
   $context['results']['log'][] = t('Performed %operation on @items.', array(
