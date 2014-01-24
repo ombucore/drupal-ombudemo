@@ -34,3 +34,6 @@
 [submodule "public/sites/all/modules/custom/ombuslide"]
 	path = public/sites/all/modules/custom/ombuslide
 	url = git@github.com:ombu/drupal-ombuslide.git
+[submodule "public/sites/all/modules/custom/ombubench"]
+	path = public/sites/all/modules/custom/ombubench
+	url = git@bitbucket.org:ombu/drupal-ombubench.git
