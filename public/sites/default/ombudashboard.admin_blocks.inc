@@ -20,6 +20,15 @@ function _ombudashboard_get_admin_blocks() {
     'theme' => 'ombu_admin_block_content_manage',
   );
 
+  if ( user_access('edit supplementary content') ) {
+    $blocks[] = array(
+      'title' => 'Supplementary Content',
+      'content' => _ombudashboard_get_supplementary_content_block(),
+      'position' => 'left',
+      'theme' => 'ombu_admin_block_content',
+    );
+  }
+
   if ( user_access('administer taxonomy') ) {
     $blocks[] = array(
       'title' => 'Categories',
@@ -251,12 +260,12 @@ function _ombudashboard_get_supplementary_content_block() {
     $content[] = $obj;
   }
 
-  if (user_access('administer blocks')) {
+  if (user_access('administer files')) {
     $content[] = array(
-      'title' => 'Site Blocks',
-      'href' => 'admin/structure/block',
+      'title' => 'Files',
+      'href' => 'admin/dashboard/manage-files',
       'localized_options' => array(),
-      'description' => 'Advanced feature. Only use if familiar with it.',
+      'description' => 'Edit and delete media files',
     );
   }
 

@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * base.context.inc
+ * tiles_base.context.inc
  */
 
 /**
  * Implements hook_context_default_contexts().
  */
-function base_context_default_contexts() {
+function tiles_base_context_default_contexts() {
   $export = array();
 
   $context = new stdClass();
@@ -26,8 +26,8 @@ function base_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'ombuprofile-site_logo' => array(
-          'module' => 'ombuprofile',
+        'ombucore-site_logo' => array(
+          'module' => 'ombucore',
           'delta' => 'site_logo',
           'region' => 'header',
           'weight' => '-11',
@@ -36,6 +36,18 @@ function base_context_default_contexts() {
           'module' => 'menu',
           'delta' => 'header-menu',
           'region' => 'header',
+          'weight' => '-10',
+        ),
+        'ombucore-page_title' => array(
+          'module' => 'ombucore',
+          'delta' => 'content_top',
+          'region' => 'content',
+          'weight' => '15',
+        ),
+        'ombucore-page_title' => array(
+          'module' => 'ombucore',
+          'delta' => 'page_title',
+          'region' => 'content',
           'weight' => '-10',
         ),
         'system-main-menu' => array(
