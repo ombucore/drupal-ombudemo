@@ -1416,6 +1416,7 @@ function workbench_moderation_states_next($current_state, $account = NULL, $node
       ->fields('transitions', array('to_name'))
       ->fields('states', array('label'));
     $select->join('workbench_moderation_states', 'states', 'transitions.to_name = states.name');
+    $select->orderBy('states.weight', 'ASC');
 
     $states = $select->execute()->fetchAllKeyed();
 

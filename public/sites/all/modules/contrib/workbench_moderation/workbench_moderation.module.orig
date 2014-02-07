@@ -1217,7 +1217,7 @@ function workbench_moderation_node_is_current($node) {
  *   state object has name, description, and weight properties.
  */
 function workbench_moderation_states() {
-  static $states;
+  $states = &drupal_static(__FUNCTION__);
   if (!isset($states)) {
     $states = db_select('workbench_moderation_states', 'states')
       ->fields('states', array('name', 'label', 'description', 'weight'))
@@ -1326,7 +1326,7 @@ function workbench_moderation_state_delete($state) {
  *   'from' states, then by the weight of the 'to' states.
  */
 function workbench_moderation_transitions() {
-  static $transitions;
+  $transitions = &drupal_static(__FUNCTION__);
   if (!isset($transitions)) {
     $query = db_select('workbench_moderation_transitions', 't')
       ->fields('t', array('from_name', 'to_name'));
