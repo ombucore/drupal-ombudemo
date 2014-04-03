@@ -5,6 +5,8 @@ add:
     'authenticated user':
         - 'view any ombubeans_fpo bean'
         - 'view any ombubeans_fpohero bean'
+    admin:
+        - 'schedule (un)publishing of nodes'
     editor:
         - 'create any ombubeans_fpo bean'
         - 'create any ombubeans_fpohero bean'
