@@ -40,12 +40,6 @@ function tiles_base_context_default_contexts() {
         ),
         'ombucore-page_title' => array(
           'module' => 'ombucore',
-          'delta' => 'content_top',
-          'region' => 'content',
-          'weight' => '15',
-        ),
-        'ombucore-page_title' => array(
-          'module' => 'ombucore',
           'delta' => 'page_title',
           'region' => 'content',
           'weight' => '-10',
