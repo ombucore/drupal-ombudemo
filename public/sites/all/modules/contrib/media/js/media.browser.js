@@ -26,7 +26,8 @@ Drupal.behaviors.MediaBrowser = {
     // Instantiate the tabs.
     $('#media-browser-tabset').tabs({
       // Ensure that the modal resizes to the content on each tab switch.
-      show: Drupal.media.browser.resizeIframe
+      show: Drupal.media.browser.resizeIframe,
+      activate: Drupal.media.browser.resizeIframe
     });
 
     $('.ui-tabs-nav li').mouseup(function() {
@@ -109,7 +110,7 @@ Drupal.media.browser.finalizeSelection = function () {
  */
 Drupal.media.browser.resizeIframe = function (event) {
   var h = $('body').height();
-  $(parent.window.document).find('#mediaBrowser').height(h);
+  $(parent.window.document).find('.media-modal-frame:visible').height(h);
 };
 
 Drupal.media.browser.selectErrorTab = function() {
@@ -132,7 +133,7 @@ Drupal.media.browser.selectErrorTab = function() {
 Drupal.media.browser.selectActiveTab = function() {
   // Find the index of the last active tab.
   setTimeout(function() {
-    $('#media-browser-tabset').tabs('select', Drupal.media.browser.activeTab);
+    $('#media-browser-tabset').tabs('option', 'active', Drupal.media.browser.activeTab);
     Drupal.media.browser.resizeIframe();
   }, 10);
 };

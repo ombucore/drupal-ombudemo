@@ -222,6 +222,8 @@ function create_element (html, info) {
   }
   var element = $(html);
 
+  element.attr('contenteditable', 'false');
+
   // Move attributes from the file info array to the placeholder element.
   if (info.attributes) {
     $.each(Drupal.settings.media.wysiwyg_allowed_attributes, function(i, a) {
