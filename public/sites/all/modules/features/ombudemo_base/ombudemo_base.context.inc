@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tiles_base.context.inc
+ * ombudemo_base.context.inc
  */
 
 /**
  * Implements hook_context_default_contexts().
  */
-function tiles_base_context_default_contexts() {
+function ombudemo_base_context_default_contexts() {
   $export = array();
 
   $context = new stdClass();

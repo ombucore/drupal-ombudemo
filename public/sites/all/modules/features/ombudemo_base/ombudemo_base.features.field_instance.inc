@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tiles_base.features.field_instance.inc
+ * ombudemo_base.features.field_instance.inc
  */
 
 /**
  * Implements hook_field_default_field_instances().
  */
-function tiles_base_field_default_field_instances() {
+function ombudemo_base_field_default_field_instances() {
   $field_instances = array();
 
   // Exported field_instance: 'node-page-field_sections'

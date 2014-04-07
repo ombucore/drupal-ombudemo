@@ -1,6 +1,0 @@
-name = OmbuProfile
-description = OmbuProfile installation profile.
-version = VERSION
-core = 7.x
-
-dependencies[] = ombucore

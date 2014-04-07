@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tiles_base.features.field_base.inc
+ * ombudemo_base.features.field_base.inc
  */
 
 /**
  * Implements hook_field_default_field_bases().
  */
-function tiles_base_field_default_field_bases() {
+function ombudemo_base_field_default_field_bases() {
   $field_bases = array();
 
   // Exported field_base: 'field_sections'

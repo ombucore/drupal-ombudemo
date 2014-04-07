@@ -4,14 +4,14 @@ from fabric.contrib import files
 from fabric.operations import run
 
 env.repo_type = 'git'
-env.repo_url = 'git@bitbucket.org:ombu/drupal-tiles-demo.git'
+env.repo_url = 'git@bitbucket.org:ombu/drupal-ombudemo.git'
 env.use_ssh_config = 'true'
 
 # Global environment settings
-env.site_name = 'Tiles Demo'
-env.db_db = 'tiles'
+env.site_name = 'OMBU Demo'
+env.db_db = 'ombudemo'
 env.public_path = 'public'
-env.site_profile = 'tiles_profile'
+env.site_profile = 'ombudemo_profile'
 
 # Dev modules to install during site build
 env.dev_modules = 'devel devel_generate context_ui views_ui diff'

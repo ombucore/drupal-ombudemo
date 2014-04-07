@@ -6,7 +6,7 @@
  * Creates node content structured as hierarchical menu
  */
 
-namespace tiles_profile\Task;
+namespace ombudemo_profile\Task;
 
 class AddContent extends \OmbuCore\Task\AddContent {
   protected $menu_nodes = array(

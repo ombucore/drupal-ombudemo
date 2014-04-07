@@ -5,7 +5,7 @@
  * Setup site blocks.
  */
 
-namespace tiles_profile\Task;
+namespace ombudemo_profile\Task;
 
 class Blocks extends \OmbuCore\Task\Blocks {
   /**

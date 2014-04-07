@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tiles_base.field_group.inc
+ * ombudemo_base.field_group.inc
  */
 
 /**
  * Implements hook_field_group_info().
  */
-function tiles_base_field_group_info() {
+function ombudemo_base_field_group_info() {
   $export = array();
 
   $field_group = new stdClass();

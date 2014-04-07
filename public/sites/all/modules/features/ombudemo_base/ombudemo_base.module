@@ -4,12 +4,12 @@
  * Code for the Tiles Demo feature.
  */
 
-include_once 'tiles_base.features.inc';
+include_once 'ombudemo_base.features.inc';
 
 /**
  * Implements hook_tiles_widths().
  */
-function tiles_base_tiles_widths() {
+function ombudemo_base_tiles_widths() {
   return array(
     'ombucore' => array(
       'site_logo' => 2,

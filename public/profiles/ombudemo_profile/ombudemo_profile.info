@@ -1,0 +1,6 @@
+name = OMBU Demo profile
+description = OMBU Demo profile
+version = VERSION
+core = 7.x
+
+dependencies[] = ombucore
