@@ -1,0 +1,10 @@
+{
+    "name": "drupal/ombucore",
+    "description": "Core profile task setup for Drupal",
+    "autoload": {
+        "psr-0": { "OmbuCore": "lib/" }
+    },
+    "require": {
+        "symfony/yaml": "2.1.*"
+    }
+}
