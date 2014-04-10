@@ -1,0 +1,14 @@
+default_blocks:
+    -
+        module: system
+        delta: main
+        region: content
+admin_blocks:
+    -
+        module: system
+        delta: main
+        region: content
+    -
+        module: user
+        delta: login
+        region: content

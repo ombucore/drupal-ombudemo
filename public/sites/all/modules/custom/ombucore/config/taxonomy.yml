@@ -1,0 +1,17 @@
+vocabularies:
+  genres:
+    name: Musical Genres
+    terms:
+      - Alternative
+      - Classic
+      - Country
+      - Dance
+      - Electronic
+      - Hip Hop
+      - Instrumental
+      - Latin
+      - Metal
+      - Pop
+      - Punk
+      - Rock
+      - Soul

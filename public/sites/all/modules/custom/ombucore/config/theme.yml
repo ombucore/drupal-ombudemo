@@ -1,0 +1,3 @@
+default_theme: bootstrap
+admin_theme: boots_admin
+node_admin_theme: true
