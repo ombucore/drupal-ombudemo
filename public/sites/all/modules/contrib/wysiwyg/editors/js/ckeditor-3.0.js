@@ -184,7 +184,8 @@ Drupal.wysiwyg.editor.instance.ckeditor = {
           editor.on('mode', function(ev) {
             if (ev.editor.mode == 'wysiwyg') {
               // Inject CSS files directly into the editing area head tag.
-              $('head', $('#cke_contents_' + ev.editor.name + ' iframe').eq(0).contents()).append('<link rel="stylesheet" href="' + settings.css + '" type="text/css" >');
+              var iframe = $('#cke_contents_' + ev.editor.name + ' iframe, #' + ev.editor.id + '_contents iframe');
+              $('head', iframe.eq(0).contents()).append('<link rel="stylesheet" href="' + settings.css + '" type="text/css" >');
             }
           });
         }
@@ -199,12 +200,7 @@ Drupal.wysiwyg.editor.instance.ckeditor = {
                   data.node = data.node.$;
                 }
                 if (selection.getType() == CKEDITOR.SELECTION_TEXT) {
-                  if (CKEDITOR.env.ie) {
-                    data.content = selection.getNative().createRange().text;
-                  }
-                  else {
-                    data.content = selection.getNative().toString();
-                  }
+                  data.content = selection.getSelectedText();
                 }
                 else if (data.node) {
                   // content is supposed to contain the "outerHTML".

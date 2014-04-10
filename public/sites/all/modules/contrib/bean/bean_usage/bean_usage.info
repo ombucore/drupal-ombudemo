@@ -5,9 +5,9 @@ dependencies[] = bean
 dependencies[] = blockreference
 package = Bean
 
-; Information added by drupal.org packaging script on 2012-09-05
-version = "7.x-1.0-rc6"
+; Information added by  packaging script on 2013-11-29
+version = "7.x-1.7"
 core = "7.x"
 project = "bean"
-datestamp = "1346850751"
+datestamp = "1385749410"
 

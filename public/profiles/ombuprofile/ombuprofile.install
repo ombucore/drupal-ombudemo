@@ -1,8 +1,0 @@
-<?php
-// $Id$
-
-/**
- * Implements hook_install().
- */
-function ombuprofile_install() {
-}

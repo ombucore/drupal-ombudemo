@@ -5,10 +5,35 @@
  * Tests for block.module.
  */
 
+abstract class BeanSetup extends DrupalWebTestCase {
+  protected $admin_user;
+  protected $plugin_name;
+
+
+  function setUp() {
+    parent::setUp('bean', 'ctools', 'entity', 'bean_test', 'block');
+    $this->addAdminUser();
+  }
+
+  function addAdminUser() {
+    $permissions = array_keys(bean_permission());
+    $permissions += array(
+      'administer blocks',
+      'access administration pages',
+      'access content',
+    );
+    $this->admin_user = $this->drupalCreateUser($permissions);
+    $this->drupalLogin($this->admin_user);
+
+    // Test plugin name
+    $this->plugin_name = 'test_bean';
+  }
+}
+
 /**
  * Test specific parts of the bean type class
  */
-class BeanUnitTests extends DrupalUnitTestCase {
+class BeanUnitTests extends BeanSetup {
   public static function getInfo() {
     return array(
       'name' => 'Bean Unit Tests',
@@ -35,35 +60,6 @@ class BeanUnitTests extends DrupalUnitTestCase {
     $bean_type = new BeanDefault($test_plugin);
     $bean_type->type = "test_name";
     $this->assertEqual($bean_type->buildURL(), "test-name", t('URL is formatted correctly.'));
-  }
-
-  /**
-   * Test the URL of the bean
-   */
-}
-
-abstract class BeanSetup extends DrupalWebTestCase {
-  protected $admin_user;
-  protected $plugin_name;
-
-
-  function setUp() {
-    parent::setUp('bean', 'ctools', 'entity', 'bean_test', 'block');
-    $this->addAdminUser();
-  }
-
-  function addAdminUser() {
-    $permissions = array_keys(bean_permission());
-    $permissions += array(
-      'administer blocks',
-      'access administration pages',
-      'access content',
-    );
-    $this->admin_user = $this->drupalCreateUser($permissions);
-    $this->drupalLogin($this->admin_user);
-
-    // Test plugin name
-    $this->plugin_name = 'test_bean';
   }
 }
 
@@ -235,10 +231,13 @@ class BeanTests extends BeanSetup {
     $bean = bean_create($values);
     bean_save($bean);
 
-    $this->drupalGet("block/{$bean->identifier()}");
+    $this->drupalGet($bean->url());
     $this->assertResponse(200, t('Bean Page is viewable'));
     $this->assertText($bean->label(), t('Bean Page is viewable'));
 
+    $this->drupalGet("block/{$bean->identifier()}");
+    $this->assertResponse(200, t('Legacy Bean Page is viewable'));
+    $this->assertText($bean->label(), t('Legacy Bean Page is viewable'));
   }
 }
 

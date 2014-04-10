@@ -25,3 +25,15 @@
 [submodule "public/sites/all/modules/custom/sentry"]
 	path = public/sites/all/modules/custom/sentry
 	url = git@github.com:ombu/drupal-sentry.git
+[submodule "public/sites/all/modules/custom/beancontainer"]
+	path = public/sites/all/modules/custom/beancontainer
+	url = git@github.com:ombu/drupal-beancontainer.git
+[submodule "public/sites/all/modules/custom/ombuslide"]
+	path = public/sites/all/modules/custom/ombuslide
+	url = git@github.com:ombu/drupal-ombuslide.git
+[submodule "public/sites/all/modules/custom/ombubench"]
+	path = public/sites/all/modules/custom/ombubench
+	url = git@bitbucket.org:ombu/drupal-ombubench.git
+[submodule "public/sites/all/modules/custom/customauthor"]
+	path = public/sites/all/modules/custom/customauthor
+	url = git@github.com:ombu/drupal-customauthor.git

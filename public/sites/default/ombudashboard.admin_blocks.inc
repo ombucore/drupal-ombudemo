@@ -20,6 +20,15 @@ function _ombudashboard_get_admin_blocks() {
     'theme' => 'ombu_admin_block_content_manage',
   );
 
+  if ( user_access('edit supplementary content') ) {
+    $blocks[] = array(
+      'title' => 'Supplementary Content',
+      'content' => _ombudashboard_get_supplementary_content_block(),
+      'position' => 'left',
+      'theme' => 'ombu_admin_block_content',
+    );
+  }
+
   if ( user_access('administer taxonomy') ) {
     $blocks[] = array(
       'title' => 'Categories',
@@ -65,10 +74,11 @@ function _ombudashboard_content_block() {
   $content = array();
 
   $types = array(
+    '' => 'All Content',
     'page' => 'Pages',
   );
   foreach ($types as $type => $name) {
-    if (user_access('administer nodes') ||  user_access("create $type content") ) {
+    if ($type && (user_access('administer nodes') ||  user_access("create $type content"))) {
       $pages = array(
         'title' => $name,
         'operations' => array(
@@ -79,11 +89,15 @@ function _ombudashboard_content_block() {
           ),
         ),
       );
-      if ( user_access('administer nodes') || user_access("delete any $type content") ) {
+      if (!$type || user_access('administer nodes') || user_access("delete any $type content") ) {
         $pages['operations'][] = array(
           'title' => 'Manage',
-          'href' => 'admin/dashboard/manage-content/' . $type,
-          'localized_options' => array(),
+          'href' => 'admin/dashboard/manage-content',
+          'localized_options' => array(
+            'query' => array(
+              'type' => $type,
+            ),
+          ),
         );
       }
 
@@ -161,6 +175,15 @@ function _ombudashboard_get_admin_block3() {
     );
   }
 
+  if ( user_access('administer redirects') ) {
+    $content[] = array(
+      'title' => 'Redirects',
+      'href' => 'admin/config/search/redirect',
+      'description' => 'Edit page redirects',
+      'localized_options' => array(),
+    );
+  }
+
   if ( user_access('administer site configuration') ) {
     $content[] = array(
       'title' => 'Clear Caches',
@@ -186,6 +209,20 @@ function _ombudashboard_get_admin_nav_block() {
     'localized_options' => array(),
   );
 
+  $content[] = array(
+    'title' => 'Manage the Header Menu',
+    'href' => 'admin/structure/menu/manage/header-menu',
+    'description' => 'Edit, enable and disable items from the site\'s header menu',
+    'localized_options' => array(),
+  );
+
+  $content[] = array(
+    'title' => 'Manage the Footer Menu',
+    'href' => 'admin/structure/menu/manage/footer-menu',
+    'description' => 'Edit, enable and disable items from the site\'s fotoer menu',
+    'localized_options' => array(),
+  );
+
   return $content;
 }
 
@@ -195,14 +232,19 @@ function _ombudashboard_get_admin_nav_block() {
 function _ombudashboard_get_admin_categories_block() {
   $content = array();
 
-  $content[]  = array(
-    'title' => 'Site Sections',
-    'href' => 'admin/structure/taxonomy/site-sections',
-    'description' => 'Manage the site sections.',
-    'localized_options' => array(
-      'query' => drupal_get_destination(),
-    ),
-  );
+  $vocabs = taxonomy_vocabulary_get_names();
+  foreach ($vocabs as $vocab) {
+    if (user_access('edit terms in ' . $vocab->vid)) {
+      $content[]  = array(
+        'title' => $vocab->name,
+        'href' => 'admin/structure/taxonomy/' . $vocab->machine_name,
+        'description' => 'Manage ' . strtolower($vocab->name),
+        'localized_options' => array(
+          'query' => drupal_get_destination(),
+        ),
+      );
+    }
+  }
 
   return $content;
 }
@@ -218,12 +260,12 @@ function _ombudashboard_get_supplementary_content_block() {
     $content[] = $obj;
   }
 
-  if (user_access('administer blocks')) {
+  if (user_access('administer files')) {
     $content[] = array(
-      'title' => 'Site Blocks',
-      'href' => 'admin/structure/block',
+      'title' => 'Files',
+      'href' => 'admin/dashboard/manage-files',
       'localized_options' => array(),
-      'description' => 'Advanced feature. Only use if familiar with it.',
+      'description' => 'Edit and delete media files',
     );
   }
 

@@ -24,6 +24,9 @@ ini_set('session.gc_divisor', 100);
 ini_set('session.gc_maxlifetime', 200000);
 ini_set('session.cookie_lifetime', 2000000);
 
-// $conf['googlemap_api_key'] = 'ABQIAAAAzxNz3nbl0rwEoAf5Ppk2qhTFiIG9WPB99zZpPRSYGUEpFLzEuBQY9U1TEzIXsFHiDepQhF83D5C7lA';
+$conf['environment'] = 'production';
 
-$conf['environment'] = 'development';
+// Caching on qa.
+$conf['cache'] = 1;
+$conf['preprocess_css'] = 1;
+$conf['preprocess_js'] = 1;
