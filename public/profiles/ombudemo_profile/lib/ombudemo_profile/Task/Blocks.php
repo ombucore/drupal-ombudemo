@@ -7,7 +7,7 @@
 
 namespace ombudemo_profile\Task;
 
-class Blocks extends \OmbuCore\Task\Blocks {
+class Blocks extends \ProfileTasks\Task\Blocks {
   /**
    * Implements parent::process().
    *

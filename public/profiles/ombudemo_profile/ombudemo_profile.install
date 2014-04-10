@@ -18,15 +18,15 @@ function ombudemo_profile_install_tasks() {
 }
 
 /**
- * Routes tasks to ombucore.
+ * Routes tasks to profile tools.
  *
  * @param array $install_state
  *   An array of information about the current installation state.
  */
 function ombudemo_profile_install_task_router($install_state) {
-  $loader = ombucore_autoload();
+  $loader = profile_tasks_autoload();
   $loader->add('ombudemo_profile', DRUPAL_ROOT . '/' . drupal_get_path('profile', 'ombudemo_profile') . '/lib');
 
-  $installer = new OmbuCore\Installer\Installer($install_state);
+  $installer = new \ProfileTasks\Installer\Installer($install_state);
   $installer->processTasks();
 }

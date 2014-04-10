@@ -26,8 +26,8 @@ function ombudemo_base_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'ombucore-site_logo' => array(
-          'module' => 'ombucore',
+        'ombucleanup-site_logo' => array(
+          'module' => 'ombucleanup',
           'delta' => 'site_logo',
           'region' => 'header',
           'weight' => '-11',
@@ -38,8 +38,8 @@ function ombudemo_base_context_default_contexts() {
           'region' => 'header',
           'weight' => '-10',
         ),
-        'ombucore-page_title' => array(
-          'module' => 'ombucore',
+        'ombucleanup-page_title' => array(
+          'module' => 'ombucleanup',
           'delta' => 'page_title',
           'region' => 'content',
           'weight' => '-10',

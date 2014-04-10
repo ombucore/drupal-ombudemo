@@ -1,0 +1,14 @@
+name = Bean styles
+description = Universal styler for supported bean types
+dependencies[] = bean
+package = bean
+core = 7.x
+files[] = tests/bean_style.test
+files[] = includes/BeanStyle.php
+files[] = includes/BeanStyleEntity.php
+
+; Bean Styls
+files[] = styles/carousel/CarouselBeanStyle.php
+files[] = styles/grid/GridBeanStyle.php
+files[] = styles/list/ListBeanStyle.php
+files[] = styles/slideshow/SlideshowBeanStyle.php

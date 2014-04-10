@@ -1,0 +1,44 @@
+<?php
+
+/**
+ * @file
+ * Install hooks for bean_style.module.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function bean_style_schema() {
+  $schema['bean_style'] = array(
+    'description' => 'Bean style instance settings.',
+    'fields' => array(
+      'bean_style_id' => array(
+        'description' => 'Primary Key: Unique bean style ID.',
+        'type' => 'serial',
+        'not null' => TRUE,
+      ),
+      'type' => array(
+        'description' => 'The type of this bean style.',
+        'type' => 'varchar',
+        'length' => 32,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'bid' => array(
+        'description' => 'The {bean} this style belongs to.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+    ),
+    'foreign keys' => array(
+      'style_bean' => array(
+        'table' => 'bean',
+        'columns' => array('bid' => 'bid'),
+      ),
+    ),
+    'primary key' => array('bean_style_id'),
+  );
+  return $schema;
+}

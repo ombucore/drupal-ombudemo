@@ -8,7 +8,7 @@
 
 namespace ombudemo_profile\Task;
 
-class AddContent extends \OmbuCore\Task\AddContent {
+class AddContent extends \ProfileTasks\Task\AddContent {
   protected $menu_nodes = array(
     'header-menu' => array(
       'Home' => array(

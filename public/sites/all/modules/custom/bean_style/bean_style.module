@@ -1,0 +1,289 @@
+<?php
+
+/**
+ * @file bean_style.module
+ * Universal styler for beans.
+ */
+
+/**
+ * Implements hook_entity_info().
+ */
+function bean_style_entity_info() {
+  $return = array(
+    'bean_style' => array(
+      'label' => t('Bean Style'),
+      'controller class' => 'EntityAPIController',
+      'entity class' => 'BeanStyleEntity',
+      'base table' => 'bean_style',
+      'uri callback' => 'entity_class_uri',
+      'fieldable' => TRUE,
+      'entity keys' => array(
+        'id' => 'bean_style_id',
+        'bundle' => 'type',
+      ),
+      'bundle keys' => array(
+        'bundle' => 'type',
+      ),
+      'bundles' => array(),
+      'view modes' => array(
+        'full' => array(
+          'label' => t('Full content'),
+          'custom settings' => FALSE,
+        ),
+      ),
+    ),
+  );
+
+  // Bundles must provide a human readable name so we can create help and error
+  // messages, and the path to attach Field admin pages to.
+  foreach (bean_style_get_styles() as $type => $info) {
+    $return['bean_style']['bundles'][$type] = array(
+      'label' => $info['label'],
+      'admin' => array(
+        'path' => 'admin/structure/bean_styles/manage/%bean_style_type',
+        'real path' => 'admin/structure/bean_styles/manage/' . str_replace('_', '-', $type),
+        'bundle argument' => 4,
+        'access arguments' => array('administer bean styles'),
+      ),
+    );
+  }
+
+  return $return;
+}
+
+/**
+ * Implements hook_menu().
+ */
+function bean_style_menu() {
+  $items = array();
+
+  if (module_exists('field_ui')) {
+    $items['admin/structure/bean_styles'] = array(
+      'title' => 'Bean Styles',
+      'description' => 'Manage fields on bean styles.',
+      'page callback' => 'bean_style_admin_overview',
+      'access arguments' => array('administer bean styles'),
+      'type' => MENU_NORMAL_ITEM,
+      'file' => 'bean_style.admin.inc',
+    );
+  }
+
+  return $items;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function bean_style_permission() {
+  return array(
+    'administer bean styles' => array(
+      'title' => t('Administer bean styles'),
+      'description' => t('Add fields and disable/enable bean styles.'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_hook_info().
+ */
+function bean_style_hook_info() {
+  $hooks['bean_style_info'] = array(
+    'group' => 'bean_style',
+  );
+  $hooks['bean_style_info_alter'] = array(
+    'group' => 'bean_style',
+  );
+  $hooks['bean_style_options_alter'] = array(
+    'group' => 'bean_style',
+  );
+
+  return $hooks;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function bean_style_theme($existing, $type, $theme, $path) {
+  return array(
+    'bean_style_slideshow' => array(
+      'variables' => array(
+        'items' => NULL,
+        'type' => NULL,
+      ),
+      'file' => 'styles/slideshow/theme.inc',
+    ),
+    'bean_style_list' => array(
+      'variables' => array(
+        'items' => NULL,
+        'type' => NULL,
+      ),
+      'file' => 'styles/list/theme.inc',
+    ),
+    'bean_style_carousel' => array(
+      'variables' => array(
+        'items' => NULL,
+        'type' => NULL,
+      ),
+      'file' => 'styles/carousel/theme.inc',
+    ),
+  );
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * Need to fix tiles.module so that all bean form alters affect tiles forms as
+ * well.
+ */
+function bean_style_form_tiles_add_form_alter(&$form, $form_state) {
+  if (isset($form['bean_form'])) {
+    bean_style_form_bean_form_alter($form['bean_form'], $form_state);
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function bean_style_form_bean_form_alter(&$form, $form_state) {
+  $options = array();
+  foreach (bean_style_get_styles() as $name => $style) {
+    if (in_array($form['#bundle'], $style['bean_types'])) {
+      $options[$name] = $style['label'];
+    }
+  }
+
+  if ($options) {
+    // Get style for existing bean.
+    if (!empty($form['bean']['#value']->bid)) {
+      $bean_style = bean_style_bean_load_style($form['bean']['#value']->bid);
+    }
+
+    // Add default option.
+    $options = array('' => t('Default style')) + $options;
+
+    // Allow other modules to alter displayed options.
+    $context = array(
+      'bundle' => $form['#bundle'],
+      'bean' => $form['bean']['#value'],
+    );
+    drupal_alter('bean_style_options', $options, $context);
+
+    $form['bean_style'] = array(
+      '#weight' => -10,
+      '#type' => 'select',
+      '#title' => t('Style'),
+      '#description' => t('Select the style this block should be displayed as.'),
+      '#options' => $options,
+      '#default_value' => !empty($bean_style) ? $bean_style->type : '',
+    );
+  }
+}
+
+/**
+ * Implements hook_bean_insert().
+ */
+function bean_style_bean_insert($bean) {
+  if (!empty($bean->bean_style)) {
+    $bean_style = entity_create('bean_style', array(
+      'bid' => $bean->bid,
+      'type' => $bean->bean_style,
+    ));
+    $bean_style->save();
+  }
+}
+
+/**
+ * Implements hook_bean_update().
+ */
+function bean_style_bean_update($bean) {
+  if (!empty($bean->bean_style)) {
+    $bean_style = bean_style_bean_load_style($bean->bid);
+    if (!$bean_style) {
+      bean_style_bean_insert($bean);
+    }
+    elseif ($bean_style->type != $bean->bean_style) {
+      $bean_style->type = $bean->bean_style;
+      $bean_style->save();
+    }
+  }
+}
+
+/**
+ * Alter bean build to pass rendering to bean style.
+ */
+function bean_style_view_alter(&$build, $bean) {
+  $style = bean_style_bean_load_style($bean->bid);
+  if ($style && $style->getStyle()) {
+    $build['bean'][$bean->delta] = $style->getStyle()->prepareView($build['bean'][$bean->delta], $bean);
+  }
+}
+
+/**
+ * Load a bean style for a specific bean.
+ *
+ * @param int $bid
+ *   Primary identifier for a bean.
+ *
+ * @return BeanStyleEntity
+ */
+function bean_style_bean_load_style($bid) {
+  // Since it's not possible to use EntityFieldQuery across multiple entity
+  // types, a direct query has to be used instead.
+  $bean_style_id = db_query('SELECT bean_style_id FROM {bean_style} WHERE bid = :bid', array(
+    ':bid' => $bid,
+  ))->fetchField();
+
+  if ($bean_style_id) {
+    return entity_load_single('bean_style', $bean_style_id);
+  }
+
+  return FALSE;
+}
+
+/**
+ * Load a bean style type.
+ *
+ * @param string $type_name
+ *   The name of the type.
+ *
+ * @return BeanStyle
+ *   Fully loaded bean style object.
+ */
+function bean_style_type_load($type_name) {
+  $styles = bean_style_get_styles();
+  if (isset($styles[$type_name])) {
+    $info = $styles[$type_name];
+
+    $style = new $info['class']($info);
+
+    return $style;
+  }
+
+  return FALSE;
+}
+
+/**
+ * Return all enabled bean style types.
+ *
+ * @return array
+ *   Array of enabled bean styles keyed by type name.
+ */
+function bean_style_get_styles() {
+  $styles =& drupal_static(__FUNCTION__, FALSE);
+
+  if ($styles === FALSE) {
+    $styles = module_invoke_all('bean_style_info');
+
+    foreach ($styles as $name => $style) {
+      // Load up settings for each style. For now settings are stored in
+      // a variable. Once styles can be created and stored in the database this
+      // should be moved to a serialized array.
+      $styles[$name]['settings'] = variable_get('bean_style_default_settings_' . $name, array());
+    }
+
+    // Allow other modules to alter bean styles.
+    drupal_alter('bean_style', $styles);
+  }
+
+  return $styles;
+}

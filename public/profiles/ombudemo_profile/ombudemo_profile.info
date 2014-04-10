@@ -3,4 +3,4 @@ description = OMBU Demo profile
 version = VERSION
 core = 7.x
 
-dependencies[] = ombucore
+dependencies[] = profile_tasks
