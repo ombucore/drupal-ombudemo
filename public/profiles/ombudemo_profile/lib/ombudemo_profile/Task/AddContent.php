@@ -43,6 +43,9 @@ class AddContent extends \ProfileTasks\Task\AddContent {
   protected function createHome() {
     $node = $this->setupNode();
 
+    // Disable XMLSitemap on frontpage.
+    $node->xmlsitemap['status'] = 0;
+
     $node->title = 'Home';
     $node->tiles = array(
       'ombubeans-fpohero' => array(
