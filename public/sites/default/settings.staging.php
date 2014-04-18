@@ -30,6 +30,8 @@ $conf['environment'] = 'development';
 $conf['sentry_dsn'] = 'https://cb1a67fc4f31421bb958fcf6167a0f3d:d6e122d152eb42889299366dcecb3aee@app.getsentry.com/8398';
 
 // Caching on qa.
+$conf['block_cache'] = 1;
 $conf['cache'] = 1;
+$conf['page_cache_maximum_age'] = 900;
 $conf['preprocess_css'] = 1;
 $conf['preprocess_js'] = 1;
