@@ -17,22 +17,6 @@ class AddContent extends \ProfileTasks\Task\AddContent {
       'About' => array(),
       'Contact' => array(),
     ),
-    'main-menu' => array(
-      'Home' => array(
-        '#link' => '<front>',
-      ),
-      'About' => array(),
-      'link 1' => array(),
-      'link 2' => array(),
-      'link 3' => array(),
-      'link 4' => array(),
-      'link 5' => array(),
-      'link 6' => array(),
-      'link 7' => array(),
-      'link 8' => array(),
-      'link 9' => array(),
-      'link 10' => array(),
-    ),
   );
 
   /**
