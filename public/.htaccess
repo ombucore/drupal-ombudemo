@@ -141,12 +141,3 @@ DirectoryIndex index.php index.html index.htm
     </FilesMatch>
   </IfModule>
 </IfModule>
-
-AuthType Basic
-AuthName "Protected"
-AuthUserFile /etc/htpasswords
-Require user ombudev
-Order deny,allow
-Deny from all
-Allow from 54.214.49.189 75.145.65.102
-Satisfy any
