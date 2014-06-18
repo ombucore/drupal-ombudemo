@@ -4,7 +4,7 @@ $databases = array (
   array (
     'default' =>
     array (
-      'database' => 'tiles',
+      'database' => 'ombudemo',
       'username' => 'root',
       'password' => 'meh',
       'host' => 'localhost',
