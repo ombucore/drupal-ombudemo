@@ -37,3 +37,9 @@
 [submodule "public/sites/all/modules/custom/customauthor"]
 	path = public/sites/all/modules/custom/customauthor
 	url = git@github.com:ombu/drupal-customauthor.git
+[submodule "public/sites/all/modules/custom/profile_tasks"]
+	path = public/sites/all/modules/custom/profile_tasks
+	url = git@github.com:ombu/drupal-profile-tasks.git
+[submodule "public/sites/all/modules/custom/bean_style"]
+	path = public/sites/all/modules/custom/bean_style
+	url = git@github.com:ombu/drupal-bean-style.git

@@ -27,6 +27,8 @@ ini_set('session.cookie_lifetime', 2000000);
 $conf['environment'] = 'production';
 
 // Caching on qa.
+$conf['block_cache'] = 1;
 $conf['cache'] = 1;
+$conf['page_cache_maximum_age'] = 900;
 $conf['preprocess_css'] = 1;
 $conf['preprocess_js'] = 1;
