@@ -44,12 +44,6 @@ function ombudemo_base_context_default_contexts() {
           'region' => 'content',
           'weight' => '-10',
         ),
-        'system-main-menu' => array(
-          'module' => 'system',
-          'delta' => 'main-menu',
-          'region' => 'sidebar_first',
-          'weight' => '-10',
-        ),
       ),
     ),
   );
