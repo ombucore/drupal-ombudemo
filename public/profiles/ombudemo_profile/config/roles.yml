@@ -1,19 +1,24 @@
 add:
     'anonymous user':
+        - 'view any bean_container bean'
         - 'view any ombubeans_fpo bean'
         - 'view any ombubeans_fpohero bean'
         - 'view any ombuslide bean'
     'authenticated user':
+        - 'view any bean_container bean'
         - 'view any ombubeans_fpo bean'
         - 'view any ombubeans_fpohero bean'
         - 'view any ombuslide bean'
     editor:
+        - 'create any bean_container bean'
         - 'create any ombubeans_fpo bean'
         - 'create any ombubeans_fpohero bean'
         - 'create any ombuslide bean'
+        - 'delete any bean_container bean'
         - 'delete any ombubeans_fpo bean'
         - 'delete any ombubeans_fpohero bean'
         - 'delete any ombuslide bean'
+        - 'edit any bean_container bean'
         - 'edit any ombubeans_fpo bean'
         - 'edit any ombubeans_fpohero bean'
         - 'edit any ombuslide bean'
