@@ -1,0 +1,17 @@
+add:
+    customauthor_article:
+        enabled: 1
+        multiple_authors: 1
+        multiple_authors_field: field_author
+    date_popup_authored_enabled_article: 1
+    date_popup_authored_format_article: 'm/d/Y - H:i'
+    date_popup_authored_year_range_article: '3'
+    menu_options_article: {  }
+    node_options_article:
+        - status
+        - promote
+    node_preview_article: '0'
+    node_submitted_article: 1
+    xmlsitemap_settings_node_article:
+        status: '1'
+        priority: '0.5'

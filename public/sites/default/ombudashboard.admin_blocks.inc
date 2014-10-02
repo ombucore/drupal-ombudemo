@@ -75,6 +75,7 @@ function _ombudashboard_content_block() {
 
   $types = array(
     '' => 'All Content',
+    'article' => 'Articles',
     'page' => 'Pages',
   );
   foreach ($types as $type => $name) {
