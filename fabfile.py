@@ -16,14 +16,13 @@ env.site_profile = 'ombudemo_profile'
 # Dev modules to install during site build
 env.dev_modules = 'devel devel_generate context_ui views_ui diff'
 
-
 # Host settings
 @task
 def qa():
     """
     The qa server definition
     """
-    env.hosts = ['pepe.ombuweb.com']
+    env.hosts = ['pepe.ombudev.com']
     env.host_type = 'qa'
     env.host_webserver_user = 'www-data'
     env.host_site_path = '/var/www/qa23'
@@ -31,14 +30,14 @@ def qa():
     env.db_db = 'qa23'
     env.db_user = 'phpuser'
     env.db_pw = 'meh'
-    env.db_host = 'qadb.cpuj5trym3at.us-west-2.rds.amazonaws.com'
+    env.db_host = 'devdb1.ombudev.com'
 
 @task
 def staging():
     """
     The staging server definition
     """
-    env.hosts = ['pepe.ombuweb.com']
+    env.hosts = ['pepe.ombudev.com']
     env.host_type = 'staging'
     env.host_webserver_user = 'www-data'
     env.host_site_path = '/var/www/stage23'
@@ -46,4 +45,4 @@ def staging():
     env.db_db = 'stage23'
     env.db_user = 'phpuser'
     env.db_pw = 'meh'
-    env.db_host = 'qadb.cpuj5trym3at.us-west-2.rds.amazonaws.com'
+    env.db_host = 'devdb1.ombudev.com'
