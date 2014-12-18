@@ -15,7 +15,26 @@ function ombudemo_base_tiles_widths() {
       'site_logo' => 2,
     ),
     'menu' => array(
-      'header-menu' => 10,
+      'header-menu' => 6,
+    ),
+    'search' => array(
+      'form' => 4,
     ),
   );
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function ombudemo_base_form_search_block_form_alter(&$form, $form_state) {
+  $form['#attributes']['class'][] = 'navbar-form';
+}
+
+/**
+ * Implements hook_preprocess_block().
+ */
+function ombudemo_base_preprocess_block(&$variables) {
+  if ($variables['block']->module == 'search') {
+    $variables['classes_array'][] = 'navbar-right';
+  }
 }

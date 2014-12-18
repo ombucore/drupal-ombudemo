@@ -38,6 +38,12 @@ function ombudemo_base_context_default_contexts() {
           'region' => 'header',
           'weight' => '-10',
         ),
+        'search-form' => array(
+          'module' => 'search',
+          'delta' => 'form',
+          'region' => 'header',
+          'weight' => '-9',
+        ),
         'ombucleanup-page_title' => array(
           'module' => 'ombucleanup',
           'delta' => 'page_title',
