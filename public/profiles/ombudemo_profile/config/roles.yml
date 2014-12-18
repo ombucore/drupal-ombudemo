@@ -4,11 +4,13 @@ add:
         - 'view any ombubeans_fpo bean'
         - 'view any ombubeans_fpohero bean'
         - 'view any ombuslide bean'
+        - 'search content'
     'authenticated user':
         - 'view any bean_container bean'
         - 'view any ombubeans_fpo bean'
         - 'view any ombubeans_fpohero bean'
         - 'view any ombuslide bean'
+        - 'search content'
     editor:
         - 'create any bean_container bean'
         - 'create any ombubeans_fpo bean'
@@ -22,3 +24,4 @@ add:
         - 'edit any ombubeans_fpo bean'
         - 'edit any ombubeans_fpohero bean'
         - 'edit any ombuslide bean'
+        - 'set tile indexable status'
