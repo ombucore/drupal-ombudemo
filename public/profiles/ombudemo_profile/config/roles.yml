@@ -17,6 +17,9 @@ add:
         - 'view any ombubeans_iframe bean'
         - 'view any ombuslide bean'
         - 'search content'
+    admin:
+        - 'edit terms in 1'
+        - 'delete terms in 1'
     editor:
         - 'create any bean_container bean'
         - 'create any featuredbean bean'

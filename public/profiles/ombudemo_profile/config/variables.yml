@@ -15,3 +15,4 @@ add:
     xmlsitemap_settings_node_article:
         status: '1'
         priority: '0.5'
+    tagsadmin_enabled_genres: 1
