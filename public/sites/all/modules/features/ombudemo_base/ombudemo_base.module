@@ -38,3 +38,17 @@ function ombudemo_base_preprocess_block(&$variables) {
     $variables['classes_array'][] = 'navbar-right';
   }
 }
+
+/**
+ * Implements hook_bean_style_options_alter().
+ */
+function ombudemo_base_bean_style_options_alter(&$options, $context) {
+  // Remove all but bootstrap slideshow for demo purposes.
+  if ($context['bundle'] == 'ombuslide') {
+    foreach ($options as $key => $value) {
+      if ($key != 'bootstrap_slideshow') {
+        unset($options[$key]);
+      }
+    }
+  }
+}
