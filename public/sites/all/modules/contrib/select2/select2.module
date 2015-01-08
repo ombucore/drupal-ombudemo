@@ -13,6 +13,9 @@
 define('SELECT2_MODULE_VERSION', '7.x-1.x-dev');
 
 define('SELECT2_MIN_PLUGIN_VERSION', '3.4.5');
+
+define('SELECT2_MIN_JQUPDATE_VERSION', '2.4');
+
 define('SELECT2_PLUGIN_PATH', 'sites/all/libraries/select2');
 define('SELECT2_MODULE_PATH', drupal_get_path('module', 'select2'));
 define('SELECT2_VALUES_SEPARATOR', '¶');
@@ -235,6 +238,14 @@ function select2_select_element_process($element, &$form_state) {
     $_select2_jq_version_warning = TRUE;
 
     return $element;
+  }
+
+  if (isset($element['#options']) && is_array($element['#options'])) {
+    foreach ($element['#options'] as $key => $value) {
+      if (is_string($value)) {
+        $element['#options'][$key] = htmlspecialchars_decode($value);
+      }
+    }
   }
 
   if (isset($element['#select2']['alter'])) {
