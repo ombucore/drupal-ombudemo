@@ -13,35 +13,6 @@ function ombudemo_base_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_base|node|article|form';
-  $field_group->group_name = 'group_base';
-  $field_group->entity_type = 'node';
-  $field_group->bundle = 'article';
-  $field_group->mode = 'form';
-  $field_group->parent_name = '';
-  $field_group->data = array(
-    'label' => 'Basic info',
-    'weight' => '1',
-    'children' => array(
-      0 => 'body',
-      1 => 'field_image',
-      2 => 'title',
-    ),
-    'format_type' => 'tab',
-    'format_settings' => array(
-      'formatter' => 'closed',
-      'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-base field-group-tab',
-        'required_fields' => 1,
-      ),
-    ),
-  );
-  $export['group_base|node|article|form'] = $field_group;
-
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
   $field_group->identifier = 'group_base|node|page|form';
   $field_group->group_name = 'group_base';
   $field_group->entity_type = 'node';
