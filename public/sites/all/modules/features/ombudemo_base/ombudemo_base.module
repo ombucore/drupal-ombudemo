@@ -28,6 +28,7 @@ function ombudemo_base_tiles_widths() {
  */
 function ombudemo_base_form_search_block_form_alter(&$form, $form_state) {
   $form['#attributes']['class'][] = 'navbar-form';
+  $form['#attributes']['class'][] = 'navbar-right';
 }
 
 /**
