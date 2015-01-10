@@ -14,7 +14,14 @@ class AddContent extends \ProfileTasks\Task\AddContent {
       'Home' => array(
         '#link' => '<front>',
       ),
-      'About' => array(),
+      'About' => array(
+        '#file' => 'about.php',
+        '#children' => array(
+          'Our Story' => array(),
+          'Our Team' => array(),
+          'Our Values' => array(),
+        ),
+      ),
       'Contact' => array(),
     ),
   );
@@ -85,5 +92,14 @@ class AddContent extends \ProfileTasks\Task\AddContent {
     node_save($node);
 
     variable_set('site_frontpage', 'node/' . $node->nid);
+  }
+
+  /**
+   * Implements parent::defaultMenuOptions().
+   */
+  protected function defaultMenuOptions($menu_link) {
+    $options = parent::defaultMenuOptions($menu_link);
+    $options['expanded'] = TRUE;
+    return $options;
   }
 }
