@@ -22,9 +22,20 @@ class AddContent extends \ProfileTasks\Task\AddContent {
           'Our Values' => array(),
         ),
       ),
-      'Contact' => array(),
+      'Contact' => array(
+        '#link' => 'contact',
+      ),
     ),
   );
+
+  /**
+   * Implements parent::process().
+   */
+  public function process() {
+    parent::process();
+
+    $this->addContactBlocks();
+  }
 
   /**
    * Implements parent::createHome().
@@ -47,5 +58,30 @@ class AddContent extends \ProfileTasks\Task\AddContent {
     $options = parent::defaultMenuOptions($menu_link);
     $options['expanded'] = TRUE;
     return $options;
+  }
+
+  /**
+   * Adds blocks to contact page.
+   */
+  protected function addContactBlocks() {
+    $layout = tiles_get_container('region')->getLayout('contact');
+
+    $layout->addBlock(array(
+      'module' => 'bean',
+      'delta' => 'contact-info',
+      'region' => 'content',
+      'weight' => 1,
+      'width' => 6,
+    ));
+
+    $layout->addBlock(array(
+      'module' => 'system',
+      'delta' => 'main',
+      'region' => 'content',
+      'weight' => 2,
+      'width' => 6,
+    ));
+
+    $layout->save();
   }
 }
