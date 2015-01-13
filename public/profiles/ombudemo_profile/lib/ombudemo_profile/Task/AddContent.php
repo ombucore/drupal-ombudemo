@@ -26,6 +26,10 @@ class AddContent extends \ProfileTasks\Task\AddContent {
         '#link' => 'contact',
       ),
     ),
+    'footer-menu' => array(
+      'Terms of Use' => array(),
+      'Privacy' => array(),
+    ),
   );
 
   /**
