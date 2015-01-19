@@ -1,0 +1,49 @@
+add:
+  vocabularies:
+    topics:
+      name: Topics
+      terms:
+        - Lorem
+        - Ipsum
+        - Dolar
+        - Tortor
+        - Donec
+    tags:
+      name: Tags
+      terms:
+        - Id
+        - Elit
+        - Non
+        - Mi
+        - Porta
+        - Gravida
+        - At
+        - Eget
+        - Metus
+        - Fusce
+        - Dapibus
+        - Tellus
+        - Ac
+        - Cursus
+        - Commodo
+        - Mauris
+        - Condimentum
+        - Nibh
+        - Ut
+        - Fermentum
+        - Massa
+        - Justo
+        - Sit
+        - Amet
+        - Risus
+        - Etiam
+        - Porta
+        - Sem
+        - Malesuada
+        - Magna
+        - Mollis
+        - Euismod
+        - Donec
+        - Sed
+        - Odio
+        - Dui
