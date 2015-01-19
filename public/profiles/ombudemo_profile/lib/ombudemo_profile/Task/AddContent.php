@@ -38,6 +38,7 @@ class AddContent extends \ProfileTasks\Task\AddContent {
   public function process() {
     parent::process();
 
+    $this->loadNodeFromFile('dummy-pages.php');
     $this->addContactBlocks();
   }
 
