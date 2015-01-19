@@ -6,6 +6,8 @@
 
 namespace ombudemo_profile\Task;
 
+use ProfileTasks\Content\Wrapper;
+
 class Blocks extends \ProfileTasks\Task\Blocks {
   /**
    * Insert/update block locations.
@@ -24,22 +26,19 @@ class Blocks extends \ProfileTasks\Task\Blocks {
    * be created first.
    */
   protected function addBeans() {
-    $bean = bean_create(array('type' => 'bean_rte_rte'));
-    $bean->label = 'contact-info';
-    $bean->delta = 'contact-info';
-    $bean->setValues(array(
-      'view_mode' => 'default',
-    ));
+    // Create dummy wrapper to ease creation of beans.
+    $wrapper = new Wrapper('node', array('type' => 'page'));
+
+    $path = drupal_get_path('profile', 'ombudemo_profile') . '/assets/';
+    $fid = $wrapper->addFile('team.jpg', $path);
+    $fid = $fid['fid'];
+
+    $bean = $wrapper->addBean('bean_rte_rte');
+    $bean->value()->delta = 'contact-info';
     $bean->field_description = array(
-      'und' =>
-      array(
-        0 =>
-        array(
-          'value' => '<h3>OMBU HQ</h3><p>107 SE Washington St #225</p><p>Portland, OR 97214</p><p>(503) 298-4888</p>',
-          'format' => 'default',
-        ),
-      ),
+      'value' => '<p>[[{"fid":"' . $fid . '","view_mode":"default","fields":{"format":"default","field_file_image_alt_text[und][0][value]":"","field_file_image_title_text[und][0][value]":""},"type":"media","link_text":null,"attributes":{"class":"media-element file-default"}}]]</p><h3>OMBU HQ</h3><p>107 SE Washington St #225</p><p>Portland, OR 97214</p><p>(503) 298-4888</p>',
+      'format' => 'default',
     );
-    bean_save($bean);
+    $bean->save();
   }
 }
