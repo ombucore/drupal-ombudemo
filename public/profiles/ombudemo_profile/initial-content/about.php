@@ -12,16 +12,247 @@ $wrapper->title = 'About';
 
 $path = drupal_get_path('profile', 'ombudemo_profile');
 
-$fid = $wrapper->addFile('phones.jpg', $path . '/assets');
-$fid = $fid['fid'];
+$fid = $wrapper->addFile('sun.jpg', $path . '/assets');
+$sun_fid = $fid['fid'];
+$file = file_load($sun_fid);
+$file->field_caption[LANGUAGE_NONE][0]['value'] = "Vanquish the impossible Orion's sword. Tendrils of gossamer clouds Euclid! Rogue the only home we've ever known. Preserve and cherish that pale blue dot.";
+file_save($file);
+
+$fid = $wrapper->addFile('orion.jpg', $path . '/assets');
+$orion_fid = $fid['fid'];
+$file = file_load($orion_fid);
+$file->field_caption[LANGUAGE_NONE][0]['value'] = "Vanquish the impossible Orion's sword. Tendrils of gossamer clouds Euclid! Rogue the only home we've ever known. Preserve and cherish that pale blue dot.";
+file_save($file);
 
 drupal_static_reset('file_get_stream_wrappers');
-$provider = media_internet_get_provider('http://youtu.be/trOXsGfytWE');
+$provider = media_internet_get_provider('http://youtu.be/QgkwiUMJ41c');
 $file = $provider->save();
 $video_fid = $file->fid;
 
 $body = <<<EOD
-<p>A co-founder and now former employee at Tinder has sued the dating app startup and its leaders for sexual harassment and discrimination. It&rsquo;s a messy (and familiar) story of an office romance between senior execs gone horribly wrong.&nbsp; The fallout has only just begun, complete with&nbsp;<a href="http://www.buzzfeed.com/sapna/tinder-sued-for-sexual-harassment" target="_blank">incriminating texts and emails</a> that have gone viral and will live forever in the company&rsquo;s cyber culture.</p><blockquote><p>Silicon Valley&rsquo;s &ldquo;bro&rdquo; or &ldquo;frat&rdquo; culture is broken and in desperate need of a re-set.</p></blockquote><p>Gender has played a significant role in recent controversies and lawsuits surrounding other Silicon Valley luminaries like GitHub, Snapchat and Kleiner Perkins Caufield &amp; Byers. Each leader or company involved has taken responsibility or refuted charges depending on the circumstances. I encourage you to read Evelyn Rusli&rsquo;s <a href="http://online.wsj.com/articles/former-executive-sues-tinder-for-sexual-harassment-1404256923">review of the cases</a> in The Wall Street Journal.</p><p>Taken together, there&rsquo;s a growing consensus that what some call Silicon Valley&rsquo;s &ldquo;bro&rdquo; or &ldquo;frat&rdquo; culture is broken and in desperate need of a re-set. The damage inflicted upon female employees aspiring to succeed in the world&rsquo;s greatest tech hub is obvious.&nbsp; And opportunities are being missed both to gain and retain strong talent. But the harm is much greater in the bigger picture.&nbsp; Widespread gender discrimination will undermine product innovation, as well as connecting with and understanding customers.&nbsp;There is a bottom line impact.</p><h2>The Boy&#39;s Club</h2><p>But let me call attention to something lurking in the legal weeds that may start to rattle the boy&rsquo;s club.</p><p>A lawsuit here and there is one thing, but a recent California resolution &ndash; SCR-62 &ndash; may drive bigger changes that will surprise tech leaders, because it aims at the very top of the organization.</p><p class="pull-left">[[{"fid":"$fid","view_mode":"default","fields":{"format":"default","field_file_image_alt_text[und][0][value]":"Two phones","field_file_image_title_text[und][0][value]":"Tinder in action"},"type":"media","link_text":null,"attributes":{"class":"media-element file-default"}}]]</p><p><a href="http://gsm.ucdavis.edu/sites/main/files/file-attachments/public-policy-impact.pdf">SCR-62</a> pushes California companies to have at least 14 percent or more of their board be composed of women. Most tech companies fall below that threshold, making them vulnerable to both board composition scrutiny and bad press around insufficient female leadership. (Just consider what other <a href="http://www.washingtonpost.com/blogs/on-leadership/wp/2014/01/08/apple-vows-to-seek-more-women-and-minority-board-candidates/">high-profile</a> companies <a href="http://business.time.com/2013/12/06/twitter-board-controversy-shows-depth-of-gender-gap-in-silicon-valley/">have gone through</a>.) Legal liability around harassment and discrimination aside, the negative impact to employee culture and customer engagement when a company is perceived to be sexist far outweighs headline grabbing legal fines and settlements.</p><p>According to the <a href="http://gsm.ucdavis.edu/uc-davis-annual-study-california-women-business-leaders">University of California Davis&rsquo; ongoing study of the subject</a>, software, hardware and semiconductor companies are in the bottom half of California companies in terms of the numbers of women they have on their boards. On average, women occupy only 11 percent of board of director seats at California technology companies. It&rsquo;s close to 5 percent for semiconductor companies. That&rsquo;s worse than energy and industrial companies in the state.</p><blockquote><p>On average, women occupy only 11 percent of board of director seats at California technology companies.</p></blockquote><p>And here&rsquo;s where non-binding resolutions like SCR-62 meet with more clear legal exposure.&nbsp; If a tech company is hit with a gender discrimination lawsuit (and I anticipate we will see some high profile class actions), lack of compliance with SCR-62 could be used against them. It reflects upon the culture of an organization, and the environment in which women are working.&nbsp; It may underscore pervasive lack of opportunities for women leaders&mdash;up to the very top of the organization&mdash;despite access to endless talent pools. It may be hard for a court (and likely, a jury) to believe premier names in the tech industry can&rsquo;t attract top female talent and leadership. Are women unwilling to help lead them?&nbsp; It&rsquo;s an absurd contention.</p><h3>A remarkable demonstration</h3><p>Looking ahead, another development to watch is the already large and growing percentage of women in ethics officer positions. According to the Society for Corporate Compliance and Ethics (SCCE) the percentage of their members who are women is approaching 60 percent. This could have interesting ramifications for our profession and is an area worth studying. We encourage our readers to work with industry associations and think tanks to research this trend and its consequences.</p><p>[[{"fid":"$video_fid","view_mode":"default","fields":{"format":"default"},"type":"media","link_text":null,"attributes":{"height":"75","width":"100","class":"media-element file-default"}}]]</p><h3>Some questions to consider</h3><ul><li>Are there discernible differences between men and women&rsquo;s approach to business ethics, especially with respect to management style, collaboration and communication?</li><li>Is there evidence that the ethics office has become the new HR &ndash; a safe place to park female high-achievers, while keeping them off the CEO track?</li><li>Is there pay equity between men and women who hold comparable ethics and compliance positions? Is their clout also comparable as measured by title or level in the organization, to whom they report and who comprises their in-house network?</li><li>Are there any identifiable differences between how employees view the ethics and compliance function if it is headed by a man or a woman? Are the findings the same in all industries? In all countries?</li></ul><p>Want to learn more about the trends we&rsquo;re covering? &nbsp;Join us on February 13, 10am PT/1pm ET, and register here.</p><h2>Conclusion</h2><p>Not unlike the litany of incriminating texts that are fanning the flames on the Tinder lawsuit, evidence of gender discrimination and a sexist work environment can take on a life of its own, and wreak havoc on a company&rsquo;s reputation and performance.</p><ol><li>Change is coming; it&rsquo;s only a question of whether tech companies lead it or are led to it.</li><li>Communicate to your employees, managers and other key stakeholders (such as third parties) to ensure they understand their duty to report, and provide assurance against retaliation.</li><li>Reinforce the message across multiple channels, including posters in break rooms, screen savers and other awareness-raising campaigns.</li><li>Integrate your commitment to a speak-up culture into all aspects of employee life, from periodic policy reviews to informal discussions at team meetings.</li><li>Train your stakeholders regularly to bring whistleblowing and anti-retaliation policies to life and ensure that everyone understands your policies.</li><li>Review &nbsp;your programme regularly to ensure that your employees are reporting incidents and that management is responding to these issues in an appropriate way.</li></ol><p>On the positive side, there was some evidence that 2013 may have been the year that perceptions of women leaders began to turn a corner. We note that stories about newsmakers including Janet Yellin at the U.S. Federal Reserve, Christine Lagarde at the IMF, Mary Jo White at the SEC, as well as CEOs Mary Barra at GM, Meg Whitman at HP, Virginia Rometty at IBM, Patricia Woertz at ADM and Marissa Mayer at Yahoo were, for the most part, about their policy decisions, experience, mistakes and achievements &ndash; and not about their gender. It&rsquo;s a subtle change, but one worth noting.</p>
+<p class="lead">
+Circumnavigated preserve and cherish that pale blue dot courage of our questions vastness is bearable only through love concept of the number one.  Great turbulent clouds Drake Equation.
+</p>
+
+<p>
+Globular star cluster from which we spring. Circumnavigated, the only home we've ever known venture as a patch of light courage of our questions paroxysm of global death, cosmos a very small stage in a vast cosmic arena <strong>tendrils of gossamer clouds</strong> another world trillion. Rich in heavy atoms Orion's sword, tendrils of gossamer clouds astonishment cosmos across the centuries, science.
+</p>
+
+<ul>
+  <li>
+    Vanquish the impossible Orion's sword.
+  </li>
+  <li>
+    Tendrils of gossamer clouds
+  </li>
+  <li>
+    Euclid! Rogue the only home we've ever known.
+  </li>
+  <li>
+    Preserve and cherish that pale blue dot.
+  </li>
+</ul>
+
+<h2>I am a secondary subheader</h2>
+
+<pre class="pull-left">
+[[{"fid":"$orion_fid","view_mode":"default","fields":{"format":"default","field_file_image_alt_text[und][0][value]":"Orion","field_file_image_title_text[und][0][value]":"Orion"},"type":"media","link_text":null,"attributes":{"class":"media-element file-default"}}]]
+</pre>
+
+
+<p>
+Cosmic fugue worldlets, Sea of Tranquility dream of the mind's eye?  Cosmic fugue Cambrian explosion kindling the energy hidden in matter finite but unbounded paroxysm of global death astonishment, circumnavigated. Worldlets, Orion's sword. Vanquish the impossible Sea of Tranquility permanence of the stars.  Drake Equation? The ash of stellar alchemy, two ghostly white figures in coveralls and helmets are soflty dancing corpus callosum.  Are creatures of the cosmos as <strong>a patch of light</strong>? Rig Veda, network of wormholes, Euclid! Rogue the only home we've ever known. Tingling of the spine, a billion trillion shores of the cosmic ocean network.
+</p>
+
+<p class="pull-right">
+<blockquote>
+Cosmic fugue worldlets, Sea of Tranquility dream of the mind's eye? Drake Equation? The ash of stellar alchemy!
+</blockquote>
+</p>
+
+<p>
+Wormholes ship of the imagination descended from astronomers not a sunrise but a galaxyrise descended from astronomers, Jean-François Champollion! Ship of the imagination.  Tendrils of gossamer clouds, corpus callosum courage of our questions rich in mystery science. From which we spring Orion's sword rich in mystery science inconspicuous motes of rock and gas billions upon billions kindling the energy hidden in matter shores of the cosmic ocean, Rig Veda trillion radio telescope Hypatia finite but unbounded.
+</p>
+
+<ol>
+<li>
+  Vanquish the impossible Orion's sword.
+</li>
+<li>
+  Tendrils of gossamer clouds
+</li>
+<li>
+  Euclid! Rogue the only home we've ever known.
+</li>
+<li>
+  Preserve and cherish that pale blue dot.
+</li>
+</ol>
+
+<h3>I am a tertiary subheader</h3>
+
+<p>
+  At the edge of forever encyclopaedia galactica Tunguska event vanquish the impossible venture, realm of the galaxies prime number, vastness is bearable only through love rich in heavy atoms Cambrian explosion network of wormholes across the centuries. A very small stage in a vast cosmic arena shores of the cosmic ocean great turbulent clouds laws of physics.
+</p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>
+        Name
+      </th>
+      <th>
+        Birthday
+      </th>
+      <th>
+        Sign
+      </th>
+      <th>
+        Color
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        Sabin
+      </td>
+      <td>
+        January 27
+      </td>
+      <td>
+        Aquarius
+      </td>
+      <td>
+        Blue
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Terra
+      </td>
+      <td>
+        February 2
+      </td>
+      <td>
+        Capricorn
+      </td>
+      <td>
+        Green
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Edgar
+      </td>
+      <td>
+        March 18
+      </td>
+      <td>
+        Aries
+      </td>
+      <td>
+        Red
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Kefka
+      </td>
+      <td>
+        April 2
+      </td>
+      <td>
+        Taurus
+      </td>
+      <td>
+        Crimson
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Locke
+      </td>
+      <td>
+        May 19
+      </td>
+      <td>
+        Gemini
+      </td>
+      <td>
+        Yellow
+      </td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="4">
+        Please do not use this information for evil.
+      </td>
+    </tr>
+  </tfoot>
+</table>
+
+
+<p>
+A billion trillion descended from astronomers. Encyclopaedia galactica Rig Veda from which we spring Flatland finite but unbounded kindling the energy hidden in matter. Vanquish the impossible Orion's sword colonies light years shores of the cosmic ocean tesseract and billions upon billions upon billions upon billions upon billions upon billions upon billions.
+</p>
+
+<h4>I am a quaternary subheader</h4>
+
+<p class="pull-left">
+<blockquote>
+Cosmic fugue worldlets, Sea of Tranquility dream of the mind's eye? Drake Equation? The ash of stellar alchemy!
+</blockquote>
+</p>
+
+<p>
+Cosmic fugue worldlets, Sea of Tranquility dream of the mind's eye?  Cosmic fugue Cambrian explosion kindling the energy hidden in matter finite but unbounded paroxysm of global death astonishment, circumnavigated. Worldlets, Orion's sword. Vanquish the impossible Sea of Tranquility permanence of the stars. Drake Equation? The ash of stellar alchemy, two ghostly white figures in coveralls and helmets are soflty dancing corpus callosum.azz
+</p>
+
+<h5>I am a quinary subheader</h5>
+
+<p>
+Hundreds of thousands! Tendrils of gossamer clouds with pretty stories for which there's little good evidence gathered by gravity another world birth astonishment Sea of Tranquility trillion, hydrogen atoms light years billions upon billions?  Are creatures of the cosmos quasar hundreds of thousands Cambrian explosion dream of the mind's eye, cosmos, are creatures of the cosmos preserve and cherish that pale blue dot tingling of the spine. With pretty stories for which there's little good evidence rings of Uranus inconspicuous motes of rock and gas.
+</p>
+
+<hr>
+
+<p>
+Realm of the galaxies, the ash of stellar alchemy. Cosmic fugue, birth intelligent beings globular star cluster rogue consciousness hundreds of thousands Flatland shores of the cosmic ocean tesseract.
+</p>
+
+<p>
+[[{"fid":"$video_fid","view_mode":"default","fields":{"format":"default"},"type":"media","link_text":null,"attributes":{"height":"75","width":"100","class":"media-element file-default"}}]]
+</p>
+<!--Vanquish the impossible Orion's sword. Tendrils of gossamer clouds Euclid! Rogue the only home we've ever known. Preserve and cherish that pale blue dot.-->
+
+<h6>I am a senary subheader</h6>
+
+<p>
+Orion's sword a still more glorious dawn awaits billions upon billions the carbon in our apple pies hydrogen atoms rogue. Astonishment something incredible is waiting to be known realm of the galaxies colonies. Hypatia great turbulent clouds!
+</p>
+
+<p>
+The sky calls to us rich in heavy atoms. Worldlets venture Euclid as a patch of light, network of wormholes cosmos dream of the mind's eye Drake Equation a very small stage in a vast cosmic arena extraordinary claims require extraordinary evidence network of wormholes Vangelis Flatland and billions upon billions upon billions upon billions upon billions upon billions upon billions.
+</p>
+
+<pre class="pull-right">
+[[{"fid":"$sun_fid","view_mode":"default","fields":{"format":"default","field_file_image_alt_text[und][0][value]":"Orion","field_file_image_title_text[und][0][value]":"Orion"},"type":"media","link_text":null,"attributes":{"class":"media-element file-default"}}]]
+</pre>
+
+
+<a href="/" class="btn">Click if you want</a>
+
+<p>
+Ship of the imagination. Tendrils of gossamer clouds, corpus callosum courage of our questions rich in mystery science. From which we spring Orion's sword rich in mystery science inconspicuous motes of rock
+</p>
+
+<a href="/" class="btn">Notice me and click!</a>
+
+<p>
+Ship of the imagination. Tendrils of gossamer clouds, corpus callosum courage of our questions rich in mystery science. From which we spring Orion's sword.
+</p>
 EOD;
 
 $wrapper->body = array(
