@@ -69,7 +69,7 @@ function ombudemo_base_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_plain',
-        'weight' => 10,
+        'weight' => 13,
       ),
       'grid' => array(
         'label' => 'above',
@@ -122,7 +122,7 @@ function ombudemo_base_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_plain',
-        'weight' => 1,
+        'weight' => 12,
       ),
       'grid' => array(
         'label' => 'above',
