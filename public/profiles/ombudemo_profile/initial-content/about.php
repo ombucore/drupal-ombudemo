@@ -64,11 +64,11 @@ Globular star cluster from which we spring. Circumnavigated, the only home we've
 Cosmic fugue worldlets, Sea of Tranquility dream of the mind's eye?  Cosmic fugue Cambrian explosion kindling the energy hidden in matter finite but unbounded paroxysm of global death astonishment, circumnavigated. Worldlets, Orion's sword. Vanquish the impossible Sea of Tranquility permanence of the stars.  Drake Equation? The ash of stellar alchemy, two ghostly white figures in coveralls and helmets are soflty dancing corpus callosum.  Are creatures of the cosmos as <strong>a patch of light</strong>? Rig Veda, network of wormholes, Euclid! Rogue the only home we've ever known. Tingling of the spine, a billion trillion shores of the cosmic ocean network.
 </p>
 
-<p class="pull-right">
-<blockquote>
-Cosmic fugue worldlets, Sea of Tranquility dream of the mind's eye? Drake Equation? The ash of stellar alchemy!
-</blockquote>
+<blockquote class="pull-right">
+<p>
+  Cosmic fugue worldlets, Sea of Tranquility dream of the mind's eye? Drake Equation? The ash of stellar alchemy!
 </p>
+</blockquote>
 
 <p>
 Wormholes ship of the imagination descended from astronomers not a sunrise but a galaxyrise descended from astronomers, Jean-François Champollion! Ship of the imagination.  Tendrils of gossamer clouds, corpus callosum courage of our questions rich in mystery science. From which we spring Orion's sword rich in mystery science inconspicuous motes of rock and gas billions upon billions kindling the energy hidden in matter shores of the cosmic ocean, Rig Veda trillion radio telescope Hypatia finite but unbounded.
@@ -95,116 +95,17 @@ Wormholes ship of the imagination descended from astronomers not a sunrise but a
   At the edge of forever encyclopaedia galactica Tunguska event vanquish the impossible venture, realm of the galaxies prime number, vastness is bearable only through love rich in heavy atoms Cambrian explosion network of wormholes across the centuries. A very small stage in a vast cosmic arena shores of the cosmic ocean great turbulent clouds laws of physics.
 </p>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>
-        Name
-      </th>
-      <th>
-        Birthday
-      </th>
-      <th>
-        Sign
-      </th>
-      <th>
-        Color
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-        Sabin
-      </td>
-      <td>
-        January 27
-      </td>
-      <td>
-        Aquarius
-      </td>
-      <td>
-        Blue
-      </td>
-    </tr>
-    <tr>
-      <td>
-        Terra
-      </td>
-      <td>
-        February 2
-      </td>
-      <td>
-        Capricorn
-      </td>
-      <td>
-        Green
-      </td>
-    </tr>
-    <tr>
-      <td>
-        Edgar
-      </td>
-      <td>
-        March 18
-      </td>
-      <td>
-        Aries
-      </td>
-      <td>
-        Red
-      </td>
-    </tr>
-    <tr>
-      <td>
-        Kefka
-      </td>
-      <td>
-        April 2
-      </td>
-      <td>
-        Taurus
-      </td>
-      <td>
-        Crimson
-      </td>
-    </tr>
-    <tr>
-      <td>
-        Locke
-      </td>
-      <td>
-        May 19
-      </td>
-      <td>
-        Gemini
-      </td>
-      <td>
-        Yellow
-      </td>
-    </tr>
-  </tbody>
-  <tfoot>
-    <tr>
-      <td colspan="4">
-        Please do not use this information for evil.
-      </td>
-    </tr>
-  </tfoot>
-</table>
-
-
 <p>
 A billion trillion descended from astronomers. Encyclopaedia galactica Rig Veda from which we spring Flatland finite but unbounded kindling the energy hidden in matter. Vanquish the impossible Orion's sword colonies light years shores of the cosmic ocean tesseract and billions upon billions upon billions upon billions upon billions upon billions upon billions.
 </p>
 
 <h4>I am a quaternary subheader</h4>
 
-<p class="pull-left">
-<blockquote>
+<blockquote class="pull-left">
+<p>
 Cosmic fugue worldlets, Sea of Tranquility dream of the mind's eye? Drake Equation? The ash of stellar alchemy!
-</blockquote>
 </p>
+</blockquote>
 
 <p>
 Cosmic fugue worldlets, Sea of Tranquility dream of the mind's eye?  Cosmic fugue Cambrian explosion kindling the energy hidden in matter finite but unbounded paroxysm of global death astonishment, circumnavigated. Worldlets, Orion's sword. Vanquish the impossible Sea of Tranquility permanence of the stars. Drake Equation? The ash of stellar alchemy, two ghostly white figures in coveralls and helmets are soflty dancing corpus callosum.azz
