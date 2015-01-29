@@ -20,6 +20,8 @@ add:
     admin:
         - 'edit terms in 1'
         - 'delete terms in 1'
+        - 'edit terms in 2'
+        - 'delete terms in 2'
     editor:
         - 'create any bean_container bean'
         - 'create any featuredbean bean'

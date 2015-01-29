@@ -134,3 +134,26 @@ function ombudemo_contact_form($form, &$form_state) {
 function ombudemo_contact_form_submit($form, &$form_state) {
   drupal_set_message(t('Thank you for your request. We will contact you soon.'));
 }
+
+/**
+ * Implements hook_field_attach_view_alter().
+ */
+function ombudemo_base_field_attach_view_alter(&$output, $context) {
+  // Alter taxonomy display to view as bootstrap labels.
+  if (isset($output['field_tags'])) {
+    foreach (element_children($output['field_tags']) as $child) {
+      $output['field_tags'][$child]['#markup'] =
+        '<span class="label label-info">' .
+        $output['field_tags'][$child]['#markup'] .
+        '</span>';
+    }
+  }
+  if (isset($output['field_topics'])) {
+    foreach (element_children($output['field_topics']) as $child) {
+      $output['field_topics'][$child]['#markup'] =
+        '<span class="label label-primary">' .
+        $output['field_topics'][$child]['#markup'] .
+        '</span>';
+    }
+  }
+}
