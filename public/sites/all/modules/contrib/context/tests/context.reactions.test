@@ -121,9 +121,8 @@ class ContextReactionBlockAjaxAccessTest extends DrupalWebTestCase {
   }
 
   function test() {
-    $token = drupal_hmac_base64('user-online', $this->session_id . drupal_get_private_key() . drupal_get_hash_salt());
     $this->drupalGet('node', array(
-      'query' => array('context_block' => 'user-online,testcontext', 'context_token' => $token)
+      'query' => array('context_block' => 'user-online,testcontext')
     ));
 
     $this->assertText('"status":0', 'Failed return status.');

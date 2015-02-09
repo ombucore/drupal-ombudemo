@@ -7,6 +7,22 @@
 include_once 'ombudemo_base.features.inc';
 
 /**
+ * Implements hook_menu().
+ */
+function ombudemo_base_menu() {
+  $items = array();
+
+  $items['contact'] = array(
+    'title' => 'Contact',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('ombudemo_contact_form'),
+    'access arguments' => array('access content'),
+  );
+
+  return $items;
+}
+
+/**
  * Implements hook_tiles_widths().
  */
 function ombudemo_base_tiles_widths() {
@@ -15,7 +31,129 @@ function ombudemo_base_tiles_widths() {
       'site_logo' => 2,
     ),
     'menu' => array(
-      'header-menu' => 10,
+      'header-menu' => 6,
+    ),
+    'search' => array(
+      'form' => 4,
     ),
   );
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function ombudemo_base_form_search_block_form_alter(&$form, $form_state) {
+  $form['#attributes']['class'][] = 'navbar-form';
+  $form['#attributes']['class'][] = 'navbar-right';
+}
+
+/**
+ * Implements hook_preprocess_block().
+ */
+function ombudemo_base_preprocess_block(&$variables) {
+  if ($variables['block']->module == 'search') {
+    $variables['classes_array'][] = 'navbar-right';
+  }
+}
+
+/**
+ * Implements hook_bean_style_options_alter().
+ */
+function ombudemo_base_bean_style_options_alter(&$options, $context) {
+  // Remove all but bootstrap slideshow for demo purposes.
+  if ($context['bundle'] == 'ombuslide') {
+    foreach ($options as $key => $value) {
+      if ($key != 'bootstrap_slideshow') {
+        unset($options[$key]);
+      }
+    }
+  }
+}
+
+/**
+ * Form callback for contact page.
+ */
+function ombudemo_contact_form($form, &$form_state) {
+  $form['name'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Your name'),
+    '#required' => TRUE,
+  );
+  $form['company'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Your company'),
+  );
+
+  $options = array(
+    t('Google / Search'),
+    t('Client reference'),
+    t('Television Ad'),
+    t('YouTube'),
+    t('Multi-level Marketing Campaign'),
+    t('Other'),
+  );
+  $form['referal'] = array(
+    '#type' => 'select',
+    '#title' => t('How did you hear about us?'),
+    '#options' => drupal_map_assoc($options, $options),
+  );
+
+  $options = array(
+    t('Design'),
+    t('UX'),
+    t('Development'),
+    t('Tech Strategy'),
+    t('Infrastructure'),
+    t('Great Jokes'),
+  );
+  $form['needs'] = array(
+    '#type' => 'checkboxes',
+    '#title' => t('Your needs (select all that apply)'),
+    '#options' => drupal_map_assoc($options, $options),
+  );
+
+  $form['thoughts'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Your thoughts'),
+  );
+
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Submit'),
+    '#attributes' => array(
+      'class' => array('btn-primary'),
+    ),
+  );
+
+  return $form;
+}
+
+/**
+ * Submit handler for contact demo form.
+ */
+function ombudemo_contact_form_submit($form, &$form_state) {
+  drupal_set_message(t('Thank you for your request. We will contact you soon.'));
+}
+
+/**
+ * Implements hook_field_attach_view_alter().
+ */
+function ombudemo_base_field_attach_view_alter(&$output, $context) {
+  // Alter taxonomy display to view as bootstrap labels.
+  if (isset($output['field_tags'])) {
+    foreach (element_children($output['field_tags']) as $child) {
+      $output['field_tags'][$child]['#markup'] =
+        '<span class="label label-info">' .
+        $output['field_tags'][$child]['#markup'] .
+        '</span>';
+    }
+  }
+  if (isset($output['field_topics'])) {
+    foreach (element_children($output['field_topics']) as $child) {
+      $output['field_topics'][$child]['#markup'] =
+        '<span class="label label-primary">' .
+        $output['field_topics'][$child]['#markup'] .
+        '</span>';
+    }
+  }
 }

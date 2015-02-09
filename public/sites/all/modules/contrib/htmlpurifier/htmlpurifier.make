@@ -1,9 +1,8 @@
-; API
 api = 2
-
-; Core
 core = 7.x
 
 ; Libraries
-libraries[htmlpurifier][download][type] = "file"
-libraries[htmlpurifier][download][url] = "http://htmlpurifier.org/releases/htmlpurifier-4.5.0.zip"
+libraries[htmlpurifier][directory_name] = htmlpurifier
+libraries[htmlpurifier][download][type] = file
+libraries[htmlpurifier][download][url] = http://htmlpurifier.org/releases/htmlpurifier-4.6.0.tar.gz
+libraries[htmlpurifier][type] = library

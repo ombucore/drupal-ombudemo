@@ -14,10 +14,33 @@ class AddContent extends \ProfileTasks\Task\AddContent {
       'Home' => array(
         '#link' => '<front>',
       ),
-      'About' => array(),
-      'Contact' => array(),
+      'About' => array(
+        '#file' => 'about.php',
+        '#children' => array(
+          'Our Story' => array(),
+          'Our Team' => array(),
+          'Our Values' => array(),
+        ),
+      ),
+      'Contact' => array(
+        '#link' => 'contact',
+      ),
+    ),
+    'footer-menu' => array(
+      'Terms of Use' => array(),
+      'Privacy' => array(),
     ),
   );
+
+  /**
+   * Implements parent::process().
+   */
+  public function process() {
+    parent::process();
+
+    $this->loadNodeFromFile('dummy-pages.php');
+    $this->addContactBlocks();
+  }
 
   /**
    * Implements parent::createHome().
@@ -25,65 +48,45 @@ class AddContent extends \ProfileTasks\Task\AddContent {
    * Add blocks to homepage.
    */
   protected function createHome() {
-    $node = $this->setupNode();
+    $node = $this->loadNodeFromFile('homepage.php');
 
     // Disable XMLSitemap on frontpage.
     $node->xmlsitemap['status'] = 0;
 
-    $node->title = 'Home';
-    $node->tiles = array(
-      'ombubeans-fpohero' => array(
-        'module' => 'bean',
-        'delta' => 'ombubeans-fpohero',
-        'region' => 'content',
-        'weight' => 0,
-      ),
-      'bean-bean-rte-rte-0' => array(
-        'module' => 'bean',
-        'delta' => 'bean-rte-rte-0',
-        'region' => 'content',
-        'weight' => 1,
-        'width' => 4,
-      ),
-      'bean-bean-rte-rte-1' => array(
-        'module' => 'bean',
-        'delta' => 'bean-rte-rte-1',
-        'region' => 'content',
-        'weight' => 2,
-        'width' => 4,
-      ),
-      'bean-bean-rte-rte-2' => array(
-        'module' => 'bean',
-        'delta' => 'bean-rte-rte-2',
-        'region' => 'content',
-        'weight' => 3,
-        'width' => 4,
-      ),
-      'bean-bean-rte-rte-3' => array(
-        'module' => 'bean',
-        'delta' => 'bean-rte-rte-3',
-        'region' => 'content',
-        'weight' => 4,
-        'width' => 4,
-      ),
-      'bean-bean-rte-rte-4' => array(
-        'module' => 'bean',
-        'delta' => 'bean-rte-rte-4',
-        'region' => 'content',
-        'weight' => 5,
-        'width' => 4,
-      ),
-      'bean-bean-rte-rte-5' => array(
-        'module' => 'bean',
-        'delta' => 'bean-rte-rte-5',
-        'region' => 'content',
-        'weight' => 6,
-        'width' => 4,
-      ),
-    );
-
-    node_save($node);
-
     variable_set('site_frontpage', 'node/' . $node->nid);
+  }
+
+  /**
+   * Implements parent::defaultMenuOptions().
+   */
+  protected function defaultMenuOptions($menu_link) {
+    $options = parent::defaultMenuOptions($menu_link);
+    $options['expanded'] = TRUE;
+    return $options;
+  }
+
+  /**
+   * Adds blocks to contact page.
+   */
+  protected function addContactBlocks() {
+    $layout = tiles_get_container('region')->getLayout('contact');
+
+    $layout->addBlock(array(
+      'module' => 'bean',
+      'delta' => 'contact-info',
+      'region' => 'content',
+      'weight' => 1,
+      'width' => 6,
+    ));
+
+    $layout->addBlock(array(
+      'module' => 'system',
+      'delta' => 'main',
+      'region' => 'content',
+      'weight' => 2,
+      'width' => 6,
+    ));
+
+    $layout->save();
   }
 }

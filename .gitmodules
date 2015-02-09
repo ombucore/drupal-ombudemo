@@ -40,3 +40,6 @@
 [submodule "public/sites/all/modules/custom/bean_style"]
 	path = public/sites/all/modules/custom/bean_style
 	url = git@github.com:ombu/drupal-bean-style.git
+[submodule "public/sites/all/modules/custom/tagsadmin"]
+	path = public/sites/all/modules/custom/tagsadmin
+	url = git@github.com:ombu/drupal-tagsadmin.git

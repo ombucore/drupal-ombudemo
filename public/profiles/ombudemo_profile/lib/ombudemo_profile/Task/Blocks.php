@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * Setup site blocks.
@@ -7,54 +6,39 @@
 
 namespace ombudemo_profile\Task;
 
+use ProfileTasks\Content\Wrapper;
+
 class Blocks extends \ProfileTasks\Task\Blocks {
   /**
-   * Implements parent::process().
-   *
-   * Adds additional beans for homepage.
+   * Insert/update block locations.
    */
   public function process() {
     parent::process();
 
-    $bean = bean_create(array('type' => 'ombubeans_fpohero'));
-    $bean->label = 'ombubeans_fpohero';
-    $bean->title = '';
-    $bean->delta = 'ombubeans-fpohero';
-    $bean->setValues(array(
-      'view_mode' => 'default',
-      'body' => '<h1>Hello, world!</h1>
-      <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-      <p><a class="btn btn-primary btn-large">Learn more »</a></p>
-      ',
-      'width' => '12',
-    ));
-    bean_save($bean);
+    $this->addBeans();
+  }
 
-    for ($i = 0; $i < 6; $i++) {
-      $bean = bean_create(array('type' => 'bean_rte_rte'));
-      $bean->label = 'bean_rte_rte-' . $i;
-      $bean->title = 'Text Block ' . (string) ($i + 1);
-      $bean->delta = 'bean-rte-rte-' . $i;
-      $bean->setValues(array(
-        'view_mode' => 'default',
-        'width' => 3,
-      ));
-      $bean->field_description = array(
-        'und' =>
-        array(
-          0 =>
-          array(
-            'value' => '<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p><p><a class="btn" href="#">View details »</a></p>',
-            'format' => 'default',
-          ),
-        ),
-      );
-      bean_save($bean);
-    }
+  /**
+   * Add additional beans for dynamic pages.
+   *
+   * Beans are usually added via the Wrapper object in intial-content files,
+   * but these beans are added to dynamic pages (e.g. Contact), so they need to
+   * be created first.
+   */
+  protected function addBeans() {
+    // Create dummy wrapper to ease creation of beans.
+    $wrapper = new Wrapper('node', array('type' => 'page'));
 
-    bean_reset();
-    drupal_static_reset('bean_get_all_beans');
-    $theme = variable_get('theme_default', '');
-    _block_rehash($theme);
+    $path = drupal_get_path('profile', 'ombudemo_profile') . '/assets/';
+    $fid = $wrapper->addFile('team.jpg', $path);
+    $fid = $fid['fid'];
+
+    $bean = $wrapper->addBean('bean_rte_rte');
+    $bean->value()->delta = 'contact-info';
+    $bean->field_description = array(
+      'value' => '<p>[[{"fid":"' . $fid . '","view_mode":"default","fields":{"format":"default","field_file_image_alt_text[und][0][value]":"","field_file_image_title_text[und][0][value]":""},"type":"media","link_text":null,"attributes":{"class":"media-element file-default"}}]]</p><h3>OMBU HQ</h3><p>107 SE Washington St #225</p><p>Portland, OR 97214</p><p>(503) 298-4888</p>',
+      'format' => 'default',
+    );
+    $bean->save();
   }
 }
