@@ -14,5 +14,5 @@ Feature: Demo of Behat for our Drupal core build
 # Testing steps provided by Tiles as a subcontext
   Scenario: The homepage of the core build has "6" RTE tiles.
     When I visit "/"
-    Then There are 6 RTE titles
+    Then There are 5 RTE titles
     And There is a tile with title "Text Block 1"

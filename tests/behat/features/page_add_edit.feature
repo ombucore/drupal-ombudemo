@@ -14,4 +14,3 @@ Feature: Manage basic pages
     And I press the "Save" button
     Then I should see "The page title"
     And I should see "Some random text of the right length"
-    And show last response

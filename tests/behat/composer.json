@@ -1,8 +1,7 @@
 {
     "require": {
-        "drupal/drupal-extension": "*"
+        "drupal/drupal-extension": "~3.0"
     },
-    "minimum-stability": "dev",
     "config": {
         "bin-dir": "bin/"
     }
