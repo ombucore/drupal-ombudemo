@@ -5,6 +5,7 @@ php:
 
 before_install:
   - sudo apt-get update > /dev/null
+  - git submodule update --init --recursive
 
 install:
   # add composer's global bin directory to the path
