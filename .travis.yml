@@ -56,3 +56,6 @@ script:
 
 after_failure:
   - cat ~/server_debug.txt
+
+notifications:
+  irc: "irc.freenode.org#ombu"
