@@ -9,7 +9,7 @@ default:
         - Drupal\DrupalExtension\Context\DrushContext
   extensions:
     Behat\MinkExtension:
-      base_url: http://ombudemo.dev
+      base_url: http://127.0.0.1:8080
       goutte: ~
       selenium2: ~
     Drupal\DrupalExtension:
