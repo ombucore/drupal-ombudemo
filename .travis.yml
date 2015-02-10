@@ -43,7 +43,6 @@ before_script:
   # Start a webserver on port 8080, and wait until initialized
   - drush --root=$PWD/public runserver --server=builtin 8080 &
   - until netstat -an 2>/dev/null | grep '8080.*LISTEN'; do true; done
-  - cd ..
 
 script:
 
