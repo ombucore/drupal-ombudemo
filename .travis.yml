@@ -41,10 +41,15 @@ before_script:
   - fab drupal.build
 
   # Start a webserver on port 8080, and wait until initialized
-  - drush --root=$PWD/public runserver --server=builtin 8080 &
+  - cd public
+  - drush --debug runserver --server=builtin 8080 > ~/server_debug.txt 2>&1 &
   - until netstat -an 2>/dev/null | grep '8080.*LISTEN'; do true; done
+  - cd ..
 
 script:
 
   - cd ./tests/behat
   - ./bin/behat
+
+after_failure:
+  - cat ~/server_debug.txt
