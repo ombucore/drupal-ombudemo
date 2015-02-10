@@ -35,8 +35,7 @@ before_script:
   - sed -i 's/%%DB_USER%%/root/' public/sites/default/settings.php
   - sed -i 's/%%DB_PW%%//' public/sites/default/settings.php
   - sed -i 's/%%DB_HOST%%/localhost/' public/sites/default/settings.php
-  - echo "\n\$base_url = 'http://localhost:8080';" >> public/sites/default/settings.php
-  - cat public/sites/default/settings.php
+  - echo "\$base_url = 'http://localhost:8080';" >> public/sites/default/settings.php
 
   # Build demo site
   - fab drupal.build
