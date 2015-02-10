@@ -54,7 +54,7 @@ before_script:
 script:
 
   - cd ./tests/behat
-  - ./bin/behat
+  - ./bin/behat features/tiles.feature
 
 after_failure:
   - cat ~/server_debug.txt
