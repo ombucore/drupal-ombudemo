@@ -1,7 +1,7 @@
 OMBU Demo Site
 ============
 
-![](https://api.travis-ci.org/ombucore/drupal-ombudemo.svg)
+[![Build Status](https://travis-ci.org/ombucore/drupal-ombudemo.svg)](https://travis-ci.org/ombucore/drupal-ombudemo)
 
 This repository tracks our OMBU demo site. 
 
