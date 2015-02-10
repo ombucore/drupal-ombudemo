@@ -10,11 +10,7 @@ default:
   extensions:
     Behat\MinkExtension:
       base_url: http://127.0.0.1:8080
-      goutte:
-        guzzle_parameters:
-          timeout: 4
-          connect_timeout: 4
-          debug: 1
+      goutte: ~
     Drupal\DrupalExtension:
       blackbox: ~
       drush:

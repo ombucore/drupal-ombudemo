@@ -47,12 +47,10 @@ before_script:
   - until netstat -an 2>/dev/null | grep '8080.*LISTEN'; do true; done
   - cd ..
 
-  # Prime the site to prevent timeouts when tests run
-  - wget -q -O - http://127.0.0.1:8080
-  - sleep 3
-
 script:
 
+  # For now only run tiles tests, since logging into the server seems to cause
+  # timeouts
   - cd ./tests/behat
   - ./bin/behat features/tiles.feature
 
