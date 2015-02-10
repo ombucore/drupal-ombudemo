@@ -41,8 +41,7 @@ before_script:
   - fab drupal.build
 
   # Start a webserver on port 8080, and wait until initialized
-  - cd public
-  - drush runserver 127.0.0.1:8080 &
+  - drush --root=$PWD/public runserver --server=builtin 8080 &
   - until netstat -an 2>/dev/null | grep '8080.*LISTEN'; do true; done
   - cd ..
 
