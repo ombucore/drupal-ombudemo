@@ -1,0 +1,51 @@
+language: php
+
+php:
+  - 5.4
+
+before_install:
+  - sudo apt-get update > /dev/null
+
+install:
+  # add composer's global bin directory to the path
+  # see: https://github.com/drush-ops/drush#install---composer
+  - export PATH="$HOME/.composer/vendor/bin:$PATH"
+
+  # install drush globally
+  - composer self-update
+  - composer global require drush/drush:6.*
+
+  # Install dependencies
+  - cd tests/behat
+  - composer install
+  - cd ../..
+
+  # install butter (for site building)
+  - pip install git+git://github.com/ombu/butter.git
+
+before_script:
+
+  # Prevent sendmail errors
+  - echo 'sendmail_path=`which true`' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
+
+  # Create a new database for demo site
+  - mysql -e 'create database ombudemo'
+  - cp public/sites/default/settings.qa.php public/sites/default/settings.php
+  - sed -i 's/%%DB_DB%%/ombudemo/' public/sites/default/settings.php
+  - sed -i 's/%%DB_USER%%/root/' public/sites/default/settings.php
+  - sed -i 's/%%DB_PW%%//' public/sites/default/settings.php
+  - sed -i 's/%%DB_HOST%%/localhost/' public/sites/default/settings.php
+  - echo "\n$base_url = 'http://localhost:8080';" >> public/sites/default/settings.php
+
+  # Build demo site
+  - fab drupal.build
+
+  # Start a webserver on port 8080, and wait until initialized
+  - cd public
+  - drush runserver 127.0.0.1:8080 &
+  - until netstat -an 2>/dev/null | grep '8080.*LISTEN'; do true; done
+
+script:
+
+  - cd ./tests/behat
+  - ./bin/behat
