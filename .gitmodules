@@ -1,45 +1,42 @@
 [submodule "public/sites/all/modules/custom/ombucleanup"]
 	path = public/sites/all/modules/custom/ombucleanup
-	url = git@github.com:ombu/drupal-ombucleanup.git
+	url = http://github.com/ombucore/drupal-ombucleanup.git
 [submodule "public/sites/all/modules/custom/ombudashboard"]
 	path = public/sites/all/modules/custom/ombudashboard
-	url = git@github.com:ombu/drupal-ombudashboard.git
+	url = http://github.com/ombucore/drupal-ombudashboard.git
 [submodule "public/sites/all/modules/custom/ombuseo"]
 	path = public/sites/all/modules/custom/ombuseo
-	url = git@github.com:ombu/drupal-ombuseo.git
+	url = http://github.com/ombucore/drupal-ombuseo.git
 [submodule "public/sites/all/modules/custom/ombuwire"]
 	path = public/sites/all/modules/custom/ombuwire
-	url = git@github.com:ombu/drupal-ombuwire.git
-[submodule "public/sites/all/themes/ombubase"]
-	path = public/sites/all/themes/ombubase
-	url = git@github.com:ombu/drupal-ombubase.git
+	url = https://github.com/ombucore/drupal-ombuwire.git
 [submodule "public/sites/all/modules/custom/tiles"]
 	path = public/sites/all/modules/custom/tiles
-	url = git@github.com:ombu/drupal-tiles.git
+	url = http://github.com/ombucore/drupal-tiles.git
 [submodule "public/sites/all/themes/boots"]
 	path = public/sites/all/themes/boots
-	url = git@github.com:ombu/drupal-boots.git
+	url = http://github.com/ombucore/drupal-boots.git
 [submodule "public/sites/all/modules/custom/ombubeans"]
 	path = public/sites/all/modules/custom/ombubeans
-	url = git@github.com:ombu/drupal-ombubeans.git
+	url = http://github.com/ombucore/drupal-ombubeans.git
 [submodule "public/sites/all/modules/custom/sentry"]
 	path = public/sites/all/modules/custom/sentry
-	url = git@github.com:ombu/drupal-sentry.git
+	url = http://github.com/ombu/drupal-sentry.git
 [submodule "public/sites/all/modules/custom/beancontainer"]
 	path = public/sites/all/modules/custom/beancontainer
-	url = git@github.com:ombu/drupal-beancontainer.git
+	url = http://github.com/ombucore/drupal-beancontainer.git
 [submodule "public/sites/all/modules/custom/ombuslide"]
 	path = public/sites/all/modules/custom/ombuslide
-	url = git@github.com:ombu/drupal-ombuslide.git
+	url = http://github.com/ombucore/drupal-ombuslide.git
 [submodule "public/sites/all/modules/custom/customauthor"]
 	path = public/sites/all/modules/custom/customauthor
-	url = git@github.com:ombu/drupal-customauthor.git
+	url = http://github.com/ombucore/drupal-customauthor.git
 [submodule "public/sites/all/modules/custom/profile_tasks"]
 	path = public/sites/all/modules/custom/profile_tasks
-	url = git@github.com:ombu/drupal-profile-tasks.git
+	url = http://github.com/ombucore/drupal-profile-tasks.git
 [submodule "public/sites/all/modules/custom/bean_style"]
 	path = public/sites/all/modules/custom/bean_style
-	url = git@github.com:ombu/drupal-bean-style.git
+	url = http://github.com/ombucore/drupal-bean-style.git
 [submodule "public/sites/all/modules/custom/tagsadmin"]
 	path = public/sites/all/modules/custom/tagsadmin
-	url = git@github.com:ombu/drupal-tagsadmin.git
+	url = http://github.com/ombucore/drupal-tagsadmin.git
