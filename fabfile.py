@@ -46,3 +46,26 @@ def staging():
     env.db_user = 'phpuser'
     env.db_pw = 'meh'
     env.db_host = 'devdb1.ombudev.com'
+
+@task
+def jmeter(host):
+    """
+    Runs jmeter and reports results
+    """
+    if not env.hosts:
+        from fabric.operations import local
+        from fabric.api import lcd
+        run_function = local
+        cd_function = lcd
+
+        # Ensure drupal.build can be run in any directory locally.
+        import os
+        env.host_site_path = os.path.dirname(env.real_fabfile)
+    else:
+        run_function = run
+        cd_function = cd
+
+    with cd_function(env.host_site_path + '/tests/jmeter'):
+        run_function('rm jmeter-results.jtl || :')
+        run_function('jmeter -n -t DrupalStress.jmx -l ./jmeter-results.jtl -Jhost=%s -p user.properties > /dev/null' % host)
+        run_function('xsltproc jmeter-results-cli-report.xsl jmeter-results.jtl')

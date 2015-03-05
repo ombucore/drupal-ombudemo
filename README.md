@@ -34,9 +34,17 @@ Unique components are:
         php composer.phar install
 
 - Set `$base_url` in settings.php if your site is not set at
-  `http://localhost/`, and in `behat.yml`. For more details on installing
+  `http://localhost/`, and in `tests/behat/behat.yml`. For more details on installing
   Behat, see
 <http://drupalcode.org/project/behat.git/blob/refs/heads/7.x-1.x:/INSTALL.txt>.
+
+
+## Optional: Install jMeter
+
+- Install jMeter if you don't already have it. see <http://jmeter.apache.org/download_jmeter.cgi>.
+- Run jmeter fab task (for `localhost.dev`):
+
+        fab jmeter:localhost.dev
 
 ## Deployment
 
