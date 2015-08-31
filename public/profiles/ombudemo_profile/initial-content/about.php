@@ -25,7 +25,7 @@ $file->field_caption[LANGUAGE_NONE][0]['value'] = "Vanquish the impossible Orion
 file_save($file);
 
 drupal_static_reset('file_get_stream_wrappers');
-$provider = media_internet_get_provider('http://youtu.be/QgkwiUMJ41c');
+$provider = media_internet_get_provider('http://youtu.be/oP4I3uDMOVw');
 $file = $provider->save();
 $video_fid = $file->fid;
 
