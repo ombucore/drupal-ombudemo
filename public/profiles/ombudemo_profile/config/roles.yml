@@ -1,11 +1,11 @@
 add:
     'anonymous user':
-        - 'view any ombubeans_fpo bean'
-        - 'view any ombubeans_fpohero bean'
+        - 'view any fpo bean'
+        - 'view any fpo_hero bean'
         - 'search content'
     'authenticated user':
-        - 'view any ombubeans_fpo bean'
-        - 'view any ombubeans_fpohero bean'
+        - 'view any fpo bean'
+        - 'view any fpo_hero bean'
         - 'search content'
     admin:
         - 'edit terms in 1'
