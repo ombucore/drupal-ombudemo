@@ -36,7 +36,8 @@ class Blocks extends \ProfileTasks\Task\Blocks {
     $bean = $wrapper->addBean('bean_rte_rte');
     $bean->value()->delta = 'contact-info';
     $bean->field_description = array(
-      'value' => '<p>[[{"fid":"' . $fid . '","view_mode":"default","fields":{"format":"default","field_file_image_alt_text[und][0][value]":"","field_file_image_title_text[und][0][value]":""},"type":"media","link_text":null,"attributes":{"class":"media-element file-default"}}]]</p><h3>OMBU HQ</h3><p>107 SE Washington St #225</p><p>Portland, OR 97214</p><p>(503) 298-4888</p>',
+      'value' => '<ombumedia data-ombumedia="{&quot;fid&quot;:&quot;' . $fid . '&quot;,&quot;view_mode&quot;:&quot;default&quot;,&quot;type&quot;:&quot;image&quot;}"></ombumedia>
+<h3>OMBU HQ</h3><p>107 SE Washington St #225</p><p>Portland, OR 97214</p><p>(503) 298-4888</p>',
       'format' => 'default',
     );
     $bean->save();

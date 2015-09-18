@@ -25,7 +25,7 @@ $file->field_caption[LANGUAGE_NONE][0]['value'] = "Vanquish the impossible Orion
 file_save($file);
 
 drupal_static_reset('file_get_stream_wrappers');
-$provider = media_internet_get_provider('http://youtu.be/oP4I3uDMOVw');
+$provider = ombumedia_internet_get_provider('http://youtu.be/oP4I3uDMOVw');
 $file = $provider->save();
 $video_fid = $file->fid;
 
@@ -55,9 +55,7 @@ Globular star cluster from which we spring. Circumnavigated, the only home we've
 
 <h2>I am a secondary subheader</h2>
 
-<pre class="pull-left">
-[[{"fid":"$orion_fid","view_mode":"default","fields":{"format":"default","field_file_image_alt_text[und][0][value]":"Orion","field_file_image_title_text[und][0][value]":"Orion"},"type":"media","link_text":null,"attributes":{"class":"media-element file-default"}}]]
-</pre>
+<ombumedia data-ombumedia="{&quot;fid&quot;:&quot;$orion_fid&quot;,&quot;position&quot;:&quot;left&quot;,&quot;view_mode&quot;:&quot;default&quot;,&quot;title&quot;:&quot;slide.jpg&quot;,&quot;type&quot;:&quot;image&quot;}"></ombumedia>
 
 
 <p>
@@ -123,10 +121,7 @@ Hundreds of thousands! Tendrils of gossamer clouds with pretty stories for which
 Realm of the galaxies, the ash of stellar alchemy. Cosmic fugue, birth intelligent beings globular star cluster rogue consciousness hundreds of thousands Flatland shores of the cosmic ocean tesseract.
 </p>
 
-<p>
-[[{"fid":"$video_fid","view_mode":"default","fields":{"format":"default"},"type":"media","link_text":null,"attributes":{"height":"75","width":"100","class":"media-element file-default"}}]]
-</p>
-<!--Vanquish the impossible Orion's sword. Tendrils of gossamer clouds Euclid! Rogue the only home we've ever known. Preserve and cherish that pale blue dot.-->
+<ombumedia data-ombumedia="{&quot;fid&quot;:&quot;$video_fid&quot;,&quot;view_mode&quot;:&quot;default&quot;,&quot;title&quot;:&quot;slide.jpg&quot;,&quot;type&quot;:&quot;video&quot;}"></ombumedia>
 
 <h6>I am a senary subheader</h6>
 
@@ -138,9 +133,7 @@ Orion's sword a still more glorious dawn awaits billions upon billions the carbo
 The sky calls to us rich in heavy atoms. Worldlets venture Euclid as a patch of light, network of wormholes cosmos dream of the mind's eye Drake Equation a very small stage in a vast cosmic arena extraordinary claims require extraordinary evidence network of wormholes Vangelis Flatland and billions upon billions upon billions upon billions upon billions upon billions upon billions.
 </p>
 
-<pre class="pull-right">
-[[{"fid":"$sun_fid","view_mode":"default","fields":{"format":"default","field_file_image_alt_text[und][0][value]":"Orion","field_file_image_title_text[und][0][value]":"Orion"},"type":"media","link_text":null,"attributes":{"class":"media-element file-default"}}]]
-</pre>
+<ombumedia data-ombumedia="{&quot;fid&quot;:&quot;$sun_fid&quot;,&quot;position&quot;:&quot;right&quot;,&quot;view_mode&quot;:&quot;default&quot;,&quot;title&quot;:&quot;slide.jpg&quot;,&quot;type&quot;:&quot;image&quot;}"></ombumedia>
 
 
 <a href="/" class="btn">Click if you want</a>
