@@ -40,3 +40,6 @@
 [submodule "public/sites/all/modules/custom/tagsadmin"]
 	path = public/sites/all/modules/custom/tagsadmin
 	url = http://github.com/ombucore/drupal-tagsadmin.git
+[submodule "public/sites/all/modules/custom/ombumedia"]
+	path = public/sites/all/modules/custom/ombumedia
+	url = https://github.com/ombucore/drupal-ombumedia.git
