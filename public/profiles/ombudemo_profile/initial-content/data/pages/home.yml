@@ -1,0 +1,190 @@
+route: /
+basic:
+  title: "Stumptown Bridges"
+  subtitle: null
+  image: null
+  body: null
+menu:
+  provide_link: true
+  title: "Home"
+  parent: <Main menu>
+sections:
+  -
+    title: "Hero"
+    title_visible: false
+    width: Wide
+    style: Blue
+    tiles:
+      -
+        type: Gallery
+        style: Slider
+        width: 12/12
+        offset: 0/12
+        title: null
+        items:
+          -
+            image: images/hero-carousel/01-st-johns.jpg
+            title: "Connecting people since 1908."
+          -
+            image: images/hero-carousel/02-tillikum.jpg
+            title: "We’d like to sell you a bridge.  Seriously."
+          -
+            image: images/hero-carousel/03-fremont.jpg
+            title: "You shall pass."
+          -
+            image: images/hero-carousel/04-marquam.jpg
+            title: "Traveled everyday by tens of thousands."
+          -
+            image: images/hero-carousel/05-st-johns.jpg
+            title: "You keep Portland weird.  We’ll keep it beautiful."
+  -
+    title: "Introduction"
+    title_visible: false
+    width: Normal
+    style: White
+    tiles:
+      -
+        type: Rich text
+        width: 8/12
+        offset: 0/12
+        title: null
+        body: |
+          <p>Take a ride down the blue waters of the Willamette and you’ll pass
+          under our legacy: a suite of indelible bridges which have given
+          Portland as much of its identity as has roses, coffee, and independent
+          bookstores.  Our bridges have brought people together for over a
+          century, and that spirit continues to drive us today.</p>
+      -
+        type: CTA
+        style: Primary
+        width: 3/12
+        offset: 1/12
+        title: null
+        body: null
+        link:
+          title: "Build your bridge"
+          url: "/contact"
+  -
+    title: "Why us?"
+    title_visible: false
+    width: Normal
+    style: White
+    tiles:
+      -
+        type: Callout
+        style: Stacked
+        mobile_behavior: Carousel
+        width: 7/12
+        offset: 0/12
+        title: "Why Stumptown Bridges?"
+        items:
+          -
+            title: "Timeless design"
+            image: images/why-stumptown/01-design.png
+            body: |
+              <p>A bridge will stand for centuries, outliving the architectural
+              trends and cultural fads that come and go around it.  Our master
+              designers understand this; they reach for the future while
+              cherishing the past.</p>
+          -
+            title: "Sturdy construction"
+            image: images/why-stumptown/02-construction.png
+            body: |
+              <p>Through earthquakes and floods, hurricanes and heat waves, our
+              bridges stand proudly.  Our rigorous construction processes ensure
+              longetivy for the final structure and safety for all of its
+              passengers.</p>
+          -
+            title: "Adaptive access"
+            image: images/why-stumptown/03-access.png
+            body: |
+              <p>Our bridges were once traveled by horse and buggy.  Now they
+              are traveled by bicycle and light rail.  Soon, we can expect
+              jetpacks and other modes of which we haven’t dreamt — but will
+              accommodate!</p>
+      -
+        type: Tile Container
+        style: Stacked
+        width: 4/12
+        offset: 1/12
+        title: "Tour our projects"
+        tiles:
+          -
+            type: Media
+            style: Basic
+            width: 12/12
+            offset: 0/12
+            title: null
+            media:
+              type: URL
+              value: https://www.youtube.com/watch?v=-iiSVOXjpxQ
+              caption: "Aerial tour, 2016"
+          -
+            type: Media
+            style: Basic
+            width: 12/12
+            offset: 0/12
+            title: null
+            media:
+              type: URL
+              value: https://www.youtube.com/watch?v=huDToAfTnRI
+              caption: "Bridgetown, 2016"
+          -
+            type: CTA
+            style: Secondary
+            width: 12/12
+            offset: 0/12
+            title: null
+            body: null
+            link:
+              title: "More videos"
+              url: https://goo.gl/FYpxpV
+  -
+    title: "Supporting information"
+    title_visible: false
+    width: Normal
+    style: Light blue
+    tiles:
+      -
+        type: Rich text
+        width: 7/12
+        offset: 0/12
+        title: "Built to last for centuries"
+        body: |
+          <p>Our bridges are carefully designed to withstand wind gusts of up to
+          80 MPH and earthquakes registering 7.9 on the Richter scale. Our
+          elegant passive damper technology counteracts all naturally occurring
+          forces, maintaining stability in unpredictable conditions.</p>
+          <p>![Technical Specifications](oregon-construction-specifications.pdf)
+          Download our technical specifications to review all design and
+          construction details.</p>
+      -
+        type: Gallery
+        style: Grid
+        width: 3/12
+        offset: 1/12
+        title: "Our legacy in photos"
+        items:
+          -
+            image: images/hero-carousel/01-st-johns.jpg
+          -
+            image: images/hero-carousel/02-tillikum.jpg
+          -
+            image: images/hero-carousel/03-fremont.jpg
+          -
+            image: images/hero-carousel/04-marquam.jpg
+  -
+    title: "Call to action"
+    title_visible: false
+    width: Normal
+    style: Blue
+    tiles:
+      -
+        type: CTA
+        style: Stinger
+        title: "Reach the other side."
+        body: null
+        image: images/page-sections/cta-st-johns-tinted.jpg
+        link:
+          title: "Build your bridge"
+          url: "/contact"
