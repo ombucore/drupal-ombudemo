@@ -61,7 +61,7 @@ function ombudemo_base_preprocess_block(&$variables) {
  */
 function ombudemo_base_bean_style_options_alter(&$options, $context) {
   // Remove all but bootstrap slideshow for demo purposes.
-  if ($context['bundle'] == 'ombuslide') {
+  if ($context['bundle'] == 'ombugallery') {
     foreach ($options as $key => $value) {
       if ($key != 'bootstrap_slideshow') {
         unset($options[$key]);

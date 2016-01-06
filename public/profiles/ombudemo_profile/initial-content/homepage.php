@@ -12,10 +12,10 @@ $wrapper->title = 'Home';
 
 $path = drupal_get_path('profile', 'ombudemo_profile') . '/assets/';
 
-$bean = $wrapper->addBean('ombuslide', 'content');
+$bean = $wrapper->addBean('ombugallery', 'content');
 $bean->value()->bean_style = 'bootstrap_slideshow';
-ombuslide_create_slide($bean->value(), $path . 'botticelli.jpg', 'Nascita di Venere', 'Sandro Boticelli');
-ombuslide_create_slide($bean->value(), $path . 'seurat.jpg', 'Sunday Afternoon on the Island of La Grande Jatte', 'Georges Seurat');
+ombugallery_create_slide($bean->value(), $path . 'botticelli.jpg', 'Nascita di Venere', 'Sandro Boticelli');
+ombugallery_create_slide($bean->value(), $path . 'seurat.jpg', 'Sunday Afternoon on the Island of La Grande Jatte', 'Georges Seurat');
 
 $bean = $wrapper->addBean('bean_rte_rte', 'content', 6);
 $bean->title = 'Text Block 1';

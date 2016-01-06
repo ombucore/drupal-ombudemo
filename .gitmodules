@@ -43,3 +43,6 @@
 [submodule "public/sites/all/modules/custom/ombugallery"]
 	path = public/sites/all/modules/custom/ombugallery
 	url = https://github.com/ombucore/drupal-ombugallery.git
+[submodule "public/sites/all/modules/custom/ombudev"]
+	path = public/sites/all/modules/custom/ombudev
+	url = https://github.com/ombucore/drupal-ombudev.git
