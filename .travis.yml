@@ -9,6 +9,7 @@ php:
 
 before_install:
   - git submodule update --init --recursive
+  - pip install -U setuptools
 
 install:
   # add composer's global bin directory to the path
