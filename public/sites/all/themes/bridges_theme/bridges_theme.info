@@ -1,0 +1,15 @@
+name = Stumptown Bridges Theme
+description = Stumptown Bridges Theme
+base theme = boots_grid
+package = OMBU
+version = 7.x-0.1
+core = 7.x
+
+scripts[] = ../boots/boots_grid/js/features/top-link.js
+
+stylesheets[screen][] = css/screen.css
+stylesheets[print][] = css/print.css
+
+settings[tiles_regions][content_top] = Content Top
+settings[tiles_regions][content] = Content
+settings[tiles_regions][content_bottom] = Content Bottom

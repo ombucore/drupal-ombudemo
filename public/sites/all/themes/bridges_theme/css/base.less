@@ -1,0 +1,24 @@
+// Base styles for all screens.
+// -----------------------------------------------------------------------------
+
+.debug-media-response-message('Media response: Base');
+
+// Globals
+// -----------------------------------------------------------------------------
+
+html {
+  // Subsequent font sizes expressed in rem units will be calculated
+  // relative to the font-size of the html element.
+  font-size: @font-size-root;
+}
+
+body {
+  font-family: @font-family-sans-serif;
+  font-weight: @font-weight-regular;
+  .font-size(@font-size-base, @line-height-base);
+}
+
+// Grid
+// -----------------------------------------------------------------------------
+
+.set-grid-metrics(@gutter-side-mobile);

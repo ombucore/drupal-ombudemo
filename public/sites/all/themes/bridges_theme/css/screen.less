@@ -1,0 +1,53 @@
+@import 'imports.less';
+
+.debug-styles-message('Styles: Default');
+
+// RICH TEXT STYLES
+// -----------------------------------------------------------------------------
+
+@import '../../boots/boots_grid/css/rte.less';
+
+// Rich text styles for landscape smartphone screens screens and larger
+@media (min-width: @mq-threshold-smartphone-landscape) {
+  @import '../../boots/boots_grid/css/responses/rte/rte-gte-smartphone-landscape.less';
+}
+
+// THEME STYLES
+// -----------------------------------------------------------------------------
+
+@import 'base.less';
+
+// MEDIA RESPONSES
+// -----------------------------------------------------------------------------
+
+// Styles for portrait smartphone screens and larger
+@media (min-width: @mq-threshold-smartphone) {
+  @import 'responses/gte-smartphone.less';
+}
+
+// Styles for landscape smartphone screens and larger
+@media (min-width: @mq-threshold-smartphone-landscape) {
+  @import 'responses/gte-smartphone-landscape.less';
+}
+
+// Styles for potrait tablet screens and larger
+@media (min-width: @mq-threshold-tablet) {
+  @import 'responses/gte-tablet.less';
+}
+
+// Styles for desktop screens and larger
+@media (min-width: @mq-threshold-desktop) {
+  @import 'responses/gte-desktop.less';
+}
+
+// Styles for desktop screens and larger
+@media (min-width: @mq-threshold-desktop-wide) {
+  @import 'responses/gte-desktop-wide.less';
+}
+
+// BROWSER OVERRIDES
+// -----------------------------------------------------------------------------
+
+@import 'browsers/ie9.less';
+@import 'browsers/ie10.less';
+@import 'browsers/firefox.less';

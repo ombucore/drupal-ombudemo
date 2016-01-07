@@ -1,0 +1,38 @@
+.firefox-smooth-edges() {
+  -moz-transform: scale(.9999);
+}
+
+.triangle-base() {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 0;
+  .firefox-smooth-edges();
+}
+.triangle(@direction, @size, @color) {
+  .triangle(@direction, @size * 2, @size, @color);
+}
+.triangle(@direction, @width, @height, @color) when (@direction = up) {
+  .triangle-base();
+  border-left: (@width / 2)solid transparent;
+  border-right: (@width / 2)solid transparent;
+  border-bottom: @height solid @color;
+}
+.triangle(@direction, @width, @height, @color) when (@direction = down) {
+  .triangle-base();
+  border-left: (@width / 2) solid transparent;
+  border-right: (@width / 2) solid transparent;
+  border-top: @height solid @color;
+}
+.triangle(@direction, @width, @height, @color) when (@direction = left) {
+  .triangle-base();
+  border-top: (@height / 2) solid transparent;
+  border-bottom: (@height / 2) solid transparent;
+  border-right: @width solid @color;
+}
+.triangle(@direction, @width, @height, @color) when (@direction = right) {
+  .triangle-base();
+  border-top: (@height / 2) solid transparent;
+  border-bottom: (@height / 2) solid transparent;
+  border-left: @width solid @color;
+}
