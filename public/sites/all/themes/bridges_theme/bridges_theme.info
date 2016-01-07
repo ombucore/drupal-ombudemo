@@ -5,6 +5,7 @@ package = OMBU
 version = 7.x-0.1
 core = 7.x
 
+scripts[] = ../boots/boots_grid/js/vendor/jquery.waypoints.js
 scripts[] = ../boots/boots_grid/js/features/top-link.js
 
 stylesheets[screen][] = css/screen.css
