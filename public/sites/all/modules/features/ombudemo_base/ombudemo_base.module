@@ -57,20 +57,6 @@ function ombudemo_base_preprocess_block(&$variables) {
 }
 
 /**
- * Implements hook_bean_style_options_alter().
- */
-function ombudemo_base_bean_style_options_alter(&$options, $context) {
-  // Remove all but bootstrap slideshow for demo purposes.
-  if ($context['bundle'] == 'ombugallery') {
-    foreach ($options as $key => $value) {
-      if ($key != 'bootstrap_slideshow') {
-        unset($options[$key]);
-      }
-    }
-  }
-}
-
-/**
  * Form callback for contact page.
  */
 function ombudemo_contact_form($form, &$form_state) {
@@ -157,3 +143,13 @@ function ombudemo_base_field_attach_view_alter(&$output, $context) {
     }
   }
 }
+
+/**
+ * Implements hook_node_view().
+ */
+function ombudemo_base_node_view($node, $view_mode, $langcode) {
+  if (isset($node->content['field_sections-navigation'])) {
+    $node->content['field_sections-navigation']['#access'] = FALSE;
+  }
+}
+

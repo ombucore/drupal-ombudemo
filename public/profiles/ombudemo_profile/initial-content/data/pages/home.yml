@@ -57,8 +57,8 @@ sections:
       -
         type: CTA
         style: Primary
-        width: 3/12
-        offset: 1/12
+        width: 4/12
+        offset: 0/12
         title: null
         body: null
         link:
@@ -117,7 +117,7 @@ sections:
             title: null
             media:
               type: URL
-              value: https://www.youtube.com/watch?v=-iiSVOXjpxQ
+              value: https://youtu.be/-iiSVOXjpxQ
               caption: "Aerial tour, 2016"
           -
             type: Media
@@ -127,7 +127,7 @@ sections:
             title: null
             media:
               type: URL
-              value: https://www.youtube.com/watch?v=huDToAfTnRI
+              value: https://youtu.be/huDToAfTnRI
               caption: "Bridgetown, 2016"
           -
             type: CTA
