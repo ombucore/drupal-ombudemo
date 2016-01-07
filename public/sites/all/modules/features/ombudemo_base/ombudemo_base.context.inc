@@ -32,6 +32,18 @@ function ombudemo_base_context_default_contexts() {
           'region' => 'header',
           'weight' => -11,
         ),
+        'menu-header-menu' => array(
+          'module' => 'menu',
+          'delta' => 'header-menu',
+          'region' => 'header',
+          'weight' => 0,
+        ),
+        'search-form' => array(
+          'module' => 'search',
+          'delta' => 'form',
+          'region' => 'header',
+          'weight' => 1,
+        ),
         'ombucleanup-breadcrumb' => array(
           'module' => 'ombucleanup',
           'delta' => 'breadcrumb',
