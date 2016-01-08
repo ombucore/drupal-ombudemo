@@ -42,9 +42,9 @@ $wrapper->field_sections[] = array(
 
 $bean = bean_create(array('type' => 'bean_rte_rte'));
 $bean->delta = 'home-intro-rte';
-$bean->title = 'Manage. Measure. Control.';
+$bean->title = '';
 $body = <<<EOD
-<p>Take a ride down the blue waters of the Willamette and you'll pass under our legacy' => a suite of indelible bridges which have given Portland as much of its identity as has roses, coffee, and independent bookstores.  Our bridges have brought people together for over a century, and that spirit continues to drive us today.</p>
+<p>Take a ride down the blue waters of the Willamette and you’ll pass under our legacy: a suite of indelible bridges which have given Portland as much of its identity as has roses, coffee, and independent bookstores.  Our bridges have brought people together for over a century, and that spirit continues to drive us today.</p>
 EOD;
 $bean->field_description[LANGUAGE_NONE][0] = array(
   'value' => $body,
