@@ -228,10 +228,10 @@ $bean->delta = 'home-gallery-grid';
 $bean->bean_style = 'grid';
 $bean->title = 'Our legacy in photos';
 $bean->save();
-ombugallery_create_slide($bean, $path . 'images/hero-carousel/01-st-johns.jpg');
-ombugallery_create_slide($bean, $path . 'images/hero-carousel/02-tillikum.jpg');
-ombugallery_create_slide($bean, $path . 'images/hero-carousel/03-fremont.jpg');
-ombugallery_create_slide($bean, $path . 'images/hero-carousel/04-marquam.jpg');
+ombugallery_create_slide($bean, $path . 'images/legacy-photos/01-vintage.jpg');
+ombugallery_create_slide($bean, $path . 'images/legacy-photos/02-vintage.jpg');
+ombugallery_create_slide($bean, $path . 'images/legacy-photos/03-vintage.jpg');
+ombugallery_create_slide($bean, $path . 'images/legacy-photos/04-vintage.jpg');
 
 $wrapper->field_sections[] = array(
   'value' => 'Supporting information',
