@@ -370,6 +370,18 @@ aside[data-module="ombubench"][data-delta="moderation"] .btn {
 .icon-arrow-right:before {
   content: "\e601";
 }
+.bean-style-carousel .owl-controls {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  padding-top: 53.08333333%;
+  margin-left: 100%;
+}
+.bean-style-carousel .owl-controls .owl-dots {
+  margin-left: -100%;
+}
 #ribbon {
   display: none;
 }
