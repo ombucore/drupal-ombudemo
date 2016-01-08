@@ -14,7 +14,7 @@ $path = drupal_get_path('profile', 'ombudemo_profile') . '/assets/';
 
 $bean = bean_create(array('type' => 'ombugallery'));
 $bean->delta = 'home-gallery';
-$bean->bean_style = 'slideshow';
+$bean->bean_style = 'carousel';
 $bean->title = '';
 $bean->save();
 ombugallery_create_slide($bean, $path . 'images/hero-carousel/01-st-johns.jpg', 'Connecting people since 1908.');
