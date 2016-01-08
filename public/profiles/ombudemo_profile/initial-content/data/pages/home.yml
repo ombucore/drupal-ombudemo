@@ -166,13 +166,13 @@ sections:
         title: "Our legacy in photos"
         items:
           -
-            image: images/hero-carousel/01-st-johns.jpg
+            image: images/hero-carousel/01-vintage.jpg
           -
-            image: images/hero-carousel/02-tillikum.jpg
+            image: images/hero-carousel/02-vintage.jpg
           -
-            image: images/hero-carousel/03-fremont.jpg
+            image: images/hero-carousel/03-vintage.jpg
           -
-            image: images/hero-carousel/04-marquam.jpg
+            image: images/hero-carousel/04-vintage.jpg
   -
     title: "Call to action"
     title_visible: false
