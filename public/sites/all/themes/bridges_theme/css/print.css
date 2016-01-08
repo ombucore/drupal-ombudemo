@@ -382,6 +382,14 @@ aside[data-module="ombubench"][data-delta="moderation"] .btn {
 .bean-style-carousel .owl-controls .owl-dots {
   margin-left: -100%;
 }
+.bean-style-carousel .field-name-field-slide-title {
+  margin-top: 0.5em;
+  text-align: center;
+  font-family: 'Lobster', serif;
+  font-size: 48px;
+  font-size: 4.8 rem;
+  line-height: 1.5;
+}
 #ribbon {
   display: none;
 }

@@ -382,6 +382,14 @@ aside[data-module="ombubench"][data-delta="moderation"] .btn {
 .bean-style-carousel .owl-controls .owl-dots {
   margin-left: -100%;
 }
+.bean-style-carousel .field-name-field-slide-title {
+  margin-top: 0.5em;
+  text-align: center;
+  font-family: 'Lobster', serif;
+  font-size: 48px;
+  font-size: 4.8 rem;
+  line-height: 1.5;
+}
 #ribbon {
   display: none;
 }
@@ -425,7 +433,7 @@ html {
   font-size: 62.5%;
 }
 body {
-  font-family: 'Helvetica', 'Arial', sans-serif;
+  font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
   font-weight: 400;
   font-size: 14px;
   font-size: 1.4 rem;
@@ -451,6 +459,10 @@ body {
 #page > [data-type="region-container"][data-name="sections"] > .field-type-tiles-section [data-type="region"][data-name="section"] > .container > .container {
   padding-left: 0;
   padding-right: 0;
+}
+[data-type="region"][data-name="header"] {
+  font-family: 'Open Sans Condensed', 'Helvetica', 'Arial', sans-serif;
+  text-transform: uppercase;
 }
 body:after {
   content: 'Media response: Smartphone';
