@@ -17,7 +17,7 @@ sections:
     tiles:
       -
         type: Gallery
-        style: Slider
+        style: Carousel
         width: 12/12
         offset: 0/12
         title: null
