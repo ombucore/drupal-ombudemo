@@ -46,3 +46,6 @@
 [submodule "public/sites/all/modules/custom/ombudev"]
 	path = public/sites/all/modules/custom/ombudev
 	url = https://github.com/ombucore/drupal-ombudev.git
+[submodule "public/sites/all/modules/custom/field_sociallinks"]
+	path = public/sites/all/modules/custom/field_sociallinks
+	url = https://github.com/ombucore/drupal-field_sociallinks

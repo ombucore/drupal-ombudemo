@@ -3,11 +3,13 @@ add:
         - 'view any bean_cta bean'
         - 'view any fpo bean'
         - 'view any fpo_hero bean'
+        - 'view any sociallinks bean'
         - 'search content'
     'authenticated user':
         - 'view any bean_cta bean'
         - 'view any fpo bean'
         - 'view any fpo_hero bean'
+        - 'view any sociallinks bean'
         - 'search content'
     admin:
         - 'edit terms in 1'
@@ -19,3 +21,6 @@ add:
         - 'create any bean_cta bean'
         - 'delete any bean_cta bean'
         - 'edit any bean_cta bean'
+        - 'create any sociallinks bean'
+        - 'delete any sociallinks bean'
+        - 'edit any sociallinks bean'
