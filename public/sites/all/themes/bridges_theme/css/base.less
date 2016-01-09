@@ -34,17 +34,17 @@ a {
 [data-type="region"][data-name="header"] {
   max-height: @height-header;
   font-family: @font-family-sans-serif-condensed;
-  .font-size(24, 1.5);
-  color: @color-white;
+  .font-size(23, 1.5);
+  color: @color-bayoux;
   text-transform: uppercase;
   background-color: @color-prussian;
   transition: all @transition-duration-default ease;
 
   a {
-    color: inherit;
+    color: @color-white;
 
     &:hover, &:focus {
-      color: @color-gorse;
+      color: @color-polo;
       outline: 0;
     }
   }
@@ -83,10 +83,16 @@ a {
     #block-ombucleanup-site-logo {
       a.brand {
         svg {
-          transform: scale(0.8);
+          transform: scale(0.85);
 
           path {
             fill: @color-bayoux;
+          }
+        }
+
+        &:hover {
+          svg path {
+            fill: @color-polo;
           }
         }
       }
@@ -98,11 +104,11 @@ a {
     }
 
     #block-menu-header-menu {
-      transition: all @transition-duration-leisurely ease 0.1s;
+      transition: all @transition-duration-leisurely ease 0.15s;
     }
 
     #block-search-form {
-      transition: all @transition-duration-leisurely ease 0.2s;
+      transition: all @transition-duration-leisurely ease 0.35s;
     }
   }
 }
@@ -137,7 +143,7 @@ a {
 
     &:hover, &:focus {
       svg path {
-        fill: @color-gorse;
+        fill: @color-polo;
       }
     }
   }
@@ -155,16 +161,19 @@ a {
 
   .nav {
     list-style: none;
-    margin: 0 -10px;
+    margin: 0 -10px 0 0;
     padding: 0;
-    overflow: auto;
 
     > li {
-      display: block;
-      float: left;
+      display: inline-block;
+
+      &:first-child:before, &:after {
+        content: "/";
+        display: inline-block;
+      }
 
       > a {
-        display: block;
+        display: inline-block;
         padding: 15px 10px;
       }
 
@@ -178,20 +187,23 @@ a {
 }
 
 #block-search-form {
+  position: relative;
   padding-bottom: 2.0em;
   transition: all @transition-duration-default ease;
 
   input[type="text"] {
+    position: relative;
+    z-index: 1;
     appearance: none;
     width: 100%;
     margin: 0;
-    padding: 3px 0;
+    padding: 3px 0 3px 30px;
     border: 0;
     border-bottom: 1px solid @color-bayoux;
     outline: 0;
     border-radius: 0;
     background-color: transparent;
-    color: @color-gorse;
+    color: @color-polo;
     transition: all @transition-duration-fast ease;
     .placeholder-styles(@color-bayoux);
 
@@ -203,6 +215,24 @@ a {
 
   input[type="submit"] {
     display: none;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: @gutter-side-mobile;
+    width: 20px;
+    height: 20px;
+    background: transparent url(/sites/all/themes/bridges_theme/images/search.svg) 0 0 no-repeat;
+    transition: all @transition-duration-default ease;
+    opacity: 0.3;
+  }
+
+  &.focused {
+    &:before {
+      opacity: 0.6;
+    }
   }
 }
 

@@ -8,6 +8,7 @@ core = 7.x
 scripts[] = ../boots/boots_grid/js/vendor/jquery.waypoints.js
 scripts[] = ../boots/boots_grid/js/features/top-link.js
 scripts[] = js/menu.js
+scripts[] = js/search.js
 
 stylesheets[screen][] = css/screen.css
 stylesheets[print][] = css/print.css
