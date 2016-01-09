@@ -29,6 +29,9 @@
 <?php if ($content): ?>
   <div data-type="region" data-name="header-background" class="<?php print $classes; ?>"></div>
   <div data-type="region" data-name="<?php print $region ?>" class="<?php print $classes; ?>">
+    <div class="container">
+      <a class="menu-toggle" href="#menu"><strong>☰</strong><span> Site menu</span></a>
+    </div>
     <?php print $content; ?>
   </div>
 <?php endif; ?>
