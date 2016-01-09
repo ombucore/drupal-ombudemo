@@ -807,17 +807,38 @@ body.front #block-system-main {
     left: 0;
     width: 100%;
     height: 80px;
+    transition: all 0.2s ease;
   }
   html.toolbar-open [data-type="region"][data-name="header-background"],
   html.toolbar-open [data-type="region"][data-name="header"] {
     top: 30px;
   }
+  html.compressed-header [data-type="region"][data-name="header-background"],
+  html.compressed-header [data-type="region"][data-name="header"] {
+    height: 60px;
+  }
+  html.compressed-header [data-type="region"][data-name="header-background"] #block-ombucleanup-site-logo,
+  html.compressed-header [data-type="region"][data-name="header"] #block-ombucleanup-site-logo {
+    transform: translate(0, 0) scale(0.5);
+  }
+  html.compressed-header [data-type="region"][data-name="header-background"] #block-menu-header-menu,
+  html.compressed-header [data-type="region"][data-name="header"] #block-menu-header-menu {
+    transform: translate(-80px, -11px) scale(0.75);
+  }
+  html.compressed-header [data-type="region"][data-name="header-background"] #block-search-form,
+  html.compressed-header [data-type="region"][data-name="header"] #block-search-form {
+    transform: translate(0, -11px) scale(0.75);
+  }
   [data-type="region"][data-name="header-background"] {
     background-color: rgba(0, 32, 79, 0.9);
     mix-blend-mode: multiply;
   }
+  html.compressed-header [data-type="region"][data-name="header-background"] {
+    background-color: #00204f;
+  }
   [data-type="region"][data-name="header"] {
     background-color: transparent;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.7);
   }
   [data-type="region"][data-name="header"] .menu-toggle {
     display: none;
@@ -842,15 +863,21 @@ body.front #block-system-main {
     position: absolute;
     top: 0;
     left: 45px;
+    width: auto;
+    transition: all 0.2s ease !important;
+    transform-origin: 15px top;
   }
   #block-ombucleanup-site-logo a.brand {
     width: 200px;
     padding-top: 24px;
+    padding-bottom: 24px;
   }
   #block-menu-header-menu {
     position: absolute;
     top: 18px;
     left: 230px;
+    transition: all 0.2s ease !important;
+    transform-origin: left center;
   }
   #block-search-form {
     position: absolute;
@@ -858,6 +885,8 @@ body.front #block-system-main {
     right: 45px;
     width: auto;
     padding-bottom: 0;
+    transition: all 0.2s ease !important;
+    transform-origin: right center;
   }
   #block-search-form input[type="text"] {
     width: 4.0em;
@@ -927,6 +956,7 @@ body.front #block-system-main {
   #block-search-form input[type="text"]:focus,
   #block-search-form.valid input[type="text"] {
     width: 7.0em;
+    cursor: text;
   }
   #block-search-form input[type="text"]:focus,
   #block-search-form.valid input[type="text"]:focus {
