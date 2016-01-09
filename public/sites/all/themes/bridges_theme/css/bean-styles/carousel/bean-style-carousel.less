@@ -29,18 +29,30 @@
         background: @color-zodiac;
       }
 
+      .group_secondary {
+        padding: 0 @gutter-side-mobile;
+      }
+
       .field-name-field-media {
         opacity: 0.2;
         transition: all @transition-duration-leisurely ease;
       }
 
       .field-name-field-slide-title {
+        position: relative;
+        max-width: 11.5em;
+        margin: 0 auto;
+        padding: 1.0em 0;
+        .font-size(24, 1.2);
+        font-family: @font-family-decorative;
+        color: @color-matisse;
+        text-align: center;
         opacity: 0;
         transition: all @transition-duration-default ease;
         transform: translate(40px, 0);
       }
 
-      &.active, &.cloned {
+      &.active, &.active-clone {
         .field-name-field-media, .field-name-field-slide-title {
           opacity: 1;
         }
@@ -68,22 +80,13 @@
     height: 0;
     margin-left: -100%;
     padding-bottom: @ar-arch;
-
-    &:before {
-      content: '';
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      height: 100%;
-      background: transparent url(/sites/all/themes/bridges_theme/images/arches/white.svg) 0 0 no-repeat;
-    }
+    background: transparent url(/sites/all/themes/bridges_theme/images/arches/white.svg) center bottom no-repeat;
 
     .owl-dot {
       width: @dot-width-outer + 8;
       height: @dot-height-outer;
       margin: 0;
-      margin-top: -12px;
+      margin-top: -15px;
       border: 0;
       border-radius: 0;
       background-color: transparent;
@@ -123,21 +126,6 @@
       }
     }
   }
-
-  .group_secondary {
-    padding: 0 @gutter-side-mobile;
-  }
-
-  .field-name-field-slide-title {
-    position: relative;
-    max-width: 11.5em;
-    margin: 0 auto;
-    padding: 1.0em 0;
-    .font-size(24, 1.2);
-    font-family: @font-family-decorative;
-    color: @color-matisse;
-    text-align: center;
-  }
 }
 
 // MEDIA RESPONSES
@@ -153,7 +141,7 @@
 
     .owl-carousel {
       .owl-item {
-        &.active {
+        &.active, &.active-clone {
           .field-name-field-slide-title {
             transition: all @transition-duration-leisurely ease 0.6s;
           }
