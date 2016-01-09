@@ -427,8 +427,8 @@ aside[data-module="ombubench"][data-delta="moderation"] .btn {
 .bean-style-carousel .field-name-field-slide-title {
   padding: 0.5em 0;
   font-family: 'Lobster', serif;
-  font-size: 32px;
-  font-size: 3.2 rem;
+  font-size: 24px;
+  font-size: 2.4 rem;
   line-height: 1.3;
   text-align: center;
 }

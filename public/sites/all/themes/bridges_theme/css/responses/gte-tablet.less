@@ -65,3 +65,14 @@
 //     padding-right: 0;
 //   }
 // }
+
+// Contextual links
+// ----------------------------------------------------------------------------
+
+[data-type="region"][data-name="section"] {
+  &:first-child {
+    .contextual-links-wrapper {
+      top: @height-header-tablet;
+    }
+  }
+}
