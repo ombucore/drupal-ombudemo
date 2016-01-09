@@ -13,7 +13,7 @@ sections:
     title: "Hero"
     title_visible: false
     width: Wide
-    style: Blue
+    style: White
     tiles:
       -
         type: Gallery
