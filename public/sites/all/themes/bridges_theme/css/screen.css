@@ -406,10 +406,13 @@ aside[data-module="ombubench"][data-delta="moderation"] .btn {
   transform: translate(40px, 0);
 }
 .bean-style-carousel .owl-carousel .owl-item.active .field-name-field-media,
-.bean-style-carousel .owl-carousel .owl-item.active .field-name-field-slide-title {
+.bean-style-carousel .owl-carousel .owl-item.cloned .field-name-field-media,
+.bean-style-carousel .owl-carousel .owl-item.active .field-name-field-slide-title,
+.bean-style-carousel .owl-carousel .owl-item.cloned .field-name-field-slide-title {
   opacity: 1;
 }
-.bean-style-carousel .owl-carousel .owl-item.active .field-name-field-slide-title {
+.bean-style-carousel .owl-carousel .owl-item.active .field-name-field-slide-title,
+.bean-style-carousel .owl-carousel .owl-item.cloned .field-name-field-slide-title {
   transition: all 0.7s ease 0.3s;
   transform: translate(0, 0);
 }
