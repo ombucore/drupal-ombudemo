@@ -19,8 +19,14 @@ function bridges_theme_bean_style_carousel(&$variables) {
   $style = $variables['type'];
 
   $classes = 'bean-style-carousel';
-  $options .= ' data-nav="false"';
   $options  = ' data-items="1"';
+  $options .= ' data-nav="false"';
+  $options .= ' data-loop="true"';
+  $options .= ' data-autoplay="true"';
+  $options .= ' data-autoplay-timeout="5000"';
+  $options .= ' data-smart-speed="700"';
+  $options .= ' data-mouse-drag="false"';
+  $options .= ' data-items="1"';
   $options .= ' data-items-480="1"';
   $options .= ' data-items-768="1"';
   $options .= ' data-items-992="1"';
