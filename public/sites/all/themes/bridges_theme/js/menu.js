@@ -7,8 +7,7 @@
 
       $menuToggle.on('click', function(e) {
         e.preventDefault();
-        $('body').toggleClass('menu-open');
-        $nestedMenus.find('.opened').removeClass('opened');
+        $('html').toggleClass('menu-open');
         return false;
       });
 
