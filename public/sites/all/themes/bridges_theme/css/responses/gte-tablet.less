@@ -11,10 +11,14 @@
 // Region: header
 // ----------------------------------------------------------------------------
 
+body {
+  padding-top: @height-header-tablet;
+}
+
 [data-type="region"][data-name="header-background"],
 [data-type="region"][data-name="header"] {
   position: fixed;
-  z-index: 100;
+  z-index: @z-index-contextual + 1;
   top: 0;
   left: 0;
   width: 100%;
@@ -32,12 +36,75 @@
 
 [data-type="region"][data-name="header"] {
   background-color: transparent;
+
+  .menu-toggle {
+    display: none;
+  }
+
+  body &, body.menu-open & {
+    max-height: none;
+
+    #block-ombucleanup-site-logo {
+      a.brand {
+        svg {
+          transform: scale(1);
+        }
+      }
+    }
+
+    #block-menu-header-menu, #block-search-form {
+      transform: translate(0, 0);
+      opacity: 1;
+      transition: none;
+    }
+  }
 }
 
 #block-ombucleanup-site-logo {
+  position: absolute;
+  top: 0;
+  left: @gutter-side-tablet - @gutter-side-mobile;
+
   a.brand {
     width: 200px;
     padding-top: 24px;
+  }
+}
+
+#block-menu-header-menu {
+  position: absolute;
+  top: 18px;
+  left: @gutter-side-tablet + 170px;
+}
+
+#block-search-form {
+  position: absolute;
+  top: 21px;
+  right: @gutter-side-tablet - @gutter-side-mobile;
+  width: auto;
+  padding-bottom: 0;
+
+  input[type="text"] {
+    width: 4.0em;
+    border-bottom-color: transparent;
+    cursor: pointer;
+    .placeholder-styles(fade(@color-white, 70%), regular, uppercase);
+
+    &:focus {
+      .placeholder-styles(@color-bayoux, regular, uppercase);
+    }
+  }
+
+  input[type="text"]:focus, &.valid input[type="text"] {
+    width: 7.0em;
+  }
+
+  input[type="text"]:focus, &.valid input[type="text"]:focus {
+    border-bottom-color: @color-polo;
+  }
+
+  &.valid input[type="text"] {
+    border-bottom-color: @color-bayoux;
   }
 }
 
@@ -66,13 +133,20 @@
 //   }
 // }
 
+// Page: Front
+// ----------------------------------------------------------------------------
+
+body.front {
+  padding-top: 0;
+}
+
 // Contextual links
 // ----------------------------------------------------------------------------
 
 [data-type="region"][data-name="section"] {
   &:first-child {
     .contextual-links-wrapper {
-      top: @height-header-tablet;
+      top: @height-header-tablet + 10;
     }
   }
 }

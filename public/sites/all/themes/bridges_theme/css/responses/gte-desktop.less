@@ -7,3 +7,22 @@
 // -----------------------------------------------------------------------------
 
 .set-grid-metrics(@gutter-side-desktop, @max-width-site);
+
+// Region: header
+// ----------------------------------------------------------------------------
+
+#block-ombucleanup-site-logo {
+  left: @gutter-side-desktop - @gutter-side-mobile;
+}
+
+#block-menu-header-menu {
+  left: @gutter-side-desktop + 170px;
+}
+
+#block-search-form {
+  right: @gutter-side-desktop - @gutter-side-mobile;
+
+  input[type="text"]:focus, &.valid input[type="text"] {
+    width: 13.0em;
+  }
+}

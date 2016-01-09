@@ -68,36 +68,41 @@
   background-color: @rgba;
 }
 
-.placeholder-styles(@color: lightgray, @font-weight: regular) {
+.placeholder-styles(@color: lightgray, @font-weight: regular, @text-transform: none) {
   // Polyfilled browsers that don't support placeholder attribute.
   &.placeholder {
     color: @color;
     font-weight: @font-weight;
     line-height: normal;
+    text-transform: @text-transform;
   }
   // Webkit browsers
   &::-webkit-input-placeholder {
     color: @color;
     font-weight: @font-weight;
     line-height: normal;
+    text-transform: @text-transform;
   }
   // Mozilla Firefox 4 to 18
   &:-moz-placeholder {
     color: @color;
     font-weight: @font-weight;
     line-height: normal;
+    text-transform: @text-transform;
   }
   // Mozilla Firefox 19+
   &::-moz-placeholder {
     color: @color;
     font-weight: @font-weight;
     line-height: normal;
+    text-transform: @text-transform;
   }
   // Internet Explorer 10+
   &:-ms-input-placeholder {
     color: @color;
     font-weight: @font-weight;
     line-height: normal;
+    text-transform: @text-transform;
   }
 }
 
