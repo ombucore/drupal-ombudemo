@@ -504,6 +504,7 @@ body {
 }
 a {
   text-decoration: none;
+  transition: all 0.1s ease;
 }
 #page > [data-type="region"] > .container,
 #page > [data-type="region-container"] > .container,
@@ -525,30 +526,203 @@ a {
   padding-right: 0;
 }
 [data-type="region"][data-name="header"] {
+  max-height: 50px;
   font-family: 'Open Sans Condensed', 'Helvetica', 'Arial', sans-serif;
-  font-size: 20px;
-  font-size: 2 rem;
+  font-size: 24px;
+  font-size: 2.4 rem;
   line-height: 1.5;
   color: #ffffff;
   text-transform: uppercase;
   background-color: #00204f;
+  transition: all 0.2s ease;
 }
 [data-type="region"][data-name="header"] a {
   color: inherit;
 }
+[data-type="region"][data-name="header"] a:hover,
+[data-type="region"][data-name="header"] a:focus {
+  color: #ffed4a;
+  outline: 0;
+}
 [data-type="region"][data-name="header"] h2 {
   display: none;
 }
+[data-type="region"][data-name="header"] .menu-toggle {
+  display: block;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  padding: 0 15px;
+  font-size: 20px;
+  font-size: 2 rem;
+  line-height: 50px;
+}
+[data-type="region"][data-name="header"] .menu-toggle strong {
+  display: block;
+  margin-top: -2px;
+}
+[data-type="region"][data-name="header"] .menu-toggle span {
+  display: none;
+}
+body.menu-open [data-type="region"][data-name="header"] {
+  max-height: 200px;
+  transition: all 0.56s ease;
+}
+body.menu-open [data-type="region"][data-name="header"] .menu-toggle {
+  color: #536580;
+}
+body.menu-open [data-type="region"][data-name="header"] #block-ombucleanup-site-logo a.brand svg {
+  transform: scale(0.8);
+}
+body.menu-open [data-type="region"][data-name="header"] #block-ombucleanup-site-logo a.brand svg path {
+  fill: #536580;
+}
+body.menu-open [data-type="region"][data-name="header"] #block-menu-header-menu,
+body.menu-open [data-type="region"][data-name="header"] #block-search-form {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+body.menu-open [data-type="region"][data-name="header"] #block-menu-header-menu {
+  transition: all 0.7s ease 0.1s;
+}
+body.menu-open [data-type="region"][data-name="header"] #block-search-form {
+  transition: all 0.7s ease 0.2s;
+}
+#block-ombucleanup-site-logo {
+  width: 180px;
+}
+#block-ombucleanup-site-logo a.brand {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  margin-left: -15px;
+  padding-top: 15px;
+  padding: 12px 15px 6px;
+}
+#block-ombucleanup-site-logo a.brand svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  -webkit-filter: drop-shadow(0 3px 1px rgba(0, 0, 0, 0.6));
+  filter: drop-shadow(0 3px 1px rgba(0, 0, 0, 0.6));
+  transition: all 0.7s ease;
+  transform: scale(1);
+  transform-origin: top left;
+}
+#block-ombucleanup-site-logo a.brand svg path {
+  fill: #ffffff;
+  transition: all 0.1s ease;
+}
+#block-ombucleanup-site-logo a.brand:hover svg path,
+#block-ombucleanup-site-logo a.brand:focus svg path {
+  fill: #ffed4a;
+}
+#block-menu-header-menu,
+#block-search-form {
+  position: relative;
+  transform: translate(0, -30px);
+  opacity: 0;
+}
+#block-menu-header-menu {
+  margin-top: -10px;
+  transition: all 0.2s ease;
+}
 #block-menu-header-menu .nav {
   list-style: none;
-  margin: 0;
+  margin: 0 -10px;
+  padding: 0;
+  overflow: auto;
 }
 #block-menu-header-menu .nav > li {
-  display: inline-block;
+  display: block;
+  float: left;
+}
+#block-menu-header-menu .nav > li > a {
+  display: block;
+  padding: 15px 10px;
 }
 #block-menu-header-menu .nav > li.expanded > div,
 #block-menu-header-menu .nav > li.expanded > ul {
   display: none;
+}
+#block-search-form {
+  padding-bottom: 2.0em;
+  transition: all 0.2s ease;
+}
+#block-search-form input[type="text"] {
+  appearance: none;
+  width: 100%;
+  margin: 0;
+  padding: 3px 0;
+  border: 0;
+  border-bottom: 1px solid #536580;
+  outline: 0;
+  border-radius: 0;
+  background-color: transparent;
+  color: #ffed4a;
+  transition: all 0.1s ease;
+}
+#block-search-form input[type="text"].placeholder {
+  color: #536580;
+  font-weight: regular;
+  line-height: normal;
+}
+#block-search-form input[type="text"]::-webkit-input-placeholder {
+  color: #536580;
+  font-weight: regular;
+  line-height: normal;
+}
+#block-search-form input[type="text"]:-moz-placeholder {
+  color: #536580;
+  font-weight: regular;
+  line-height: normal;
+}
+#block-search-form input[type="text"]::-moz-placeholder {
+  color: #536580;
+  font-weight: regular;
+  line-height: normal;
+}
+#block-search-form input[type="text"]:-ms-input-placeholder {
+  color: #536580;
+  font-weight: regular;
+  line-height: normal;
+}
+#block-search-form input[type="text"]:focus {
+  border-bottom-color: #8fa7cc;
+}
+#block-search-form input[type="text"]:focus.placeholder {
+  color: #00204f;
+  font-weight: regular;
+  line-height: normal;
+}
+#block-search-form input[type="text"]:focus::-webkit-input-placeholder {
+  color: #00204f;
+  font-weight: regular;
+  line-height: normal;
+}
+#block-search-form input[type="text"]:focus:-moz-placeholder {
+  color: #00204f;
+  font-weight: regular;
+  line-height: normal;
+}
+#block-search-form input[type="text"]:focus::-moz-placeholder {
+  color: #00204f;
+  font-weight: regular;
+  line-height: normal;
+}
+#block-search-form input[type="text"]:focus:-ms-input-placeholder {
+  color: #00204f;
+  font-weight: regular;
+  line-height: normal;
+}
+#block-search-form input[type="submit"] {
+  display: none;
+}
+#main,
+aside[data-type="block"] {
+  min-height: 0;
 }
 [data-type="region"][data-name="section"] > .container.footer {
   display: none;
@@ -593,8 +767,7 @@ a {
     top: 0;
     left: 0;
     width: 100%;
-    height: 60px;
-    overflow: hidden;
+    height: 80px;
   }
   html.toolbar-open [data-type="region"][data-name="header-background"],
   html.toolbar-open [data-type="region"][data-name="header"] {
@@ -606,6 +779,10 @@ a {
   }
   [data-type="region"][data-name="header"] {
     background-color: transparent;
+  }
+  #block-ombucleanup-site-logo a.brand {
+    width: 200px;
+    padding-top: 24px;
   }
   #page > [data-type="region-container"][data-name="sections"] > .field-type-tiles-section > [data-type="region"][data-name="section"]#Hero > .content {
     padding-left: 0;
