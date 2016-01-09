@@ -487,7 +487,7 @@ aside[data-module="ombubench"][data-delta="moderation"] .btn {
   opacity: 1;
 }
 @media (min-width: 768px) {
-  .bean-style-carousel .field-name-field-slide-title {
+  .bean-style-carousel .owl-carousel .owl-item .field-name-field-slide-title {
     font-size: 48px;
     font-size: 4.8 rem;
     line-height: 1.2;
@@ -500,7 +500,7 @@ aside[data-module="ombubench"][data-delta="moderation"] .btn {
   }
 }
 @media (min-width: 992px) {
-  .bean-style-carousel .field-name-field-slide-title {
+  .bean-style-carousel .owl-carousel .owl-item .field-name-field-slide-title {
     font-size: 64px;
     font-size: 6.4 rem;
     line-height: 1.2;

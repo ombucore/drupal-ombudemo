@@ -13,6 +13,7 @@ html {
 }
 
 body {
+  padding-top: @height-header;
   font-family: @font-family-sans-serif;
   font-weight: @font-weight-regular;
   .font-size(@font-size-base, @line-height-base);
@@ -31,14 +32,34 @@ a {
 // Region: header
 // ----------------------------------------------------------------------------
 
+[data-type="region"][data-name="header-background"],
 [data-type="region"][data-name="header"] {
-  max-height: @height-header;
+  position: fixed;
+  z-index: @z-index-contextual + 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: @height-header;
+  transition: all @transition-duration-default ease;
+
+  html.menu-open & {
+    height: 200px;
+    transition: all (@transition-duration-leisurely * 0.8) ease;
+  }
+}
+
+[data-type="region"][data-name="header-background"] {
+  background-color: fade(@color-prussian, 100%);
+  mix-blend-mode: multiply;
+}
+
+[data-type="region"][data-name="header"] {
   font-family: @font-family-sans-serif-condensed;
   .font-size(23, 1.5);
   color: @color-bayoux;
   text-transform: uppercase;
-  background-color: @color-prussian;
-  transition: all @transition-duration-default ease;
+  background-color: transparent;
+  border-bottom: 3px solid fade(black, 70%);
 
   a {
     color: @color-white;
@@ -72,43 +93,23 @@ a {
     }
   }
 
-  body.menu-open & {
-    max-height: 200px;
-    transition: all (@transition-duration-leisurely * 0.8) ease;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: @height-header;
+    background: @color-prussian;
+    background: darken(@color-prussian, 5);
+    border-bottom: 2px solid fade(@color-black, 80%);
+    opacity: 0;
+    transition: all @transition-duration-default ease;
+  }
 
-    .menu-toggle {
-      color: @color-bayoux;
-    }
-
-    #block-ombucleanup-site-logo {
-      a.brand {
-        svg {
-          transform: scale(0.85);
-
-          path {
-            fill: @color-bayoux;
-          }
-        }
-
-        &:hover {
-          svg path {
-            fill: @color-polo;
-          }
-        }
-      }
-    }
-
-    #block-menu-header-menu, #block-search-form {
-      transform: translate(0, 0);
+  html.menu-open & {
+    &:before {
       opacity: 1;
-    }
-
-    #block-menu-header-menu {
-      transition: all @transition-duration-leisurely ease 0.15s;
-    }
-
-    #block-search-form {
-      transition: all @transition-duration-leisurely ease 0.35s;
     }
   }
 }
@@ -152,7 +153,10 @@ a {
 #block-menu-header-menu, #block-search-form {
   position: relative;
   transform: translate(0, -30px);
+  height: 0;
+  min-height: 0 !important;
   opacity: 0;
+  overflow: hidden;
 }
 
 #block-menu-header-menu {
@@ -188,8 +192,11 @@ a {
 
 #block-search-form {
   position: relative;
-  padding-bottom: 2.0em;
   transition: all @transition-duration-default ease;
+
+  form {
+    padding-bottom: 2.0em;
+  }
 
   input[type="text"] {
     position: relative;
@@ -233,6 +240,42 @@ a {
     &:before {
       opacity: 0.6;
     }
+  }
+}
+
+html.menu-open {
+  [data-type="region"][data-name="header"] {
+    .menu-toggle {
+      color: @color-bayoux;
+    }
+  }
+
+  #block-ombucleanup-site-logo {
+    a.brand {
+      opacity: 0.7;
+
+      svg {
+        transform: scale(0.85);
+      }
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  #block-menu-header-menu, #block-search-form {
+    transform: translate(0, 0);
+    height: auto;
+    opacity: 1;
+  }
+
+  #block-menu-header-menu {
+    transition: all @transition-duration-leisurely ease 0.15s;
+  }
+
+  #block-search-form {
+    transition: all @transition-duration-leisurely ease 0.35s;
   }
 }
 
