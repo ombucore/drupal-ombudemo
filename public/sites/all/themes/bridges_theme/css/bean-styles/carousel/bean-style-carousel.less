@@ -6,6 +6,44 @@
 // ----------------------------------------------------------------------------
 
 .bean-style-carousel {
+  margin-bottom: 0;
+
+  .ombugallery.col-xs-12.col-sm-12.col-md-12.col-lg-12 & {
+    .owl-carousel {
+      .owl-stage-outer {
+        overflow: visible;
+      }
+    }
+  }
+
+  .owl-carousel {
+    .owl-item {
+      .force-hardware-acceleration();
+
+      .group_primary {
+        background: @color-zodiac;
+      }
+
+      .field {
+        transition: all @transition-duration-default ease;
+      }
+
+      .field-name-field-media {
+        opacity: 0.2;
+      }
+
+      .field-name-field-slide-title {
+        opacity: 0;
+      }
+
+      &.active {
+        .field-name-field-media, .field-name-field-slide-title {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
   .owl-controls {
     position: absolute;
     top: 0;
@@ -20,14 +58,25 @@
     }
   }
 
+  .group_secondary {
+    padding: 0 @gutter-side-mobile;
+  }
+
   .field-name-field-slide-title {
-    margin-top: 0.5em;
-    text-align: center;
+    padding: 0.5em 0;
     font-family: @font-family-decorative;
-    .font-size(48, 1.5);
+    .font-size(32, 1.3);
+    text-align: center;
   }
 }
 
 // MEDIA RESPONSES
 // ----------------------------------------------------------------------------
 
+@media (min-width: @mq-threshold-tablet) {
+  .bean-style-carousel {
+    .field-name-field-slide-title {
+      .font-size(48, 1.3);
+    }
+  }
+}

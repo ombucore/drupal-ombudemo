@@ -18,16 +18,77 @@ body {
   .font-size(@font-size-base, @line-height-base);
 }
 
+a {
+  text-decoration: none;
+}
+
 // Grid
 // -----------------------------------------------------------------------------
 
 .set-grid-metrics(@gutter-side-mobile);
-
 
 // Region: header
 // ----------------------------------------------------------------------------
 
 [data-type="region"][data-name="header"] {
   font-family: @font-family-sans-serif-condensed;
+  .font-size(20, 1.5);
+  color: @color-white;
   text-transform: uppercase;
+  background-color: @color-prussian;
+
+  a {
+    color: inherit;
+  }
+
+  h2 {
+    display: none;
+  }
+}
+
+#block-menu-header-menu {
+  .nav {
+    list-style: none;
+    margin: 0;
+
+    > li {
+      display: inline-block;
+
+      &.expanded {
+        > div, >ul {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+// Tile sections
+// ----------------------------------------------------------------------------
+
+[data-type="region"][data-name="section"] {
+  > .container.footer {
+    display: none;
+  }
+
+  // TODO: Replace IDs with style names (e.g., white, blue)
+
+  &#Hero {
+    background-color: @color-white;
+  }
+
+  &#Supporting-information {
+    background-color: @color-botticelli;
+  }
+
+  &#Call-to-action {
+    background-color: @color-bayoux;
+  }
+}
+
+// Region: footer
+// ----------------------------------------------------------------------------
+
+[data-type="region"][data-name="footer"] {
+  background-color: @color-polo;
 }

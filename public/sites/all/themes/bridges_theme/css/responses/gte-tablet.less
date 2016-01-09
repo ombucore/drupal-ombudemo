@@ -7,3 +7,55 @@
 // -----------------------------------------------------------------------------
 
 .set-grid-metrics(@gutter-side-tablet);
+
+// Region: header
+// ----------------------------------------------------------------------------
+
+[data-type="region"][data-name="header-background"],
+[data-type="region"][data-name="header"] {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  overflow: hidden;
+
+  html.toolbar-open & {
+    top: 30px;
+  }
+}
+
+[data-type="region"][data-name="header-background"] {
+  background-color: fade(@color-prussian, 90%);
+  mix-blend-mode: multiply;
+}
+
+[data-type="region"][data-name="header"] {
+  background-color: transparent;
+}
+
+// Region width: Wide
+// ----------------------------------------------------------------------------
+
+// TODO: Replace ID with "Wide" width
+
+#page > [data-type="region-container"][data-name="sections"] > .field-type-tiles-section > [data-type="region"][data-name="section"]#Hero {
+  > .content {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+// Region width: Full-width
+// ----------------------------------------------------------------------------
+
+// TODO: Replace ID with "Full width" width
+
+// #page > [data-type="region-container"][data-name="sections"] > .field-type-tiles-section > [data-type="region"][data-name="section"]#Hero {
+//   > .content {
+//     max-width: none;
+//     padding-left: 0;
+//     padding-right: 0;
+//   }
+// }
