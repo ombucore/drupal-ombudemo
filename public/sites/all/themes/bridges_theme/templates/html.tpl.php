@@ -65,6 +65,5 @@
       <?php print $scripts; ?>
       <?php print $page_bottom; ?>
     </div>
-    <div id="top-link"><a href="#top"><span>Top</span></a></div>
   </body>
 </html>

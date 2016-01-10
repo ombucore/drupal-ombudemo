@@ -30,6 +30,7 @@
   <div data-type="region" data-name="header-background" class="<?php print $classes; ?>"></div>
   <div data-type="region" data-name="<?php print $region ?>" class="<?php print $classes; ?>">
     <div class="container">
+      <a class="top-link" href="#top"><strong>▲</strong><span> Top</span></a>
       <a class="menu-toggle" href="#menu"><strong>☰</strong><span> Site menu</span></a>
     </div>
     <?php print $content; ?>

@@ -94,14 +94,18 @@ a {
     display: none;
   }
 
+  .top-link,
   .menu-toggle {
     display: block;
     position: absolute;
     z-index: 2;
     top: 0;
     right: 0;
+    width: 50px;
     padding: 0 @gutter-side-mobile;
     .font-size(20, @height-header);
+    text-align: center;
+    transition: all @transition-duration-default ease;
 
     strong {
       display: block;
@@ -110,6 +114,25 @@ a {
 
     span {
       display: none;
+    }
+  }
+
+  .top-link {
+    right: 50px;
+    opacity: 0;
+    transform: translate(0, -30px);
+    visibility: hidden;
+
+    strong {
+      margin-top: -1px;
+    }
+  }
+
+  html.show-top-link & {
+    .top-link {
+      opacity: 1;
+      transform: translate(0, 0);
+      visibility: visible;
     }
   }
 

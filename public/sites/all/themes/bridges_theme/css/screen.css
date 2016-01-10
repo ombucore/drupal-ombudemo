@@ -345,53 +345,6 @@ aside[data-module="ombubench"][data-delta="moderation"] .btn {
   margin-top: 0.5em;
   color: white !important;
 }
-#top-link {
-  display: none;
-}
-@media (max-width: 480px) {
-  html #top-link {
-    display: block;
-  }
-  html #top-link a {
-    position: fixed;
-    top: -50px;
-    right: 0;
-    width: 64px;
-    height: 64px;
-    padding-top: 22px;
-    font-size: 10px;
-    font-size: 1 rem;
-    line-height: 1;
-    font-weight: 700;
-    text-align: center;
-    border: 10px solid transparent;
-    border-radius: 12px;
-    color: #ffffff;
-    background-color: rgba(0, 0, 0, 0.7);
-    text-transform: uppercase;
-    text-decoration: none;
-    opacity: 0;
-    transition: all 0.4s ease;
-    background-clip: padding-box;
-    z-index: 100;
-  }
-  html #top-link a:before {
-    content: '';
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    margin-left: -5px;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 5px 6px 5px;
-    border-color: transparent transparent #ffffff transparent;
-  }
-  html.show-top-link #top-link a {
-    top: 0;
-    opacity: 1;
-  }
-}
 @font-face {
   font-family: 'theme-icons';
   src: url('../fonts/theme-icons/theme-icons.eot');
@@ -722,23 +675,43 @@ html.menu-open [data-type="region"][data-name="header"] {
 [data-type="region"][data-name="header"] h2 {
   display: none;
 }
+[data-type="region"][data-name="header"] .top-link,
 [data-type="region"][data-name="header"] .menu-toggle {
   display: block;
   position: absolute;
   z-index: 2;
   top: 0;
   right: 0;
+  width: 50px;
   padding: 0 15px;
   font-size: 20px;
   font-size: 2 rem;
   line-height: 50px;
+  text-align: center;
+  transition: all 0.2s ease;
 }
+[data-type="region"][data-name="header"] .top-link strong,
 [data-type="region"][data-name="header"] .menu-toggle strong {
   display: block;
   margin-top: -2px;
 }
+[data-type="region"][data-name="header"] .top-link span,
 [data-type="region"][data-name="header"] .menu-toggle span {
   display: none;
+}
+[data-type="region"][data-name="header"] .top-link {
+  right: 50px;
+  opacity: 0;
+  transform: translate(0, -30px);
+  visibility: hidden;
+}
+[data-type="region"][data-name="header"] .top-link strong {
+  margin-top: -1px;
+}
+html.show-top-link [data-type="region"][data-name="header"] .top-link {
+  opacity: 1;
+  transform: translate(0, 0);
+  visibility: visible;
 }
 [data-type="region"][data-name="header"]:before {
   content: '';
@@ -1108,6 +1081,7 @@ body.front #block-system-main {
   html.compressed-header [data-type="region"][data-name="header-background"] {
     background-color: #00204f;
   }
+  [data-type="region"][data-name="header"] .top-link,
   [data-type="region"][data-name="header"] .menu-toggle,
   [data-type="region"][data-name="header"]:before {
     display: none;
