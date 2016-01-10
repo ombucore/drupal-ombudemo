@@ -483,7 +483,7 @@ aside[data-module="ombubench"][data-delta="moderation"] .btn {
   margin-left: 100%;
 }
 .bean-style-carousel .owl-dots {
-  bottom: -2px;
+  bottom: -1px;
   height: 0;
   margin-left: -100%;
   padding-bottom: 6.25%;
@@ -545,6 +545,9 @@ aside[data-module="ombubench"][data-delta="moderation"] .btn {
   .bean-style-carousel {
     margin-left: 0;
     margin-right: 0;
+  }
+  .bean-style-carousel .owl-dots {
+    bottom: -2px;
   }
   .bean-style-carousel .field-name-field-slide-title {
     max-width: 12.0em;
