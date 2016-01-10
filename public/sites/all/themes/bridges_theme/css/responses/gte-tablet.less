@@ -8,6 +8,18 @@
 
 body {
   padding-top: @height-header-tablet;
+  .font-size(16, @line-height-base);
+}
+
+// Extend stems
+// -----------------------------------------------------------------------------
+
+.decorative-header {
+  .font-size(30, 1.2);
+}
+
+.capital-header {
+  .font-size(22, 1.4)
 }
 
 // Grid
@@ -118,6 +130,12 @@ body {
 }
 
 html, html.menu-open {
+  #block-ombucleanup-site-logo {
+    a.brand {
+      opacity: 1;
+    }
+  }
+
   #block-ombucleanup-site-logo, #block-menu-header-menu, #block-search-form {
     transition: all @transition-duration-default ease;
   }
@@ -177,5 +195,48 @@ body.front {
     .contextual-links-wrapper {
       top: @height-header-tablet + 10;
     }
+  }
+}
+
+// Tile: CTA
+// ----------------------------------------------------------------------------
+
+.bean-cta {
+  text-align: right;
+
+  .field-name-field-cta-link {
+    a {
+      border-width: 10px;
+      .font-size(20, 1.2);
+      border-radius: 13px;
+    }
+  }
+}
+
+// Tile: Callout
+// ----------------------------------------------------------------------------
+
+.bean-callout {
+  text-align: left;
+
+  .field-collection-view {
+    clear: both;
+    padding-bottom: 3.0em;
+  }
+
+  .field-name-field-callout-image {
+    float: left;
+    width: 40%;
+    padding-top: 0.6em;
+
+    img {
+      max-width: 250px;
+    }
+  }
+
+  .field-name-field-callout-title,
+  .field-name-field-callout-description {
+    margin-left: 40%;
+    padding-left: 20px;
   }
 }

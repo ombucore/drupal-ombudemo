@@ -193,7 +193,7 @@ table {
 .field.c iframe {
   max-width: 100%;
 }
-@media (max-width: 480px) {
+@media (min-width: 480px) {
   .field.c pre.pull-left,
   .field.c blockquote.pull-left,
   .field.c p.pull-left,
@@ -433,7 +433,7 @@ aside[data-module="ombubench"][data-delta="moderation"] .btn {
 .bean-style-carousel:before {
   content: '';
   position: absolute;
-  top: 26.54166667%;
+  top: 42.46666667%;
   left: 50%;
   width: 64px;
   height: 64px;
@@ -567,23 +567,26 @@ aside[data-module="ombubench"][data-delta="moderation"] .btn {
 .bean-style-carousel .field-name-field-slide-title {
   position: relative;
   max-width: 11.7em;
-  margin: 0 auto;
-  padding: 1.0em 0 0 0;
-  font-size: 24px;
-  font-size: 2.4 rem;
-  line-height: 1.2;
+  margin: 1.0em auto 1.0em;
   font-family: 'Lobster', serif;
+  font-size: 26px;
+  font-size: 2.6 rem;
+  line-height: 1.2;
   color: #215096;
   text-align: center;
 }
 @media (min-width: 768px) {
+  .bean-style-carousel {
+    margin-left: 0;
+    margin-right: 0;
+  }
   .bean-style-carousel .field-name-field-slide-title {
     max-width: 12.0em;
     font-size: 48px;
     font-size: 4.8 rem;
     line-height: 1.2;
-    padding: 0;
-    margin: -0.15em auto 1.5em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
   }
   .bean-style-carousel .owl-carousel .owl-item.active .field-name-field-slide-title,
   .bean-style-carousel .owl-carousel .owl-item.active-clone .field-name-field-slide-title {
@@ -592,20 +595,36 @@ aside[data-module="ombubench"][data-delta="moderation"] .btn {
 }
 @media (min-width: 992px) {
   .bean-style-carousel .field-name-field-slide-title {
+    margin-top: -0.15em;
+    margin-bottom: 0.8em;
     font-size: 64px;
     font-size: 6.4 rem;
     line-height: 1.2;
-    margin: -0.15em auto 1.5em;
   }
 }
 .field.c .lead {
-  font-family: 'Open Sans Condensed', 'Helvetica', 'Arial', sans-serif;
-  font-size: 22px;
-  font-size: 2.2 rem;
+  margin-top: 0;
+  font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
+  font-size: 18px;
+  font-size: 1.8 rem;
   line-height: 1.4;
   font-weight: 200;
   font-style: italic;
   color: #0c1c36;
+}
+@media (min-width: 768px) {
+  .field.c .lead {
+    font-size: 22px;
+    font-size: 2.2 rem;
+    line-height: 1.4;
+  }
+}
+@media (min-width: 992px) {
+  .field.c .lead {
+    font-size: 28px;
+    font-size: 2.8 rem;
+    line-height: 1.4;
+  }
 }
 html {
   font-size: 62.5%;
@@ -617,10 +636,31 @@ body {
   font-size: 14px;
   font-size: 1.4 rem;
   line-height: 1.6;
+  color: #0c1c36;
 }
 a {
   text-decoration: none;
   transition: all 0.1s ease;
+}
+.decorative-header,
+[data-type="block"] > h2 {
+  margin-bottom: 1.0em;
+  padding-bottom: 0.4em;
+  border-bottom: 2px solid #d3dcea;
+  font-size: 24px;
+  font-size: 2.4 rem;
+  line-height: 1.2;
+  font-family: 'Lobster', serif;
+  font-weight: normal;
+  color: #215096;
+}
+.capital-header,
+.bean-callout .field-name-field-callout-title {
+  font-size: 18px;
+  font-size: 1.8 rem;
+  line-height: 1.3;
+  font-weight: 900;
+  text-transform: uppercase;
 }
 #page > [data-type="region"] > .container,
 #page > [data-type="region-container"] > .container,
@@ -929,8 +969,80 @@ aside[data-type="block"] {
 body.front #block-system-main {
   display: none;
 }
+[data-type="block"] {
+  margin-bottom: 1.0em;
+}
+.bean-container {
+  margin-bottom: 1.0em;
+}
+.bean-container > .content {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.bean-media {
+  margin-bottom: 2.0em;
+}
+.bean-media .file-video {
+  padding: 7px;
+  border-radius: 6px;
+  background-color: #d3dcea;
+}
+.bean-cta {
+  text-align: center;
+  margin-bottom: 2.0em;
+}
+.bean-cta .field-name-field-cta-link a {
+  display: inline-block;
+  padding: 0.8em 2.0em;
+  border: 6px solid #b3dadd;
+  font-size: 18px;
+  font-size: 1.8 rem;
+  line-height: 1.2;
+  font-weight: 900;
+  font-style: italic;
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: -0.05em;
+  border-radius: 9px;
+  background-color: #039ba6;
+}
+.bean-cta .field-name-field-cta-link a:hover {
+  background-color: #037780;
+}
+.bean-callout {
+  text-align: center;
+}
+.bean-callout .field-collection-view {
+  padding-bottom: 1.0em;
+}
+.bean-callout .field-name-field-callout-image {
+  padding-bottom: 0.5em;
+}
+.bean-callout .field-name-field-callout-image img {
+  display: inline-block;
+  max-width: 200px;
+  width: 100%;
+  height: auto;
+}
 body {
   padding-top: 80px;
+  font-size: 16px;
+  font-size: 1.6 rem;
+  line-height: 1.6;
+}
+.decorative-header,
+[data-type="block"] > h2 {
+  font-size: 30px;
+  font-size: 3 rem;
+  line-height: 1.2;
+}
+.capital-header,
+.bean-callout .field-name-field-callout-title {
+  font-size: 22px;
+  font-size: 2.2 rem;
+  line-height: 1.4;
 }
 #page > [data-type="region"] > .container,
 #page > [data-type="region-container"] > .container,
@@ -939,8 +1051,8 @@ body {
 #page > [data-type="region-container"][data-name="sections"] > .field-type-tiles-section [data-type="region"][data-name="section"] > .container {
   max-width: none;
   position: relative;
-  padding-left: 60px;
-  padding-right: 60px;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 #page > [data-type="region-container"][data-name="core"] [data-type="region"] > .container {
   padding-left: 0;
@@ -1000,7 +1112,7 @@ html.compressed-header [data-type="region"][data-name="header-background"] {
 #block-ombucleanup-site-logo {
   position: absolute;
   top: 0;
-  left: 45px;
+  left: 25px;
   width: auto;
   transform-origin: 15px top;
 }
@@ -1012,13 +1124,13 @@ html.compressed-header [data-type="region"][data-name="header-background"] {
 #block-menu-header-menu {
   position: absolute;
   top: 18px;
-  left: 230px;
+  left: 210px;
   transform-origin: left center;
 }
 #block-search-form {
   position: absolute;
   top: 21px;
-  right: 45px;
+  right: 25px;
   width: auto;
   transform-origin: right center;
 }
@@ -1102,6 +1214,10 @@ html.compressed-header [data-type="region"][data-name="header-background"] {
 #block-search-form.valid input[type="text"] {
   border-bottom-color: #536580;
 }
+html #block-ombucleanup-site-logo a.brand,
+html.menu-open #block-ombucleanup-site-logo a.brand {
+  opacity: 1;
+}
 html #block-ombucleanup-site-logo,
 html.menu-open #block-ombucleanup-site-logo,
 html #block-menu-header-menu,
@@ -1131,6 +1247,48 @@ body.front {
 }
 [data-type="region"][data-name="section"]:first-child .contextual-links-wrapper {
   top: 90px;
+}
+.bean-cta {
+  text-align: right;
+}
+.bean-cta .field-name-field-cta-link a {
+  border-width: 10px;
+  font-size: 20px;
+  font-size: 2 rem;
+  line-height: 1.2;
+  border-radius: 13px;
+}
+.bean-callout {
+  text-align: left;
+}
+.bean-callout .field-collection-view {
+  clear: both;
+  padding-bottom: 3.0em;
+}
+.bean-callout .field-name-field-callout-image {
+  float: left;
+  width: 40%;
+  padding-top: 0.6em;
+}
+.bean-callout .field-name-field-callout-image img {
+  max-width: 250px;
+}
+.bean-callout .field-name-field-callout-title,
+.bean-callout .field-name-field-callout-description {
+  margin-left: 40%;
+  padding-left: 20px;
+}
+.decorative-header,
+[data-type="block"] > h2 {
+  font-size: 36px;
+  font-size: 3.6 rem;
+  line-height: 1.2;
+}
+.capital-header,
+.bean-callout .field-name-field-callout-title {
+  font-size: 24px;
+  font-size: 2.4 rem;
+  line-height: 1.4;
 }
 #page > [data-type="region"] > .container,
 #page > [data-type="region-container"] > .container,
@@ -1165,6 +1323,12 @@ body.front {
 #block-search-form input[type="text"]:focus,
 #block-search-form.valid input[type="text"] {
   width: 13.0em;
+}
+.bean-cta .field-name-field-cta-link a {
+  font-size: 24px;
+  font-size: 2.4 rem;
+  line-height: 1.2;
+  border-radius: 8px;
 }
 html.ie8 .col-md-1 {
   width: 8.33333333%;

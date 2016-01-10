@@ -193,7 +193,7 @@ table {
 .field.c iframe {
   max-width: 100%;
 }
-@media (max-width: 480px) {
+@media (min-width: 480px) {
   .field.c pre.pull-left,
   .field.c blockquote.pull-left,
   .field.c p.pull-left,
@@ -433,7 +433,7 @@ aside[data-module="ombubench"][data-delta="moderation"] .btn {
 .bean-style-carousel:before {
   content: '';
   position: absolute;
-  top: 26.54166667%;
+  top: 42.46666667%;
   left: 50%;
   width: 64px;
   height: 64px;
@@ -567,23 +567,26 @@ aside[data-module="ombubench"][data-delta="moderation"] .btn {
 .bean-style-carousel .field-name-field-slide-title {
   position: relative;
   max-width: 11.7em;
-  margin: 0 auto;
-  padding: 1.0em 0 0 0;
-  font-size: 24px;
-  font-size: 2.4 rem;
-  line-height: 1.2;
+  margin: 1.0em auto 1.0em;
   font-family: 'Lobster', serif;
+  font-size: 26px;
+  font-size: 2.6 rem;
+  line-height: 1.2;
   color: #215096;
   text-align: center;
 }
 @media (min-width: 768px) {
+  .bean-style-carousel {
+    margin-left: 0;
+    margin-right: 0;
+  }
   .bean-style-carousel .field-name-field-slide-title {
     max-width: 12.0em;
     font-size: 48px;
     font-size: 4.8 rem;
     line-height: 1.2;
-    padding: 0;
-    margin: -0.15em auto 1.5em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
   }
   .bean-style-carousel .owl-carousel .owl-item.active .field-name-field-slide-title,
   .bean-style-carousel .owl-carousel .owl-item.active-clone .field-name-field-slide-title {
@@ -592,20 +595,36 @@ aside[data-module="ombubench"][data-delta="moderation"] .btn {
 }
 @media (min-width: 992px) {
   .bean-style-carousel .field-name-field-slide-title {
+    margin-top: -0.15em;
+    margin-bottom: 0.8em;
     font-size: 64px;
     font-size: 6.4 rem;
     line-height: 1.2;
-    margin: -0.15em auto 1.5em;
   }
 }
 .field.c .lead {
-  font-family: 'Open Sans Condensed', 'Helvetica', 'Arial', sans-serif;
-  font-size: 22px;
-  font-size: 2.2 rem;
+  margin-top: 0;
+  font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
+  font-size: 18px;
+  font-size: 1.8 rem;
   line-height: 1.4;
   font-weight: 200;
   font-style: italic;
   color: #0c1c36;
+}
+@media (min-width: 768px) {
+  .field.c .lead {
+    font-size: 22px;
+    font-size: 2.2 rem;
+    line-height: 1.4;
+  }
+}
+@media (min-width: 992px) {
+  .field.c .lead {
+    font-size: 28px;
+    font-size: 2.8 rem;
+    line-height: 1.4;
+  }
 }
 * {
   text-shadow: none !important;

@@ -17,11 +17,31 @@ body {
   font-family: @font-family-sans-serif;
   font-weight: @font-weight-regular;
   .font-size(@font-size-base, @line-height-base);
+  color: @color-zodiac;
 }
 
 a {
   text-decoration: none;
   transition: all @transition-duration-fast ease;
+}
+
+// Extend stems
+// -----------------------------------------------------------------------------
+
+.decorative-header {
+  margin-bottom: 1.0em;
+  padding-bottom: 0.4em;
+  border-bottom: 2px solid @color-botticelli;
+  .font-size(24, 1.2);
+  font-family: @font-family-decorative;
+  font-weight: normal;
+  color: @color-matisse;
+}
+
+.capital-header {
+  .font-size(18, 1.3);
+  font-weight: @font-weight-black;
+  text-transform: uppercase;
 }
 
 // Grid
@@ -322,5 +342,97 @@ html.menu-open {
 body.front {
   #block-system-main {
     display: none;
+  }
+}
+
+// Tiles
+// ----------------------------------------------------------------------------
+
+[data-type="block"] {
+  margin-bottom: 1.0em;
+
+  > h2 {
+    &:extend(.decorative-header);
+  }
+}
+
+// Tile: Tile Container
+// ----------------------------------------------------------------------------
+
+.bean-container {
+  margin-bottom: 1.0em;
+
+  > .content {
+    margin-left: -1 * @gutter-side-mobile;
+    margin-right: -1 * @gutter-side-mobile;
+  }
+}
+
+// Tile: Media
+// ----------------------------------------------------------------------------
+
+.bean-media {
+  margin-bottom: 2.0em;
+
+  .file-video {
+    padding: 7px;
+    border-radius: 6px;
+    background-color: @color-botticelli;
+  }
+}
+
+// Tile: CTA
+// ----------------------------------------------------------------------------
+
+.bean-cta {
+  text-align: center;
+  margin-bottom: 2.0em;
+
+  .field-name-field-cta-link {
+    a {
+      display: inline-block;
+      padding: 0.8em 2.0em;
+      border: 6px solid @color-ziggurat;
+      .font-size(18, 1.2);
+      font-weight: @font-weight-black;
+      font-style: italic;
+      color: @color-white;
+      text-shadow: 0 -1px 0 fade(@color-black, 50%);
+      text-transform: uppercase;
+      text-align: center;
+      letter-spacing: -0.05em;
+      border-radius: 9px;
+      background-color: @color-bondi;
+
+      &:hover {
+        background-color: @color-lagoon;
+      }
+    }
+  }
+}
+
+// Tile: Callout
+// ----------------------------------------------------------------------------
+
+.bean-callout {
+  text-align: center;
+
+  .field-collection-view {
+    padding-bottom: 1.0em;
+  }
+
+  .field-name-field-callout-image {
+    padding-bottom: 0.5em;
+
+    img {
+      display: inline-block;
+      max-width: 200px;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .field-name-field-callout-title {
+    &:extend(.capital-header);
   }
 }

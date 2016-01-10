@@ -3,6 +3,17 @@
 
 .debug-media-response-message('Media response: Desktop');
 
+// Extend stems
+// -----------------------------------------------------------------------------
+
+.decorative-header {
+  .font-size(36, 1.2);
+}
+
+.capital-header {
+  .font-size(24, 1.4)
+}
+
 // Grid
 // -----------------------------------------------------------------------------
 
@@ -24,5 +35,17 @@
 
   input[type="text"]:focus, &.valid input[type="text"] {
     width: 13.0em;
+  }
+}
+
+// Tile: CTA
+// ----------------------------------------------------------------------------
+
+.bean-cta {
+  .field-name-field-cta-link {
+    a {
+      .font-size(24, 1.2);
+      border-radius: 8px;
+    }
   }
 }

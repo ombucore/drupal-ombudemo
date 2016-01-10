@@ -18,7 +18,7 @@
   &:before {
     content: '';
     position: absolute;
-    top: @ar-image-hero / 2;
+    top: @ar-image-hero * 0.8;
     left: 50%;
     width: @spinner-width / 2;
     height: @spinner-height / 2;
@@ -166,10 +166,9 @@
   .field-name-field-slide-title {
     position: relative;
     max-width: 11.7em;
-    margin: 0 auto;
-    padding: 1.0em 0 0 0;
-    .font-size(24, 1.2);
+    margin: 1.0em auto 1.0em;
     font-family: @font-family-decorative;
+    .font-size(26, 1.2);
     color: @color-matisse;
     text-align: center;
   }
@@ -180,11 +179,14 @@
 
 @media (min-width: @mq-threshold-tablet) {
   .bean-style-carousel {
+    margin-left: 0;
+    margin-right: 0;
+
     .field-name-field-slide-title {
       max-width: 12.0em;
       .font-size(48, 1.2);
-      padding: 0;
-      margin: -0.15em auto 1.5em;
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
     }
 
     .owl-carousel {
@@ -202,8 +204,9 @@
 @media (min-width: @mq-threshold-desktop) {
   .bean-style-carousel {
     .field-name-field-slide-title {
+      margin-top: -0.15em;
+      margin-bottom: 0.8em;
       .font-size(64, 1.2);
-      margin: -0.15em auto 1.5em;
     }
   }
 }
