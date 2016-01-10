@@ -17,7 +17,8 @@ body {
   font-family: @font-family-sans-serif;
   font-weight: @font-weight-regular;
   .font-size(@font-size-base, @line-height-base);
-  color: @color-zodiac;
+  background-color: @color-polo;
+  color: @color-black;
 }
 
 a {
@@ -324,6 +325,12 @@ html.menu-open {
 
 // Region: content
 // ----------------------------------------------------------------------------
+
+[data-type="region-container"][data-name="core"],
+[data-type="region-container"][data-name="sections"] {
+  color: @color-zodiac;
+  background-color: @color-white;
+}
 
 #main, aside[data-type="block"] {
   min-height: 0;

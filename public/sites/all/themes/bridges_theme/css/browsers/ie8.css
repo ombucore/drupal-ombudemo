@@ -386,7 +386,7 @@ aside[data-module="ombubench"][data-delta="moderation"] .btn {
 .bean-style-carousel:before {
   content: '';
   position: absolute;
-  top: 42.46666667%;
+  top: 47.775%;
   left: 50%;
   width: 64px;
   height: 64px;
@@ -399,7 +399,7 @@ aside[data-module="ombubench"][data-delta="moderation"] .btn {
 }
 .bean-style-carousel > .carousel {
   opacity: 0;
-  transition: all 0.7s ease;
+  transition: all 0.7s ease 0.1s;
 }
 .bean-style-carousel:not(.initialized) {
   overflow: hidden;
@@ -407,12 +407,25 @@ aside[data-module="ombubench"][data-delta="moderation"] .btn {
 }
 .bean-style-carousel:not(.initialized) .item {
   display: inline-block;
+  width: 100%;
   vertical-align: top;
   white-space: normal;
 }
+.bean-style-carousel:not(.initialized) .item .group_primary {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-top: 53.08333333%;
+}
+.bean-style-carousel:not(.initialized) .item .group_primary .field-name-field-media {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
 .bean-style-carousel.initialized > .carousel {
   opacity: 1;
-  visibility: visible;
 }
 .ombugallery.col-xs-12.col-sm-12.col-md-12.col-lg-12 .bean-style-carousel .owl-carousel .owl-stage-outer {
   overflow: visible;
@@ -589,7 +602,8 @@ body {
   font-size: 14px;
   font-size: 1.4 rem;
   line-height: 1.6;
-  color: #0c1c36;
+  background-color: #8fa7cc;
+  color: #000000;
 }
 a {
   text-decoration: none;
@@ -920,6 +934,11 @@ html.menu-open #block-menu-header-menu {
 }
 html.menu-open #block-search-form {
   transition: all 0.7s ease 0.35s;
+}
+[data-type="region-container"][data-name="core"],
+[data-type="region-container"][data-name="sections"] {
+  color: #0c1c36;
+  background-color: #ffffff;
 }
 #main,
 aside[data-type="block"] {

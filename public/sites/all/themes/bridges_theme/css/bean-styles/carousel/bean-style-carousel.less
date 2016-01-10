@@ -18,7 +18,7 @@
   &:before {
     content: '';
     position: absolute;
-    top: @ar-image-hero * 0.8;
+    top: @ar-image-hero * 0.9;
     left: 50%;
     width: @spinner-width / 2;
     height: @spinner-height / 2;
@@ -33,7 +33,7 @@
 
   > .carousel {
     opacity: 0;
-    transition: all @transition-duration-leisurely ease;
+    transition: all @transition-duration-leisurely ease 0.1s;
   }
 
   &:not(.initialized) {
@@ -42,15 +42,30 @@
 
     .item {
       display: inline-block;
+      width: 100%;
       vertical-align: top;
       white-space: normal;
+
+      .group_primary {
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-top: @ar-image-hero;
+
+        .field-name-field-media {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+        }
+      }
     }
   }
 
   &.initialized {
     > .carousel {
       opacity: 1;
-      visibility: visible;
     }
   }
 
