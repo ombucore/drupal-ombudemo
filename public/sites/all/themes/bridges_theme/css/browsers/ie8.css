@@ -373,6 +373,37 @@ aside[data-module="ombubench"][data-delta="moderation"] .btn {
 .bean-style-carousel {
   margin-bottom: 0;
 }
+.bean-style-carousel:before {
+  content: '';
+  position: absolute;
+  top: 26.54166667%;
+  left: 50%;
+  width: 64px;
+  height: 64px;
+  margin-top: -32px;
+  margin-left: -32px;
+  background: transparent url(/sites/all/themes/bridges_theme/images/animated/coffee.gif) center 30% no-repeat;
+  background-size: 64px auto;
+  opacity: 1;
+  transition: all 0.7s ease;
+}
+.bean-style-carousel > .carousel {
+  opacity: 0;
+  transition: all 0.7s ease;
+}
+.bean-style-carousel:not(.initialized) {
+  overflow: hidden;
+  white-space: nowrap;
+}
+.bean-style-carousel:not(.initialized) .item {
+  display: inline-block;
+  vertical-align: top;
+  white-space: normal;
+}
+.bean-style-carousel.initialized > .carousel {
+  opacity: 1;
+  visibility: visible;
+}
 .ombugallery.col-xs-12.col-sm-12.col-md-12.col-lg-12 .bean-style-carousel .owl-carousel .owl-stage-outer {
   overflow: visible;
 }
@@ -404,16 +435,6 @@ aside[data-module="ombubench"][data-delta="moderation"] .btn {
   transition: all 0.7s ease;
 }
 .bean-style-carousel .owl-carousel .owl-item .field-name-field-slide-title {
-  position: relative;
-  max-width: 11.5em;
-  margin: 0 auto;
-  padding: 1.0em 0;
-  font-size: 24px;
-  font-size: 2.4 rem;
-  line-height: 1.2;
-  font-family: 'Lobster', serif;
-  color: #215096;
-  text-align: center;
   opacity: 0;
   transition: all 0.2s ease;
   transform: translate(40px, 0);
@@ -486,8 +507,20 @@ aside[data-module="ombubench"][data-delta="moderation"] .btn {
 .bean-style-carousel .owl-dots .owl-dot:hover:after {
   opacity: 1;
 }
+.bean-style-carousel .field-name-field-slide-title {
+  position: relative;
+  max-width: 11.5em;
+  margin: 0 auto;
+  padding: 1.0em 0;
+  font-size: 24px;
+  font-size: 2.4 rem;
+  line-height: 1.2;
+  font-family: 'Lobster', serif;
+  color: #215096;
+  text-align: center;
+}
 @media (min-width: 768px) {
-  .bean-style-carousel .owl-carousel .owl-item .field-name-field-slide-title {
+  .bean-style-carousel .field-name-field-slide-title {
     font-size: 48px;
     font-size: 4.8 rem;
     line-height: 1.2;
@@ -500,7 +533,7 @@ aside[data-module="ombubench"][data-delta="moderation"] .btn {
   }
 }
 @media (min-width: 992px) {
-  .bean-style-carousel .owl-carousel .owl-item .field-name-field-slide-title {
+  .bean-style-carousel .field-name-field-slide-title {
     font-size: 64px;
     font-size: 6.4 rem;
     line-height: 1.2;
