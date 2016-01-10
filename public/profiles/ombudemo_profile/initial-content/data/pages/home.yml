@@ -161,7 +161,7 @@ sections:
       -
         type: Gallery
         style: Grid
-        width: 3/12
+        width: 4/12
         offset: 1/12
         title: "Our legacy in photos"
         items:
