@@ -994,9 +994,12 @@ aside[data-type="block"] {
 body.front #block-system-main {
   display: none;
 }
+body.front #block-bean-home-gallery {
+  margin-bottom: 0;
+}
 [data-type="region-container"][data-name="core"] [data-type="block"],
 [data-type="region-container"][data-name="sections"] [data-type="block"] {
-  margin-bottom: 1.0em;
+  margin-bottom: 2.0em;
 }
 .bean-container {
   margin-bottom: 1.0em;
@@ -1005,16 +1008,10 @@ body.front #block-system-main {
   margin-left: -15px;
   margin-right: -15px;
 }
-.bean-media {
-  margin-bottom: 2.0em;
-}
 .bean-media .file-video {
   padding: 7px;
   border-radius: 6px;
   background-color: #d3dcea;
-}
-.bean-cta {
-  margin-bottom: 2.0em;
 }
 .bean-cta > .entity-bean {
   text-align: center;
