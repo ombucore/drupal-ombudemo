@@ -101,20 +101,14 @@ a {
     position: absolute;
     z-index: 2;
     top: 0;
-    right: 0;
     width: 50px;
+    height: @height-header;
     padding: 0 @gutter-side-mobile;
-    .font-size(20, @height-header);
     text-align: center;
     transition: all @transition-duration-default ease;
 
-    strong {
+    strong, span {
       display: block;
-      margin-top: -2px;
-    }
-
-    span {
-      display: none;
     }
   }
 
@@ -125,13 +119,34 @@ a {
     visibility: hidden;
 
     strong {
-      margin-top: -1px;
+      margin-top: 12px;
+      .font-size(13, 13px);
+    }
+
+    span {
+      font-family: @font-family-sans-serif;
+      font-weight: @font-weight-black;
+      .font-size(9, 1);
+    }
+  }
+
+  .menu-toggle {
+    right: 0;
+    opacity: 0.8;
+
+    strong {
+      .font-size(20, @height-header);
+      margin-top: -2px;
+    }
+
+    span {
+      display: none;
     }
   }
 
   html.show-top-link & {
     .top-link {
-      opacity: 1;
+      opacity: 0.6;
       transform: translate(0, 0);
       visibility: visible;
     }
@@ -160,6 +175,9 @@ a {
 
 #block-ombucleanup-site-logo {
   width: 180px;
+  transform: scale(1);
+  transform-origin: @gutter-side-mobile 5px;
+  transition: all @transition-duration-default ease;
 
   a.brand {
     position: relative;
@@ -176,9 +194,6 @@ a {
       height: auto;
       -webkit-filter: drop-shadow(0 3px 1px fade(@color-black, 60%));
       filter: drop-shadow(0 3px 1px fade(@color-black, 60%));
-      transition: all @transition-duration-leisurely ease;
-      transform: scale(1);
-      transform-origin: top left;
 
       path {
         fill: @color-white;
@@ -250,17 +265,17 @@ a {
     margin: 0;
     padding: 3px 0 3px 30px;
     border: 0;
-    border-bottom: 1px solid @color-bayoux;
+    border-bottom: 1px solid fade(@color-polo, 50%);
     outline: 0;
     border-radius: 0;
     background-color: transparent;
     color: @color-white;
     transition: all @transition-duration-fast ease;
-    .placeholder-styles(@color-bayoux);
+    .placeholder-styles(fade(@color-white, 80%));
 
     &:focus {
-      border-bottom-color: @color-polo;
-      .placeholder-styles(@color-prussian);
+      border-bottom-color: fade(@color-polo, 100%);
+      .placeholder-styles(fade(@color-polo, 20%));
     }
   }
 
@@ -275,15 +290,22 @@ a {
     left: @gutter-side-mobile;
     width: 20px;
     height: 20px;
-    background: transparent url(/sites/all/themes/bridges_theme/images/search.svg) 0 0 no-repeat;
+    // /sites/all/themes/bridges_theme/images/search.svg
+    background: transparent url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMTggMTgiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDE4IDE4IiB4bWw6c3BhY2U9InByZXNlcnZlIj48cGF0aCBpZD0ic2VhcmNoIiBmaWxsPSIjZDNkY2VhIiBkPSJNMTcuNzAzNSwxNi41MDk4bC0xLjE4NjEsMS4yMDA3Yy0wLjM5NTQsMC4zODU5LTAuNzkwNywwLjM4NTktMS4xODYxLDBsLTQuNjEyNi00LjU4ODRjLTEuMTg2MSwwLjY4NjEtMi40MTYxLDEuMDI5Mi0zLjY0NjEsMS4wMjkyYy0xLjkzMjksMC0zLjYwMjItMC42ODYxLTUuMDA3OS0yLjA1ODRDMC42NTg5LDEwLjcyMDcsMCw5LjA0ODIsMCw3LjA3NTZjMC0xLjk3MjYsMC43MDI5LTMuNjQ1LDIuMDY0Ny01LjAxNzNDMy40NzA0LDAuNjg2MSw1LjEzOTcsMCw3LjA3MjYsMHMzLjYwMjIsMC42ODYxLDUuMDA3OSwyLjA1ODRzMi4wNjQ3LDMuMDQ0NywyLjA2NDcsNS4wMTczYzAsMS4yODY1LTAuMzUxNCwyLjQ4NzItMS4wNTQzLDMuNjQ1bDQuNjEyNiw0LjYzMTNDMTguMDk4OCwxNS42OTUxLDE4LjA5ODgsMTYuMDgxLDE3LjcwMzUsMTYuNTA5OEwxNy43MDM1LDE2LjUwOTh6IE0xMS44MTcsNy4wMzI4YzAtMS4yODY1LTAuNDgzMi0yLjQwMTQtMS40MDU3LTMuMzQ0OEM5LjQ4ODcsMi43NDQ1LDguMzkwNSwyLjMxNTcsNy4wNzI2LDIuMzE1N1M0LjY1NjUsMi43ODc0LDMuNzM0LDMuNjg3OUMyLjgxMTUsNC42MzEzLDIuMzcyMiw1LjcwMzQsMi4zNzIyLDcuMDMyOGMwLDEuMjg2NSwwLjQzOTMsMi40MDE0LDEuMzYxOCwzLjM0NDljMC45MjI1LDAuOTQzNCwyLjAyMDcsMS4zNzIyLDMuMzM4NiwxLjM3MjJzMi40MTYxLTAuNDcxNywzLjMzODYtMS4zNzIyQzExLjMzMzcsOS40NzcxLDExLjgxNyw4LjM2MjEsMTEuODE3LDcuMDMyOEwxMS44MTcsNy4wMzI4eiIgLz48L3N2Zz4=) 0 0 no-repeat;
     transition: all @transition-duration-default ease;
-    opacity: 0.3;
+    opacity: 0.4;
   }
 
   &.focused {
     &:before {
-      opacity: 0.6;
+      opacity: 1.0;
     }
+  }
+}
+
+html.show-top-link {
+  #block-ombucleanup-site-logo {
+    transform: scale(0.6);
   }
 }
 
@@ -295,17 +317,8 @@ html.menu-open {
   }
 
   #block-ombucleanup-site-logo {
-    a.brand {
-      opacity: 0.7;
-
-      svg {
-        transform: scale(0.85);
-      }
-
-      &:hover {
-        opacity: 1;
-      }
-    }
+    transform: scale(0.85);
+    opacity: 0.7;
   }
 
   #block-menu-header-menu, #block-search-form {

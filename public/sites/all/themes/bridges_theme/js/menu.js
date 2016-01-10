@@ -19,7 +19,7 @@
         handler: function(direction) {
           $('html').toggleClass('show-top-link', (direction == 'down'));
         },
-        offset: -200
+        offset: -100
       });
 
       $menuToggle.on('click', function(e) {
