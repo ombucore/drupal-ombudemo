@@ -104,7 +104,7 @@ $callouts = array(
   array(
     'title' => 'Adaptive access',
     'image' => '03-access.png',
-    'body' => '<p>Our bridges were once traveled by horse and buggy.  Now they are traveled by bicycle and light rail.  Soon, we can expect jetpacks and other modes of which we haven’t dreamt — but will accommodate!</p>',
+    'body' => '<p>Our bridges were once traveled by horse and buggy.  Now they are traveled by bicycle and light rail.  Soon, we can expect jetpacks and modes of which we haven’t dreamt — but will have had the foresight to accommodate!</p>',
   ),
 );
 foreach ($callouts as $callout) {
