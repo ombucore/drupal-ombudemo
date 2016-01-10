@@ -35,6 +35,7 @@ body {
 
   &, html.menu-open & {
     height: @height-header-tablet;
+    transition: all @transition-duration-default ease;
   }
 
   html.toolbar-open & {
@@ -61,12 +62,18 @@ body {
 [data-type="region"][data-name="header-background"] {
   background-color: fade(@color-prussian, 90%);
 
+  &:after {
+    display: none;
+  }
+
   html.compressed-header & {
     background-color: fade(@color-prussian, 100%);
   }
 }
 
 [data-type="region"][data-name="header"] {
+  border-bottom: 3px solid fade(black, 70%);
+
   .top-link, .menu-toggle, &:before {
     display: none;
   }

@@ -64,7 +64,7 @@ a {
   transition: all @transition-duration-default ease;
 
   html.menu-open & {
-    height: 200px;
+    height: 180px;
     transition: all (@transition-duration-leisurely * 0.8) ease;
   }
 }
@@ -72,6 +72,31 @@ a {
 [data-type="region"][data-name="header-background"] {
   background-color: fade(@color-prussian, 100%);
   mix-blend-mode: multiply;
+  top: 0;
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 0;
+    margin-top: -2px;
+    padding-top: 0%;
+    // /sites/all/themes/bridges_theme/images/arches/prussian.svg
+    background: transparent url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMzIwIDIwIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAzMjAgMjAiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwYXRoIGZpbGw9IiMwMDIwNGYiIGQ9Ik0zMjAsMjB2LTAuMDA0QzI4My41MTEsNy44NTQsMjI1LjQyNSwwLDE2MCwwUzM2LjQ4OSw3Ljg1NCwwLDE5Ljk5NlYyMEgzMjB6Ii8+PC9zdmc+) center top no-repeat;
+    background-size: cover;
+    transform-origin: center center;
+    transform: rotate(180deg);
+    transition: all @transition-duration-leisurely ease;
+  }
+
+  html.menu-open & {
+    &:after {
+      padding-top: @ar-arch * 1.1;
+    }
+  }
 }
 
 [data-type="region"][data-name="header"] {
@@ -80,7 +105,6 @@ a {
   color: @color-bayoux;
   text-transform: uppercase;
   background-color: transparent;
-  border-bottom: 3px solid fade(black, 70%);
 
   a {
     color: @color-white;
@@ -159,16 +183,14 @@ a {
     left: 0;
     right: 0;
     height: @height-header;
-    background: @color-prussian;
-    background: darken(@color-prussian, 5);
+    background-color: fade(darken(@color-prussian, 8), 0%);
     border-bottom: 2px solid fade(@color-black, 80%);
-    opacity: 0;
     transition: all @transition-duration-default ease;
   }
 
   html.menu-open & {
     &:before {
-      opacity: 1;
+      background-color: fade(darken(@color-prussian, 8), 100%);
     }
   }
 }
@@ -305,7 +327,7 @@ a {
 
 html.show-top-link {
   #block-ombucleanup-site-logo {
-    transform: scale(0.6);
+    transform: scale(0.63);
   }
 }
 
