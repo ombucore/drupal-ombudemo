@@ -436,7 +436,7 @@ aside[data-module="ombubench"][data-delta="moderation"] .btn {
 }
 .bean-style-carousel .owl-carousel .owl-item .field-name-field-slide-title {
   opacity: 0;
-  transition: all 0.2s ease;
+  transition: opacity 0.2s ease 0s, transform 0.2s ease 0.5s;
   transform: translate(40px, 0);
 }
 .bean-style-carousel .owl-carousel .owl-item.active .field-name-field-media,
@@ -447,7 +447,7 @@ aside[data-module="ombubench"][data-delta="moderation"] .btn {
 }
 .bean-style-carousel .owl-carousel .owl-item.active .field-name-field-slide-title,
 .bean-style-carousel .owl-carousel .owl-item.active-clone .field-name-field-slide-title {
-  transition: all 0.7s ease 0.3s;
+  transition: all 0.7s ease 0.2s;
   transform: translate(0, 0);
 }
 .bean-style-carousel .owl-controls {
@@ -509,7 +509,7 @@ aside[data-module="ombubench"][data-delta="moderation"] .btn {
 }
 .bean-style-carousel .field-name-field-slide-title {
   position: relative;
-  max-width: 11.5em;
+  max-width: 11.7em;
   margin: 0 auto;
   padding: 1.0em 0;
   font-size: 24px;
@@ -521,6 +521,7 @@ aside[data-module="ombubench"][data-delta="moderation"] .btn {
 }
 @media (min-width: 768px) {
   .bean-style-carousel .field-name-field-slide-title {
+    max-width: 12.0em;
     font-size: 48px;
     font-size: 4.8 rem;
     line-height: 1.2;
@@ -529,7 +530,7 @@ aside[data-module="ombubench"][data-delta="moderation"] .btn {
   }
   .bean-style-carousel .owl-carousel .owl-item.active .field-name-field-slide-title,
   .bean-style-carousel .owl-carousel .owl-item.active-clone .field-name-field-slide-title {
-    transition: all 0.7s ease 0.6s;
+    transition: all 0.7s ease 0.4s;
   }
 }
 @media (min-width: 992px) {

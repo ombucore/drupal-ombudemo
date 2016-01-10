@@ -81,7 +81,7 @@
 
       .field-name-field-slide-title {
         opacity: 0;
-        transition: all @transition-duration-default ease;
+        transition: opacity @transition-duration-default ease 0s, transform @transition-duration-default ease 0.5s;
         transform: translate(40px, 0);
       }
 
@@ -91,7 +91,7 @@
         }
 
         .field-name-field-slide-title {
-          transition: all @transition-duration-leisurely ease 0.3s;
+          transition: all @transition-duration-leisurely ease 0.2s;
           transform: translate(0, 0);
         }
       }
@@ -165,7 +165,7 @@
 
   .field-name-field-slide-title {
     position: relative;
-    max-width: 11.5em;
+    max-width: 11.7em;
     margin: 0 auto;
     padding: 1.0em 0;
     .font-size(24, 1.2);
@@ -181,6 +181,7 @@
 @media (min-width: @mq-threshold-tablet) {
   .bean-style-carousel {
     .field-name-field-slide-title {
+      max-width: 12.0em;
       .font-size(48, 1.2);
       padding: 0;
       margin: -0.15em auto 1.5em;
@@ -190,7 +191,7 @@
       .owl-item {
         &.active, &.active-clone {
           .field-name-field-slide-title {
-            transition: all @transition-duration-leisurely ease 0.6s;
+            transition: all @transition-duration-leisurely ease 0.4s;
           }
         }
       }
