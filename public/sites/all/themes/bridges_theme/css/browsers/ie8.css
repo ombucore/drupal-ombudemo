@@ -165,6 +165,63 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+.field.c .lead {
+  font-size: 120%;
+  font-weight: bold;
+}
+.field.c pre.pull-left {
+  clear: left;
+}
+.field.c pre.pull-right {
+  clear: right;
+}
+.field.c pre.pull-left,
+.field.c pre.pull-right {
+  font-family: inherit;
+  white-space: normal;
+  word-break: normal;
+  word-wrap: normal;
+}
+.field.c pre.pull-left .field-name-field-caption,
+.field.c pre.pull-right .field-name-field-caption {
+  margin-top: 0.5em;
+}
+.field.c ul,
+.field.c ol {
+  overflow: hidden;
+}
+.field.c iframe {
+  max-width: 100%;
+}
+@media (max-width: 480px) {
+  .field.c pre.pull-left,
+  .field.c blockquote.pull-left,
+  .field.c p.pull-left,
+  .field.c pre.pull-right,
+  .field.c blockquote.pull-right,
+  .field.c p.pull-right {
+    width: 50%;
+    max-width: 350px;
+    margin: 0.5em 0;
+  }
+  .field.c pre.pull-left,
+  .field.c blockquote.pull-left,
+  .field.c p.pull-left {
+    float: left;
+    margin-right: 1.0em;
+  }
+  .field.c pre.pull-right,
+  .field.c blockquote.pull-right,
+  .field.c p.pull-right {
+    float: right;
+    margin-left: 1.0em;
+  }
+  .field.c pre img,
+  .field.c blockquote img,
+  .field.c p img {
+    max-width: 100%;
+  }
+}
 div[data-type="region"][data-name="console"] {
   clear: both;
   color: black;
