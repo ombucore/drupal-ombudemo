@@ -533,7 +533,7 @@ aside[data-module="ombubench"][data-delta="moderation"] .btn {
 .bean-style-carousel .field-name-field-slide-title {
   position: relative;
   max-width: 11.7em;
-  margin: 1.0em auto 1.0em;
+  margin: 1.0em auto 0;
   font-family: 'Lobster', serif;
   font-size: 26px;
   font-size: 2.6 rem;
@@ -554,7 +554,7 @@ aside[data-module="ombubench"][data-delta="moderation"] .btn {
     font-size: 48px;
     font-size: 4.8 rem;
     line-height: 1.2;
-    margin-top: 0.5em;
+    margin-top: 0.2em;
     margin-bottom: 0.5em;
   }
   .bean-style-carousel .owl-carousel .owl-item.active .field-name-field-slide-title,
@@ -565,14 +565,13 @@ aside[data-module="ombubench"][data-delta="moderation"] .btn {
 @media (min-width: 992px) {
   .bean-style-carousel .field-name-field-slide-title {
     margin-top: -0.15em;
-    margin-bottom: 0.8em;
+    margin-bottom: 0.2em;
     font-size: 64px;
     font-size: 6.4 rem;
-    line-height: 1.2;
+    line-height: 1.1;
   }
 }
 .field.c .lead {
-  margin-top: 0;
   font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
   font-size: 18px;
   font-size: 1.8 rem;

@@ -389,6 +389,7 @@ html.menu-open {
 
 [data-type="region"][data-name="section"] {
   position: relative;
+  padding-bottom: 2.0em;
 
   > .container.footer {
     .top-link {
@@ -408,6 +409,7 @@ html.menu-open {
 
   &#Hero {
     background-color: @color-white;
+    padding-bottom: 0;
   }
 
   &#Supporting-information {
@@ -416,6 +418,16 @@ html.menu-open {
 
   &#Call-to-action {
     background-color: @color-bayoux;
+  }
+
+  // TODO: Special case for white region with another white region immediately
+  // following.  The bottom padding must be hidden to prevent too much visible
+  // spacing between regions.
+
+  &#Hero {
+    > .container.footer:after {
+      display: none;
+    }
   }
 }
 
@@ -466,12 +478,12 @@ html.menu-open {
 
   // TODO: Remove IDs and replace with section style class names
 
-  &:first-child, &#Introduction-arch, &#Why-us-arch {
+  &:first-child {
     display: none;
   }
 
-  &#Introduction-arch { // .white
-    display: none
+  &#Introduction-arch, &#Why-us-arch { // white
+    display: none;
   }
 
   &#Supporting-information-arch svg path {
@@ -487,41 +499,7 @@ html.menu-open {
 // ----------------------------------------------------------------------------
 
 [data-type="region"][data-name="footer"] {
-  border-top: 20px solid @color-white;
-  background-color: @color-polo;
-
-  > .container {
-    #page & {
-      padding-left: 0;
-      padding-right: 0;
-    }
-
-    &:before, &:after {
-      content: '';
-      display: block;
-      position: absolute;
-      bottom: 100%;
-      left: 0;
-      right: 0;
-      height: 0;
-      margin-bottom: 0;
-      padding-top: @ar-arch;
-      background-color: transparent;
-      background-position: center 2px;
-      background-repeat: no-repeat;
-    }
-
-    &:before {
-      // /sites/all/themes/bridges_theme/images/arches/white.svg
-      background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMzIwIDIwIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAzMjAgMjAiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwYXRoIGZpbGw9IiNmZmZmZmYiIGQ9Ik0zMjAsMjB2LTAuMDA0QzI4My41MTEsNy44NTQsMjI1LjQyNSwwLDE2MCwwUzM2LjQ4OSw3Ljg1NCwwLDE5Ljk5NlYyMEgzMjB6Ii8+PC9zdmc+);
-      border-bottom: 18px solid @color-white;
-    }
-
-    &:after {
-      // /sites/all/themes/bridges_theme/images/arches/polo.svg
-      background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMzIwIDIwIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAzMjAgMjAiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwYXRoIGZpbGw9IiM4RkE3Q0MiIGQ9Ik0zMjAsMjB2LTAuMDA0QzI4My41MTEsNy44NTQsMjI1LjQyNSwwLDE2MCwwUzM2LjQ4OSw3Ljg1NCwwLDE5Ljk5NlYyMEgzMjB6Ii8+PC9zdmc+);
-    }
-  }
+  padding-bottom: 4.0em;
 }
 
 // Page: Front
@@ -589,6 +567,8 @@ body.front {
   }
 
   .field-name-field-cta-link {
+    margin-top: 2.0em;
+
     a {
       display: inline-block;
       padding: 0.8em 2.0em;
