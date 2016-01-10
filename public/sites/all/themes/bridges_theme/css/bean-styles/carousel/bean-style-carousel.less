@@ -1,6 +1,7 @@
 // CONSTANTS
 // ----------------------------------------------------------------------------
 @ar-image-hero: percentage(637/1200);
+@ar-image-hero: percentage(580/1280);
 @ar-arch: percentage(20/320);
 @dot-width-outer: 25px;
 @dot-height-outer: 41px;
@@ -18,7 +19,7 @@
   &:before {
     content: '';
     position: absolute;
-    top: @ar-image-hero * 0.9;
+    top: @ar-image-hero * 0.8;
     left: 50%;
     width: @spinner-width / 2;
     height: @spinner-height / 2;
@@ -223,8 +224,8 @@
 @media (min-width: @mq-threshold-desktop) {
   .bean-style-carousel {
     .field-name-field-slide-title {
-      margin-top: -0.15em;
-      margin-bottom: 0.2em;
+      margin-top: 0;
+      margin-bottom: 0.5em;
       .font-size(64, 1.1);
     }
   }

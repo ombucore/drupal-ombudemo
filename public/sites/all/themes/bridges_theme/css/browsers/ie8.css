@@ -386,7 +386,7 @@ aside[data-module="ombubench"][data-delta="moderation"] .btn {
 .bean-style-carousel:before {
   content: '';
   position: absolute;
-  top: 47.775%;
+  top: 36.25%;
   left: 50%;
   width: 64px;
   height: 64px;
@@ -415,7 +415,7 @@ aside[data-module="ombubench"][data-delta="moderation"] .btn {
   position: relative;
   width: 100%;
   height: 0;
-  padding-top: 53.08333333%;
+  padding-top: 45.3125%;
 }
 .bean-style-carousel:not(.initialized) .item .group_primary .field-name-field-media {
   position: absolute;
@@ -479,7 +479,7 @@ aside[data-module="ombubench"][data-delta="moderation"] .btn {
   left: 0;
   width: 100%;
   height: 0;
-  padding-top: 53.08333333%;
+  padding-top: 45.3125%;
   margin-left: 100%;
 }
 .bean-style-carousel .owl-dots {
@@ -564,8 +564,8 @@ aside[data-module="ombubench"][data-delta="moderation"] .btn {
 }
 @media (min-width: 992px) {
   .bean-style-carousel .field-name-field-slide-title {
-    margin-top: -0.15em;
-    margin-bottom: 0.2em;
+    margin-top: 0;
+    margin-bottom: 0.5em;
     font-size: 64px;
     font-size: 6.4 rem;
     line-height: 1.1;
@@ -1007,7 +1007,8 @@ aside[data-type="block"] {
 [data-type="region"][data-name="section"]#Call-to-action {
   background-color: #536580;
 }
-[data-type="region"][data-name="section"]#Hero > .container.footer:after {
+[data-type="region"][data-name="section"]#Hero > .container.footer:after,
+[data-type="region"][data-name="section"]#Introduction > .container.footer:after {
   display: none;
 }
 [data-type="region"][data-name="section-arch"] {

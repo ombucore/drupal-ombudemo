@@ -17,11 +17,11 @@ $bean->delta = 'home-gallery';
 $bean->bean_style = 'carousel';
 $bean->title = '';
 $bean->save();
-ombugallery_create_slide($bean, $path . 'images/hero-carousel/01-st-johns.jpg', 'Connecting people since 1908.');
-ombugallery_create_slide($bean, $path . 'images/hero-carousel/02-tillikum.jpg', "We’ve got a bridge to sell you.  Seriously.");
-ombugallery_create_slide($bean, $path . 'images/hero-carousel/03-fremont.jpg', 'You shall pass.');
-ombugallery_create_slide($bean, $path . 'images/hero-carousel/04-marquam.jpg', 'Safely traveled by thousands every day.');
-ombugallery_create_slide($bean, $path . 'images/hero-carousel/05-st-johns.jpg', "You keep Portland weird.  We'll keep it beautiful.");
+ombugallery_create_slide($bean, $path . 'images/hero-carousel-cropped/01-st-johns.jpg', 'Connecting people since 1908.');
+ombugallery_create_slide($bean, $path . 'images/hero-carousel-cropped/02-tillikum.jpg', "We’ve got a bridge to sell you.  Seriously.");
+ombugallery_create_slide($bean, $path . 'images/hero-carousel-cropped/03-fremont.jpg', 'You shall pass.');
+ombugallery_create_slide($bean, $path . 'images/hero-carousel-cropped/04-marquam.jpg', 'Safely traveled by thousands every day.');
+ombugallery_create_slide($bean, $path . 'images/hero-carousel-cropped/05-st-johns.jpg', "You keep Portland weird.  We'll keep it beautiful.");
 
 $wrapper->field_sections[] = array(
   'value' => 'Hero',
