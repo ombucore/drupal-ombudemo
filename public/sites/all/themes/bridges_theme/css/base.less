@@ -374,9 +374,33 @@ html.menu-open {
 // Tile sections
 // ----------------------------------------------------------------------------
 
+// #page > [data-type="region-container"][data-name="sections"] > .field-type-tiles-section [data-type="region"][data-name="section"] > .container, #page > [data-type="region-container"][data-name="sections"] > .field-type-tiles-section [data-type="region"][data-name="section"] > .container
+
+#page > [data-type="region-container"][data-name="sections"] {
+  > .field-type-tiles-section [data-type="region"][data-name="section"] {
+    > .container.footer {
+      // max-width: @max-width-site + (@gutter-side-desktop * 2);
+      padding-left: @gutter-side-mobile;
+      padding-right: @gutter-side-mobile;
+    }
+  }
+}
+
 [data-type="region"][data-name="section"] {
+  position: relative;
+
   > .container.footer {
-    display: none;
+    .top-link {
+      display: none;
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      height: 0;
+      padding-top: @ar-arch;
+      margin-bottom: -2px;
+    }
   }
 
   // TODO: Replace IDs with style names (e.g., white, blue)
@@ -394,11 +418,102 @@ html.menu-open {
   }
 }
 
+// Tile section arches
+// ----------------------------------------------------------------------------
+
+[data-type="region"][data-name="section-arch"] {
+  > .container {
+    position: relative;
+    max-width: @max-width-site + (@gutter-side-desktop * 2);
+    margin: 0 auto;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 100%;
+      left: 0;
+      right: 0;
+      height: 0;
+      margin-bottom: -2px;
+      padding-top: @ar-arch;
+      border-bottom: 20px solid @color-white;
+      // /sites/all/themes/bridges_theme/images/arches/white.svg
+      background: transparent url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMzIwIDIwIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAzMjAgMjAiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwYXRoIGZpbGw9IiNmZmZmZmYiIGQ9Ik0zMjAsMjB2LTAuMDA0QzI4My41MTEsNy44NTQsMjI1LjQyNSwwLDE2MCwwUzM2LjQ4OSw3Ljg1NCwwLDE5Ljk5NlYyMEgzMjB6Ii8+PC9zdmc+) center bottom no-repeat;
+    }
+  }
+
+  .arch {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 100%;
+    height: 0;
+    padding-top: @ar-arch;
+
+    > svg {
+      position: absolute;
+      bottom: 100%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  // TODO: Remove IDs and replace with section style class names
+
+  &:first-child, &#Introduction-arch, &#Why-us-arch {
+    display: none;
+  }
+
+  &#Introduction-arch { // .white
+    display: none
+  }
+
+  &#Supporting-information-arch svg path {
+    fill: @color-botticelli;
+  }
+
+  &#Call-to-action-arch svg path {
+    fill: @color-bayoux;
+  }
+}
+
 // Region: footer
 // ----------------------------------------------------------------------------
 
 [data-type="region"][data-name="footer"] {
   background-color: @color-polo;
+
+  > .container {
+    &:before, &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 100%;
+      left: 0;
+      right: 0;
+      height: 0;
+      margin-bottom: -2px;
+      padding-top: @ar-arch;
+      background-color: transparent;
+      background-position: center bottom;
+      background-repeat: no-repeat;
+    }
+
+    &:before {
+      // /sites/all/themes/bridges_theme/images/arches/white.svg
+      background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMzIwIDIwIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAzMjAgMjAiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwYXRoIGZpbGw9IiNmZmZmZmYiIGQ9Ik0zMjAsMjB2LTAuMDA0QzI4My41MTEsNy44NTQsMjI1LjQyNSwwLDE2MCwwUzM2LjQ4OSw3Ljg1NCwwLDE5Ljk5NlYyMEgzMjB6Ii8+PC9zdmc+);
+      border-bottom: 20px solid @color-white;
+    }
+
+    &:after {
+      // /sites/all/themes/bridges_theme/images/arches/polo.svg
+      background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMzIwIDIwIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAzMjAgMjAiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwYXRoIGZpbGw9IiM4RkE3Q0MiIGQ9Ik0zMjAsMjB2LTAuMDA0QzI4My41MTEsNy44NTQsMjI1LjQyNSwwLDE2MCwwUzM2LjQ4OSw3Ljg1NCwwLDE5Ljk5NlYyMEgzMjB6Ii8+PC9zdmc+);
+    }
+  }
 }
 
 // Page: Front
@@ -432,11 +547,17 @@ body.front {
 // ----------------------------------------------------------------------------
 
 .bean-container {
-  margin-bottom: 1.0em;
-
   > .content {
     margin-left: -1 * @gutter-side-mobile;
     margin-right: -1 * @gutter-side-mobile;
+  }
+}
+
+
+[data-type="region-container"][data-name="core"],
+[data-type="region-container"][data-name="sections"] {
+  .bean-container {
+    margin-bottom: 0;
   }
 }
 
