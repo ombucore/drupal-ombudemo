@@ -643,7 +643,8 @@ a {
   transition: all 0.1s ease;
 }
 .decorative-header,
-[data-type="block"] > h2 {
+[data-type="region-container"][data-name="core"] [data-type="block"] > h2,
+[data-type="region-container"][data-name="sections"] [data-type="block"] > h2 {
   margin-bottom: 1.0em;
   padding-bottom: 0.4em;
   border-bottom: 2px solid #d3dcea;
@@ -969,7 +970,8 @@ aside[data-type="block"] {
 body.front #block-system-main {
   display: none;
 }
-[data-type="block"] {
+[data-type="region-container"][data-name="core"] [data-type="block"],
+[data-type="region-container"][data-name="sections"] [data-type="block"] {
   margin-bottom: 1.0em;
 }
 .bean-container {
@@ -988,8 +990,10 @@ body.front #block-system-main {
   background-color: #d3dcea;
 }
 .bean-cta {
-  text-align: center;
   margin-bottom: 2.0em;
+}
+.bean-cta > .entity-bean {
+  text-align: center;
 }
 .bean-cta .field-name-field-cta-link a {
   display: inline-block;
@@ -1011,7 +1015,7 @@ body.front #block-system-main {
 .bean-cta .field-name-field-cta-link a:hover {
   background-color: #037780;
 }
-.bean-callout {
+.bean-callout > .entity-bean {
   text-align: center;
 }
 .bean-callout .field-collection-view {
@@ -1033,7 +1037,8 @@ body {
   line-height: 1.6;
 }
 .decorative-header,
-[data-type="block"] > h2 {
+[data-type="region-container"][data-name="core"] [data-type="block"] > h2,
+[data-type="region-container"][data-name="sections"] [data-type="block"] > h2 {
   font-size: 30px;
   font-size: 3 rem;
   line-height: 1.2;
@@ -1248,7 +1253,7 @@ body.front {
 [data-type="region"][data-name="section"]:first-child .contextual-links-wrapper {
   top: 90px;
 }
-.bean-cta {
+.bean-cta > .entity-bean {
   text-align: right;
 }
 .bean-cta .field-name-field-cta-link a {
@@ -1258,7 +1263,7 @@ body.front {
   line-height: 1.2;
   border-radius: 13px;
 }
-.bean-callout {
+.bean-callout > .entity-bean {
   text-align: left;
 }
 .bean-callout .field-collection-view {
@@ -1279,7 +1284,8 @@ body.front {
   padding-left: 20px;
 }
 .decorative-header,
-[data-type="block"] > h2 {
+[data-type="region-container"][data-name="core"] [data-type="block"] > h2,
+[data-type="region-container"][data-name="sections"] [data-type="block"] > h2 {
   font-size: 36px;
   font-size: 3.6 rem;
   line-height: 1.2;

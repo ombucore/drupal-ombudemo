@@ -348,11 +348,14 @@ body.front {
 // Tiles
 // ----------------------------------------------------------------------------
 
-[data-type="block"] {
-  margin-bottom: 1.0em;
+[data-type="region-container"][data-name="core"],
+[data-type="region-container"][data-name="sections"] {
+  [data-type="block"] {
+    margin-bottom: 1.0em;
 
-  > h2 {
-    &:extend(.decorative-header);
+    > h2 {
+      &:extend(.decorative-header);
+    }
   }
 }
 
@@ -385,8 +388,11 @@ body.front {
 // ----------------------------------------------------------------------------
 
 .bean-cta {
-  text-align: center;
   margin-bottom: 2.0em;
+
+  > .entity-bean {
+    text-align: center;
+  }
 
   .field-name-field-cta-link {
     a {
@@ -415,7 +421,9 @@ body.front {
 // ----------------------------------------------------------------------------
 
 .bean-callout {
-  text-align: center;
+  > .entity-bean {
+    text-align: center;
+  }
 
   .field-collection-view {
     padding-bottom: 1.0em;
