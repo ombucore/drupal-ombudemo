@@ -65,5 +65,12 @@
       <?php print $scripts; ?>
       <?php print $page_bottom; ?>
     </div>
+    <svg height="0" width="0">
+      <defs>
+        <clipPath id="stinger-cta-clip-path" clipPathUnits="objectBoundingBox">
+          <path d="M.50,0C.295547,0,.114028,.054166,0,.137904v.000027V1.00h1.00V.137931v-.000027C.885972,.054166,.704453,0,.50,0z"/>
+        </clipPath>
+      </defs>
+    </svg>
   </body>
 </html>
