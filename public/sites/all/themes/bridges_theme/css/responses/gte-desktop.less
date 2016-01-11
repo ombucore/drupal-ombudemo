@@ -45,7 +45,27 @@
   .field-name-field-cta-link {
     a {
       .font-size(24, 1.2);
-      border-radius: 8px;
+    }
+  }
+}
+
+// TODO: Styles for Primary / Secondary / Stinger CTA tiles?
+
+// TODO: Primary
+
+#block-bean-home-intro-cta {
+  @side-padding: 40px;
+
+  .field-name-field-cta-link {
+    a {
+      padding-left: @side-padding;
+      padding-right: @side-padding;
+      .font-size(24, 1.2);
+
+      &:after {
+        margin-left: @side-padding * -1;
+        margin-right: @side-padding * -1;
+      }
     }
   }
 }

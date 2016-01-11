@@ -571,31 +571,123 @@ body.front {
   }
 
   .field-name-field-cta-link {
+    display: inline-block;
     margin-top: 2.0em;
 
     a {
+      position: relative;
       display: inline-block;
       padding: 0.8em 2.0em;
-      border: 6px solid @color-ziggurat;
       .font-size(18, 1.2);
       font-weight: @font-weight-black;
       font-style: italic;
       color: @color-white;
       text-shadow: 0 -1px 0 fade(@color-black, 50%);
-      text-transform: uppercase;
       text-align: center;
+      text-transform: uppercase;
       letter-spacing: -0.05em;
-      border-radius: 9px;
+      outline: 0;
       background-color: @color-bondi;
-
-      &:hover {
-        background-color: @color-lagoon;
-      }
     }
   }
 }
 
 // TODO: Styles for Primary / Secondary / Stinger CTA tiles?
+
+// TODO: Primary
+
+#block-bean-home-intro-cta {
+  @well-width: 8px;
+  @press-distance: 20px;
+  @side-padding: 30px;
+
+  .field-name-field-cta-link {
+    position: relative;
+    padding: 0;
+    border: @well-width solid @color-ziggurat;
+    border-radius: @well-width;
+    background-color: darken(@color-lagoon, 10);
+    background-image: linear-gradient(to bottom, darken(@color-lagoon, 5) 0, darken(@color-lagoon, 20) @press-distance + 3);
+    transition: all @transition-duration-default ease;
+
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      top: 100%;
+      left: -1px;
+      right: -1px;
+    }
+
+    &:before {
+      height: @well-width;
+      background-color: @color-ziggurat;
+      transition: all @transition-duration-default ease;
+    }
+
+    &:after {
+      margin-top: @well-width;
+      height: 15px;
+      background-color: @color-white;
+    }
+
+    &:hover, &:focus {
+      border-color: @color-emerald;
+
+      &:before {
+        background-color: @color-emerald;
+      }
+    }
+
+    a {
+      position: relative;
+      display: inline-block;
+      padding: 0.3em @side-padding 0;
+      min-width: 270px;
+      color: @color-white;
+
+      &:before, &:after {
+        content: '';
+        display: block;
+        padding-top: @ar-arch * 1.5;
+      }
+
+      &:before {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 100%;
+        height: 0;
+        margin-bottom: -1px;
+        // /sites/all/themes/bridges_theme/images/arches/bondi.svg
+        background: transparent url(/sites/all/themes/bridges_theme/images/arches/bondi.svg) center bottom no-repeat;
+        // background: transparent url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMzIwIDIwIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAzMjAgMjAiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwYXRoIGZpbGw9IiMwMDIwNGYiIGQ9Ik0zMjAsMjB2LTAuMDA0QzI4My41MTEsNy44NTQsMjI1LjQyNSwwLDE2MCwwUzM2LjQ4OSw3Ljg1NCwwLDE5Ljk5NlYyMEgzMjB6Ii8+PC9zdmc+) center bottom no-repeat;
+
+      }
+
+      &:after {
+        margin-top: 1.0em;
+        margin-left: @side-padding * -1;
+        margin-right: @side-padding * -1;
+        // /sites/all/themes/bridges_theme/images/arches/lagoon.svg
+        background: transparent url(/sites/all/themes/bridges_theme/images/arches/lagoon.svg) center bottom no-repeat;
+        // background: transparent url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMzIwIDIwIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAzMjAgMjAiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwYXRoIGZpbGw9IiMwMDIwNGYiIGQ9Ik0zMjAsMjB2LTAuMDA0QzI4My41MTEsNy44NTQsMjI1LjQyNSwwLDE2MCwwUzM2LjQ4OSw3Ljg1NCwwLDE5Ljk5NlYyMEgzMjB6Ii8+PC9zdmc+) center bottom no-repeat;
+      }
+
+      &:hover, &:focus {
+        // text-shadow: 0 -1px 0 fade(@color-black, 50%), 0 3px 20px @color-emerald;
+        // transform: translate(0, 3px);
+      }
+
+      &:active {
+        transform: translate(0, @press-distance);
+      }
+
+    }
+  }
+}
+
+// TODO: Stinger
 
 #block-bean-home-stinger-cta {
   margin-bottom: 0;
