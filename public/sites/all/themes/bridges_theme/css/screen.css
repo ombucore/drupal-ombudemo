@@ -573,6 +573,39 @@ aside[data-module="ombubench"][data-delta="moderation"] .btn {
     line-height: 1.1;
   }
 }
+.bean-style-grid > .items > .item {
+  display: block;
+  float: left;
+}
+.bean-style-grid > .items > .item:nth-child(2n+1) {
+  clear: none;
+}
+.bean-style-grid figure {
+  background: #ffffff;
+  border-radius: 4px;
+  padding: 6px;
+}
+@media (min-width: 768px) {
+  .bean-style-grid {
+    margin-left: -5px;
+    margin-right: -5px;
+  }
+  .bean-style-grid > .items > .item {
+    width: 50%;
+  }
+  .bean-style-grid > .items > .item > div {
+    padding: 5px;
+  }
+}
+@media (min-width: 992px) {
+  .bean-style-grid {
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+  .bean-style-grid > .items > .item > div {
+    padding: 10px;
+  }
+}
 .field.c .lead {
   font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
   font-size: 18px;
