@@ -252,9 +252,32 @@ body.front {
 // TODO: Stinger
 
 #block-bean-home-stinger-cta {
+  @button-width: 360px;
+  @press-distance: 30px;
+
   > h2 {
     margin: 3.0em 0 3.0em 0;
     .font-size(64, 1.1);
+  }
+
+  .field-name-field-cta-link {
+    margin-top: -20px;
+    margin-left: @button-width / -2;
+    width: @button-width;
+    background-image: linear-gradient(to bottom, darken(@color-emerald, 40) 0, darken(@color-emerald, 50) @press-distance + 3);
+
+    &:after {
+      height: @press-distance;
+    }
+
+    a {
+      padding-top: 0.8em;
+      .font-size(24, 1.2);
+
+      &:active {
+        transform: translate(0, @press-distance);
+      }
+    }
   }
 }
 

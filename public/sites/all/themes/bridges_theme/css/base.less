@@ -557,6 +557,7 @@ html.menu-open {
 // ----------------------------------------------------------------------------
 
 [data-type="region"][data-name="footer"] {
+  padding-top: 4.0em;
   padding-bottom: 4.0em;
 }
 
@@ -674,7 +675,7 @@ body.front {
     }
 
     &:before {
-      height: @well-width;
+      height: @press-distance;
       background-color: @color-ziggurat;
       transition: all @transition-duration-default ease;
     }
@@ -760,6 +761,11 @@ body.front {
 // TODO: Stinger
 
 #block-bean-home-stinger-cta {
+  @button-width: 260px;
+  @press-distance: 20px;
+  @side-padding: 30px;
+
+  &:extend(#block-bean-home-intro-cta all);
   margin-bottom: 0;
 
   &, > .entity-bean {
@@ -778,16 +784,49 @@ body.front {
     position: absolute;
     z-index: 1;
     top: 100%;
-    left: 0;
-    right: 0;
+    left: 50%;
     margin-top: 0;
+    margin-left: @button-width / -2;
+    width: @button-width;
+    border-color: @color-white;
+    background-image: linear-gradient(to bottom, darken(@color-emerald, 40) 0, darken(@color-emerald, 50) @press-distance + 3);
+
+    &:before {
+      background-color: @color-white;
+    }
+
+    &:after {
+      height: @press-distance;
+      background-color: @color-polo;
+    }
+
+    &:hover, &:focus {
+      border-color: lighten(@color-emerald, 20);
+
+      &:before {
+        background-color: lighten(@color-emerald, 20);
+      }
+    }
 
     a {
-      border: (@section-separation - 2) solid @color-white;
+      min-width: 0;
+      width: 100%;
+      padding-top: 0.8em;
       background-color: @color-emerald;
 
-      &:hover {
-        background-color: darken(@color-emerald, 10);
+      &:before {
+        // /sites/all/themes/bridges_theme/images/arches/emerald.svg
+        background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMzIwIDIwIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAzMjAgMjAiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwYXRoIGZpbGw9IiM1OGNjNjUiIGQ9Ik0zMjAsMjB2LTAuMDA0QzI4My41MTEsNy44NTQsMjI1LjQyNSwwLDE2MCwwUzM2LjQ4OSw3Ljg1NCwwLDE5Ljk5NlYyMEgzMjB6Ii8+PC9zdmc+);
+      }
+
+      &:after {
+        margin-top: 1.2em;
+        // /sites/all/themes/bridges_theme/images/arches/chateau.svg
+        background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMzIwIDIwIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAzMjAgMjAiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwYXRoIGZpbGw9IiM0Mjk5NGMiIGQ9Ik0zMjAsMjB2LTAuMDA0QzI4My41MTEsNy44NTQsMjI1LjQyNSwwLDE2MCwwUzM2LjQ4OSw3Ljg1NCwwLDE5Ljk5NlYyMEgzMjB6Ii8+PC9zdmc+);
+      }
+
+      &:active {
+        transform: translate(0, @press-distance);
       }
     }
   }
