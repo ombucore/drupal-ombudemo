@@ -732,6 +732,31 @@ body.front {
   }
 }
 
+// TODO: Secondary
+
+#block-bean-home-secondary-cta {
+  .field-name-field-cta-link {
+    margin-top: 1.0em;
+
+    a {
+      background-color: @color-polo;
+      border-radius: 4px;
+      border-bottom: 2px solid darken(@color-polo, 15);
+      .font-size(14, 1.2);
+
+      &:hover, &:focus {
+        background-color: darken(@color-polo, 10);
+        border-bottom-color: darken(@color-polo, 20);
+      }
+
+      &:active {
+        border-bottom-color: transparent;
+        transform: translate(0, 2px);
+      }
+    }
+  }
+}
+
 // TODO: Stinger
 
 #block-bean-home-stinger-cta {

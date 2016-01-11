@@ -1259,6 +1259,26 @@ body.front #block-bean-home-gallery {
 #block-bean-home-intro-cta .field-name-field-cta-link a:active {
   transform: translate(0, 20px);
 }
+#block-bean-home-secondary-cta .field-name-field-cta-link {
+  margin-top: 1.0em;
+}
+#block-bean-home-secondary-cta .field-name-field-cta-link a {
+  background-color: #8fa7cc;
+  border-radius: 4px;
+  border-bottom: 2px solid #5a7eb4;
+  font-size: 14px;
+  font-size: 1.4 rem;
+  line-height: 1.2;
+}
+#block-bean-home-secondary-cta .field-name-field-cta-link a:hover,
+#block-bean-home-secondary-cta .field-name-field-cta-link a:focus {
+  background-color: #6c8bbc;
+  border-bottom-color: #4d71a8;
+}
+#block-bean-home-secondary-cta .field-name-field-cta-link a:active {
+  border-bottom-color: transparent;
+  transform: translate(0, 2px);
+}
 #block-bean-home-stinger-cta {
   margin-bottom: 0;
 }
@@ -1556,6 +1576,11 @@ body.front #block-bean-home-gallery {
     font-size: 2 rem;
     line-height: 1.2;
   }
+  #block-bean-home-secondary-cta .field-name-field-cta-link a {
+    font-size: 16px;
+    font-size: 1.6 rem;
+    line-height: 1.2;
+  }
   #block-bean-home-stinger-cta > h2 {
     margin: 3.0em 0 3.0em 0;
     font-size: 64px;
@@ -1654,6 +1679,11 @@ body.front #block-bean-home-gallery {
   #block-bean-home-intro-cta .field-name-field-cta-link a:after {
     margin-left: -40px;
     margin-right: -40px;
+  }
+  #block-bean-home-secondary-cta .field-name-field-cta-link a {
+    font-size: 18px;
+    font-size: 1.8 rem;
+    line-height: 1.2;
   }
 }
 _:-moz-tree-row(hover),
