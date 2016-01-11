@@ -372,8 +372,8 @@ html.menu-open {
   min-height: 0;
 }
 
-#main {
-  padding-top: 2.0em;
+#block-system-main {
+  padding-top: 1.0em;
   padding-bottom: 2.0em;
 }
 
@@ -384,6 +384,43 @@ html.menu-open {
   height: 0;
   padding-top: @ar-arch;
   margin-bottom: 0px;
+}
+
+// Page title
+// ----------------------------------------------------------------------------
+
+#block-ombucleanup-page-title {
+  position: relative;
+  display: block;
+  width: auto;
+  margin-top: -@height-header;
+  margin-left: ~"calc(-50vw + 50% + 0px)";
+  margin-right: ~"calc(-50vw + 50% + 0px)";
+  margin-bottom: 0;
+  padding: @height-header + 30px @gutter-side-mobile 30px;
+  background: @color-botticelli url(/sites/all/themes/bridges_theme/images/title-banners/panorama-01.jpg) top center no-repeat;
+  background-size: cover;
+  background-blend-mode: soft-light;
+  border-bottom: 1px solid darken(@color-botticelli, 30);
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: linear-gradient(to bottom, fade(@color-prussian, 30%) @height-header, fade(@color-prussian, 0%) 100%);
+  }
+
+  h1 {
+    max-width: @max-width-site;
+    margin: 0 auto;
+    .font-size(42, 1.4);
+    font-family: @font-family-decorative;
+    font-weight: normal;
+    text-shadow: 0 1px 0 @color-white;
+  }
 }
 
 // Tile sections

@@ -1014,8 +1014,8 @@ html.menu-open #block-search-form {
 aside[data-type="block"] {
   min-height: 0;
 }
-#main {
-  padding-top: 2.0em;
+#block-system-main {
+  padding-top: 1.0em;
   padding-bottom: 2.0em;
 }
 #main > [data-type="region"] > .container:after,
@@ -1025,6 +1025,39 @@ aside[data-type="block"] {
   height: 0;
   padding-top: 6.25%;
   margin-bottom: 0px;
+}
+#block-ombucleanup-page-title {
+  position: relative;
+  display: block;
+  width: auto;
+  margin-top: -50px;
+  margin-left: calc(-50vw + 50% + 0px);
+  margin-right: calc(-50vw + 50% + 0px);
+  margin-bottom: 0;
+  padding: 80px 15px 30px;
+  background: #d3dcea url(/sites/all/themes/bridges_theme/images/title-banners/panorama-01.jpg) top center no-repeat;
+  background-size: cover;
+  background-blend-mode: soft-light;
+  border-bottom: 1px solid #6b8ab9;
+}
+#block-ombucleanup-page-title:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(to bottom, rgba(0, 32, 79, 0.3) 50px, rgba(0, 32, 79, 0) 100%);
+}
+#block-ombucleanup-page-title h1 {
+  max-width: 1280px;
+  margin: 0 auto;
+  font-size: 42px;
+  font-size: 4.2 rem;
+  line-height: 1.4;
+  font-family: 'Lobster', serif;
+  font-weight: normal;
+  text-shadow: 0 1px 0 #ffffff;
 }
 #page > [data-type="region-container"][data-name="sections"] > .field-type-tiles-section [data-type="region"][data-name="section"] > .container.footer {
   padding-left: 15px;
@@ -1452,7 +1485,7 @@ html.compressed-header [data-type="region"][data-name="header-background"] {
 }
 #block-search-form input[type="text"]:focus,
 #block-search-form.valid input[type="text"] {
-  width: 7.0em;
+  width: 9.0em;
   cursor: text;
 }
 #block-search-form input[type="text"]:focus,
@@ -1482,6 +1515,19 @@ html.menu-open #block-search-form {
   transform: translate(0, 0);
   height: auto;
   opacity: 1;
+}
+#block-system-main {
+  padding-top: 2.0em;
+  padding-bottom: 4.0em;
+}
+#block-ombucleanup-page-title {
+  margin-top: -80px;
+  padding: 130px 40px 50px;
+}
+#block-ombucleanup-page-title h1 {
+  font-size: 64px;
+  font-size: 6.4 rem;
+  line-height: 1.4;
 }
 #page > [data-type="region-container"][data-name="sections"] > .field-type-tiles-section > [data-type="region"][data-name="section"]#Hero > .content {
   padding-left: 0;
@@ -1575,6 +1621,15 @@ body.front {
 #block-search-form input[type="text"]:focus,
 #block-search-form.valid input[type="text"] {
   width: 13.0em;
+}
+#block-ombucleanup-page-title {
+  margin-top: -80px;
+  padding: 140px 100px 70px;
+}
+#block-ombucleanup-page-title h1 {
+  font-size: 64px;
+  font-size: 6.4 rem;
+  line-height: 1.4;
 }
 .bean-cta .field-name-field-cta-link a {
   font-size: 24px;
