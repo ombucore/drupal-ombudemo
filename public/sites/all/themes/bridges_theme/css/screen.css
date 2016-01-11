@@ -1324,11 +1324,17 @@ body.front #block-bean-home-gallery {
   z-index: 0;
   background-color: transparent;
   background-image: url(/sites/all/themes/bridges_theme/images/stinger-backgrounds/cta-st-johns-tinted.jpg);
-  background-position: center top;
-  background-size: cover;
+  background-position: center center;
+  background-size: 150% 150%;
   background-repeat: no-repeat;
   -webkit-clip-path: url(#stinger-cta-clip-path);
   clip-path: url(/sites/all/themes/bridges_theme/images/clip-paths/stinger-cta-clip-path.svg#stinger-cta-clip-path);
+  opacity: 0.3;
+  transition: all 3s ease;
+}
+#block-bean-home-stinger-cta.arrived:before {
+  background-size: 100% 100%;
+  opacity: 1;
 }
 #block-bean-home-stinger-cta > h2 {
   position: absolute;
