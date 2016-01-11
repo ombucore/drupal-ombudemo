@@ -26,17 +26,26 @@ sections:
             image: images/hero-carousel/01-st-johns.jpg
             title: "Connecting people since 1908."
           -
-            image: images/hero-carousel/02-tillikum.jpg
-            title: "We’ve got a bridge to sell you.  Seriously."
+            image: images/hero-carousel/08-nightscape.jpg
+            title: "We’ve added color to the city."
           -
-            image: images/hero-carousel/03-fremont.jpg
-            title: "You shall pass."
+            image: images/hero-carousel/07-tilt-shift.jpg
+            title: "Functional, yet playful."
           -
-            image: images/hero-carousel/04-marquam.jpg
-            title: "Traveled by thousands every day."
-          -
-            image: images/hero-carousel/05-st-johns.jpg
+            image: images/hero-carousel/06-hawthorne.jpg
             title: "You keep Portland weird.  We’ll keep it beautiful."
+          -
+            image: images/hero-carousel/14-fremont-with-st-helens.jpg
+            title: "Act now and we’ll throw in a volcano."
+          -
+            image: images/hero-carousel/16-tillikum-at-night.jpg
+            title: "Light cycles not included."
+          -
+            image: images/hero-carousel/11-burnside-open.jpg
+            title: "You shall not pass."
+          -
+            image: images/hero-carousel/09-night-long-exposure.jpg
+            title: "Safely traveled by thousands every day."
   -
     title: "Introduction"
     title_visible: false
