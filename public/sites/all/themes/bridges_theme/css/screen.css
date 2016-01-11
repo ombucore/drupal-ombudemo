@@ -1045,7 +1045,7 @@ aside[data-type="block"] {
   display: none;
 }
 [data-type="region"][data-name="section-arch"] {
-  border-bottom: 20px solid #ffffff;
+  border-bottom: 10px solid #ffffff;
 }
 [data-type="region"][data-name="section-arch"] > .container {
   position: relative;
@@ -1068,7 +1068,7 @@ aside[data-type="block"] {
 }
 [data-type="region"][data-name="section-arch"] .arch {
   position: absolute;
-  top: 22px;
+  top: 12px;
   left: 0;
   width: 100%;
   height: 0;
@@ -1145,6 +1145,37 @@ body.front #block-bean-home-gallery {
 }
 .bean-cta .field-name-field-cta-link a:hover {
   background-color: #037780;
+}
+#block-bean-home-stinger-cta {
+  margin-bottom: 0;
+}
+#block-bean-home-stinger-cta,
+#block-bean-home-stinger-cta > .entity-bean {
+  text-align: center;
+}
+#block-bean-home-stinger-cta > h2 {
+  margin: 2.0em 0 2.0em 0;
+  padding: 0;
+  border: 0;
+  color: #ffffff;
+  font-size: 32px;
+  font-size: 3.2 rem;
+  line-height: 1.1;
+}
+#block-bean-home-stinger-cta .field-name-field-cta-link {
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 0;
+}
+#block-bean-home-stinger-cta .field-name-field-cta-link a {
+  border: 8px solid #ffffff;
+  background-color: #58cc65;
+}
+#block-bean-home-stinger-cta .field-name-field-cta-link a:hover {
+  background-color: #38b947;
 }
 .bean-callout > .entity-bean {
   text-align: center;
@@ -1398,6 +1429,12 @@ body.front #block-bean-home-gallery {
     font-size: 2 rem;
     line-height: 1.2;
     border-radius: 13px;
+  }
+  #block-bean-home-stinger-cta > h2 {
+    margin: 3.0em 0 3.0em 0;
+    font-size: 64px;
+    font-size: 6.4 rem;
+    line-height: 1.1;
   }
   .bean-callout > .entity-bean {
     text-align: left;

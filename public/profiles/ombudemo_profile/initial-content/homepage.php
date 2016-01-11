@@ -264,7 +264,7 @@ $wrapper->field_sections[] = array(
 $bean = bean_create(array('type' => 'bean_cta'));
 $bean->style = 'stinger';
 $bean->delta = 'home-stinger-cta';
-$bean->title = 'Reach the other side';
+$bean->title = 'Reach the other side.';
 $bean->field_cta_image[LANGUAGE_NONE][0] = $wrapper->addFile('cta-st-johns-tinted.jpg', $path . '/images/page-sections');
 $bean->field_cta_link[LANGUAGE_NONE][0] = array(
   'title' => 'Build your bridge',

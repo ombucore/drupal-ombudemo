@@ -380,7 +380,6 @@ html.menu-open {
 #page > [data-type="region-container"][data-name="sections"] {
   > .field-type-tiles-section [data-type="region"][data-name="section"] {
     > .container.footer {
-      // max-width: @max-width-site + (@gutter-side-desktop * 2);
       padding-left: @gutter-side-mobile;
       padding-right: @gutter-side-mobile;
     }
@@ -435,7 +434,7 @@ html.menu-open {
 // ----------------------------------------------------------------------------
 
 [data-type="region"][data-name="section-arch"] {
-  border-bottom: 20px solid @color-white;
+  border-bottom: @section-separation solid @color-white;
 
   > .container {
     position: relative;
@@ -461,7 +460,7 @@ html.menu-open {
 
   .arch {
     position: absolute;
-    top: 22px;
+    top: @section-separation + 2;
     left: 0;
     width: 100%;
     height: 0;
@@ -586,6 +585,42 @@ body.front {
 
       &:hover {
         background-color: @color-lagoon;
+      }
+    }
+  }
+}
+
+// TODO: Styles for Primary / Secondary / Stinger CTA tiles?
+
+#block-bean-home-stinger-cta {
+  margin-bottom: 0;
+
+  &, > .entity-bean {
+    text-align: center;
+  }
+
+  > h2 {
+    margin: 2.0em 0 2.0em 0;
+    padding: 0;
+    border: 0;
+    color: @color-white;
+    .font-size(32, 1.1);
+  }
+
+  .field-name-field-cta-link {
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin-top: 0;
+
+    a {
+      border: (@section-separation - 2) solid @color-white;
+      background-color: @color-emerald;
+
+      &:hover {
+        background-color: darken(@color-emerald, 10);
       }
     }
   }
