@@ -31,6 +31,7 @@ $wrapper->field_sections[] = array(
   'settings' => array(
     'visible' => 0,
     'style' => 'white',
+    'width' => 'wide',
     'tiles' => array(
       array(
         'module' => 'bean',
@@ -70,6 +71,7 @@ $wrapper->field_sections[] = array(
   'settings' => array(
     'visible' => 0,
     'style' => 'white',
+    'width' => 'normal',
     'tiles' => array(
       array(
         'module' => 'bean',
@@ -188,6 +190,7 @@ $wrapper->field_sections[] = array(
   'settings' => array(
     'visible' => 0,
     'style' => 'white',
+    'width' => 'normal',
     'tiles' => array(
       array(
         'module' => 'bean',
@@ -241,6 +244,7 @@ $wrapper->field_sections[] = array(
   'settings' => array(
     'visible' => 0,
     'style' => 'light_blue',
+    'width' => 'normal',
     'tiles' => array(
       array(
         'module' => 'bean',
@@ -277,6 +281,7 @@ $wrapper->field_sections[] = array(
   'settings' => array(
     'visible' => 0,
     'style' => 'blue',
+    'width' => 'normal',
     'tiles' => array(
       array(
         'module' => 'bean',

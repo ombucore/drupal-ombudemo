@@ -47,6 +47,14 @@ class Blocks extends \ProfileTasks\Task\Blocks {
         'url' => 'https://www.facebook.com',
       ),
       array(
+        'service' => 'flickr',
+        'url' => 'https://flickr.com',
+      ),
+      array(
+        'service' => 'pinterest',
+        'url' => 'http://pinterest.com',
+      ),
+      array(
         'service' => 'youtube',
         'url' => 'https://www.youtube.com',
       ),

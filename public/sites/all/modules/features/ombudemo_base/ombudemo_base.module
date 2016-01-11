@@ -172,6 +172,16 @@ function ombudemo_base_tiles_section_form_alter(&$element, $context) {
 //   $element['settings']['#collapsible'] = TRUE;
 //   $element['settings']['#collapsed'] = TRUE;
 
+  $element['settings']['width'] = array(
+    '#type' => 'select',
+    '#title' => t('Width'),
+    '#options' => array(
+      'normal' => 'Normal',
+      'wide' => 'Wide',
+    ),
+    '#default_value' => isset($item['settings']['width']) ? $item['settings']['width'] : 'normal',
+  );
+
   $element['settings']['style'] = array(
     '#type' => 'select',
     '#title' => t('Style'),
@@ -191,4 +201,14 @@ function ombudemo_base_preprocess_tiles_section(&$variables) {
   $settings = $variables['element']['settings'];
   // Add class based on selected color.
   $variables['classes_array'][] = $settings['style'];
+  $variables['classes_array'][] = $settings['width'];
+}
+
+/**
+ * Implements hook_field_sociallinks_services_alter().
+ */
+function ombudemo_base_field_sociallinks_services_alter(&$services) {
+  // Add slideshare to services list.
+  $services['slideshare'] = 'Slideshare';
+  $services['pinterest'] = 'Pinterest';
 }
