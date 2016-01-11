@@ -36,13 +36,12 @@ function bridges_theme_bean_style_carousel(&$variables) {
 
   $style = $variables['type'];
 
-  $classes = 'bean-style-carousel';
-  $options  = ' data-items="1"';
-  $options .= ' data-nav="false"';
+  $classes  = 'bean-style-carousel';
+  $options  = ' data-nav="false"';
   $options .= ' data-loop="true"';
   $options .= ' data-autoplay="true"';
-  $options .= ' data-autoplay-timeout="5000"';
-  $options .= ' data-smart-speed="600"';
+  $options .= ' data-autoplay-timeout="4000"';
+  $options .= ' data-smart-speed="800"';
   $options .= ' data-mouse-drag="true"';
   $options .= ' data-items="1"';
   $options .= ' data-items-480="1"';
