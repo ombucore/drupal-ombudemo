@@ -607,7 +607,6 @@ aside[data-module="ombubench"][data-delta="moderation"] .btn {
   }
 }
 div[data-type="region"][data-name="console"] .alert {
-  margin-top: 50px;
   padding-top: 2.0em;
   padding-bottom: 2.0em;
 }
