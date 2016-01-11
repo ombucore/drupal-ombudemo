@@ -7,7 +7,6 @@
 // -----------------------------------------------------------------------------
 
 body {
-  padding-top: @height-header-tablet;
   .font-size(16, @line-height-base);
 }
 
@@ -165,7 +164,6 @@ html, html.menu-open {
 // ----------------------------------------------------------------------------
 
 #block-ombucleanup-page-title {
-  margin-top: -@height-header-tablet;
   padding: @height-header-tablet + 50px @gutter-side-tablet 50px;
 
   h1 {
@@ -285,6 +283,8 @@ body.front {
 // ----------------------------------------------------------------------------
 
 .bean-callout {
+  .font-size(14, 1.6);
+
   > .entity-bean {
     text-align: left;
   }

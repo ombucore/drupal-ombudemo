@@ -13,7 +13,6 @@ html {
 }
 
 body {
-  padding-top: @height-header;
   font-family: @font-family-sans-serif;
   font-weight: @font-weight-regular;
   .font-size(@font-size-base, @line-height-base);
@@ -393,7 +392,6 @@ html.menu-open {
   position: relative;
   display: block;
   width: auto;
-  margin-top: -@height-header;
   margin-left: ~"calc(-50vw + 50% + 0px)";
   margin-right: ~"calc(-50vw + 50% + 0px)";
   margin-bottom: 0;
@@ -403,6 +401,7 @@ html.menu-open {
   background-position: center 20%;
   background-repeat: no-repeat;
   background-blend-mode: soft-light;
+  border-top: 1px solid darken(@color-botticelli, 30);
   border-bottom: 1px solid darken(@color-botticelli, 30);
 
   // /sites/all/themes/bridges_theme/images/title-banners/panorama-01.jpg

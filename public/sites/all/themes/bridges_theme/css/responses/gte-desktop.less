@@ -3,6 +3,13 @@
 
 .debug-media-response-message('Media response: Desktop');
 
+// Globals
+// -----------------------------------------------------------------------------
+
+body {
+  .font-size(18, @line-height-base);
+}
+
 // Extend stems
 // -----------------------------------------------------------------------------
 
@@ -42,12 +49,18 @@
 // ----------------------------------------------------------------------------
 
 #block-ombucleanup-page-title {
-  margin-top: -@height-header-tablet;
   padding: @height-header-tablet + 60px @gutter-side-desktop 70px;
 
   h1 {
     .font-size(64, 1.4);
   }
+}
+
+// Tile: Callout
+// ----------------------------------------------------------------------------
+
+.bean-callout {
+  .font-size(16, 1.8);
 }
 
 // Tile: CTA

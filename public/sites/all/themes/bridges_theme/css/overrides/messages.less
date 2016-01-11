@@ -4,7 +4,13 @@
 // Region: Console
 // -----------------------------------------------------------------------------
 
-// div[data-type="region"][data-name="console"] {
+div[data-type="region"][data-name="console"] {
+  .alert {
+    margin-top: @height-header;
+    padding-top: 2.0em;
+    padding-bottom: 2.0em;
+  }
+
 //   background-color: gray;
 //   color: white;
 
@@ -20,6 +26,7 @@
 //     background-color: red;
 //   }
 // }
+}
 
 // Module: ombubench: moderation
 // -----------------------------------------------------------------------------
@@ -28,3 +35,14 @@
 //   background-color: green;
 //   color: white;
 // }
+
+// MEDIA RESPONSES
+// ----------------------------------------------------------------------------
+
+@media (min-width: @mq-threshold-tablet) {
+  div[data-type="region"][data-name="console"] {
+    .alert {
+      margin-top: @height-header-tablet;
+    }
+  }
+}

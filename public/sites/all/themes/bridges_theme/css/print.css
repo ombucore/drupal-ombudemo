@@ -606,6 +606,16 @@ aside[data-module="ombubench"][data-delta="moderation"] .btn {
     padding: 10px;
   }
 }
+div[data-type="region"][data-name="console"] .alert {
+  margin-top: 50px;
+  padding-top: 2.0em;
+  padding-bottom: 2.0em;
+}
+@media (min-width: 768px) {
+  div[data-type="region"][data-name="console"] .alert {
+    margin-top: 80px;
+  }
+}
 .field.c .lead {
   font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
   font-size: 18px;
