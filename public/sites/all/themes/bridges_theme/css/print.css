@@ -459,18 +459,17 @@ aside[data-module="ombubench"][data-delta="moderation"] .btn {
 }
 .bean-style-carousel .owl-carousel .owl-item .field-name-field-slide-title {
   opacity: 0;
-  transition: opacity 0.2s ease 0s, transform 0.2s ease 0.5s;
+  transition: opacity 0.2s ease 0s, transform 0.2s ease 0.8s;
   transform: translate(40px, 0);
 }
 .bean-style-carousel .owl-carousel .owl-item.active .field-name-field-media,
-.bean-style-carousel .owl-carousel .owl-item.active-clone .field-name-field-media,
-.bean-style-carousel .owl-carousel .owl-item.active .field-name-field-slide-title,
-.bean-style-carousel .owl-carousel .owl-item.active-clone .field-name-field-slide-title {
+.bean-style-carousel .owl-carousel .owl-item.active-clone .field-name-field-media {
   opacity: 1;
 }
 .bean-style-carousel .owl-carousel .owl-item.active .field-name-field-slide-title,
 .bean-style-carousel .owl-carousel .owl-item.active-clone .field-name-field-slide-title {
-  transition: all 0.7s ease 0.2s;
+  opacity: 1;
+  transition: all 0.7s ease 0.4s;
   transform: translate(0, 0);
 }
 .bean-style-carousel .owl-controls {
@@ -562,7 +561,7 @@ aside[data-module="ombubench"][data-delta="moderation"] .btn {
   }
   .bean-style-carousel .owl-carousel .owl-item.active .field-name-field-slide-title,
   .bean-style-carousel .owl-carousel .owl-item.active-clone .field-name-field-slide-title {
-    transition: all 0.7s ease 0.4s;
+    transition: all 0.7s ease 0.5s;
   }
 }
 @media (min-width: 992px) {

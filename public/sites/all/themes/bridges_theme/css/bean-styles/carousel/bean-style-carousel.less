@@ -97,17 +97,18 @@
 
       .field-name-field-slide-title {
         opacity: 0;
-        transition: opacity @transition-duration-default ease 0s, transform @transition-duration-default ease 0.5s;
+        transition: opacity @transition-duration-default ease 0s, transform @transition-duration-default ease 0.8s;
         transform: translate(40px, 0);
       }
 
       &.active, &.active-clone {
-        .field-name-field-media, .field-name-field-slide-title {
+        .field-name-field-media {
           opacity: 1;
         }
 
         .field-name-field-slide-title {
-          transition: all @transition-duration-leisurely ease 0.2s;
+          opacity: 1;
+          transition: all @transition-duration-leisurely ease 0.4s;
           transform: translate(0, 0);
         }
       }
@@ -217,7 +218,7 @@
       .owl-item {
         &.active, &.active-clone {
           .field-name-field-slide-title {
-            transition: all @transition-duration-leisurely ease 0.4s;
+            transition: all @transition-duration-leisurely ease 0.5s;
           }
         }
       }
