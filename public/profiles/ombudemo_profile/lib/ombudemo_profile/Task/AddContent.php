@@ -20,9 +20,11 @@ class AddContent extends \ProfileTasks\Task\AddContent {
       ),
     ),
     'footer-menu' => array(
-      ' © OMBU' => array(),
+      '© OMBU' => array(
+        '#link' => 'http://ombuweb.com',
+      ),
       'Terms of Use' => array(),
-      'Privacy' => array(),
+      'Privacy Policy' => array(),
     ),
   );
 

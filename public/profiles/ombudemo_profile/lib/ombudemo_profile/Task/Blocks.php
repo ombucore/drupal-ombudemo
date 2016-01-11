@@ -55,23 +55,23 @@ class Blocks extends \ProfileTasks\Task\Blocks {
 
     $bean = bean_create(array('type' => 'bean_link'));
     $bean->delta = 'footer-links';
-    $bean->field_bean_links_links[LANGUAGE_NONE][] = array(
+    $bean->field_bean_link_links[LANGUAGE_NONE][] = array(
       'title' => 'Home',
       'url' => '<front>',
     );
-    $bean->field_bean_links_links[LANGUAGE_NONE][] = array(
+    $bean->field_bean_link_links[LANGUAGE_NONE][] = array(
       'title' => 'About',
       'url' => 'about',
     );
-    $bean->field_bean_links_links[LANGUAGE_NONE][] = array(
+    $bean->field_bean_link_links[LANGUAGE_NONE][] = array(
       'title' => 'Bridges',
       'url' => 'bridges',
     );
-    $bean->field_bean_links_links[LANGUAGE_NONE][] = array(
+    $bean->field_bean_link_links[LANGUAGE_NONE][] = array(
       'title' => 'Contact',
       'url' => 'contact',
     );
-    $bean->field_bean_links_links[LANGUAGE_NONE][] = array(
+    $bean->field_bean_link_links[LANGUAGE_NONE][] = array(
       'title' => 'Search',
       'Url' => 'search',
     );
