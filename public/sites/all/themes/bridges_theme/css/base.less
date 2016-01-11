@@ -372,10 +372,22 @@ html.menu-open {
   min-height: 0;
 }
 
+#main {
+  padding-top: 2.0em;
+  padding-bottom: 2.0em;
+}
+
+#main > [data-type="region"] > .container:after,
+[data-type="region"][data-name="section"] > .container.footer:after {
+  content: '';
+  display: block;
+  height: 0;
+  padding-top: @ar-arch;
+  margin-bottom: 0px;
+}
+
 // Tile sections
 // ----------------------------------------------------------------------------
-
-// #page > [data-type="region-container"][data-name="sections"] > .field-type-tiles-section [data-type="region"][data-name="section"] > .container, #page > [data-type="region-container"][data-name="sections"] > .field-type-tiles-section [data-type="region"][data-name="section"] > .container
 
 #page > [data-type="region-container"][data-name="sections"] {
   > .field-type-tiles-section [data-type="region"][data-name="section"] {
@@ -393,14 +405,6 @@ html.menu-open {
   > .container.footer {
     .top-link {
       display: none;
-    }
-
-    &:after {
-      content: '';
-      display: block;
-      height: 0;
-      padding-top: @ar-arch;
-      margin-bottom: 0px;
     }
   }
 
@@ -434,6 +438,7 @@ html.menu-open {
 // ----------------------------------------------------------------------------
 
 [data-type="region"][data-name="section-arch"] {
+  min-height: 0 !important;
   border-bottom: @section-separation solid @color-white;
 
   > .container {
@@ -505,7 +510,7 @@ html.menu-open {
 // ----------------------------------------------------------------------------
 
 body.front {
-  #block-system-main {
+  #main {
     display: none;
   }
 
