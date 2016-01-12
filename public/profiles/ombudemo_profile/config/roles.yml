@@ -16,6 +16,7 @@ add:
         - 'delete terms in 1'
         - 'edit terms in 2'
         - 'delete terms in 2'
+        - 'administer files'
     editor:
         - 'set tile indexable status'
         - 'create any bean_cta bean'
