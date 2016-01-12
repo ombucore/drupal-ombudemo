@@ -1819,6 +1819,8 @@ body.front #block-bean-home-gallery {
   height: 0;
   min-height: 0;
   padding-top: 45.3125%;
+}
+[data-type="region-container"][data-name="sections"] .bean-cta.stinger {
   margin-bottom: 0;
 }
 .bean-cta.stinger,

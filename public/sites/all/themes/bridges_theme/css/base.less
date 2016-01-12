@@ -914,14 +914,16 @@ body.front {
   @button-width: 260px;
   @press-distance: 20px;
   @side-padding: 30px;
+  &:extend(.bean-cta.primary all);
   position: relative;
   width: auto;
   height: 0;
   min-height: 0;
   padding-top: @ar-stinger-cta;
 
-  &:extend(.bean-cta.primary all);
-  margin-bottom: 0;
+  [data-type="region-container"][data-name="sections"] & {
+    margin-bottom: 0;
+  }
 
   &, > .entity-bean {
     text-align: center;
