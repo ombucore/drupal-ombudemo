@@ -46,50 +46,6 @@ a {
   text-transform: uppercase;
 }
 
-.file-document {
-  @icon-height: 40px;
-
-  span.file {
-    > a {
-      position: relative;
-      display: inline-block;
-      padding: 0.8em 15px 0.9em @icon-height + 15px;
-      border-bottom: 1px solid darken(@color-cove, 30);
-      .font-size(18, 1.5);
-      font-weight: @font-weight-bold;
-      background-color: @color-cove;
-      border-radius: 4px;
-      color: @color-white;
-      text-shadow: 0 -1px 0 fade(@color-black, 30%);
-      font-family: @font-family-sans-serif-condensed;
-
-      &:before {
-        .bridges-icon(@glyph-code-document, @icon-height);
-        position: absolute;
-        top: 50%;
-        left: 10px;
-        margin-top: @icon-height / -2;
-        color: darken(@color-cove, 20);
-        text-shadow: 0 1px 0 fade(@color-white, 30%);
-      }
-
-      &:hover, &:focus {
-        background-color: darken(@color-cove, 20);
-        border-bottom: 1px solid darken(@color-cove, 50);
-
-        &:before {
-          color: @color-polo;
-          text-shadow: 0 -1px 0 fade(@color-black, 30%);
-        }
-      }
-    }
-
-    img {
-      display: none;
-    }
-  }
-}
-
 // Grid
 // -----------------------------------------------------------------------------
 
@@ -836,9 +792,6 @@ body.front {
   }
 }
 
-// TODO: Remove obsolete IDs once styles are correctly applied on build.
-
-#block-bean-home-intro-cta,
 .bean-cta.primary {
   @well-width: 8px;
   @press-distance: 20px;
@@ -921,7 +874,6 @@ body.front {
   }
 }
 
-#block-bean-home-secondary-cta,
 .bean-cta.secondary {
   .field-name-field-cta-link {
     margin-top: 1.0em;
@@ -958,7 +910,6 @@ body.front {
   }
 }
 
-#block-bean-home-stinger-cta,
 .bean-cta.stinger {
   @button-width: 260px;
   @press-distance: 20px;

@@ -21,32 +21,6 @@ body {
   .font-size(24, 1.4)
 }
 
-.file-document {
-  @icon-height: 50px;
-
-  span.file {
-    > a {
-      .font-size(24, 1.5);
-      padding-right: 20px;
-      padding-left: @icon-height + 20px;
-
-      &:before {
-        left: 15px;
-        font-size: @icon-height;
-        line-height: 1;
-        margin-top: @icon-height / -2;
-      }
-
-      & {
-        float: left;
-        margin-right: 1.0em;
-        margin-bottom: 1.0em;
-        margin-left: -@gutter-side-desktop + @gutter-side-mobile;
-      }
-    }
-  }
-}
-
 // Grid
 // -----------------------------------------------------------------------------
 
@@ -157,7 +131,6 @@ body {
   }
 }
 
-#block-bean-home-intro-cta,
 .bean-cta.primary {
   @side-padding: 40px;
 
@@ -175,7 +148,6 @@ body {
   }
 }
 
-#block-bean-home-secondary-cta,
 .bean-cta.secondary {
   .field-name-field-cta-link {
     a {
@@ -184,7 +156,6 @@ body {
   }
 }
 
-#block-bean-home-stinger-cta,
 .bean-cta.stinger {
   margin-left: -@gutter-side-desktop + @gutter-side-mobile;
   margin-right: -@gutter-side-desktop + @gutter-side-mobile;
