@@ -18,6 +18,9 @@ class AddContent extends \ProfileTasks\Task\AddContent {
       'Contact' => array(
         '#link' => 'contact',
       ),
+      'A demo of OMBU CMS' => array(
+        '#link' => '<nolink>',
+      ),
     ),
     'footer-menu' => array(
       '© OMBU' => array(
