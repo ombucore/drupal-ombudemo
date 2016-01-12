@@ -175,9 +175,7 @@ html, html.menu-open {
 // Region width: Wide
 // ----------------------------------------------------------------------------
 
-// TODO: Replace ID with "Wide" width
-
-#page > [data-type="region-container"][data-name="sections"] > .field-type-tiles-section > [data-type="region"][data-name="section"]#Hero {
+#page > [data-type="region-container"][data-name="sections"] > .field-type-tiles-section > [data-type="region"][data-name="section"].width-wide {
   > .content {
     padding-left: 0;
     padding-right: 0;
@@ -193,15 +191,13 @@ html, html.menu-open {
 // Region width: Full-width
 // ----------------------------------------------------------------------------
 
-// TODO: Replace ID with "Full width" width
-
-// #page > [data-type="region-container"][data-name="sections"] > .field-type-tiles-section > [data-type="region"][data-name="section"]#Hero {
-//   > .content {
-//     max-width: none;
-//     padding-left: 0;
-//     padding-right: 0;
-//   }
-// }
+#page > [data-type="region-container"][data-name="sections"] > .field-type-tiles-section > [data-type="region"][data-name="section"].width-full-width {
+  > .content {
+    max-width: none;
+    padding-left: @gutter-side-mobile;
+    padding-right: @gutter-side-mobile;
+  }
+}
 
 // Page: Front
 // ----------------------------------------------------------------------------
@@ -267,6 +263,7 @@ body.front {
   }
 
   .field-name-field-cta-link {
+    margin-top: -2.3em;
     margin-left: @button-width / -2;
     width: @button-width;
     background-image: linear-gradient(to bottom, darken(@color-emerald, 40) 0, darken(@color-emerald, 50) @press-distance + 3);

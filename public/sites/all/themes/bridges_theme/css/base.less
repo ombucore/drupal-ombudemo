@@ -462,18 +462,16 @@ html.menu-open {
     }
   }
 
-  // TODO: Replace IDs with style names (e.g., white, blue)
-
-  &#Hero {
+  &.style-white {
     background-color: @color-white;
     padding-bottom: 0;
   }
 
-  &#Supporting-information {
+  &.style-light-blue {
     background-color: @color-botticelli;
   }
 
-  &#Call-to-action {
+  &.style-blue {
     background-color: @color-bayoux;
   }
 
@@ -534,21 +532,19 @@ html.menu-open {
     }
   }
 
-  // TODO: Remove IDs and replace with section style class names
-
   &:first-child {
     display: none;
   }
 
-  &#Introduction-arch, &#Why-us-arch { // white
+  &.style-white { // white
     display: none;
   }
 
-  &#Supporting-information-arch svg path {
+  &.style-light-blue svg path {
     fill: @color-botticelli;
   }
 
-  &#Call-to-action-arch svg path {
+  &.style-blue svg path {
     fill: @color-bayoux;
   }
 }
@@ -830,8 +826,9 @@ body.front {
     position: absolute;
     z-index: 3;
     top: 100%;
+    top: percentage(1) - (@ar-arch * 2.5);
     left: 50%;
-    margin-top: -10%;
+    margin-top: -2.0em;
     margin-left: @button-width / -2;
     width: @button-width;
     border-color: @color-white;
@@ -909,7 +906,7 @@ body.front {
 // Tile: Social Follow Links
 // ----------------------------------------------------------------------------
 
-.tile.sociallinks {
+[data-type="block"].sociallinks {
   @icon-size: 40px;
   @width-separation: 8px;
 

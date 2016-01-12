@@ -1124,14 +1124,14 @@ body.page-contact #block-ombucleanup-page-title {
 [data-type="region"][data-name="section"] > .container.footer .top-link {
   display: none;
 }
-[data-type="region"][data-name="section"]#Hero {
+[data-type="region"][data-name="section"].style-white {
   background-color: #ffffff;
   padding-bottom: 0;
 }
-[data-type="region"][data-name="section"]#Supporting-information {
+[data-type="region"][data-name="section"].style-light-blue {
   background-color: #d3dcea;
 }
-[data-type="region"][data-name="section"]#Call-to-action {
+[data-type="region"][data-name="section"].style-blue {
   background-color: #536580;
 }
 [data-type="region"][data-name="section"]#Hero > .container.footer:after,
@@ -1179,14 +1179,13 @@ body.page-contact #block-ombucleanup-page-title {
 [data-type="region"][data-name="section-arch"]:first-child {
   display: none;
 }
-[data-type="region"][data-name="section-arch"]#Introduction-arch,
-[data-type="region"][data-name="section-arch"]#Why-us-arch {
+[data-type="region"][data-name="section-arch"].style-white {
   display: none;
 }
-[data-type="region"][data-name="section-arch"]#Supporting-information-arch svg path {
+[data-type="region"][data-name="section-arch"].style-light-blue svg path {
   fill: #d3dcea;
 }
-[data-type="region"][data-name="section-arch"]#Call-to-action-arch svg path {
+[data-type="region"][data-name="section-arch"].style-blue svg path {
   fill: #536580;
 }
 [data-type="region"][data-name="footer"] {
@@ -1402,8 +1401,9 @@ body.front #block-bean-home-gallery {
   position: absolute;
   z-index: 3;
   top: 100%;
+  top: 84.375%;
   left: 50%;
-  margin-top: -10%;
+  margin-top: -2em;
   margin-left: -130px;
   width: 260px;
   border-color: #ffffff;
@@ -1455,14 +1455,14 @@ body.front #block-bean-home-gallery {
   width: 100%;
   height: auto;
 }
-.tile.sociallinks > h2 {
+[data-type="block"].sociallinks > h2 {
   display: none;
 }
-.tile.sociallinks .field-type-sociallinks {
+[data-type="block"].sociallinks .field-type-sociallinks {
   margin: 1em -4px;
   text-align: center;
 }
-.tile.sociallinks .sociallink {
+[data-type="block"].sociallinks .sociallink {
   position: relative;
   display: inline-block;
   float: none;
@@ -1472,7 +1472,7 @@ body.front #block-bean-home-gallery {
   padding: 4px;
   outline: 0;
 }
-.tile.sociallinks .sociallink:before {
+[data-type="block"].sociallinks .sociallink:before {
   content: '';
   display: block;
   position: absolute;
@@ -1485,7 +1485,7 @@ body.front #block-bean-home-gallery {
   background: transparent;
   border-radius: 40px;
 }
-.tile.sociallinks .sociallink:after {
+[data-type="block"].sociallinks .sociallink:after {
   content: '\e900';
   font-family: 'bridges-icons';
   font-size: 40px;
@@ -1500,34 +1500,34 @@ body.front #block-bean-home-gallery {
   display: block;
   position: relative;
 }
-.tile.sociallinks .sociallink.sociallink-instagram:after {
+[data-type="block"].sociallinks .sociallink.sociallink-instagram:after {
   content: '\e902';
 }
-.tile.sociallinks .sociallink.sociallink-facebook:after {
+[data-type="block"].sociallinks .sociallink.sociallink-facebook:after {
   content: '\e900';
 }
-.tile.sociallinks .sociallink.sociallink-twitter:after {
+[data-type="block"].sociallinks .sociallink.sociallink-twitter:after {
   content: '\e905';
 }
-.tile.sociallinks .sociallink.sociallink-flickr:after {
+[data-type="block"].sociallinks .sociallink.sociallink-flickr:after {
   content: '\e901';
 }
-.tile.sociallinks .sociallink.sociallink-pinterest:after {
+[data-type="block"].sociallinks .sociallink.sociallink-pinterest:after {
   content: '\e903';
 }
-.tile.sociallinks .sociallink.sociallink-youtube:after {
+[data-type="block"].sociallinks .sociallink.sociallink-youtube:after {
   content: '\e906';
 }
-.tile.sociallinks .sociallink span {
+[data-type="block"].sociallinks .sociallink span {
   display: none;
 }
-.tile.sociallinks .sociallink:hover,
-.tile.sociallinks .sociallink:focus {
+[data-type="block"].sociallinks .sociallink:hover,
+[data-type="block"].sociallinks .sociallink:focus {
   color: #d3dcea;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
 }
-.tile.sociallinks .sociallink:hover:before,
-.tile.sociallinks .sociallink:focus:before {
+[data-type="block"].sociallinks .sociallink:hover:before,
+[data-type="block"].sociallinks .sociallink:focus:before {
   background: #536580;
 }
 body {
@@ -1760,12 +1760,17 @@ html.menu-open #block-search-form {
   font-size: 6.4 rem;
   line-height: 1.4;
 }
-#page > [data-type="region-container"][data-name="sections"] > .field-type-tiles-section > [data-type="region"][data-name="section"]#Hero > .content {
+#page > [data-type="region-container"][data-name="sections"] > .field-type-tiles-section > [data-type="region"][data-name="section"].width-wide > .content {
   padding-left: 0;
   padding-right: 0;
 }
-#page > [data-type="region-container"][data-name="sections"] > .field-type-tiles-section > [data-type="region"][data-name="section"]#Hero aside[data-type="block"] .contextual-links-wrapper {
+#page > [data-type="region-container"][data-name="sections"] > .field-type-tiles-section > [data-type="region"][data-name="section"].width-wide aside[data-type="block"] .contextual-links-wrapper {
   right: 80px;
+}
+#page > [data-type="region-container"][data-name="sections"] > .field-type-tiles-section > [data-type="region"][data-name="section"].width-full-width > .content {
+  max-width: none;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 body.front {
   padding-top: 0;
@@ -1799,6 +1804,7 @@ body.front {
   line-height: 1.1;
 }
 #block-bean-home-stinger-cta .field-name-field-cta-link {
+  margin-top: -2.3em;
   margin-left: -180px;
   width: 360px;
   background-image: linear-gradient(to bottom, #15431a 0, #091c0b 33px);
@@ -1900,7 +1906,7 @@ body {
   font-size: 6.4 rem;
   line-height: 1.4;
 }
-#page > [data-type="region-container"][data-name="sections"] > .field-type-tiles-section > [data-type="region"][data-name="section"]#Hero aside[data-type="block"] .contextual-links-wrapper {
+#page > [data-type="region-container"][data-name="sections"] > .field-type-tiles-section > [data-type="region"][data-name="section"].width-wide aside[data-type="block"] .contextual-links-wrapper {
   right: 140px;
 }
 .bean-callout {
