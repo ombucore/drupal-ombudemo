@@ -435,7 +435,6 @@ html.menu-open {
   padding-bottom: 2.0em;
 }
 
-#main > [data-type="region"] > .container:after,
 [data-type="region"][data-name="section"] > .container.footer:after {
   content: '';
   display: block;
@@ -512,7 +511,11 @@ html.menu-open {
 
 [data-type="region"][data-name="section"] {
   position: relative;
-  padding-bottom: 2.0em;
+
+  > .container.content {
+    padding-top: 2.0em;
+    padding-bottom: 2.0em;
+  }
 
   > .container.footer {
     .top-link {
@@ -522,7 +525,6 @@ html.menu-open {
 
   &.style-white {
     background-color: @color-white;
-    padding-bottom: 0;
   }
 
   &.style-light-blue {
@@ -533,18 +535,16 @@ html.menu-open {
     background-color: @color-bayoux;
   }
 
-  &.style-light-blue,
-  &.style-blue {
+  // Don't pad the bottom of sections if its next sibling has the same style.
+
+  &.style-white.followed-by-style-white,
+  &.style-blue.followed-by-style-blue,
+  &.style-light-blue.followed-by-style-light-blue {
     > .container.content {
-      padding-top: @colored-section-top-padding;
+      padding-top: 0;
+      padding-bottom: 0;
     }
-  }
 
-  // TODO: Special case for white region with another white region immediately
-  // following.  The bottom padding must be hidden to prevent too much visible
-  // spacing between regions.
-
-  &#Hero, &#Introduction {
     > .container.footer:after {
       display: none;
     }
@@ -554,7 +554,8 @@ html.menu-open {
 // Tile section arches
 // ----------------------------------------------------------------------------
 
-[data-type="region"][data-name="section-arch"] {
+[data-type="region"][data-name="section-arch"],
+[data-type="region"][data-name="footer-arch"] {
   min-height: 0 !important;
   border-bottom: @section-separation solid @color-white;
   .force-hardware-acceleration();
@@ -602,8 +603,14 @@ html.menu-open {
     display: none;
   }
 
-  &.style-white { // white
+  // Don't show arches for an adjacent sections with the same style as its
+  // previous sibling.
+  .style-white + &.style-white {
     display: none;
+  }
+
+  &.style-white svg path {
+    fill: @color-white;
   }
 
   &.style-light-blue svg path {
@@ -617,6 +624,15 @@ html.menu-open {
 
 // Region: footer
 // ----------------------------------------------------------------------------
+
+[data-type="region"][data-name="footer-arch"] {
+  padding-top: 100px;
+  background-color: @color-white;
+
+  [data-type="region-container"][data-name="sections"] + & {
+    padding-top: 0;
+  }
+}
 
 [data-type="region"][data-name="footer"] {
   padding-top: 3.0em;
@@ -742,6 +758,11 @@ body.front {
     }
   }
 }
+
+#block-system-main, #block-ombucleanup-page-title {
+  margin-bottom: 0;
+}
+
 
 // Tile: Tile Container
 // ----------------------------------------------------------------------------
@@ -914,7 +935,10 @@ body.front {
 // TODO: Special case for region containing Stinger CTA.
 
 [data-type="region"]#Call-to-action {
-  padding-bottom: 0;
+  > .container.content {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
 
   > .container.footer {
     display: none;
@@ -930,7 +954,6 @@ body.front {
   width: auto;
   height: 0;
   min-height: 0;
-  margin-top: -@colored-section-top-padding;
   padding-top: @ar-stinger-cta;
 
   &:extend(.bean-cta.primary all);
