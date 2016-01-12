@@ -683,11 +683,10 @@ body.front {
   }
 }
 
-// TODO: Styles for Primary / Secondary / Stinger CTA tiles?
+// TODO: Remove obsolete IDs once styles are correctly applied on build.
 
-// TODO: Primary
-
-#block-bean-home-intro-cta {
+#block-bean-home-intro-cta,
+.bean-cta.primary {
   @well-width: 8px;
   @press-distance: 20px;
   @side-padding: 30px;
@@ -769,9 +768,8 @@ body.front {
   }
 }
 
-// TODO: Secondary
-
-#block-bean-home-secondary-cta {
+#block-bean-home-secondary-cta,
+.bean-cta.secondary {
   .field-name-field-cta-link {
     margin-top: 1.0em;
 
@@ -794,7 +792,7 @@ body.front {
   }
 }
 
-// TODO: Stinger
+// TODO: Special case for region containing Stinger CTA.
 
 [data-type="region"]#Call-to-action {
   padding-bottom: 0;
@@ -804,7 +802,8 @@ body.front {
   }
 }
 
-#block-bean-home-stinger-cta {
+#block-bean-home-stinger-cta,
+.bean-cta.stinger {
   @button-width: 260px;
   @press-distance: 20px;
   @side-padding: 30px;
@@ -815,7 +814,7 @@ body.front {
   margin-top: -@colored-section-top-padding;
   padding-top: @ar-stinger-cta;
 
-  &:extend(#block-bean-home-intro-cta all);
+  &:extend(.bean-cta.primary all);
   margin-bottom: 0;
 
   &, > .entity-bean {
@@ -849,18 +848,20 @@ body.front {
     }
   }
 
-  > h2 {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    z-index: 1;
-    margin: -1.0em 0 0 0;
-    padding: 0;
-    border: 0;
-    color: @color-white;
-    .font-size(32, 1.1);
-    text-shadow: 0 -2px 0 fade(@color-black, 40%);
+  &, [data-type="region-container"][data-name="sections"] & {
+    > h2 {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      z-index: 1;
+      margin: -1.0em 0 0 0;
+      padding: 0;
+      border: 0;
+      color: @color-white;
+      .font-size(32, 1.1);
+      text-shadow: 0 -2px 0 fade(@color-black, 40%);
+    }
   }
 
   .field-name-field-cta-link {

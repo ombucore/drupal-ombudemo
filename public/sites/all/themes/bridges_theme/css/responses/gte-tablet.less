@@ -226,11 +226,8 @@ body.front {
   }
 }
 
-// TODO: Styles for Primary / Secondary / Stinger CTA tiles?
-
-// TODO: Primary
-
-#block-bean-home-intro-cta {
+#block-bean-home-intro-cta,
+.bean-cta.primary {
   .field-name-field-cta-link {
     a {
       min-width: 0;
@@ -240,9 +237,8 @@ body.front {
   }
 }
 
-// TODO: Secondary
-
-#block-bean-home-secondary-cta {
+#block-bean-home-secondary-cta,
+.bean-cta.secondary {
   .field-name-field-cta-link {
     a {
       .font-size(16, 1.2);
@@ -250,16 +246,17 @@ body.front {
   }
 }
 
-// TODO: Stinger
-
-#block-bean-home-stinger-cta {
+#block-bean-home-stinger-cta,
+.bean-cta.stinger {
   @button-width: 360px;
   @press-distance: 30px;
   margin-left: -@gutter-side-tablet + @gutter-side-mobile;
   margin-right: -@gutter-side-tablet + @gutter-side-mobile;
 
-  > h2 {
-    .font-size(64, 1.1);
+  &, [data-type="region-container"][data-name="sections"] & {
+    > h2 {
+      .font-size(64, 1.1);
+    }
   }
 
   .field-name-field-cta-link {
