@@ -59,7 +59,7 @@ Globular star cluster from which we spring. Circumnavigated, the only home we've
 
 
 <p>
-Cosmic fugue worldlets, Sea of Tranquility dream of the mind's eye?  Cosmic fugue Cambrian explosion kindling the energy hidden in matter finite but unbounded paroxysm of global death astonishment, circumnavigated. Worldlets, Orion's sword. Vanquish the impossible Sea of Tranquility permanence of the stars.  Drake Equation? The ash of stellar alchemy, two ghostly white figures in coveralls and helmets are soflty dancing corpus callosum.  Are creatures of the cosmos as <strong>a patch of light</strong>? Rig Veda, network of wormholes, Euclid! Rogue the only home we've ever known. Tingling of the spine, a billion trillion shores of the cosmic ocean network.
+Cosmic fugue worldlets, <a href="https://en.wikipedia.org/wiki/Mare_Tranquillitatis">Sea of Tranquility</a> dream of the mind's eye?  Cosmic fugue Cambrian explosion kindling the energy hidden in matter finite but unbounded paroxysm of global death astonishment, circumnavigated. Worldlets, Orion's sword. Vanquish the impossible Sea of Tranquility permanence of the stars.  Drake Equation? The ash of stellar alchemy, two ghostly white figures in coveralls and helmets are soflty dancing corpus callosum.  Are creatures of the cosmos as <strong>a patch of light</strong>? Rig Veda, network of wormholes, Euclid! Rogue the only home we've ever known. Tingling of the spine, a billion trillion shores of the cosmic ocean network.
 </p>
 
 <blockquote class="pull-right">
@@ -106,7 +106,7 @@ Cosmic fugue worldlets, Sea of Tranquility dream of the mind's eye? Drake Equati
 </blockquote>
 
 <p>
-Cosmic fugue worldlets, Sea of Tranquility dream of the mind's eye?  Cosmic fugue Cambrian explosion kindling the energy hidden in matter finite but unbounded paroxysm of global death astonishment, circumnavigated. Worldlets, Orion's sword. Vanquish the impossible Sea of Tranquility permanence of the stars. Drake Equation? The ash of stellar alchemy, two ghostly white figures in coveralls and helmets are soflty dancing corpus callosum.azz
+Cosmic fugue worldlets, Sea of Tranquility dream of the mind's eye?  Cosmic fugue Cambrian explosion kindling the energy hidden in matter finite but unbounded paroxysm of global death astonishment, circumnavigated. Worldlets, Orion's sword. Vanquish the impossible Sea of Tranquility permanence of the stars. Drake Equation? The ash of stellar alchemy, two ghostly white figures in coveralls and helmets are soflty dancing corpus callosum.
 </p>
 
 <h5>I am a quinary subheader</h5>
@@ -145,7 +145,7 @@ Ship of the imagination. Tendrils of gossamer clouds, corpus callosum courage of
 <a href="/" class="cta">Notice me and click!</a>
 
 <p>
-Ship of the imagination. Tendrils of gossamer clouds, corpus callosum courage of our questions rich in mystery science. From which we spring Orion's sword.
+<small>Ship of the imagination. Tendrils of gossamer clouds, corpus callosum courage of our questions rich in mystery science. From which we spring Orion's sword.</small>
 </p>
 EOD;
 $bean = bean_create(array('type' => 'bean_rte_rte'));
