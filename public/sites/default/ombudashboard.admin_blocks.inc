@@ -20,15 +20,6 @@ function _ombudashboard_get_admin_blocks() {
     'theme' => 'ombu_admin_block_content_manage',
   );
 
-  if ( user_access('edit supplementary content') ) {
-    $blocks[] = array(
-      'title' => 'Supplementary Content',
-      'content' => _ombudashboard_get_supplementary_content_block(),
-      'position' => 'left',
-      'theme' => 'ombu_admin_block_content',
-    );
-  }
-
   if ( user_access('administer taxonomy') ) {
     $blocks[] = array(
       'title' => 'Categories',
@@ -103,6 +94,24 @@ function _ombudashboard_content_block() {
 
       $content[] = $pages;
     }
+  }
+
+  if (user_access('administer files')) {
+    $content[] = array(
+      'title' => 'Media',
+      'operations' => array(
+        array(
+          'title' => 'Add',
+          'href' => 'admin/dashboard/manage-media/add',
+          'localized_options' => array(),
+        ),
+        array(
+          'title' => 'Manage',
+          'href' => 'admin/dashboard/manage-media',
+          'localized_options' => array(),
+        ),
+      ),
+    );
   }
 
   return $content;
