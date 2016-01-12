@@ -148,10 +148,31 @@ Ship of the imagination. Tendrils of gossamer clouds, corpus callosum courage of
 Ship of the imagination. Tendrils of gossamer clouds, corpus callosum courage of our questions rich in mystery science. From which we spring Orion's sword.
 </p>
 EOD;
-
-$wrapper->body = array(
+$bean = bean_create(array('type' => 'bean_rte_rte'));
+$bean->delta = 'about-rte';
+$bean->title = '';
+$bean->field_description[LANGUAGE_NONE][0] = array(
   'value' => $body,
   'format' => 'default',
+);
+$bean->save();
+
+$wrapper->field_sections[] = array(
+  'value' => 'Our story',
+  'settings' => array(
+    'visible' => 0,
+    'style' => 'style-white',
+    'width' => 'width-normal',
+    'tiles' => array(
+      array(
+        'module' => 'bean',
+        'delta' => 'about-rte',
+        'region' => 'content',
+        'weight' => 1,
+        'width' => 12,
+      ),
+    ),
+  ),
 );
 
 $wrapper->save();
