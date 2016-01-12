@@ -1,3 +1,4 @@
 add:
     tagsadmin_enabled_tags: 1
     ombudashboard_show_ribbon: 0
+    bean_container_show_tab_style: 1

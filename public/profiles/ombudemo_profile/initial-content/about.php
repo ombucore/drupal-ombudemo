@@ -86,7 +86,142 @@ Wormholes ship of the imagination descended from astronomers not a sunrise but a
   Preserve and cherish that pale blue dot.
 </li>
 </ol>
+EOD;
+$bean = bean_create(array('type' => 'bean_rte_rte'));
+$bean->delta = 'about-rte';
+$bean->title = '';
+$bean->field_description[LANGUAGE_NONE][0] = array(
+  'value' => $body,
+  'format' => 'default',
+);
+$bean->save();
 
+$wrapper->field_sections[] = array(
+  'value' => 'Our story',
+  'settings' => array(
+    'visible' => 0,
+    'style' => 'style-white',
+    'width' => 'width-normal',
+    'tiles' => array(
+      array(
+        'module' => 'bean',
+        'delta' => 'about-rte',
+        'region' => 'content',
+        'weight' => 1,
+        'width' => 12,
+      ),
+    ),
+  ),
+);
+
+$bean = bean_create(array('type' => 'bean_container'));
+$bean->label = 'about-tabs';
+$bean->title = 'Tabs!';
+$bean->delta = 'about-tabs';
+$bean->bean_style = 'bean_container_tabbed';
+$bean->setValues(array (
+  'view_mode' => 'default',
+));
+bean_save($bean);
+$layout = tiles_get_container('bean_container')->getLayout('about-tabs');
+
+$bean = bean_create(array('type' => 'bean_rte_rte'));
+$bean->delta = 'about-tabs-1';
+$bean->title = 'Tab 1';
+$body = <<<EOD
+<p>Our bridges are carefully designed to withstand wind gusts of up to 80 MPH and earthquakes registering 7.9 on the Richter scale. Our elegant passive damper technology counteracts all naturally occurring forces, maintaining stability in unpredictable conditions.</p><p>Download our technical specifications to review all design and construction details.</p>
+EOD;
+$bean->field_description[LANGUAGE_NONE][0] = array(
+  'value' => $body,
+  'format' => 'default',
+);
+$bean->save();
+$layout->addBlock(array(
+  'module' => 'bean',
+  'delta' => $bean->delta,
+  'region' => 'content',
+  'width' => 12,
+  'weight' => 1,
+));
+
+$bean = bean_create(array('type' => 'bean_rte_rte'));
+$bean->delta = 'about-tabs-2';
+$bean->title = 'Tab 2';
+$body = <<<EOD
+<p>Our bridges are carefully designed to withstand wind gusts of up to 80 MPH and earthquakes registering 7.9 on the Richter scale. Our elegant passive damper technology counteracts all naturally occurring forces, maintaining stability in unpredictable conditions.</p><p>Download our technical specifications to review all design and construction details.</p>
+EOD;
+$bean->field_description[LANGUAGE_NONE][0] = array(
+  'value' => $body,
+  'format' => 'default',
+);
+$bean->save();
+$layout->addBlock(array(
+  'module' => 'bean',
+  'delta' => $bean->delta,
+  'region' => 'content',
+  'width' => 12,
+  'weight' => 1,
+));
+
+$bean = bean_create(array('type' => 'bean_rte_rte'));
+$bean->delta = 'about-tabs-3';
+$bean->title = 'Tab 3';
+$body = <<<EOD
+<p>Our bridges are carefully designed to withstand wind gusts of up to 80 MPH and earthquakes registering 7.9 on the Richter scale. Our elegant passive damper technology counteracts all naturally occurring forces, maintaining stability in unpredictable conditions.</p><p>Download our technical specifications to review all design and construction details.</p>
+EOD;
+$bean->field_description[LANGUAGE_NONE][0] = array(
+  'value' => $body,
+  'format' => 'default',
+);
+$bean->save();
+$layout->addBlock(array(
+  'module' => 'bean',
+  'delta' => $bean->delta,
+  'region' => 'content',
+  'width' => 12,
+  'weight' => 1,
+));
+
+$bean = bean_create(array('type' => 'bean_rte_rte'));
+$bean->delta = 'about-tabs-4';
+$bean->title = 'Tab 4';
+$body = <<<EOD
+<p>Our bridges are carefully designed to withstand wind gusts of up to 80 MPH and earthquakes registering 7.9 on the Richter scale. Our elegant passive damper technology counteracts all naturally occurring forces, maintaining stability in unpredictable conditions.</p><p>Download our technical specifications to review all design and construction details.</p>
+EOD;
+$bean->field_description[LANGUAGE_NONE][0] = array(
+  'value' => $body,
+  'format' => 'default',
+);
+$bean->save();
+$layout->addBlock(array(
+  'module' => 'bean',
+  'delta' => $bean->delta,
+  'region' => 'content',
+  'width' => 12,
+  'weight' => 1,
+));
+
+$layout->save();
+
+$wrapper->field_sections[] = array(
+  'value' => 'Tabs',
+  'settings' => array(
+    'visible' => 0,
+    'style' => 'style-white',
+    'width' => 'width-normal',
+    'tiles' => array(
+      array(
+        'module' => 'bean',
+        'delta' => 'about-tabs',
+        'region' => 'content',
+        'weight' => 1,
+        'width' => 12,
+      ),
+    ),
+  ),
+);
+
+$body = <<<EOD
 <h3>I am a tertiary subheader</h3>
 
 <p>
@@ -149,7 +284,7 @@ Ship of the imagination. Tendrils of gossamer clouds, corpus callosum courage of
 </p>
 EOD;
 $bean = bean_create(array('type' => 'bean_rte_rte'));
-$bean->delta = 'about-rte';
+$bean->delta = 'about-rte-2';
 $bean->title = '';
 $bean->field_description[LANGUAGE_NONE][0] = array(
   'value' => $body,
@@ -166,7 +301,7 @@ $wrapper->field_sections[] = array(
     'tiles' => array(
       array(
         'module' => 'bean',
-        'delta' => 'about-rte',
+        'delta' => 'about-rte-2',
         'region' => 'content',
         'weight' => 1,
         'width' => 12,
