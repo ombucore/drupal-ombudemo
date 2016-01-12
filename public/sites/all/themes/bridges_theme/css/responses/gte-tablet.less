@@ -182,6 +182,12 @@ html, html.menu-open {
     padding-left: 0;
     padding-right: 0;
   }
+
+  aside[data-type="block"] {
+    .contextual-links-wrapper {
+      right: @gutter-side-tablet + 40;
+    }
+  }
 }
 
 // Region width: Full-width
@@ -208,7 +214,7 @@ body.front {
 // ----------------------------------------------------------------------------
 
 [data-type="region"][data-name="section"] {
-  &:first-child {
+  &:nth-child(2) {
     .contextual-links-wrapper {
       top: @height-header-tablet + 10;
     }

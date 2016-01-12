@@ -1764,10 +1764,13 @@ html.menu-open #block-search-form {
   padding-left: 0;
   padding-right: 0;
 }
+#page > [data-type="region-container"][data-name="sections"] > .field-type-tiles-section > [data-type="region"][data-name="section"]#Hero aside[data-type="block"] .contextual-links-wrapper {
+  right: 80px;
+}
 body.front {
   padding-top: 0;
 }
-[data-type="region"][data-name="section"]:first-child .contextual-links-wrapper {
+[data-type="region"][data-name="section"]:nth-child(2) .contextual-links-wrapper {
   top: 90px;
 }
 .bean-cta > .entity-bean {
@@ -1896,6 +1899,9 @@ body {
   font-size: 64px;
   font-size: 6.4 rem;
   line-height: 1.4;
+}
+#page > [data-type="region-container"][data-name="sections"] > .field-type-tiles-section > [data-type="region"][data-name="section"]#Hero aside[data-type="block"] .contextual-links-wrapper {
+  right: 140px;
 }
 .bean-callout {
   font-size: 16px;
