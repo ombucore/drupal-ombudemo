@@ -657,6 +657,15 @@ div[data-type="region"][data-name="console"] .alert {
   font-style: italic;
   color: #0c1c36;
 }
+.field.c a:not(.btn):not(.cta) {
+  color: #6c8bbc;
+  border-bottom: 1px solid #6c8bbc;
+}
+.field.c a:not(.btn):not(.cta):hover,
+.field.c a:not(.btn):not(.cta):focus {
+  color: #215096;
+  border-bottom: 3px solid #215096;
+}
 .field.c h2,
 .field.c h3,
 .field.c h4,
@@ -775,62 +784,6 @@ div[data-type="region"][data-name="console"] .alert {
   font-weight: 400;
   color: #536580;
 }
-.field.c .file-document span.file > a {
-  position: relative;
-  display: inline-block;
-  padding: 0.8em 15px 0.9em 55px;
-  border-bottom: 1px solid #2e3e58;
-  font-size: 18px;
-  font-size: 1.8 rem;
-  line-height: 1.5;
-  font-weight: 700;
-  background-color: #6c88b3;
-  border-radius: 4px;
-  color: #ffffff;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
-  font-family: 'Open Sans Condensed', 'Helvetica', 'Arial', sans-serif;
-}
-.field.c .file-document span.file > a:before {
-  content: '\e907';
-  font-family: 'bridges-icons';
-  font-size: 40px;
-  line-height: 40px;
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  position: absolute;
-  top: 50%;
-  left: 10px;
-  margin-top: -20px;
-  color: #3f567a;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
-}
-.field.c .file-document span.file > a:hover,
-.field.c .file-document span.file > a:focus {
-  background-color: #3f567a;
-  border-bottom: 1px solid #0b0f15;
-}
-.field.c .file-document span.file > a:hover:before,
-.field.c .file-document span.file > a:focus:before {
-  color: #8fa7cc;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
-}
-.field.c .file-document span.file img {
-  display: none;
-}
-.field.c a:not(.btn):not(.cta) {
-  color: #6c8bbc;
-  border-bottom: 1px solid #6c8bbc;
-}
-.field.c a:not(.btn):not(.cta):hover,
-.field.c a:not(.btn):not(.cta):focus {
-  color: #215096;
-  border-bottom: 3px solid #215096;
-}
 .field.c .btn,
 .field.c .cta {
   position: relative;
@@ -880,6 +833,59 @@ div[data-type="region"][data-name="console"] .alert {
 }
 .field.c .cta:active {
   border-bottom-color: transparent;
+}
+.field.c .file-document span.file > a {
+  position: relative;
+  display: inline-block;
+  padding: 0.8em 15px 0.9em 55px;
+  font-size: 18px;
+  font-size: 1.8 rem;
+  line-height: 1.5;
+  font-weight: 700;
+  background-color: #6c88b3;
+  border-radius: 4px;
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+  font-family: 'Open Sans Condensed', 'Helvetica', 'Arial', sans-serif;
+  outline: 0;
+  border-bottom: 2px solid #48628b;
+}
+.field.c .file-document span.file > a:before {
+  content: '\e907';
+  font-family: 'bridges-icons';
+  font-size: 40px;
+  line-height: 40px;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  margin-top: -20px;
+  color: #3f567a;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+.field.c .file-document span.file > a:hover,
+.field.c .file-document span.file > a:focus {
+  background-color: #506e9c;
+  border-bottom: 2px solid #3f567a;
+  color: #ffffff;
+}
+.field.c .file-document span.file > a:hover:before,
+.field.c .file-document span.file > a:focus:before {
+  color: #8fa7cc;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+}
+.field.c .file-document span.file > a:active {
+  transform: translate(0, 2px);
+  border-bottom-color: transparent;
+}
+.field.c .file-document span.file img {
+  display: none;
 }
 @media (min-width: 768px) {
   .field.c .lead {
