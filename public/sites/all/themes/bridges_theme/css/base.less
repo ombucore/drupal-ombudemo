@@ -103,7 +103,7 @@ a {
 [data-type="region"][data-name="header"] {
   font-family: @font-family-sans-serif-condensed;
   .font-size(23, 1.5);
-  color: @color-bayoux;
+  color: lighten(@color-bayoux, 15);
   text-transform: uppercase;
   background-color: transparent;
 
@@ -253,14 +253,21 @@ a {
     > li {
       display: inline-block;
 
-      &:first-child:before, &:after {
+      &:before {
         content: "/";
         display: inline-block;
       }
 
-      > a {
+      > a, > span.nolink {
         display: inline-block;
         padding: 15px 10px;
+        transition: all @transition-duration-default;
+      }
+
+      > span.nolink {
+        &:last-child {
+          display: none;
+        }
       }
 
       &.expanded {
@@ -268,6 +275,13 @@ a {
           display: none;
         }
       }
+    }
+  }
+
+  html.search-focused & {
+    .nav > li > span.nolink:last-child {
+      opacity: 0;
+      transform: translate(-10px, 0);
     }
   }
 }
@@ -319,7 +333,7 @@ a {
     opacity: 0.4;
   }
 
-  &.focused {
+  html.search-focused & {
     &:before {
       opacity: 1.0;
     }
@@ -563,6 +577,24 @@ html.menu-open {
 [data-type="region"][data-name="footer"] {
   padding-top: 4.0em;
   padding-bottom: 4.0em;
+  text-align: center;
+}
+
+#block-menu-footer-menu {
+  > h2 {
+    display: none;
+  }
+
+  .nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    > li {
+      margin: 0;
+      padding: 0;
+    }
+  }
 }
 
 // Page: Front
@@ -925,7 +957,6 @@ body.front {
 
   .field-type-sociallinks {
     margin: 1.0em @width-separation / -2;
-    text-align: center;
   }
 
   .sociallink {

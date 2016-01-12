@@ -776,7 +776,7 @@ html.menu-open [data-type="region"][data-name="header-background"]:after {
   font-size: 23px;
   font-size: 2.3 rem;
   line-height: 1.5;
-  color: #536580;
+  color: #788ba7;
   text-transform: uppercase;
   background-color: transparent;
 }
@@ -911,18 +911,26 @@ html.menu-open [data-type="region"][data-name="header"]:before {
 #block-menu-header-menu .nav > li {
   display: inline-block;
 }
-#block-menu-header-menu .nav > li:first-child:before,
-#block-menu-header-menu .nav > li:after {
+#block-menu-header-menu .nav > li:before {
   content: "/";
   display: inline-block;
 }
-#block-menu-header-menu .nav > li > a {
+#block-menu-header-menu .nav > li > a,
+#block-menu-header-menu .nav > li > span.nolink {
   display: inline-block;
   padding: 15px 10px;
+  transition: all 0.2s;
+}
+#block-menu-header-menu .nav > li > span.nolink:last-child {
+  display: none;
 }
 #block-menu-header-menu .nav > li.expanded > div,
 #block-menu-header-menu .nav > li.expanded > ul {
   display: none;
+}
+html.search-focused #block-menu-header-menu .nav > li > span.nolink:last-child {
+  opacity: 0;
+  transform: translate(-10px, 0);
 }
 #block-search-form {
   position: relative;
@@ -1023,7 +1031,7 @@ html.menu-open [data-type="region"][data-name="header"]:before {
   transition: all 0.2s ease;
   opacity: 0.4;
 }
-#block-search-form.focused:before {
+html.search-focused #block-search-form:before {
   opacity: 1.0;
 }
 html.show-top-link #block-ombucleanup-site-logo {
@@ -1208,6 +1216,19 @@ body.page-contact #block-ombucleanup-page-title {
 [data-type="region"][data-name="footer"] {
   padding-top: 4.0em;
   padding-bottom: 4.0em;
+  text-align: center;
+}
+#block-menu-footer-menu > h2 {
+  display: none;
+}
+#block-menu-footer-menu .nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#block-menu-footer-menu .nav > li {
+  margin: 0;
+  padding: 0;
 }
 body.front #main {
   display: none;
@@ -1478,7 +1499,6 @@ body.front #block-bean-home-gallery {
 }
 [data-type="block"].sociallinks .field-type-sociallinks {
   margin: 1em -4px;
-  text-align: center;
 }
 [data-type="block"].sociallinks .sociallink {
   position: relative;
@@ -1909,6 +1929,10 @@ body.front #block-bean-home-gallery {
   }
   #block-menu-header-menu {
     left: 270px;
+    padding-right: 0;
+  }
+  #block-menu-header-menu .nav > li > span.nolink:last-child {
+    display: inline-block;
   }
   #block-search-form {
     right: 85px;

@@ -6,12 +6,12 @@
       var $input = $('input[name="search_block_form"]', $tile);
 
       $input.on('focus', function(e) {
-        $tile.addClass('focused');
+        $('html').addClass('search-focused');
         return false;
       });
 
       $input.on('blur', function(e) {
-        $tile.removeClass('focused');
+        $('html').removeClass('search-focused');
         return false;
       });
 

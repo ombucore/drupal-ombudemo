@@ -35,6 +35,17 @@ body {
 
 #block-menu-header-menu {
   left: @gutter-side-desktop + 170px;
+  padding-right: 0;
+
+  .nav {
+    > li {
+      > span.nolink {
+        &:last-child {
+          display: inline-block;
+        }
+      }
+    }
+  }
 }
 
 #block-search-form {
