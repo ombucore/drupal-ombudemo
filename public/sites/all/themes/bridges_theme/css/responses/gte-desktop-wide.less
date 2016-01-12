@@ -2,3 +2,21 @@
 // -----------------------------------------------------------------------------
 
 .debug-media-response-message('Media response: Wide desktop');
+
+// Tile: CTA
+// ----------------------------------------------------------------------------
+
+// TODO: Stinger
+
+#block-bean-home-stinger-cta {
+  &:after {
+    content: '';
+    position: absolute;
+    top: @section-separation / -2;
+    left: 0;
+    right: 0;
+    bottom: @section-separation / -2;
+    border-left: @section-separation solid @color-white;
+    border-right: @section-separation solid @color-white;
+  }
+}
