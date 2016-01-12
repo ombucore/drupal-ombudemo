@@ -93,6 +93,7 @@ $wrapper->field_sections[] = array(
 
 $bean = new Wrapper('bean', array('type' => 'bean_callout'));
 $bean->title = 'Why Stumptown Bridges?';
+$bean->value()->bean_style = 'basic';
 $bean->value()->delta = 'home-callout';
 
 $callouts = array(
