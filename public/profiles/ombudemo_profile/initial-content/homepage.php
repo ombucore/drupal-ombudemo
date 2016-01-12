@@ -30,8 +30,8 @@ $wrapper->field_sections[] = array(
   'value' => 'Hero',
   'settings' => array(
     'visible' => 0,
-    'style' => 'white',
-    'width' => 'wide',
+    'style' => 'style-white',
+    'width' => 'width-wide',
     'tiles' => array(
       array(
         'module' => 'bean',
@@ -70,8 +70,8 @@ $wrapper->field_sections[] = array(
   'value' => 'Introduction',
   'settings' => array(
     'visible' => 0,
-    'style' => 'white',
-    'width' => 'normal',
+    'style' => 'style-white',
+    'width' => 'width-normal',
     'tiles' => array(
       array(
         'module' => 'bean',
@@ -189,8 +189,8 @@ $wrapper->field_sections[] = array(
   'value' => 'Why us?',
   'settings' => array(
     'visible' => 0,
-    'style' => 'white',
-    'width' => 'normal',
+    'style' => 'style-white',
+    'width' => 'width-normal',
     'tiles' => array(
       array(
         'module' => 'bean',
@@ -243,8 +243,8 @@ $wrapper->field_sections[] = array(
   'value' => 'Supporting information',
   'settings' => array(
     'visible' => 0,
-    'style' => 'light_blue',
-    'width' => 'normal',
+    'style' => 'style-light-blue',
+    'width' => 'width-normal',
     'tiles' => array(
       array(
         'module' => 'bean',
@@ -280,8 +280,8 @@ $wrapper->field_sections[] = array(
   'value' => 'Call to action',
   'settings' => array(
     'visible' => 0,
-    'style' => 'blue',
-    'width' => 'normal',
+    'style' => 'style-blue',
+    'width' => 'width-normal',
     'tiles' => array(
       array(
         'module' => 'bean',

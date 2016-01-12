@@ -176,21 +176,22 @@ function ombudemo_base_tiles_section_form_alter(&$element, $context) {
     '#type' => 'select',
     '#title' => t('Width'),
     '#options' => array(
-      'normal' => 'Normal',
-      'wide' => 'Wide',
+      'width-normal' => 'Normal',
+      'width-wide' => 'Wide',
+      'width-full-width' => 'Full width',
     ),
-    '#default_value' => isset($item['settings']['width']) ? $item['settings']['width'] : 'normal',
+    '#default_value' => isset($item['settings']['width']) ? $item['settings']['width'] : 'width-normal',
   );
 
   $element['settings']['style'] = array(
     '#type' => 'select',
     '#title' => t('Style'),
     '#options' => array(
-      'white' => 'White',
-      'blue' => 'Blue',
-      'light_blue' => 'Light Blue',
+      'style-white' => 'White',
+      'style-blue' => 'Blue',
+      'style-light-blue' => 'Light Blue',
     ),
-    '#default_value' => isset($item['settings']['style']) ? $item['settings']['style'] : 'white',
+    '#default_value' => isset($item['settings']['style']) ? $item['settings']['style'] : 'style-white',
   );
 }
 
