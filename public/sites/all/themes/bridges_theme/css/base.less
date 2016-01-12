@@ -47,13 +47,15 @@ a {
 }
 
 .file-document {
+  @icon-height: 40px;
+
   span.file {
     > a {
       position: relative;
       display: inline-block;
-      padding: 0.8em 1.4em 0.9em 70px;
+      padding: 0.8em 15px 0.9em @icon-height + 15px;
       border-bottom: 1px solid darken(@color-cove, 30);
-      .font-size(24, 1.5);
+      .font-size(18, 1.5);
       font-weight: @font-weight-bold;
       background-color: @color-cove;
       border-radius: 4px;
@@ -62,11 +64,11 @@ a {
       font-family: @font-family-sans-serif-condensed;
 
       &:before {
-        .bridges-icon(@glyph-code-document, 50px);
+        .bridges-icon(@glyph-code-document, @icon-height);
         position: absolute;
         top: 50%;
-        left: 15px;
-        margin-top: -25px;
+        left: 10px;
+        margin-top: @icon-height / -2;
         color: darken(@color-cove, 20);
         text-shadow: 0 1px 0 fade(@color-white, 30%);
       }

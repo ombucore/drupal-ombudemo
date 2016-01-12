@@ -22,9 +22,20 @@ body {
 }
 
 .file-document {
+  @icon-height: 50px;
+
   span.file {
     > a {
       .font-size(24, 1.5);
+      padding-right: 20px;
+      padding-left: @icon-height + 20px;
+
+      &:before {
+        left: 15px;
+        font-size: @icon-height;
+        line-height: 1;
+        margin-top: @icon-height / -2;
+      }
 
       & {
         float: left;
