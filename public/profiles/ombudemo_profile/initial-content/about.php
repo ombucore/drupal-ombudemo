@@ -142,7 +142,7 @@ The sky calls to us rich in heavy atoms. Worldlets venture Euclid as a patch of 
 Ship of the imagination. Tendrils of gossamer clouds, corpus callosum courage of our questions rich in mystery science. From which we spring Orion's sword rich in mystery science inconspicuous motes of rock
 </p>
 
-<a href="/" class="btn">Notice me and click!</a>
+<a href="/" class="cta">Notice me and click!</a>
 
 <p>
 Ship of the imagination. Tendrils of gossamer clouds, corpus callosum courage of our questions rich in mystery science. From which we spring Orion's sword.
