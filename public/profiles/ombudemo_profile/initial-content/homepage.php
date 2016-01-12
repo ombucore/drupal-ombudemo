@@ -216,13 +216,18 @@ $file = $wrapper->addFile('oregon-construction-specifications.pdf', $path . '/do
 $file = file_load($file['fid']);
 $file->filename = 'Technical Specifications';
 file_save($file);
-$tag = ombumedia_file_embed_tag(array('fid' => $file->fid));
+$tag = ombumedia_file_embed_tag(array(
+  'fid' => $file->fid,
+  'view_mode' => 'full',
+  'type' => 'document',
+  'title' => $file->filename,
+));
 
 $bean = bean_create(array('type' => 'bean_rte_rte'));
 $bean->delta = 'home-rte-last';
 $bean->title = 'Built to last for centuries';
 $body = <<<EOD
-<p>Our bridges are carefully designed to withstand wind gusts of up to 80 MPH and earthquakes registering 7.9 on the Richter scale. Our elegant passive damper technology counteracts all naturally occurring forces, maintaining stability in unpredictable conditions.</p> <p>$tag Download our technical specifications to review all design and construction details.</p>
+<p>Our bridges are carefully designed to withstand wind gusts of up to 80 MPH and earthquakes registering 7.9 on the Richter scale. Our elegant passive damper technology counteracts all naturally occurring forces, maintaining stability in unpredictable conditions.</p>$tag<p>Download our technical specifications to review all design and construction details.</p>
 EOD;
 $bean->field_description[LANGUAGE_NONE][0] = array(
   'value' => $body,
