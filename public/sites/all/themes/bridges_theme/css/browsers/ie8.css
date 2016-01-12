@@ -648,9 +648,6 @@ div[data-type="region"][data-name="console"] .alert {
     margin-top: 80px;
   }
 }
-.field.c {
-  overflow: auto;
-}
 .field.c .lead {
   font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
   font-size: 18px;
