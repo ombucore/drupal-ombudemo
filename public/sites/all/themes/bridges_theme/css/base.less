@@ -475,6 +475,13 @@ html.menu-open {
     background-color: @color-bayoux;
   }
 
+  &.style-light-blue,
+  &.style-blue {
+    > .container.content {
+      padding-top: @colored-section-top-padding;
+    }
+  }
+
   // TODO: Special case for white region with another white region immediately
   // following.  The bottom padding must be hidden to prevent too much visible
   // spacing between regions.
@@ -773,7 +780,8 @@ body.front {
   width: auto;
   height: 0;
   min-height: 0;
-  padding-top: percentage(580/1280);
+  margin-top: -@colored-section-top-padding;
+  padding-top: @ar-stinger-cta;
 
   &:extend(#block-bean-home-intro-cta all);
   margin-bottom: 0;
@@ -785,7 +793,7 @@ body.front {
   &:before {
     content: '';
     position: absolute;
-    top: 0;
+    top: 2px;
     left: 0;
     right: 0;
     bottom: 0;
@@ -794,7 +802,7 @@ body.front {
     background-color: transparent;
     background-image: url(/sites/all/themes/bridges_theme/images/stinger-backgrounds/cta-st-johns-tinted.jpg);
     background-position: center center;
-    background-size: 150% 150%;
+    background-size: 200% 200%;
     background-repeat: no-repeat;
     -webkit-clip-path: url(#stinger-cta-clip-path);
     clip-path: url(/sites/all/themes/bridges_theme/images/clip-paths/stinger-cta-clip-path.svg#stinger-cta-clip-path);
