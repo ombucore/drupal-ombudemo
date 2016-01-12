@@ -905,3 +905,72 @@ body.front {
     &:extend(.capital-header);
   }
 }
+
+// Tile: Social Follow Links
+// ----------------------------------------------------------------------------
+
+.tile.sociallinks {
+  @icon-size: 40px;
+  @width-separation: 8px;
+
+  > h2 {
+    display: none;
+  }
+
+  .field-type-sociallinks {
+    margin: 1.0em @width-separation / -2;
+    text-align: center;
+  }
+
+  .sociallink {
+    position: relative;
+    display: inline-block;
+    float: none;
+    color: @color-bayoux;
+    text-shadow: 0 1px 0 fade(@color-white, 30%);
+    margin-right: -0.25em;
+    padding: @width-separation / 2;
+    outline: 0;
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: @icon-size * 0.8;
+      height: @icon-size * 0.8;
+      margin-top: (@icon-size * 0.8) / -2;
+      margin-left: (@icon-size * 0.8) / -2;
+      background: transparent;
+      border-radius: @icon-size;
+
+    }
+
+    &:after {
+      .bridges-icon(@glyph-code-facebook, @icon-size);
+      display: block;
+      position: relative;
+    }
+
+    &.sociallink-instagram:after { content: @glyph-code-instagram; }
+    &.sociallink-facebook:after { content: @glyph-code-facebook; }
+    &.sociallink-twitter:after { content: @glyph-code-twitter; }
+    &.sociallink-flickr:after { content: @glyph-code-flickr; }
+    &.sociallink-pinterest:after { content: @glyph-code-pinterest; }
+    &.sociallink-youtube:after { content: @glyph-code-youtube; }
+
+    span {
+      display: none;
+    }
+
+    &:hover, &:focus {
+      color: @color-botticelli;
+      text-shadow: 0 -1px 0 fade(@color-black, 20%);
+
+      &:before {
+        background: @color-bayoux;
+      }
+    }
+  }
+}
