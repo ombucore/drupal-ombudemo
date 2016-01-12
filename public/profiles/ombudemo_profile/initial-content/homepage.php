@@ -57,7 +57,7 @@ $bean->field_description[LANGUAGE_NONE][0] = array(
 $bean->save();
 
 $bean = bean_create(array('type' => 'bean_cta'));
-$bean->style = 'primary';
+$bean->bean_style = 'primary';
 $bean->delta = 'home-intro-cta';
 $bean->title = '';
 $bean->field_cta_link[LANGUAGE_NONE][0] = array(
@@ -168,7 +168,7 @@ $layout->addBlock(array(
 ));
 
 $bean = bean_create(array('type' => 'bean_cta'));
-$bean->style = 'secondary';
+$bean->bean_style = 'secondary';
 $bean->delta = 'home-secondary-cta';
 $bean->title = '';
 $bean->field_cta_link[LANGUAGE_NONE][0] = array(
@@ -267,7 +267,7 @@ $wrapper->field_sections[] = array(
 );
 
 $bean = bean_create(array('type' => 'bean_cta'));
-$bean->style = 'stinger';
+$bean->bean_style = 'stinger';
 $bean->delta = 'home-stinger-cta';
 $bean->title = 'Reach the other side.';
 $bean->field_cta_image[LANGUAGE_NONE][0] = $wrapper->addFile('cta-st-johns-tinted.jpg', $path . '/images/page-sections');
