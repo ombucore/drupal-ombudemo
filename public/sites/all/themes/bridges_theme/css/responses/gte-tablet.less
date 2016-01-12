@@ -199,6 +199,39 @@ html, html.menu-open {
   }
 }
 
+// Region: footer
+// ----------------------------------------------------------------------------
+
+[data-type="region"][data-name="footer"] {
+  text-align: left;
+  min-height: 16.0em;
+}
+
+#block-bean-footer-social,
+#block-bean-footer-links,
+#block-menu-footer-menu {
+  position: absolute;
+  width: auto;
+  padding-left: 0;
+  padding-right: 0;
+  right: @gutter-side-tablet + @gutter-side-mobile;
+
+}
+
+#block-bean-footer-social {
+  top: -4.6em;
+}
+
+#block-bean-footer-links {
+  top: 0em;
+  right: @gutter-side-tablet + @gutter-side-mobile;
+}
+
+#block-menu-footer-menu {
+  top: 3.0em;
+  right: @gutter-side-tablet + @gutter-side-mobile;
+}
+
 // Page: Front
 // ----------------------------------------------------------------------------
 
@@ -270,8 +303,12 @@ body.front {
     }
 
     a {
-      padding-top: 0.8em;
+      padding-top: 0.6em;
       .font-size(24, 1.2);
+
+      &:after {
+        margin-top: 1.0em;
+      }
 
       &:active {
         transform: translate(0, @press-distance);
