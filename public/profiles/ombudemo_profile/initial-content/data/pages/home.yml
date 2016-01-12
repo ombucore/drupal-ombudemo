@@ -82,7 +82,7 @@ sections:
       -
         type: Callout
         style: Stacked
-        mobile_behavior: Carousel
+        mobile_behavior: Stacked
         width: 7/12
         offset: 0/12
         title: "Why Stumptown Bridges?"
