@@ -535,18 +535,31 @@ html.menu-open {
     background-color: @color-bayoux;
   }
 
+  :first-child + & {
+    > .container.content {
+      padding-top: 0;
+    }
+  }
+
   // Don't pad the bottom of sections if its next sibling has the same style.
 
   &.style-white.followed-by-style-white,
   &.style-blue.followed-by-style-blue,
   &.style-light-blue.followed-by-style-light-blue {
     > .container.content {
-      padding-top: 0;
       padding-bottom: 0;
     }
 
     > .container.footer:after {
       display: none;
+    }
+  }
+
+  &.followed-by-style-white + div + .style-white,
+  &.followed-by-style-blue + div + .style-blue,
+  &.followed-by-style-light-blue + div + .style-light-blue {
+    > .container.content {
+      padding-top: 0;
     }
   }
 }
