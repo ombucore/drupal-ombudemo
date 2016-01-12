@@ -81,7 +81,7 @@ class Blocks extends \ProfileTasks\Task\Blocks {
     );
     $bean->field_bean_link_links[LANGUAGE_NONE][] = array(
       'title' => 'Search',
-      'Url' => 'search',
+      'url' => 'search',
     );
     $bean->save();
   }
