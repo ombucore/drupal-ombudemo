@@ -683,6 +683,7 @@ div[data-type="region"][data-name="console"] .alert {
   font-size: 3 rem;
   line-height: 1.2;
   margin: 1.5em 0 1.0em 0;
+  clear: both;
 }
 .field.c h3 {
   font-size: 26px;
@@ -1001,6 +1002,14 @@ div[data-type="region"][data-name="console"] .alert {
   .field.c hr {
     margin: 3.0em 0;
     padding-top: 3.125%;
+  }
+  .field.c blockquote.pull-left,
+  .field.c figure.pull-left {
+    margin-left: -85px;
+  }
+  .field.c blockquote.pull-right,
+  .field.c figure.pull-right {
+    margin-right: -85px;
   }
   .field.c .file-document span.file > a {
     font-size: 24px;

@@ -24,6 +24,7 @@
     color: @color-prussian;
     .font-size(30, 1.2);
     margin: 1.5em 0 1.0em 0;
+    clear: both;
   }
 
   h3 {
@@ -375,6 +376,16 @@
     hr {
       margin: 3.0em 0;
       padding-top: @ar-arch * 0.5;
+    }
+
+    blockquote, figure {
+      &.pull-left {
+        margin-left: -@gutter-side-desktop + @gutter-side-mobile;
+      }
+
+      &.pull-right {
+        margin-right: -@gutter-side-desktop + @gutter-side-mobile;
+      }
     }
 
     .file-document {
