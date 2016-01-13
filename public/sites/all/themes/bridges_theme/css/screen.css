@@ -763,7 +763,7 @@ div[data-type="region"][data-name="console"] .alert {
 }
 .field.c .btn,
 .field.c .cta,
-input.btn {
+form:not(#search-block-form) input.btn {
   position: relative;
   display: inline-block;
   padding: 0.8em 2.0em;
@@ -782,24 +782,24 @@ input.btn {
 }
 .field.c .btn:active,
 .field.c .cta:active,
-input.btn:active {
+form:not(#search-block-form) input.btn:active {
   transform: translate(0, 2px);
 }
 .field.c .btn,
-input.btn {
+form:not(#search-block-form) input.btn {
   background-color: #8fa7cc;
   border: 0;
   border-bottom: 2px solid #4d71a8;
 }
 .field.c .btn:hover,
 .field.c .btn:focus,
-input.btn:hover,
-input.btn:focus {
+form:not(#search-block-form) input.btn:hover,
+form:not(#search-block-form) input.btn:focus {
   background-color: #6c8bbc;
   border-bottom-color: #3d5985;
 }
 .field.c .btn:active,
-input.btn:active {
+form:not(#search-block-form) input.btn:active {
   border-bottom-color: transparent;
 }
 .field.c .cta {
@@ -817,6 +817,9 @@ input.btn:active {
 }
 .field.c .cta:active {
   border-bottom-color: transparent;
+}
+.field.c .file-video {
+  margin: 2.0em 0;
 }
 .field.c .file-document .file-size {
   display: none;
@@ -1063,7 +1066,7 @@ a {
   text-decoration: none;
   transition: all 0.1s ease;
 }
-label {
+form:not(#search-block-form) label {
   display: block;
   margin-bottom: 0.5em;
   text-transform: uppercase;
@@ -1072,22 +1075,22 @@ label {
   line-height: 1.4;
   font-weight: 700;
 }
-label span.form-required {
+form:not(#search-block-form) label span.form-required {
   color: #646464;
 }
-label.checkbox {
+form:not(#search-block-form) label.checkbox {
   text-transform: none;
   font-weight: 400;
 }
-label.checkbox span {
+form:not(#search-block-form) label.checkbox span {
   margin-left: 0.5em;
 }
-.form-group {
+form:not(#search-block-form) .form-group {
   margin: 1.0em 0;
 }
-input[type="text"],
-input[type="password"],
-textarea {
+form:not(#search-block-form) input[type="text"],
+form:not(#search-block-form) input[type="password"],
+form:not(#search-block-form) textarea {
   appearance: none;
   -webkit-appearance: none;
   max-width: 100%;
@@ -1097,20 +1100,16 @@ textarea {
   padding: 0.5em 0.5em;
   border: 1px solid #b1b1b1;
 }
-textarea {
+form:not(#search-block-form) textarea {
   font-size: 16px;
   font-size: 1.6 rem;
   line-height: 1.5;
 }
-.help-block {
-  margin: 0.5em 0 2.0em 0;
-  font-size: 14px;
-  font-size: 1.4 rem;
-  line-height: 1.3;
-  font-style: italic;
-  color: #646464;
+form:not(#search-block-form) select {
+  width: 100%;
+  max-width: 320px;
 }
-input.btn {
+form:not(#search-block-form) input.btn {
   -webkit-appearance: none;
   appearance: none;
 }
@@ -1120,6 +1119,14 @@ a.password-request {
 a.password-request:hover,
 a.password-request:focus {
   color: #000000;
+}
+.help-block {
+  margin: 0.5em 0 2.0em 0;
+  font-size: 14px;
+  font-size: 1.4 rem;
+  line-height: 1.3;
+  font-style: italic;
+  color: #646464;
 }
 .decorative-header,
 [data-type="region-container"][data-name="core"] [data-type="block"] > h2,
@@ -1142,6 +1149,21 @@ a.password-request:focus {
   line-height: 1.3;
   font-weight: 900;
   text-transform: uppercase;
+}
+.tabbable > .nav,
+.tabbable > .tabbable-select {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.tabbable > .nav,
+.tabbable > .tabbable-select h5 {
+  display: none;
+}
+.tabbable .tab-pane {
+  display: none;
+}
+.tabbable .tab-pane.active {
+  display: block;
 }
 #page > [data-type="region"] > .container,
 #page > [data-type="region-container"] > .container,

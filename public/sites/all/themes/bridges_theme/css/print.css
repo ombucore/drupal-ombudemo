@@ -812,6 +812,9 @@ div[data-type="region"][data-name="console"] .alert {
 .field.c .cta:active {
   border-bottom-color: transparent;
 }
+.field.c .file-video {
+  margin: 2.0em 0;
+}
 .field.c .file-document .file-size {
   display: none;
 }
