@@ -220,6 +220,7 @@ $tag = ombumedia_file_embed_tag(array(
   'fid' => $file->fid,
   'view_mode' => 'full',
   'type' => 'document',
+  'position' => 'left',
   'title' => $file->filename,
 ));
 
