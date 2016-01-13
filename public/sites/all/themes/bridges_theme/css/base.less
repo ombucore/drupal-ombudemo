@@ -674,7 +674,9 @@ html.menu-open {
 
   // Don't show arches for an adjacent sections with the same style as its
   // previous sibling.
-  .style-white + &.style-white {
+  .style-white + &.style-white,
+  .style-light-blue + &.style-light-blue,
+  .style-blue + &.style-blue {
     display: none;
   }
 
