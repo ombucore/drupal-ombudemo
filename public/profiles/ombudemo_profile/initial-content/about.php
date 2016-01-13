@@ -15,17 +15,29 @@ $path = drupal_get_path('profile', 'ombudemo_profile');
 $fid = $wrapper->addFile('sun.jpg', $path . '/assets');
 $sun_fid = $fid['fid'];
 $file = file_load($sun_fid);
-$file->field_caption[LANGUAGE_NONE][0]['value'] = "Vanquish the impossible Orion's sword. Tendrils of gossamer clouds Euclid! Rogue the only home we've ever known. Preserve and cherish that pale blue dot.";
+$file->field_caption[LANGUAGE_NONE][0]['value'] = "Tendrils of gossamer clouds the only home we've ever known.  Dream of the mind's eye? Kindling the energy hidden in matter are creatures of the cosmos permanence of the stars Hypatia.";
 file_save($file);
 
 $fid = $wrapper->addFile('orion.jpg', $path . '/assets');
 $orion_fid = $fid['fid'];
 $file = file_load($orion_fid);
-$file->field_caption[LANGUAGE_NONE][0]['value'] = "Vanquish the impossible Orion's sword. Tendrils of gossamer clouds Euclid! Rogue the only home we've ever known. Preserve and cherish that pale blue dot.";
+$file->field_caption[LANGUAGE_NONE][0]['value'] = "Gathered by gravity, a mote of dust suspended in a sunbeam.";
+file_save($file);
+
+$fid = $wrapper->addFile('rainbow-galaxy.jpg', $path . '/assets');
+$rainbow_fid = $fid['fid'];
+$file = file_load($rainbow_fid);
+$file->field_caption[LANGUAGE_NONE][0]['value'] = "Bits of moving fluff not a sunrise but a galaxyrise!";
+file_save($file);
+
+$fid = $wrapper->addFile('earthrise.jpg', $path . '/assets');
+$earthrise_fid = $fid['fid'];
+$file = file_load($earthrise_fid);
+$file->field_caption[LANGUAGE_NONE][0]['value'] = "Finite but unbounded Drake Equation, citizens of distant epochs. Tunguska event take root and flourish. Rig Veda from which we spring.";
 file_save($file);
 
 drupal_static_reset('file_get_stream_wrappers');
-$provider = ombumedia_internet_get_provider('http://youtu.be/oP4I3uDMOVw');
+$provider = ombumedia_internet_get_provider('http://youtu.be/NjwWb_vUvB4');
 $file = $provider->save();
 $video_fid = $file->fid;
 
@@ -38,20 +50,7 @@ Circumnavigated preserve and cherish that pale blue dot courage of our questions
 Globular star cluster from which we spring. Circumnavigated, the only home we've ever known venture as a patch of light courage of our questions paroxysm of global death, cosmos a very small stage in a vast cosmic arena <strong>tendrils of gossamer clouds</strong> another world trillion. Rich in heavy atoms Orion's sword, tendrils of gossamer clouds astonishment cosmos across the centuries, science.
 </p>
 
-<ul>
-  <li>
-    Vanquish the impossible Orion's sword.
-  </li>
-  <li>
-    Tendrils of gossamer clouds
-  </li>
-  <li>
-    Euclid! Rogue the only home we've ever known.
-  </li>
-  <li>
-    Preserve and cherish that pale blue dot.
-  </li>
-</ul>
+<hr>
 
 <h2>I am a secondary subheader</h2>
 
@@ -72,20 +71,23 @@ Cosmic fugue worldlets, <a href="https://en.wikipedia.org/wiki/Mare_Tranquillita
 Wormholes ship of the imagination descended from astronomers not a sunrise but a galaxyrise descended from astronomers, Jean-François Champollion! Ship of the imagination.  Tendrils of gossamer clouds, corpus callosum courage of our questions rich in mystery science. From which we spring Orion's sword rich in mystery science inconspicuous motes of rock and gas billions upon billions kindling the energy hidden in matter shores of the cosmic ocean, Rig Veda trillion radio telescope Hypatia finite but unbounded.
 </p>
 
-<ol>
-<li>
-  Vanquish the impossible Orion's sword.
-</li>
-<li>
-  Tendrils of gossamer clouds
-</li>
-<li>
-  Euclid! Rogue the only home we've ever known.
-</li>
-<li>
-  Preserve and cherish that pale blue dot.
-</li>
-</ol>
+<ombumedia data-ombumedia="{&quot;fid&quot;:&quot;$rainbow_fid&quot;,&quot;position&quot;:&quot;right&quot;,&quot;view_mode&quot;:&quot;default&quot;,&quot;title&quot;:&quot;slide.jpg&quot;,&quot;type&quot;:&quot;image&quot;}"></ombumedia>
+
+<ul>
+  <li>
+    Vanquish the impossible Orion's sword.
+  </li>
+  <li>
+    Tendrils of gossamer clouds
+  </li>
+  <li>
+    Euclid! Rogue the only home we've ever known.
+  </li>
+  <li>
+    Preserve and cherish that pale blue dot.
+  </li>
+</ul>
+
 EOD;
 $bean = bean_create(array('type' => 'bean_rte_rte'));
 $bean->delta = 'about-rte';
@@ -117,7 +119,7 @@ $wrapper->field_sections[] = array(
 
 $bean = bean_create(array('type' => 'bean_container'));
 $bean->label = 'about-tabs';
-$bean->title = 'Tabs!';
+$bean->title = '';
 $bean->delta = 'about-tabs';
 $bean->bean_style = 'bean_container_tabbed';
 $bean->setValues(array (
@@ -128,9 +130,9 @@ $layout = tiles_get_container('bean_container')->getLayout('about-tabs');
 
 $bean = bean_create(array('type' => 'bean_rte_rte'));
 $bean->delta = 'about-tabs-1';
-$bean->title = 'Tab 1';
+$bean->title = 'Cosmic fugue';
 $body = <<<EOD
-<p>Our bridges are carefully designed to withstand wind gusts of up to 80 MPH and earthquakes registering 7.9 on the Richter scale. Our elegant passive damper technology counteracts all naturally occurring forces, maintaining stability in unpredictable conditions.</p><p>Download our technical specifications to review all design and construction details.</p>
+<p class="lead">Bits of moving fluff not a sunrise but a galaxyrise! Cosmic fugue. Circumnavigated network of wormholes, paroxysm of global death vanquish the impossible, Euclid encyclopaedia galactica dream of the mind's eye science. Birth worldlets! The ash of stellar alchemy how far away Flatland. Star stuff harvesting star light decipherment Sea of Tranquility quasar, cosmic fugue kindling the energy hidden in matter. Cosmic fugue. Globular star cluster the sky calls to us, ship of the imagination are creatures of the cosmos emerged into consciousness science!  White dwarf, two ghostly white figures in coveralls and helmets are soflty dancing astonishment colonies shores.</p>
 EOD;
 $bean->field_description[LANGUAGE_NONE][0] = array(
   'value' => $body,
@@ -147,9 +149,9 @@ $layout->addBlock(array(
 
 $bean = bean_create(array('type' => 'bean_rte_rte'));
 $bean->delta = 'about-tabs-2';
-$bean->title = 'Tab 2';
+$bean->title = 'Rogue explorations';
 $body = <<<EOD
-<p>Our bridges are carefully designed to withstand wind gusts of up to 80 MPH and earthquakes registering 7.9 on the Richter scale. Our elegant passive damper technology counteracts all naturally occurring forces, maintaining stability in unpredictable conditions.</p><p>Download our technical specifications to review all design and construction details.</p>
+<p class="lead">Rogue explorations! Descended from astronomers explorations from which we spring, hundreds of thousands. Apollonius of Perga rich in heavy atoms. Emerged into consciousness, rich in mystery tingling of the spine billions upon billions, decipherment. Star stuff harvesting star light! Great turbulent clouds! Preserve and cherish that pale blue dot shores of the cosmic ocean. Light years tingling of the spine science hundreds of thousands star stuff harvesting star light decipherment! With pretty stories for which there's little good evidence, something incredible is waiting to be known science, a very small stage in a vast cosmic arena Hypatia white dwarf!</p>
 EOD;
 $bean->field_description[LANGUAGE_NONE][0] = array(
   'value' => $body,
@@ -166,9 +168,9 @@ $layout->addBlock(array(
 
 $bean = bean_create(array('type' => 'bean_rte_rte'));
 $bean->delta = 'about-tabs-3';
-$bean->title = 'Tab 3';
+$bean->title = 'Heavy atoms';
 $body = <<<EOD
-<p>Our bridges are carefully designed to withstand wind gusts of up to 80 MPH and earthquakes registering 7.9 on the Richter scale. Our elegant passive damper technology counteracts all naturally occurring forces, maintaining stability in unpredictable conditions.</p><p>Download our technical specifications to review all design and construction details.</p>
+<p class="lead">Across the centuries rich in heavy atoms a mote of dust suspended in a sunbeam, trillion Sea of Tranquility worldlets with pretty stories for which there's little good evidence! Something incredible is waiting to be known emerged into consciousness courage of our questions great turbulent clouds cosmic fugue, emerged into consciousness encyclopaedia galactica at the edge of forever preserve and cherish that pale blue dot concept of the number one explorations from which we spring, Jean-François Champollion! Science Hypatia! Hearts of the stars. Astonishment finite but unbounded? Dispassionate extraterrestrial observer preserve and cherish that pale blue dot.</p>
 EOD;
 $bean->field_description[LANGUAGE_NONE][0] = array(
   'value' => $body,
@@ -185,9 +187,9 @@ $layout->addBlock(array(
 
 $bean = bean_create(array('type' => 'bean_rte_rte'));
 $bean->delta = 'about-tabs-4';
-$bean->title = 'Tab 4';
+$bean->title = 'Gossamer clouds';
 $body = <<<EOD
-<p>Our bridges are carefully designed to withstand wind gusts of up to 80 MPH and earthquakes registering 7.9 on the Richter scale. Our elegant passive damper technology counteracts all naturally occurring forces, maintaining stability in unpredictable conditions.</p><p>Download our technical specifications to review all design and construction details.</p>
+<p class="lead">Decipherment intelligent beings great turbulent clouds! Circumnavigated from which we spring ship of the imagination, a still more glorious dawn awaits, the carbon in our apple pies? Quasar, at the edge of forever? Cosmic fugue shores of the cosmic ocean white dwarf descended from astronomers intelligent beings from which we spring billions upon billions colonies courage of our questions made in the interiors of collapsing stars rich in heavy atoms. Cosmic ocean! Dream of the mind's eye? Kindling the energy hidden in matter are creatures of the cosmos permanence of the stars Hypatia, rings of Uranus, from which we spring, ship of the imagination Orion's sword.</p>
 EOD;
 $bean->field_description[LANGUAGE_NONE][0] = array(
   'value' => $body,
@@ -225,13 +227,26 @@ $wrapper->field_sections[] = array(
 $body = <<<EOD
 <h3>I am a tertiary subheader</h3>
 
+<ombumedia data-ombumedia="{&quot;fid&quot;:&quot;$earthrise_fid&quot;,&quot;position&quot;:&quot;right&quot;,&quot;view_mode&quot;:&quot;default&quot;,&quot;title&quot;:&quot;slide.jpg&quot;,&quot;type&quot;:&quot;image&quot;}"></ombumedia>
+
 <p>
   At the edge of forever encyclopaedia galactica Tunguska event vanquish the impossible venture, realm of the galaxies prime number, vastness is bearable only through love rich in heavy atoms Cambrian explosion network of wormholes across the centuries. A very small stage in a vast cosmic arena shores of the cosmic ocean great turbulent clouds laws of physics.
 </p>
 
-<p>
-A billion trillion descended from astronomers. Encyclopaedia galactica Rig Veda from which we spring Flatland finite but unbounded kindling the energy hidden in matter. Vanquish the impossible Orion's sword colonies light years shores of the cosmic ocean tesseract and billions upon billions upon billions upon billions upon billions upon billions upon billions.
-</p>
+<ol>
+<li>
+  Vanquish the impossible Orion's sword.
+</li>
+<li>
+  Tendrils of gossamer clouds
+</li>
+<li>
+  Euclid! Rogue the only home we've ever known.
+</li>
+<li>
+  Preserve and cherish that pale blue dot.
+</li>
+</ol>
 
 <h4>I am a quaternary subheader</h4>
 
@@ -250,17 +265,19 @@ Cosmic fugue worldlets, <a href="https://en.wikipedia.org/wiki/Mare_Tranquillita
 Hundreds of thousands! Tendrils of gossamer clouds with pretty stories for which there's little good evidence gathered by gravity another world birth astonishment Sea of Tranquility trillion, hydrogen atoms light years billions upon billions?  Are creatures of the cosmos quasar hundreds of thousands Cambrian explosion dream of the mind's eye, cosmos, are creatures of the cosmos preserve and cherish that pale blue dot tingling of the spine. With pretty stories for which there's little good evidence rings of Uranus inconspicuous motes of rock and gas.
 </p>
 
-<hr>
 
-<p>Rogue explorations! Descended from astronomers explorations from which we spring, hundreds of thousands. Apollonius of Perga rich in heavy atoms. Emerged into consciousness, rich in mystery tingling of the spine billions upon billions, decipherment. Star stuff harvesting star light! Great turbulent clouds! Preserve and cherish that pale blue dot shores of the cosmic ocean. Light years tingling of the spine science hundreds of thousands star stuff harvesting star light decipherment! With pretty stories for which there's little good evidence, something incredible is waiting to be known science, a very small stage in a vast cosmic arena Hypatia white dwarf!</p>
+<ombumedia data-ombumedia="{&quot;fid&quot;:&quot;$video_fid&quot;,&quot;view_mode&quot;:&quot;default&quot;,&quot;title&quot;:&quot;slide.jpg&quot;,&quot;type&quot;:&quot;video&quot;}"></ombumedia>
 
 <h5>I am a quinary subheader</h5>
+
+
+<p>Rogue explorations! Descended from astronomers explorations from which we spring, hundreds of thousands. Apollonius of Perga rich in heavy atoms. Emerged into consciousness, rich in mystery tingling of the spine billions upon billions, decipherment. Star stuff harvesting star light! Great turbulent clouds! Preserve and cherish that pale blue dot shores of the cosmic ocean. Light years tingling of the spine science hundreds of thousands star stuff harvesting star light decipherment! With pretty stories for which there's little good evidence, something incredible is waiting to be known science, a very small stage in a vast cosmic arena Hypatia white dwarf!</p>
 
 <p>
 Realm of the galaxies, the ash of stellar alchemy. Cosmic fugue, birth intelligent beings globular star cluster rogue consciousness hundreds of thousands Flatland shores of the cosmic ocean tesseract.
 </p>
 
-<ombumedia data-ombumedia="{&quot;fid&quot;:&quot;$video_fid&quot;,&quot;view_mode&quot;:&quot;default&quot;,&quot;title&quot;:&quot;slide.jpg&quot;,&quot;type&quot;:&quot;video&quot;}"></ombumedia>
+<hr>
 
 <h6>I am a senary subheader</h6>
 
@@ -283,7 +300,7 @@ Ship of the imagination. Tendrils of gossamer clouds, corpus callosum courage of
 <p><a href="/" class="cta">Notice me and click!</a></p>
 
 <p>
-<small>Ship of the imagination. Tendrils of gossamer clouds, corpus callosum courage of our questions rich in mystery science. From which we spring Orion's sword.</small>
+<small>Ship of the imagination. Tendrils of gossamer clouds, corpus callosum courage of our questions rich in mystery science.</small>
 </p>
 EOD;
 $bean = bean_create(array('type' => 'bean_rte_rte'));
