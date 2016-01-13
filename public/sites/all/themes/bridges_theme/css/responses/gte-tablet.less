@@ -171,13 +171,31 @@ html, html.menu-open {
   }
 }
 
+// Tile sections
+// ----------------------------------------------------------------------------
+
+[data-type="region"][data-name="section"] {
+  > .container.header {
+    h2 {
+      .font-size(24, 1.2);
+    }
+  }
+
+  &:nth-child(2) {
+    .contextual-links-wrapper {
+      top: @height-header-tablet + 10;
+    }
+  }
+}
+
 // Region width: Wide
 // ----------------------------------------------------------------------------
 
 #page > [data-type="region-container"][data-name="sections"] > .field-type-tiles-section > [data-type="region"][data-name="section"].width-wide {
-  > .content {
-    padding-left: 0;
-    padding-right: 0;
+  > .container.content {
+    max-width: @max-width-site + (@gutter-side-desktop * 2);
+    padding-left: @gutter-side-mobile;
+    padding-right: @gutter-side-mobile;
   }
 
   aside[data-type="block"] {
@@ -236,17 +254,6 @@ html, html.menu-open {
 
 body.front {
   padding-top: 0;
-}
-
-// Contextual links
-// ----------------------------------------------------------------------------
-
-[data-type="region"][data-name="section"] {
-  &:nth-child(2) {
-    .contextual-links-wrapper {
-      top: @height-header-tablet + 10;
-    }
-  }
 }
 
 // Tile: CTA

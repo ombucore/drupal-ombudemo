@@ -18,7 +18,7 @@ body {
   font-weight: @font-weight-regular;
   .font-size(@font-size-base, @line-height-base);
   background-color: @color-polo;
-  color: @color-black;
+  color: @color-zodiac;
 }
 
 a {
@@ -468,6 +468,16 @@ html.menu-open {
 [data-type="region"][data-name="section"] {
   position: relative;
 
+  > .container.header {
+    h2 {
+      margin: 2.0em 0 1.0em 0;
+      .font-size(20, 1.2);
+      font-weight: @font-weight-bold;
+      text-transform: uppercase;
+      color: @color-polo;
+    }
+  }
+
   > .container.content {
     padding-top: 2.0em;
     padding-bottom: 2.0em;
@@ -481,17 +491,36 @@ html.menu-open {
 
   &.style-white {
     background-color: @color-white;
+    color: @color-zodiac;
   }
 
   &.style-light-blue {
     background-color: @color-botticelli;
+    color: @color-zodiac;
+
+    > .container.header h2 {
+      color: @color-white;
+      text-shadow: 0 -1px 0 fade(@color-black, 30%);
+    }
   }
 
   &.style-blue {
     background-color: @color-bayoux;
+    color: @color-botticelli;
+
+    > .container.header h2 {
+      color: @color-polo;
+      text-shadow: 0 -1px 0 fade(@color-black, 30%);
+    }
   }
 
   :first-child + & {
+    > .container.header {
+      h2 {
+        margin-top: 0;
+      }
+    }
+
     > .container.content {
       padding-top: 0;
     }
