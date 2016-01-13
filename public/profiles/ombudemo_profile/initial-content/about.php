@@ -99,7 +99,7 @@ $bean->save();
 $wrapper->field_sections[] = array(
   'value' => 'Exposition',
   'settings' => array(
-    'visible' => 1,
+    'visible' => 0,
     'style' => 'style-white',
     'width' => 'width-normal',
     'tiles' => array(
@@ -108,7 +108,8 @@ $wrapper->field_sections[] = array(
         'delta' => 'about-rte',
         'region' => 'content',
         'weight' => 1,
-        'width' => 12,
+        'width' => 10,
+        'offset' => 1,
       ),
     ),
   ),
@@ -295,7 +296,7 @@ $bean->save();
 $wrapper->field_sections[] = array(
   'value' => 'Resolution',
   'settings' => array(
-    'visible' => 1,
+    'visible' => 0,
     'style' => 'style-white',
     'width' => 'width-normal',
     'tiles' => array(
@@ -304,7 +305,8 @@ $wrapper->field_sections[] = array(
         'delta' => 'about-rte-2',
         'region' => 'content',
         'weight' => 1,
-        'width' => 12,
+        'width' => 10,
+        'offset' => 1,
       ),
     ),
   ),
