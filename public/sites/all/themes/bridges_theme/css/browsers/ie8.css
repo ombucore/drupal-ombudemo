@@ -841,9 +841,13 @@ div[data-type="region"][data-name="console"] .alert {
 .field.c .cta:active {
   border-bottom-color: transparent;
 }
+.field.c .file-document .file-size {
+  display: none;
+}
 .field.c .file-document span.file > a {
   position: relative;
   display: inline-block;
+  margin-bottom: 1.0em;
   padding: 0.8em 15px 0.9em 55px;
   font-size: 18px;
   font-size: 1.8 rem;
@@ -1004,16 +1008,23 @@ div[data-type="region"][data-name="console"] .alert {
     line-height: 1.5;
     padding-right: 20px;
     padding-left: 70px;
-    float: left;
-    margin-right: 1.0em;
-    margin-bottom: 1.0em;
-    margin-left: -85px;
   }
   .field.c .file-document span.file > a:before {
     left: 15px;
     font-size: 50px;
     line-height: 1;
     margin-top: -25px;
+  }
+  .field.c .file-document.pull-left span.file > a {
+    float: left;
+    margin-right: 1.0em;
+    margin-bottom: 0.5em;
+    margin-left: -85px;
+  }
+  .field.c .file-document.pull-right span.file > a {
+    float: right;
+    margin-left: 1.0em;
+    margin-bottom: 0.5em;
   }
 }
 .field-type-sociallinks .sociallink {

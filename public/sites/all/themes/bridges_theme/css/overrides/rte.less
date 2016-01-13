@@ -189,14 +189,18 @@
     }
   }
 
-
   .file-document {
     @icon-height: 40px;
+
+    .file-size {
+      display: none;
+    }
 
     span.file {
       > a {
         position: relative;
         display: inline-block;
+        margin-bottom: 1.0em;
         padding: 0.8em 15px 0.9em @icon-height + 15px;
         .font-size(18, 1.5);
         font-weight: @font-weight-bold;
@@ -388,13 +392,23 @@
             line-height: 1;
             margin-top: @icon-height / -2;
           }
+        }
+      }
 
-          & {
-            float: left;
-            margin-right: 1.0em;
-            margin-bottom: 1.0em;
-            margin-left: -@gutter-side-desktop + @gutter-side-mobile;
-          }
+      &.pull-left {
+        span.file > a {
+          float: left;
+          margin-right: 1.0em;
+          margin-bottom: 0.5em;
+          margin-left: -@gutter-side-desktop + @gutter-side-mobile;
+        }
+      }
+
+      &.pull-right {
+        span.file > a {
+          float: right;
+          margin-left: 1.0em;
+          margin-bottom: 0.5em;
         }
       }
     }
