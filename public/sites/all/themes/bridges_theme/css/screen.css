@@ -967,7 +967,7 @@ form:not(#search-block-form) input.btn:active {
   font-size: 18px;
   font-size: 1.8 rem;
   line-height: 1.5;
-  font-weight: 700;
+  font-weight: 400;
   background-color: #6c88b3;
   border-radius: 4px;
   color: #ffffff;
@@ -1080,6 +1080,14 @@ form:not(#search-block-form) input.btn:active {
     margin-left: 1.0em;
     margin-right: -25px;
   }
+  .bean-container .field.c blockquote.pull-left,
+  .bean-container .field.c figure.pull-left {
+    margin-left: 0;
+  }
+  .bean-container .field.c blockquote.pull-right,
+  .bean-container .field.c figure.pull-right {
+    margin-right: 0;
+  }
   .field.c blockquote {
     font-size: 32px;
     font-size: 3.2 rem;
@@ -1144,6 +1152,12 @@ form:not(#search-block-form) input.btn:active {
     font-size: 50px;
     line-height: 1;
     margin-top: -25px;
+  }
+  .field.c .file-document.pull-left,
+  .field.c .file-document.pull-right {
+    width: auto;
+    max-width: 400px;
+    margin: 0;
   }
   .field.c .file-document.pull-left span.file > a {
     float: left;

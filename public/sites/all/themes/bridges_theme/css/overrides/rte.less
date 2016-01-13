@@ -215,7 +215,7 @@
         margin-bottom: 1.0em;
         padding: 0.8em 15px 0.9em @icon-height + 15px;
         .font-size(18, 1.5);
-        font-weight: @font-weight-bold;
+        font-weight: @font-weight-regular;
         background-color: @color-cove;
         border-radius: 4px;
         color: @color-white;
@@ -349,6 +349,17 @@
         margin-left: 1.0em;
         margin-right: -@gutter-side-tablet + @gutter-side-mobile;
       }
+
+      // Don't allow RTE elements inside tile container to pull outside margins.
+      .bean-container & {
+        &.pull-left {
+          margin-left: 0;
+        }
+
+        &.pull-right {
+          margin-right: 0;
+        }
+      }
     }
 
     blockquote {
@@ -423,6 +434,12 @@
             margin-top: @icon-height / -2;
           }
         }
+      }
+
+      &.pull-left, &.pull-right {
+        width: auto;
+        max-width: 400px;
+        margin: 0;
       }
 
       &.pull-left {
