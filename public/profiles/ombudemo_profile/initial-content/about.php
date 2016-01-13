@@ -64,7 +64,7 @@ Cosmic fugue worldlets, <a href="https://en.wikipedia.org/wiki/Mare_Tranquillita
 
 <blockquote class="pull-right">
 <p>
-  Cosmic fugue worldlets, Sea of Tranquility dream of the mind's eye? Drake Equation? The ash of stellar alchemy!
+  Tendrils of gossamer clouds vanquish the impossible Orion's sword in a cosmic ocean.
 </p>
 </blockquote>
 
@@ -207,7 +207,7 @@ $layout->save();
 $wrapper->field_sections[] = array(
   'value' => 'Rising action',
   'settings' => array(
-    'visible' => 1,
+    'visible' => 0,
     'style' => 'style-light-blue',
     'width' => 'width-wide',
     'tiles' => array(
@@ -237,7 +237,7 @@ A billion trillion descended from astronomers. Encyclopaedia galactica Rig Veda 
 
 <blockquote class="pull-left">
 <p>
-Cosmic fugue worldlets, Sea of Tranquility dream of the mind's eye? Drake Equation? The ash of stellar alchemy!
+Tingling of the spine, a billion trillion pretty stories for which there's little good evidence.
 </p>
 </blockquote>
 
@@ -245,13 +245,16 @@ Cosmic fugue worldlets, Sea of Tranquility dream of the mind's eye? Drake Equati
 Cosmic fugue worldlets, <a href="https://en.wikipedia.org/wiki/Mare_Tranquillitatis">Sea of Tranquility</a> dream of the mind's eye?  Cosmic fugue Cambrian explosion kindling the energy hidden in matter finite but unbounded paroxysm of global death astonishment, circumnavigated. Worldlets, Orion's sword. Vanquish the impossible Sea of Tranquility permanence of the stars. Drake Equation? The ash of stellar alchemy, two ghostly white figures in coveralls and helmets are soflty dancing corpus callosum.
 </p>
 
-<h5>I am a quinary subheader</h5>
 
 <p>
 Hundreds of thousands! Tendrils of gossamer clouds with pretty stories for which there's little good evidence gathered by gravity another world birth astonishment Sea of Tranquility trillion, hydrogen atoms light years billions upon billions?  Are creatures of the cosmos quasar hundreds of thousands Cambrian explosion dream of the mind's eye, cosmos, are creatures of the cosmos preserve and cherish that pale blue dot tingling of the spine. With pretty stories for which there's little good evidence rings of Uranus inconspicuous motes of rock and gas.
 </p>
 
 <hr>
+
+<p>Rogue explorations! Descended from astronomers explorations from which we spring, hundreds of thousands. Apollonius of Perga rich in heavy atoms. Emerged into consciousness, rich in mystery tingling of the spine billions upon billions, decipherment. Star stuff harvesting star light! Great turbulent clouds! Preserve and cherish that pale blue dot shores of the cosmic ocean. Light years tingling of the spine science hundreds of thousands star stuff harvesting star light decipherment! With pretty stories for which there's little good evidence, something incredible is waiting to be known science, a very small stage in a vast cosmic arena Hypatia white dwarf!</p>
+
+<h5>I am a quinary subheader</h5>
 
 <p>
 Realm of the galaxies, the ash of stellar alchemy. Cosmic fugue, birth intelligent beings globular star cluster rogue consciousness hundreds of thousands Flatland shores of the cosmic ocean tesseract.
@@ -265,12 +268,11 @@ Realm of the galaxies, the ash of stellar alchemy. Cosmic fugue, birth intellige
 Orion's sword a still more glorious dawn awaits billions upon billions the carbon in our apple pies hydrogen atoms rogue. Astonishment something incredible is waiting to be known realm of the galaxies colonies. Hypatia great turbulent clouds!
 </p>
 
+<ombumedia data-ombumedia="{&quot;fid&quot;:&quot;$sun_fid&quot;,&quot;position&quot;:&quot;right&quot;,&quot;view_mode&quot;:&quot;default&quot;,&quot;title&quot;:&quot;slide.jpg&quot;,&quot;type&quot;:&quot;image&quot;}"></ombumedia>
+
 <p>
 The sky calls to us rich in heavy atoms. Worldlets venture Euclid as a patch of light, network of wormholes cosmos dream of the mind's eye Drake Equation a very small stage in a vast cosmic arena extraordinary claims require extraordinary evidence network of wormholes Vangelis Flatland and billions upon billions upon billions upon billions upon billions upon billions upon billions.
 </p>
-
-<ombumedia data-ombumedia="{&quot;fid&quot;:&quot;$sun_fid&quot;,&quot;position&quot;:&quot;right&quot;,&quot;view_mode&quot;:&quot;default&quot;,&quot;title&quot;:&quot;slide.jpg&quot;,&quot;type&quot;:&quot;image&quot;}"></ombumedia>
-
 
 <p><a href="/" class="btn">Click if you want</a></p>
 

@@ -48,7 +48,7 @@
   <title><?php print $head_title; ?></title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0.0" />
   <?php print $head; ?>
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,700,700italic,800|Open+Sans+Condensed:300,300italic|Lobster" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,700,700italic,800|Open+Sans+Condensed:300,300italic,700|Lobster" rel="stylesheet" type="text/css">
   <?php print $styles; ?>
   <!--[if IE 7 ]> <script type="text/javascript">document.documentElement.className += ' ie7';</script> <![endif]-->
   <!--[if IE 8 ]> <script type="text/javascript">document.documentElement.className += ' ie8';</script> <![endif]-->

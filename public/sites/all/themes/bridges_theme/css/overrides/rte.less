@@ -130,10 +130,12 @@
     padding: 0;
     border-top: 5px solid @color-botticelli;
     border-bottom: 2px solid @color-botticelli;
-    .font-size(18, 1.5);
+    .font-size(26, 1.3);
+    font-family: @font-family-sans-serif-condensed;
     font-style: italic;
     font-weight: @font-weight-regular;
     color: @color-bayoux;
+    text-transform: uppercase;
 
     a:not(.btn):not(.cta) {
       border-bottom: 0;
@@ -162,6 +164,7 @@
 
   .btn {
     background-color: @color-polo;
+    border: 0;
     border-bottom: 2px solid darken(@color-polo, 20);
 
     &:hover, &:focus {
@@ -316,24 +319,22 @@
       &.pull-left,
       &.pull-right {
         margin-top: 0.5em;
-        max-width: 350px;
+        max-width: 400px;
       }
 
       &.pull-left {
-        float: left;
         margin-left: -@gutter-side-tablet + @gutter-side-mobile;
-        margin-right: 1.5em;
+        margin-right: 1.0em;
       }
 
       &.pull-right {
-        float: right;
-        margin-left: 1.5em;
+        margin-left: 1.0em;
         margin-right: -@gutter-side-tablet + @gutter-side-mobile;
       }
+    }
 
-      img {
-        max-width: 100%;
-      }
+    blockquote {
+      .font-size(32, 1.2);
     }
   }
 }

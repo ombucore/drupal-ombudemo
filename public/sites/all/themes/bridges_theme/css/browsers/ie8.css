@@ -169,34 +169,11 @@ table {
   font-size: 120%;
   font-weight: bold;
 }
-.field.c pre.pull-left,
-.field.c blockquote.pull-left,
-.field.c p.pull-left {
+.field.c .pull-left {
   clear: left;
 }
-.field.c pre.pull-right,
-.field.c blockquote.pull-right,
-.field.c p.pull-right {
+.field.c .pull-right {
   clear: right;
-}
-.field.c pre.pull-left,
-.field.c blockquote.pull-left,
-.field.c p.pull-left,
-.field.c pre.pull-right,
-.field.c blockquote.pull-right,
-.field.c p.pull-right {
-  font-family: inherit;
-  white-space: normal;
-  word-break: normal;
-  word-wrap: normal;
-}
-.field.c pre.pull-left .field-name-field-caption,
-.field.c blockquote.pull-left .field-name-field-caption,
-.field.c p.pull-left .field-name-field-caption,
-.field.c pre.pull-right .field-name-field-caption,
-.field.c blockquote.pull-right .field-name-field-caption,
-.field.c p.pull-right .field-name-field-caption {
-  margin-top: 0.5em;
 }
 .field.c ul,
 .field.c ol {
@@ -205,33 +182,23 @@ table {
 .field.c iframe {
   max-width: 100%;
 }
+.field.c img {
+  max-width: 100%;
+}
 @media (min-width: 480px) {
-  .field.c pre.pull-left,
-  .field.c blockquote.pull-left,
-  .field.c p.pull-left,
-  .field.c pre.pull-right,
-  .field.c blockquote.pull-right,
-  .field.c p.pull-right {
+  .field.c .pull-left,
+  .field.c .pull-right {
     width: 50%;
     max-width: 350px;
     margin: 0.5em 0;
   }
-  .field.c pre.pull-left,
-  .field.c blockquote.pull-left,
-  .field.c p.pull-left {
+  .field.c .pull-left {
     float: left;
     margin-right: 1.0em;
   }
-  .field.c pre.pull-right,
-  .field.c blockquote.pull-right,
-  .field.c p.pull-right {
+  .field.c .pull-right {
     float: right;
     margin-left: 1.0em;
-  }
-  .field.c pre img,
-  .field.c blockquote img,
-  .field.c p img {
-    max-width: 100%;
   }
 }
 div[data-type="region"][data-name="console"] {
@@ -782,18 +749,21 @@ div[data-type="region"][data-name="console"] .alert {
   padding: 0;
   border-top: 5px solid #d3dcea;
   border-bottom: 2px solid #d3dcea;
-  font-size: 18px;
-  font-size: 1.8 rem;
-  line-height: 1.5;
+  font-size: 26px;
+  font-size: 2.6 rem;
+  line-height: 1.3;
+  font-family: 'Open Sans Condensed', 'Helvetica', 'Arial', sans-serif;
   font-style: italic;
   font-weight: 400;
   color: #536580;
+  text-transform: uppercase;
 }
 .field.c blockquote a:not(.btn):not(.cta) {
   border-bottom: 0;
 }
 .field.c .btn,
-.field.c .cta {
+.field.c .cta,
+input.btn {
   position: relative;
   display: inline-block;
   padding: 0.8em 2.0em;
@@ -811,19 +781,25 @@ div[data-type="region"][data-name="console"] .alert {
   border-radius: 4px;
 }
 .field.c .btn:active,
-.field.c .cta:active {
+.field.c .cta:active,
+input.btn:active {
   transform: translate(0, 2px);
 }
-.field.c .btn {
+.field.c .btn,
+input.btn {
   background-color: #8fa7cc;
+  border: 0;
   border-bottom: 2px solid #4d71a8;
 }
 .field.c .btn:hover,
-.field.c .btn:focus {
+.field.c .btn:focus,
+input.btn:hover,
+input.btn:focus {
   background-color: #6c8bbc;
   border-bottom-color: #3d5985;
 }
-.field.c .btn:active {
+.field.c .btn:active,
+input.btn:active {
   border-bottom-color: transparent;
 }
 .field.c .cta {
@@ -946,23 +922,22 @@ div[data-type="region"][data-name="console"] .alert {
   .field.c blockquote.pull-right,
   .field.c figure.pull-right {
     margin-top: 0.5em;
-    max-width: 350px;
+    max-width: 400px;
   }
   .field.c blockquote.pull-left,
   .field.c figure.pull-left {
-    float: left;
     margin-left: -25px;
-    margin-right: 1.5em;
+    margin-right: 1.0em;
   }
   .field.c blockquote.pull-right,
   .field.c figure.pull-right {
-    float: right;
-    margin-left: 1.5em;
+    margin-left: 1.0em;
     margin-right: -25px;
   }
-  .field.c blockquote img,
-  .field.c figure img {
-    max-width: 100%;
+  .field.c blockquote {
+    font-size: 32px;
+    font-size: 3.2 rem;
+    line-height: 1.2;
   }
 }
 @media (min-width: 992px) {
@@ -1054,6 +1029,23 @@ div[data-type="region"][data-name="console"] .alert {
 .field-type-sociallinks .sociallink.sociallink-youtube {
   background: none;
 }
+.select2-drop-active {
+  border: 1px solid #979797;
+}
+.select2-container .select2-choice,
+.select2-container.select2-container-active .select2-choice {
+  border: 1px solid #979797;
+  background-color: #ffffff;
+}
+.select2-container .select2-choice .select2-arrow,
+.select2-container.select2-container-active .select2-choice .select2-arrow {
+  background-color: #cacaca;
+  border-left: 1px solid #979797;
+}
+.select2-container .select2-choice .select2-arrow b,
+.select2-container.select2-container-active .select2-choice .select2-arrow b {
+  color: #646464;
+}
 html {
   font-size: 62.5%;
 }
@@ -1070,6 +1062,64 @@ body {
 a {
   text-decoration: none;
   transition: all 0.1s ease;
+}
+label {
+  display: block;
+  margin-bottom: 0.5em;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-size: 1.4 rem;
+  line-height: 1.4;
+  font-weight: 700;
+}
+label span.form-required {
+  color: #646464;
+}
+label.checkbox {
+  text-transform: none;
+  font-weight: 400;
+}
+label.checkbox span {
+  margin-left: 0.5em;
+}
+.form-group {
+  margin: 1.0em 0;
+}
+input[type="text"],
+input[type="password"],
+textarea {
+  appearance: none;
+  -webkit-appearance: none;
+  max-width: 100%;
+  font-size: 18px;
+  font-size: 1.8 rem;
+  line-height: 1;
+  padding: 0.5em 0.5em;
+  border: 1px solid #b1b1b1;
+}
+textarea {
+  font-size: 16px;
+  font-size: 1.6 rem;
+  line-height: 1.5;
+}
+.help-block {
+  margin: 0.5em 0 2.0em 0;
+  font-size: 14px;
+  font-size: 1.4 rem;
+  line-height: 1.3;
+  font-style: italic;
+  color: #646464;
+}
+input.btn {
+  -webkit-appearance: none;
+  appearance: none;
+}
+a.password-request {
+  color: #979797;
+}
+a.password-request:hover,
+a.password-request:focus {
+  color: #000000;
 }
 .decorative-header,
 [data-type="region-container"][data-name="core"] [data-type="block"] > h2,
@@ -1450,6 +1500,9 @@ aside[data-type="block"] {
 #block-system-main {
   padding-top: 1.0em;
   padding-bottom: 2.0em;
+}
+#block-system-main > form {
+  margin: 3.0em 0 8.0em 0;
 }
 [data-type="region"][data-name="section"] > .container.footer:after {
   content: '';

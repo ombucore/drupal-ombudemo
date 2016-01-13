@@ -1,0 +1,21 @@
+.select2-drop-active {
+  border: 1px solid lighten(@color-fossil, 20);
+}
+
+.select2-container {
+  &, &.select2-container-active {
+    .select2-choice {
+      border: 1px solid lighten(@color-fossil, 20);
+      background-color: @color-white;
+
+      .select2-arrow {
+        background-color: lighten(@color-fossil, 40);
+        border-left: 1px solid lighten(@color-fossil, 20);
+
+        b {
+          color: @color-fossil;
+        }
+      }
+    }
+  }
+}
