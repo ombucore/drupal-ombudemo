@@ -1,0 +1,110 @@
+.tabbable {
+  > .tabbable-tabs, > .tabbable-select {
+    padding-left: @gutter-side-mobile;
+    padding-right: @gutter-side-mobile;
+  }
+
+  > .tabbable-tabs, > .tabbable-select h5 {
+    display: none;
+  }
+
+  .tab-pane {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+}
+
+// MEDIA RESPONSES
+// ----------------------------------------------------------------------------
+
+@media (min-width: @mq-threshold-tablet) {
+  .tabbable {
+    > .tab-content {
+      padding-top: 1.0em;
+    }
+
+    > .tabbable-select {
+      display: none;
+    }
+
+    > .tabbable-tabs {
+      display: block;
+      padding: 0;
+      text-align: center;
+
+      > .nav {
+        display: block;
+        list-style: none;
+        margin: 0;
+        padding: 20px 40px 0;
+        .font-size(0);
+        text-align: center;
+        border-bottom: 1px solid fade(@color-white, 60%);
+        background: transparent linear-gradient(to bottom, @color-botticelli 0, darken(@color-botticelli, 6) 100%);
+
+        > li {
+          display: inline-block;
+          margin: 0px;
+          padding: 0;
+
+          > a {
+            display: block;
+            padding: 0.8em 1.0em;
+            border-top: 1px solid transparent;
+            outline: 0;
+            .font-size(16, 1.2);
+            font-weight: @font-weight-bold;
+            font-family: @font-family-sans-serif-condensed;
+            text-transform: uppercase;
+            color: @color-white;
+            text-shadow: 0 -1px 0 fade(@color-black, 30%);
+            transform: translate(0, 1px);
+
+            &:hover, &:focus {
+              color: fade(@color-bayoux, 70%);
+              text-shadow: 0 1px 0 fade(@color-white, 80%);
+            }
+          }
+
+          &.active > a {
+            color: @color-bayoux;
+            border-top-color: fade(@color-white, 80%);
+            background-color: @color-botticelli;
+            text-shadow: 0 1px 0 fade(@color-white, 80%);
+            border-radius: 4px 4px 0 0;
+          }
+        }
+      }
+    }
+  }
+
+  [data-type="region"][data-name="section"] > .container.content > .container {
+    > .row:first-child > .col-md-12.col-lg-12 {
+      .tabbable {
+        margin-top: -1.5em;
+
+        > .tabbable-tabs {
+          margin-left: ~"calc(-50vw + 50% - 15px);";
+          margin-right: ~"calc(-50vw + 50% - 15px);";
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: @mq-threshold-desktop) {
+  .tabbable {
+    > .tabbable-tabs {
+      > .nav {
+        > li {
+          > a {
+            .font-size(24, 1.2);
+          }
+        }
+      }
+    }
+  }
+}

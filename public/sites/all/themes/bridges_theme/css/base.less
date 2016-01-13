@@ -26,6 +26,11 @@ a {
   transition: all @transition-duration-fast ease;
 }
 
+select {
+  width: 100%;
+  max-width: 320px;
+}
+
 form:not(#search-block-form) {
   label {
     display: block;
@@ -64,11 +69,6 @@ form:not(#search-block-form) {
 
   textarea {
     .font-size(16, 1.5);
-  }
-
-  select {
-    width: 100%;
-    max-width: 320px;
   }
 
   input.btn {
@@ -111,25 +111,6 @@ a.password-request {
   .font-size(18, 1.3);
   font-weight: @font-weight-black;
   text-transform: uppercase;
-}
-
-.tabbable {
-  > .nav, > .tabbable-select {
-    padding-left: @gutter-side-mobile;
-    padding-right: @gutter-side-mobile;
-  }
-
-  > .nav, > .tabbable-select h5 {
-    display: none;
-  }
-
-  .tab-pane {
-    display: none;
-
-    &.active {
-      display: block;
-    }
-  }
 }
 
 // Grid
