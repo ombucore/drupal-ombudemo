@@ -583,6 +583,14 @@ html.menu-open {
       color: @color-polo;
       text-shadow: 0 -1px 0 fade(@color-black, 30%);
     }
+
+    [data-type="region-container"][data-name="sections"] & {
+      [data-type="block"] > h2 {
+        color: @color-polo;
+        text-shadow: 0 -1px 0 fade(@color-black, 50%);
+        border-bottom-color: lighten(@color-bayoux, 10);
+      }
+    }
   }
 
   :first-child + & {
@@ -925,7 +933,7 @@ body.front {
 
     &:after {
       margin-top: @well-width;
-      height: 15px;
+      height: @press-distance - @well-width + 1;
       background-color: @color-white;
     }
 
@@ -972,6 +980,18 @@ body.front {
       &:active {
         transform: translate(0, @press-distance);
       }
+    }
+  }
+
+  .style-light-blue & {
+    .field-name-field-cta-link:after {
+      background-color: @color-botticelli;
+    }
+  }
+
+  .style-blue & {
+    .field-name-field-cta-link:after {
+      background-color: @color-bayoux;
     }
   }
 }
@@ -1074,6 +1094,13 @@ body.front {
     }
   }
 
+  [data-type="region-container"][data-name="sections"] [data-type="region"][data-name="section"].style-blue &,
+    [data-type="region-container"][data-name="sections"] [data-type="region"][data-name="section"].style-light-blue & {
+    > h2 {
+      color: @color-white;
+    }
+  }
+
   .field-name-field-cta-link {
     position: absolute;
     z-index: 3;
@@ -1124,6 +1151,80 @@ body.front {
         transform: translate(0, @press-distance);
       }
     }
+  }
+
+  .followed-by-style-white & {
+    .field-name-field-cta-link:after {
+      background-color: @color-white;
+    }
+  }
+
+  .followed-by-style-light-blue & {
+    .field-name-field-cta-link:after {
+      background-color: @color-botticelli;
+    }
+  }
+
+  .style-blue + div + .style-blue &,
+  .style-light-blue + div + .style-light-blue &,
+  .style-white + div + .style-white &,
+  .style-blue.followed-by-style-blue &,
+  .style-light-blue.followed-by-style-light-blue &,
+  .style-white.followed-by-style-white & {
+    &:after {
+      border: 0;
+    }
+  }
+
+  .style-blue.followed-by-style-blue &,
+  .style-light-blue.followed-by-style-light-blue &,
+  .style-white.followed-by-style-white & {
+    margin-bottom: 3.0em;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: auto;
+      left: -15px;
+      right: -15px;
+      bottom: -2px;
+      height: 0;
+      padding-top: @ar-arch * 1.1;
+      // /sites/all/themes/bridges_theme/images/arches/bayoux.svg
+      background: transparent url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOS4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCAzMjAgMjAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDMyMCAyMCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8cGF0aCBmaWxsPSIjNTM2NTgwIiBkPSJNMzIwLDIwdi0wLjAwNEMyODMuNTExLDcuODU0LDIyNS40MjUsMCwxNjAsMFMzNi40ODksNy44NTQsMCwxOS45OTZWMjBIMzIweiIvPg0KPC9zdmc+DQo=) center bottom no-repeat;
+    }
+
+    .field-name-field-cta-link:after {
+      background-color: @color-bayoux;
+    }
+  }
+
+  .style-white.followed-by-style-white & {
+    &:after {
+      // /sites/all/themes/bridges_theme/images/arches/white.svg
+      background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMzIwIDIwIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAzMjAgMjAiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwYXRoIGZpbGw9IiNmZmZmZmYiIGQ9Ik0zMjAsMjB2LTAuMDA0QzI4My41MTEsNy44NTQsMjI1LjQyNSwwLDE2MCwwUzM2LjQ4OSw3Ljg1NCwwLDE5Ljk5NlYyMEgzMjB6Ii8+PC9zdmc+);
+    }
+
+    .field-name-field-cta-link:after {
+      background-color: @color-white;
+    }
+  }
+
+  .style-light-blue.followed-by-style-light-blue & {
+    &:after {
+      // /sites/all/themes/bridges_theme/images/arches/botticelli.svg
+      background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOS4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCAzMjAgMjAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDMyMCAyMCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8cGF0aCBmaWxsPSIjZDNkY2VhIiBkPSJNMzIwLDIwdi0wLjAwNEMyODMuNTExLDcuODU0LDIyNS40MjUsMCwxNjAsMFMzNi40ODksNy44NTQsMCwxOS45OTZWMjBIMzIweiIvPg0KPC9zdmc+DQo=);
+    }
+
+    .field-name-field-cta-link:after {
+      background-color: @color-botticelli;
+    }
+  }
+
+  .style-blue + div + .style-blue &,
+  .style-light-blue + div + .style-light-blue &,
+  .style-white + div + .style-white & {
+    margin-top: @ar-arch * 1.5;
   }
 }
 
