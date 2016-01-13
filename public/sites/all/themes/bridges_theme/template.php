@@ -39,7 +39,7 @@ function bridges_theme_bean_style_carousel(&$variables) {
   $classes  = 'bean-style-carousel';
   $options  = ' data-nav="false"';
   $options .= ' data-loop="true"';
-  $options .= ' data-autoplay="true"';
+  $options .= ' data-autoplay="false"';
   $options .= ' data-autoplay-timeout="4000"';
   $options .= ' data-smart-speed="800"';
   $options .= ' data-mouse-drag="true"';
