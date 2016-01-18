@@ -121,7 +121,7 @@ a.password-request {
 // Region: header
 // ----------------------------------------------------------------------------
 
-[data-type="region"][data-name="header-background"],
+[data-type="region-theme"][data-name="header-background"],
 [data-type="region"][data-name="header"] {
   position: fixed;
   z-index: @z-index-contextual + 1;
@@ -137,7 +137,7 @@ a.password-request {
   }
 }
 
-[data-type="region"][data-name="header-background"] {
+[data-type="region-theme"][data-name="header-background"] {
   background-color: fade(@color-prussian, 100%);
   mix-blend-mode: multiply;
   top: 0;
@@ -631,8 +631,8 @@ html.menu-open {
 // Tile section arches
 // ----------------------------------------------------------------------------
 
-[data-type="region"][data-name="section-arch"],
-[data-type="region"][data-name="footer-arch"] {
+[data-type="region-theme"][data-name="section-arch"],
+[data-type="region-theme"][data-name="footer-arch"] {
   min-height: 0 !important;
   border-bottom: @section-separation solid @color-white;
   .force-hardware-acceleration();
@@ -704,7 +704,7 @@ html.menu-open {
 // Region: footer
 // ----------------------------------------------------------------------------
 
-[data-type="region"][data-name="footer-arch"] {
+[data-type="region-theme"][data-name="footer-arch"] {
   padding-top: 100px;
   background-color: @color-white;
 

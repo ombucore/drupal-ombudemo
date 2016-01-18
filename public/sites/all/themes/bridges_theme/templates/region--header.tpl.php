@@ -26,8 +26,9 @@
  * @see template_process()
  */
 ?>
+<?php $stripped_classes = str_replace(array('contextual-links-region', 'tiles-section'), array('', ''), $classes); ?>
 <?php if ($content): ?>
-  <div data-type="region" data-name="header-background" class="<?php print $classes; ?>"></div>
+  <div data-type="region-theme" data-name="header-background" class="<?php print $stripped_classes; ?>"></div>
   <div data-type="region" data-name="<?php print $region ?>" class="<?php print $classes; ?>">
     <div class="container">
       <a class="top-link" href="#top"><strong>▲</strong><span> Top</span></a>

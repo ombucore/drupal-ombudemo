@@ -16,7 +16,8 @@ if (!empty($section_title) && $title_visible) {
   $classes .= ' has-title';
 }
 ?>
-<div data-type="region" data-name="section-arch" class="<?php print $classes ?>" id="<?php print $id . '-arch' ?>"<?php print $attributes ?>>
+<?php $stripped_classes = str_replace(array('contextual-links-region', 'tiles-section'), array('', ''), $classes); ?>
+<div data-type="region-theme" data-name="section-arch" class="<?php print $stripped_classes ?>" id="<?php print $id . '-arch' ?>"<?php print $attributes ?>>
   <div class="container">
     <div class="arch">
       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 320 20" enable-background="new 0 0 320 20" xml:space="preserve">
