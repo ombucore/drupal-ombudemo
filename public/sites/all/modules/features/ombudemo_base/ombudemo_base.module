@@ -57,20 +57,6 @@ function ombudemo_base_preprocess_block(&$variables) {
 }
 
 /**
- * Implements hook_bean_style_options_alter().
- */
-function ombudemo_base_bean_style_options_alter(&$options, $context) {
-  // Remove all but bootstrap slideshow for demo purposes.
-  if ($context['bundle'] == 'ombuslide') {
-    foreach ($options as $key => $value) {
-      if ($key != 'bootstrap_slideshow') {
-        unset($options[$key]);
-      }
-    }
-  }
-}
-
-/**
  * Form callback for contact page.
  */
 function ombudemo_contact_form($form, &$form_state) {
@@ -133,4 +119,108 @@ function ombudemo_contact_form($form, &$form_state) {
  */
 function ombudemo_contact_form_submit($form, &$form_state) {
   drupal_set_message(t('Thank you for your request. We will contact you soon.'));
+}
+
+/**
+ * Implements hook_field_attach_view_alter().
+ */
+function ombudemo_base_field_attach_view_alter(&$output, $context) {
+  // Alter taxonomy display to view as bootstrap labels.
+  if (isset($output['field_tags'])) {
+    foreach (element_children($output['field_tags']) as $child) {
+      $output['field_tags'][$child]['#markup'] =
+        '<span class="label label-info">' .
+        $output['field_tags'][$child]['#markup'] .
+        '</span>';
+    }
+  }
+  if (isset($output['field_topics'])) {
+    foreach (element_children($output['field_topics']) as $child) {
+      $output['field_topics'][$child]['#markup'] =
+        '<span class="label label-primary">' .
+        $output['field_topics'][$child]['#markup'] .
+        '</span>';
+    }
+  }
+}
+
+/**
+ * Implements hook_node_view().
+ */
+function ombudemo_base_node_view($node, $view_mode, $langcode) {
+  if (isset($node->content['field_sections-navigation'])) {
+    $node->content['field_sections-navigation']['#access'] = FALSE;
+  }
+  if (isset($node->content['field_sections'])) {
+    foreach (element_children($node->content['field_sections']) as $key) {
+      if (isset($node->content['field_sections'][$key - 1])) {
+        $node->content['field_sections'][$key - 1]['#element']['settings']['next_style'] = $node->content['field_sections'][$key]['#element']['settings']['style'];
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_tiles_section_form_alter().
+ */
+function ombudemo_base_tiles_section_form_alter(&$element, $context) {
+  $item = NULL;
+  if (array_key_exists($context['delta'], $context['items'])) {
+    $item = $context['items'][$context['delta']];
+  }
+
+//   // Group section settings into a fieldset.
+//   unset($element['value']['#prefix']);
+//   unset($element['value']['#suffix']);
+//   unset($element['settings']['#prefix']);
+//   unset($element['settings']['#suffix']);
+//   $element['settings']['#type'] = 'fieldset';
+//   $element['settings']['#title'] = t('Section Settings');
+//   $element['settings']['#collapsible'] = TRUE;
+//   $element['settings']['#collapsed'] = TRUE;
+
+  $element['settings']['width'] = array(
+    '#type' => 'select',
+    '#title' => t('Width'),
+    '#options' => array(
+      'width-normal' => 'Normal',
+      'width-wide' => 'Wide',
+      'width-full-width' => 'Full width',
+    ),
+    '#default_value' => isset($item['settings']['width']) ? $item['settings']['width'] : 'width-normal',
+  );
+
+  $element['settings']['style'] = array(
+    '#type' => 'select',
+    '#title' => t('Style'),
+    '#options' => array(
+      'style-white' => 'White',
+      'style-blue' => 'Blue',
+      'style-light-blue' => 'Light Blue',
+    ),
+    '#default_value' => isset($item['settings']['style']) ? $item['settings']['style'] : 'style-white',
+  );
+}
+
+/**
+ * Implements hook_preprocess_tiles_section().
+ */
+function ombudemo_base_preprocess_tiles_section(&$variables) {
+  $settings = $variables['element']['settings'];
+  // Add class based on selected color.
+  $variables['classes_array'][] = $settings['style'];
+  $variables['classes_array'][] = $settings['width'];
+
+  if (isset($settings['next_style'])) {
+    $variables['classes_array'][] = 'followed-by-' . $settings['next_style'];
+  }
+}
+
+/**
+ * Implements hook_field_sociallinks_services_alter().
+ */
+function ombudemo_base_field_sociallinks_services_alter(&$services) {
+  // Add slideshare to services list.
+  $services['slideshare'] = 'Slideshare';
+  $services['pinterest'] = 'Pinterest';
 }

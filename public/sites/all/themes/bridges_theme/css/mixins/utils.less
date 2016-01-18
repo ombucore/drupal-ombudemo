@@ -1,0 +1,148 @@
+.debug-message(@text, @position) {}
+.debug-media-response-message(@text) {}
+.debug-styles-message(@text) {}
+
+.prettify_custom_fonts() {
+  &, * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+// In some cases, it may be necessary to force hardware acceleration to prevent
+// effects such as image jiggle on hover.
+.force-hardware-acceleration() {
+  -webkit-transform: translate3d(0, 0, 0);
+     -moz-transform: translate3d(0, 0, 0);
+      -ms-transform: translate3d(0, 0, 0);
+       -o-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+
+  -webkit-backface-visibility: hidden;
+     -moz-backface-visibility: hidden;
+      -ms-backface-visibility: hidden;
+       -o-backface-visibility: hidden;
+          backface-visibility: hidden;
+
+  -webkit-perspective: 1000;
+     -moz-perspective: 1000;
+      -ms-perspective: 1000;
+       -o-perspective: 1000;
+          perspective: 1000;
+}
+
+.transform-origin(@x:center, @y:center) {
+  -webkit-transform-origin: @x @y;
+     -moz-transform-origin: @x @y;
+      -ms-transform-origin: @x @y;
+       -o-transform-origin: @x @y;
+}
+
+.transition(@transition) {
+  -webkit-transition: @transition;
+         transition: @transition;
+}
+
+.animation(@animation) {
+  -webkit-animation: @animation;
+     -moz-animation: @animation;
+       -o-animation: @animation;
+          animation: @animation;
+}
+
+.animation-play-state(@state) {
+  -webkit-animation-play-state: @state;
+     -moz-animation-play-state: @state;
+       -o-animation-play-state: @state;
+          animation-play-state: @state;
+}
+
+.background-color-rgba(@color,@alpha){
+  @rgba: rgba(red(@color), green(@color), blue(@color), @alpha);
+  @argb: argb(@rgba);
+  background-color: @color;
+  zoom: 1;
+  background-color: transparent\9;
+  filter: ~"progid:DXImageTransform.Microsoft.gradient(startColorstr=@{argb}, endColorstr=@{argb})";
+  -ms-filter: ~"progid:DXImageTransform.Microsoft.gradient(startColorstr=@{argb}, endColorstr=@{argb})";
+  background-color: @rgba;
+}
+
+.placeholder-styles(@color: lightgray, @font-weight: regular, @text-transform: none) {
+  // Polyfilled browsers that don't support placeholder attribute.
+  &.placeholder {
+    color: @color;
+    font-weight: @font-weight;
+    line-height: normal;
+    text-transform: @text-transform;
+  }
+  // Webkit browsers
+  &::-webkit-input-placeholder {
+    color: @color;
+    font-weight: @font-weight;
+    line-height: normal;
+    text-transform: @text-transform;
+  }
+  // Mozilla Firefox 4 to 18
+  &:-moz-placeholder {
+    color: @color;
+    font-weight: @font-weight;
+    line-height: normal;
+    text-transform: @text-transform;
+  }
+  // Mozilla Firefox 19+
+  &::-moz-placeholder {
+    color: @color;
+    font-weight: @font-weight;
+    line-height: normal;
+    text-transform: @text-transform;
+  }
+  // Internet Explorer 10+
+  &:-ms-input-placeholder {
+    color: @color;
+    font-weight: @font-weight;
+    line-height: normal;
+    text-transform: @text-transform;
+  }
+}
+
+// Flexbox display
+// flex or inline-flex
+.flex-display(@display: flex) {
+  display: ~"-webkit-@{display}";
+  display: ~"-moz-@{display}";
+  display: ~"-ms-@{display}box"; // IE10 uses -ms-flexbox
+  display: ~"-ms-@{display}"; // IE11
+  display: @display;
+}
+
+// Display Order
+// - applies to: flex items
+// <integer>
+.flex-order(@order: 0) {
+  -webkit-order: @order;
+     -moz-order: @order;
+      -ms-order: @order;
+          order: @order;
+}
+
+// Flex Direction and Wrap
+// - applies to: flex containers
+// <flex-direction> || <flex-wrap>
+.flex-flow(@flow) {
+  -webkit-flex-flow: @flow;
+     -moz-flex-flow: @flow;
+      -ms-flex-flow: @flow;
+          flex-flow: @flow;
+}
+
+// @see https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/
+.word-wrap-break-all() {
+   -ms-word-break: break-all;
+       word-break: break-all;
+
+  /* Non standard for webkit */
+  -webkit-hyphens: auto;
+     -moz-hyphens: auto;
+          hyphens: auto;
+}

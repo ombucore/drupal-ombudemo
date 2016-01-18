@@ -1,0 +1,98 @@
+site:
+  title: Stumptown Bridges
+  pages:
+    - pages/home.yml
+    - pages/about.yml
+  global_regions:
+    header:
+      tiles:
+        -
+          type: Menu
+          width: 12/12
+          offset: 0/12
+          title: null
+          items:
+            -
+              title: "Home"
+              route: /
+            -
+              title: "About"
+              route: /about
+            -
+              title: "Bridges"
+              route: /bridges
+            -
+              title: "Contact"
+              route: /contact
+            -
+              title: "A demo of OMBU CMS"
+              route: http://ombuweb.com
+        -
+          type: Search
+          width: 12/12
+          offset: 0/12
+          title: null
+          input:
+            placeholder: "Search"
+    footer:
+      tiles:
+        -
+          type: Social Media Follow Links
+          width: 12/12
+          offset: 0/12
+          title: null
+          items:
+            -
+              service: Instagram
+              url: http://ombuweb.com
+            -
+              service: Twitter
+              url: http://ombuweb.com
+            -
+              service: Facebook
+              url: http://ombuweb.com
+            -
+              service: Flickr
+              url: http://ombuweb.com
+            -
+              service: Pinterest
+              url: http://ombuweb.com
+            -
+              service: YouTube
+              url: http://ombuweb.com
+        -
+          type: Menu
+          width: 12/12
+          offset: 0/12
+          title: null
+          items:
+            -
+              title: "Home"
+              route: /
+            -
+              title: "About"
+              route: /about
+            -
+              title: "Bridges"
+              route: /bridges
+            -
+              title: "Contact"
+              route: /contact
+            -
+              title: "Search"
+              route: /search
+        -
+          type: Links
+          width: 12/12
+          offset: 0/12
+          title: null
+          items:
+            -
+              title: "© OMBU"
+              route: <nolink>
+            -
+              title: "Terms of Use"
+              route: /legal/terms
+            -
+              title: "Privacy Policy"
+              route: /legal/privacy

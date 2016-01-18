@@ -1,0 +1,20 @@
+// Styles for wide desktop screens and larger.
+// -----------------------------------------------------------------------------
+
+.debug-media-response-message('Media response: Wide desktop');
+
+// Tile: CTA
+// ----------------------------------------------------------------------------
+
+.bean-cta.stinger {
+  &:after {
+    content: '';
+    position: absolute;
+    top: @section-separation / -2;
+    left: 0;
+    right: 0;
+    bottom: @section-separation / -2;
+    border-left: @section-separation solid @color-white;
+    border-right: @section-separation solid @color-white;
+  }
+}

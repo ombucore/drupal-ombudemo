@@ -1,0 +1,22 @@
+.font-size(@font-size: @font-size-base, @line-height: @line-height-base) {
+  font-size: @font-size * (@font-size-root-px / 10);
+
+  // Restore rem font-size rule once Chrome fixes sizing bug.
+  // https://code.google.com/p/chromium/issues/detail?id=319623
+  font-size: @font-size / 10 + rem;
+  line-height: @line-height;
+}
+
+.bridges-icon(@content: "\e600", @size: 18px) {
+  content: @content;
+  font-family: 'bridges-icons';
+  font-size: @size;
+  line-height: @size;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

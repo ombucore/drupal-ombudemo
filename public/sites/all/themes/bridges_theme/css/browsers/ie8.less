@@ -1,0 +1,52 @@
+// Browser hacks targeting IE8.
+// -----------------------------------------------------------------------------
+
+@import '../imports.less';
+
+.debug-styles-message('Styles: <= IE8');
+
+// THEME STYLES
+// -----------------------------------------------------------------------------
+
+@import '../base.less';
+
+// MEDIA RESPONSES
+// -----------------------------------------------------------------------------
+
+// In the case of IE8 and below, styles contained inside media queries
+// will be invisible to the browser, so we forcibly import them here.
+// In the spirit of mobile first, it may be necessary to import styles
+// cumulatively -- e.g., mobile, then tablet, then desktop -- if they
+// are designed to build on top of one another.
+
+@import '../responses/gte-smartphone.less';
+@import '../responses/gte-tablet.less';
+@import '../responses/gte-desktop.less';
+
+// Browser-specific hacks & overrides
+// -----------------------------------------------------------------------------
+
+// Scoping to html.ie8 isn't necessary since this file should never be loaded
+// by any browser *but* IE8, but there's no harm in covering our bases.
+
+html.ie8 {
+
+  // The Bootstrap grid requires media queries to apply the correct
+  // floating and sizing styles for blocks marked as col-md-3, etc.
+  // -xs, -sm, and -lg classes can be ignored since IE8's response
+  // styles are brute-forced to -md (i.e., standard desktop).
+  // Reproduce Bootstrap's -md rules as necessary here.
+
+  .col-md-1  { width: percentage( 1/12); float: left; }
+  .col-md-2  { width: percentage( 2/12); float: left; }
+  .col-md-3  { width: percentage( 3/12); float: left; }
+  .col-md-4  { width: percentage( 4/12); float: left; }
+  .col-md-5  { width: percentage( 5/12); float: left; }
+  .col-md-6  { width: percentage( 6/12); float: left; }
+  .col-md-7  { width: percentage( 7/12); float: left; }
+  .col-md-8  { width: percentage( 8/12); float: left; }
+  .col-md-9  { width: percentage( 9/12); float: left; }
+  .col-md-10 { width: percentage(10/12); float: left; }
+  .col-md-11 { width: percentage(11/12); float: left; }
+  .col-md-12 { width: percentage(12/12); }
+}

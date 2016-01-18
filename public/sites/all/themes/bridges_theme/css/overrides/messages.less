@@ -1,0 +1,47 @@
+// Customize styles for Drupal console messages, including form errors and
+// workbench moderation messages, with theme color palette and typography.
+
+// Region: Console
+// -----------------------------------------------------------------------------
+
+div[data-type="region"][data-name="console"] {
+  .alert {
+    padding-top: 2.0em;
+    padding-bottom: 2.0em;
+  }
+
+//   background-color: gray;
+//   color: white;
+
+//   &.console-status {
+//     background-color: lightblue;
+//   }
+
+//   &.console-warning {
+//     background-color: yellow;
+//   }
+
+//   &.console-error {
+//     background-color: red;
+//   }
+// }
+}
+
+// Module: ombubench: moderation
+// -----------------------------------------------------------------------------
+
+// aside[data-module="ombubench"][data-delta="moderation"] {
+//   background-color: green;
+//   color: white;
+// }
+
+// MEDIA RESPONSES
+// ----------------------------------------------------------------------------
+
+@media (min-width: @mq-threshold-tablet) {
+  div[data-type="region"][data-name="console"] {
+    .alert {
+      margin-top: @height-header-tablet;
+    }
+  }
+}

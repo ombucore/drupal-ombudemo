@@ -11,20 +11,23 @@ namespace ombudemo_profile\Task;
 class AddContent extends \ProfileTasks\Task\AddContent {
   protected $menu_nodes = array(
     'header-menu' => array(
-      'Home' => array(
-        '#link' => '<front>',
-      ),
       'About' => array(
         '#file' => 'about.php',
-        '#children' => array(
-          'Our Story' => array(),
-          'Our Team' => array(),
-          'Our Values' => array(),
-        ),
       ),
+      'Bridges' => array(),
       'Contact' => array(
         '#link' => 'contact',
       ),
+      'A demo of OMBU CMS' => array(
+        '#link' => '<nolink>',
+      ),
+    ),
+    'footer-menu' => array(
+      '© OMBU' => array(
+        '#link' => 'http://ombuweb.com',
+      ),
+      'Terms of Use' => array(),
+      'Privacy Policy' => array(),
     ),
   );
 
@@ -34,6 +37,7 @@ class AddContent extends \ProfileTasks\Task\AddContent {
   public function process() {
     parent::process();
 
+    $this->loadNodeFromFile('dummy-pages.php');
     $this->addContactBlocks();
   }
 

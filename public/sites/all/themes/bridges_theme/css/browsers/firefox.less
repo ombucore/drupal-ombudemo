@@ -1,0 +1,10 @@
+// Browser hacks targeting Firefox.
+// -----------------------------------------------------------------------------
+
+// Firefox CSS hack h/t: http://browserhacks.com/
+// With overflow-x set to hidden on the html element, Firefox mysteriously will
+// not respect some element transitions.
+
+_:-moz-tree-row(hover), html {
+  overflow-x: visible;
+}

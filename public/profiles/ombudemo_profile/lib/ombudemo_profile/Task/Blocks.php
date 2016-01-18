@@ -6,6 +6,8 @@
 
 namespace ombudemo_profile\Task;
 
+use ProfileTasks\Content\Wrapper;
+
 class Blocks extends \ProfileTasks\Task\Blocks {
   /**
    * Insert/update block locations.
@@ -24,22 +26,63 @@ class Blocks extends \ProfileTasks\Task\Blocks {
    * be created first.
    */
   protected function addBeans() {
-    $bean = bean_create(array('type' => 'bean_rte_rte'));
-    $bean->label = 'contact-info';
-    $bean->delta = 'contact-info';
+    $bean = bean_create(array('type' => 'sociallinks'));
+    $bean->label = 'footer-social';
+    $bean->title = 'Follow us';
+    $bean->delta = 'footer-social';
     $bean->setValues(array(
       'view_mode' => 'default',
     ));
-    $bean->field_description = array(
-      'und' =>
+    $bean->field_sociallinks_sociallinks[LANGUAGE_NONE] = array(
       array(
-        0 =>
-        array(
-          'value' => '<h3>OMBU HQ</h3><p>107 SE Washington St #225</p><p>Portland, OR 97214</p><p>(503) 298-4888</p>',
-          'format' => 'default',
-        ),
+        'service' => 'instagram',
+        'url' => 'http://instagram.com',
+      ),
+      array(
+        'service' => 'twitter',
+        'url' => 'https:twitter.com',
+      ),
+      array(
+        'service' => 'facebook',
+        'url' => 'https://www.facebook.com',
+      ),
+      array(
+        'service' => 'flickr',
+        'url' => 'https://flickr.com',
+      ),
+      array(
+        'service' => 'pinterest',
+        'url' => 'http://pinterest.com',
+      ),
+      array(
+        'service' => 'youtube',
+        'url' => 'https://www.youtube.com',
       ),
     );
     bean_save($bean);
+
+    $bean = bean_create(array('type' => 'bean_link'));
+    $bean->delta = 'footer-links';
+    $bean->field_bean_link_links[LANGUAGE_NONE][] = array(
+      'title' => 'Home',
+      'url' => '<front>',
+    );
+    $bean->field_bean_link_links[LANGUAGE_NONE][] = array(
+      'title' => 'About',
+      'url' => 'about',
+    );
+    $bean->field_bean_link_links[LANGUAGE_NONE][] = array(
+      'title' => 'Bridges',
+      'url' => 'bridges',
+    );
+    $bean->field_bean_link_links[LANGUAGE_NONE][] = array(
+      'title' => 'Contact',
+      'url' => 'contact',
+    );
+    $bean->field_bean_link_links[LANGUAGE_NONE][] = array(
+      'title' => 'Search',
+      'url' => 'search',
+    );
+    $bean->save();
   }
 }
