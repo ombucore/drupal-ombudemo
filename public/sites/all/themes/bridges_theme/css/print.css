@@ -165,6 +165,16 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+.phpdebugbar-header-right .phpdebugbar-indicator:nth-of-type(1):after {
+  margin-left: 0.25em;
+}
+.phpdebugbar-header-right .phpdebugbar-indicator:nth-of-type(1) > i.fa {
+  width: 16px;
+  text-align: center;
+}
+.phpdebugbar-header-right .phpdebugbar-indicator:nth-of-type(1) > i.fa:before {
+  display: inline-block;
+}
 .field.c .lead {
   font-size: 120%;
   font-weight: bold;
