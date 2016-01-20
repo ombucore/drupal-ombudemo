@@ -594,7 +594,7 @@ aside[data-module="ombubench"][data-delta="moderation"] .btn {
     transition: all 0.7s ease 0.5s;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .ombugallery .bean-style-carousel .field-name-field-slide-title {
     margin-top: 0;
     margin-bottom: 0.5em;
@@ -627,7 +627,7 @@ aside[data-module="ombubench"][data-delta="moderation"] .btn {
     padding: 5px;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .bean-style-grid {
     margin-left: -10px;
     margin-right: -10px;
@@ -757,7 +757,7 @@ aside[data-module="ombubench"][data-delta="moderation"] .btn {
     margin-top: 1.0em;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .tabbable > .tabbable-tabs > .nav > li > a {
     font-size: 24px;
     font-size: 2.4 rem;
@@ -1126,7 +1126,7 @@ form:not(#search-block-form) input.btn:active,
     line-height: 1.2;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .field.c .lead {
     font-size: 28px;
     font-size: 2.8 rem;

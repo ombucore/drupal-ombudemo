@@ -594,7 +594,7 @@ aside[data-module="ombubench"][data-delta="moderation"] .btn {
     transition: all 0.7s ease 0.5s;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .ombugallery .bean-style-carousel .field-name-field-slide-title {
     margin-top: 0;
     margin-bottom: 0.5em;
@@ -627,7 +627,7 @@ aside[data-module="ombubench"][data-delta="moderation"] .btn {
     padding: 5px;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .bean-style-grid {
     margin-left: -10px;
     margin-right: -10px;
@@ -757,7 +757,7 @@ aside[data-module="ombubench"][data-delta="moderation"] .btn {
     margin-top: 1.0em;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .tabbable > .tabbable-tabs > .nav > li > a {
     font-size: 24px;
     font-size: 2.4 rem;
@@ -1126,7 +1126,7 @@ form:not(#search-block-form) input.btn:active,
     line-height: 1.2;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .field.c .lead {
     font-size: 28px;
     font-size: 2.8 rem;
@@ -1351,7 +1351,6 @@ a.password-request:focus {
 }
 #page > [data-type="region"] > .container,
 #page > [data-type="region-container"] > .container,
-#page > [data-type="region-container"][data-name="sections"] > .field-type-tiles-section [data-type="region"][data-name="section"] > .container,
 #page > [data-type="region-container"][data-name="sections"] > .field-type-tiles-section [data-type="region"][data-name="section"] > .container,
 #page > [data-type="region-container"][data-name="sections"] > .field-type-tiles-section [data-type="region"][data-name="section"] > .container {
   max-width: none;
@@ -2456,7 +2455,6 @@ body {
 #page > [data-type="region"] > .container,
 #page > [data-type="region-container"] > .container,
 #page > [data-type="region-container"][data-name="sections"] > .field-type-tiles-section [data-type="region"][data-name="section"] > .container,
-#page > [data-type="region-container"][data-name="sections"] > .field-type-tiles-section [data-type="region"][data-name="section"] > .container,
 #page > [data-type="region-container"][data-name="sections"] > .field-type-tiles-section [data-type="region"][data-name="section"] > .container {
   max-width: none;
   position: relative;
@@ -2781,148 +2779,24 @@ body.front {
   padding-left: 20px;
 }
 .phpdebugbar-header-right .phpdebugbar-indicator:nth-of-type(1):after {
-  content: "Notebook: ≥ 992px";
+  content: "Desktop: ≥ 1440px";
 }
 .phpdebugbar-header-right .phpdebugbar-indicator:nth-of-type(1) > i.fa:before {
-  content: '\f109';
+  content: '\f108';
   transform: rotate(0deg);
 }
 .phpdebugbar-header-right .phpdebugbar-indicator:nth-of-type(1) > .phpdebugbar-text {
   display: none;
 }
-body {
-  font-size: 18px;
-  font-size: 1.8 rem;
-  line-height: 1.8;
-}
-.decorative-header,
-[data-type="region-container"][data-name="core"] [data-type="block"] > h2,
-[data-type="region-container"][data-name="sections"] [data-type="block"] > h2 {
-  font-size: 36px;
-  font-size: 3.6 rem;
-  line-height: 1.2;
-}
-.capital-header,
-.bean-callout .field-name-field-callout-title {
-  font-size: 24px;
-  font-size: 2.4 rem;
-  line-height: 1.4;
-}
-#page > [data-type="region"] > .container,
-#page > [data-type="region-container"] > .container,
-#page > [data-type="region-container"][data-name="sections"] > .field-type-tiles-section [data-type="region"][data-name="section"] > .container,
-#page > [data-type="region-container"][data-name="sections"] > .field-type-tiles-section [data-type="region"][data-name="section"] > .container,
-#page > [data-type="region-container"][data-name="sections"] > .field-type-tiles-section [data-type="region"][data-name="section"] > .container {
-  max-width: 1480px;
-  position: relative;
-  padding-left: 100px;
-  padding-right: 100px;
-}
-#page > [data-type="region-container"][data-name="core"] [data-type="region"] > .container {
-  padding-left: 0;
-  padding-right: 0;
-}
-#page > [data-type="region-container"][data-name="sections"] > .field-type-tiles-section [data-type="region"][data-name="section"] .container.header .block.header {
-  min-height: 0;
-}
-#page > [data-type="region-container"][data-name="sections"] > .field-type-tiles-section [data-type="region"][data-name="section"] > .container > .container {
-  padding-left: 0;
-  padding-right: 0;
-}
-#block-ombucleanup-site-logo {
-  left: 85px;
-}
-#block-menu-header-menu {
-  left: 270px;
-  padding-right: 0;
-}
-#block-menu-header-menu .nav > li > span.nolink:last-child {
-  display: inline-block;
-}
-#block-search-form {
-  right: 85px;
-}
-#block-search-form input[type="text"]:focus,
-#block-search-form.valid input[type="text"] {
-  width: 13.0em;
-}
-[data-type="region"][data-name="footer"] {
-  padding-top: 2.0em;
-  min-height: 7.0em;
-}
-[data-type="region"][data-name="footer"] .logo {
-  margin-left: -20px;
-}
-[data-type="region"][data-name="footer"] .logo svg {
-  max-width: 160px;
-}
-#block-bean-footer-social {
-  top: -3.9em;
-  left: 255px;
-  right: auto;
-  padding: 0 5px;
-}
-#block-bean-footer-links {
-  top: -4.6em;
-  right: 88px;
-}
-#block-menu-footer-menu {
-  top: -2.5em;
-  right: 89px;
-}
-#block-ombucleanup-page-title {
-  padding: 140px 100px 70px;
-}
-#block-ombucleanup-page-title h1 {
-  font-size: 64px;
-  font-size: 6.4 rem;
-  line-height: 1.4;
-}
-[data-type="region"][data-name="section"] > .container.header h2 {
-  font-size: 24px;
-  font-size: 2.4 rem;
-  line-height: 1.2;
-}
-#page > [data-type="region-container"][data-name="sections"] > .field-type-tiles-section > [data-type="region"][data-name="section"].width-wide aside[data-type="block"] .contextual-links-wrapper {
-  right: 140px;
-}
-.bean-callout {
-  font-size: 16px;
-  font-size: 1.6 rem;
-  line-height: 1.8;
-}
-.bean-cta .field-name-field-cta-link a {
-  font-size: 24px;
-  font-size: 2.4 rem;
-  line-height: 1.2;
-}
-.bean-cta.primary .field-name-field-cta-link a,
-.bean-cta.stinger .field-name-field-cta-link a {
-  padding-left: 40px;
-  padding-right: 40px;
-  font-size: 24px;
-  font-size: 2.4 rem;
-  line-height: 1.2;
-}
-.bean-cta.primary .field-name-field-cta-link a:after,
-.bean-cta.stinger .field-name-field-cta-link a:after {
-  margin-left: -40px;
-  margin-right: -40px;
-}
-.bean-cta.secondary .field-name-field-cta-link a {
-  font-size: 18px;
-  font-size: 1.8 rem;
-  line-height: 1.2;
-}
-.bean-cta.stinger {
-  margin-left: -85px;
-  margin-right: -85px;
-}
-.bean-cta.stinger > h2,
-[data-type="region-container"][data-name="sections"] .bean-cta.stinger > h2 {
-  font-size: 72px;
-  font-size: 7.2 rem;
-  line-height: 1.1;
+.bean-cta.stinger:after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 0;
+  right: 0;
+  bottom: -5px;
+  border-left: 10px solid #ffffff;
+  border-right: 10px solid #ffffff;
 }
 html.ie8 .col-md-1 {
   width: 8.33333333%;

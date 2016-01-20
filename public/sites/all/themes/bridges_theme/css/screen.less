@@ -1,7 +1,5 @@
 @import 'imports.less';
 
-.debug-styles-message('Styles: Default');
-
 // THEME STYLES
 // -----------------------------------------------------------------------------
 
@@ -10,29 +8,29 @@
 // MEDIA RESPONSES
 // -----------------------------------------------------------------------------
 
-// Styles for portrait smartphone screens and larger
+// Styles for portrait smartphone screens and wider
 @media (min-width: @mq-threshold-smartphone) {
   @import 'responses/gte-smartphone.less';
 }
 
-// Styles for landscape smartphone screens and larger
+// Styles for landscape smartphone screens and wider
 @media (min-width: @mq-threshold-smartphone-landscape) {
   @import 'responses/gte-smartphone-landscape.less';
 }
 
-// Styles for potrait tablet screens and larger
+// Styles for portrait tablet screens and wider
 @media (min-width: @mq-threshold-tablet) {
   @import 'responses/gte-tablet.less';
 }
 
-// Styles for desktop screens and larger
-@media (min-width: @mq-threshold-desktop) {
-  @import 'responses/gte-desktop.less';
+// Styles for notebook screens and wider
+@media (min-width: @mq-threshold-notebook) {
+  @import 'responses/gte-notebook.less';
 }
 
-// Styles for desktop screens and larger
-@media (min-width: @mq-threshold-desktop-wide) {
-  @import 'responses/gte-desktop-wide.less';
+// Styles for desktop screens and wider
+@media (min-width: @mq-threshold-desktop) {
+  @import 'responses/gte-desktop.less';
 }
 
 // BROWSER OVERRIDES
