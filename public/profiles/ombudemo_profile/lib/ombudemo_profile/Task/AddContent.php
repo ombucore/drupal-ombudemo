@@ -22,6 +22,12 @@ class AddContent extends \ProfileTasks\Task\AddContent {
         '#link' => '<nolink>',
       ),
     ),
+    'main-menu' => array(
+      'Page 1' => array(),
+      'Page 2' => array(),
+      'Page 3' => array(),
+      'Page 4' => array(),
+    ),
     'footer-menu' => array(
       '© OMBU' => array(
         '#link' => 'http://ombuweb.com',
