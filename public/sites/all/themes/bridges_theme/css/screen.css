@@ -1944,20 +1944,22 @@ body.page-contact #block-ombucleanup-page-title {
   margin-left: -0.5em;
   margin-right: -0.5em;
   margin-bottom: 1.0em;
+}
+#block-bean-footer-links .field-name-field-bean-link-links {
   font-size: 14px;
   font-size: 1.4 rem;
   line-height: 1.5;
   font-weight: 700;
   text-transform: uppercase;
 }
-#block-bean-footer-links a {
+#block-bean-footer-links .field-name-field-bean-link-links > a {
   display: inline-block;
   margin-right: -4px;
   padding: 0.75em 0.5em;
   color: #ffffff;
 }
-#block-bean-footer-links a:hover,
-#block-bean-footer-links a:focus {
+#block-bean-footer-links .field-name-field-bean-link-links > a:hover,
+#block-bean-footer-links .field-name-field-bean-link-links > a:focus {
   color: #536580;
 }
 #block-menu-footer-menu {
@@ -2868,6 +2870,9 @@ body.front #block-bean-home-gallery {
   }
   [data-type="region"][data-name="footer"] .logo svg {
     max-width: 160px;
+  }
+  body.phpdebugbar-active [data-type="region"][data-name="footer"] {
+    min-height: 10.0em;
   }
   #block-bean-footer-social {
     top: -3.9em;

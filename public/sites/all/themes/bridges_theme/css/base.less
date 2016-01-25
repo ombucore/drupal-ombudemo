@@ -752,18 +752,21 @@ html.menu-open {
   margin-left: -@link-padding;
   margin-right: -@link-padding;
   margin-bottom: 1.0em;
-  .font-size(14, 1.5);
-  font-weight: @font-weight-bold;
-  text-transform: uppercase;
 
-  a {
-    display: inline-block;
-    margin-right: -4px;
-    padding: 0.75em @link-padding;
-    color: @color-white;
+  .field-name-field-bean-link-links {
+    .font-size(14, 1.5);
+    font-weight: @font-weight-bold;
+    text-transform: uppercase;
 
-    &:hover, &:focus {
-      color: @color-bayoux;
+    > a {
+      display: inline-block;
+      margin-right: -4px;
+      padding: 0.75em @link-padding;
+      color: @color-white;
+
+      &:hover, &:focus {
+        color: @color-bayoux;
+      }
     }
   }
 }
