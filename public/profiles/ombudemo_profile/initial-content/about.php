@@ -12,6 +12,8 @@ $wrapper->title = 'About';
 
 $path = drupal_get_path('profile', 'ombudemo_profile');
 
+$wrapper->field_banner_image = $wrapper->addFile('panorama-01.jpg', $path . '/assets/images/title-banners');
+
 $fid = $wrapper->addFile('sun.jpg', $path . '/assets');
 $sun_fid = $fid['fid'];
 $file = file_load($sun_fid);

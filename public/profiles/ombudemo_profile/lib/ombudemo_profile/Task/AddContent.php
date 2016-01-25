@@ -14,7 +14,9 @@ class AddContent extends \ProfileTasks\Task\AddContent {
       'About' => array(
         '#file' => 'about.php',
       ),
-      'Bridges' => array(),
+      'Bridges' => array(
+        '#file' => 'bridges.php',
+      ),
       'Contact' => array(
         '#link' => 'contact',
       ),

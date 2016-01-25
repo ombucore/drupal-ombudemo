@@ -66,3 +66,17 @@ function bridges_theme_bean_style_carousel(&$variables) {
 
   return $list;
 }
+
+/**
+ * Implements hook_preprocess_ombucleanup_title_block().
+ */
+function bridges_theme_preprocess_ombucleanup_title_block(&$variables) {
+  $content =& $variables['content'];
+
+  if (!empty($content['field_banner_image'])) {
+    $content['field_banner_image']['#access'] = FALSE;
+
+    $url = file_create_url($content['field_banner_image'][0]['file']['#item']['uri']);
+    $variables['attributes_array']['style'] = 'background-image: url("' . $url . '")';
+  }
+}
