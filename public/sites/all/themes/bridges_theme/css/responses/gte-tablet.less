@@ -164,10 +164,16 @@ html, html.menu-open {
 // ----------------------------------------------------------------------------
 
 #block-ombucleanup-page-title {
-  padding: @height-header-tablet + 50px @gutter-side-tablet 50px;
+  > div.ombucleanup-title-block {
+    padding: @height-header-tablet + 50px @gutter-side-tablet 50px;
+  }
 
   h1 {
-    .font-size(64, 1.4);
+    .font-size(52, 1.4);
+  }
+
+  .field-name-field-summary {
+    .font-size(28, 1.3);
   }
 }
 

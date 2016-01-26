@@ -99,10 +99,16 @@ body {
 // ----------------------------------------------------------------------------
 
 #block-ombucleanup-page-title {
-  padding: @height-header-tablet + 60px @gutter-side-notebook 70px;
+  > div.ombucleanup-title-block {
+    padding: @height-header-tablet + 60px @gutter-side-notebook 70px;
+  }
 
   h1 {
     .font-size(64, 1.4);
+  }
+
+  .field-name-field-summary {
+    .font-size(36, 1.3);
   }
 }
 
