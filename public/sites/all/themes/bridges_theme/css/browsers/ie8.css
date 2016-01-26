@@ -2422,6 +2422,54 @@ body.front #block-bean-home-gallery {
 [data-type="block"].sociallinks .sociallink:focus:before {
   background: #536580;
 }
+[data-type="block"].bean-menu-block .nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans Condensed', 'Helvetica', 'Arial', sans-serif;
+  font-size: 20px;
+  font-size: 2 rem;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+[data-type="block"].bean-menu-block .nav > li {
+  margin: 0;
+  padding: 0;
+}
+[data-type="block"].bean-menu-block .nav > li > a {
+  position: relative;
+  display: inline-block;
+  padding: 0.3em 0;
+  color: #6c88b3;
+}
+[data-type="block"].bean-menu-block .nav > li > a:after {
+  content: '';
+  position: absolute;
+  bottom: 0.25em;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: #215096;
+  transition: all 0.2s ease;
+}
+[data-type="block"].bean-menu-block .nav > li > a:hover,
+[data-type="block"].bean-menu-block .nav > li > a:focus {
+  color: #215096;
+}
+[data-type="block"].bean-menu-block .nav > li > a:hover:after,
+[data-type="block"].bean-menu-block .nav > li > a:focus:after {
+  height: 3px;
+}
+.style-blue [data-type="block"].bean-menu-block .nav > li > a {
+  color: #ffffff;
+}
+.style-blue [data-type="block"].bean-menu-block .nav > li > a:after {
+  background-color: #8fa7cc;
+}
+.style-blue [data-type="block"].bean-menu-block .nav > li > a:hover,
+.style-blue [data-type="block"].bean-menu-block .nav > li > a:focus {
+  color: #8fa7cc;
+}
 .phpdebugbar-header-right .phpdebugbar-indicator:nth-of-type(1):after {
   content: "Smartphone: ≥ 320px";
 }
@@ -2791,6 +2839,11 @@ body.front {
 .bean-callout .field-name-field-callout-description {
   margin-left: 40%;
   padding-left: 20px;
+}
+[data-type="block"].bean-menu-block .nav {
+  font-size: 24px;
+  font-size: 2.4 rem;
+  line-height: 1.4;
 }
 .phpdebugbar-header-right .phpdebugbar-indicator:nth-of-type(1):after {
   content: "Desktop: ≥ 1440px";

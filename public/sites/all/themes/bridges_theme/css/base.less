@@ -1341,3 +1341,62 @@ body.front {
     }
   }
 }
+
+// Tile: Menu
+// ----------------------------------------------------------------------------
+
+[data-type="block"].bean-menu-block {
+  .nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-family: @font-family-sans-serif-condensed;
+    .font-size(20, 1.4);
+    text-transform: uppercase;
+
+    > li {
+      margin: 0;
+      padding: 0;
+
+      > a {
+        position: relative;
+        display: inline-block;
+        padding: 0.3em 0;
+        color: @color-cove;
+
+        &:after {
+          content: '';
+          position: absolute;
+          bottom: 0.25em;
+          left: 0;
+          width: 100%;
+          height: 0;
+          background-color: @color-matisse;
+          transition: all @transition-duration-default ease;
+        }
+
+        &:hover, &:focus {
+          color: @color-matisse;
+
+          &:after {
+            height: 3px;
+          }
+        }
+      }
+    }
+  }
+
+  .style-blue & {
+    .nav > li > a {
+      color: @color-white;
+
+      &:after {
+        background-color: @color-polo;
+      }
+
+      &:hover, &:focus {
+        color: @color-polo;
+      }
+    }
+  }
+}
