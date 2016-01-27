@@ -1742,7 +1742,7 @@ aside[data-type="block"] {
   background-image: linear-gradient(to bottom, rgba(0, 32, 79, 0.3) 50px, rgba(0, 32, 79, 0) 100%);
 }
 #block-ombucleanup-page-title h1,
-#block-ombucleanup-page-title .field-name-field-summary {
+#block-ombucleanup-page-title .field-name-field-subtitle {
   position: relative;
   max-width: 1280px;
   margin: 0 auto;
@@ -1755,7 +1755,7 @@ aside[data-type="block"] {
   font-weight: normal;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
 }
-#block-ombucleanup-page-title .field-name-field-summary {
+#block-ombucleanup-page-title .field-name-field-subtitle {
   margin-top: 0.5em;
   font-family: 'Open Sans Condensed', 'Helvetica', 'Arial', sans-serif;
   font-size: 26px;
@@ -2729,7 +2729,7 @@ body.front #block-bean-home-gallery {
     font-size: 5.2 rem;
     line-height: 1.4;
   }
-  #block-ombucleanup-page-title .field-name-field-summary {
+  #block-ombucleanup-page-title .field-name-field-subtitle {
     font-size: 28px;
     font-size: 2.8 rem;
     line-height: 1.3;
@@ -2961,7 +2961,7 @@ body.front #block-bean-home-gallery {
     font-size: 6.4 rem;
     line-height: 1.4;
   }
-  #block-ombucleanup-page-title .field-name-field-summary {
+  #block-ombucleanup-page-title .field-name-field-subtitle {
     font-size: 36px;
     font-size: 3.6 rem;
     line-height: 1.3;
