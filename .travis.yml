@@ -1,13 +1,12 @@
 # Setting necessary for container based builds
 # see http://docs.travis-ci.com/user/migrating-from-legacy/?utm_source=legacy-notice&utm_medium=banner&utm_campaign=legacy-upgrade
-sudo: false
-
 language: php
 
 php:
-  - 5.4
+  - 5.5
 
 before_install:
+  - sudo apt-get update > /dev/null
   - git submodule update --init --recursive
 
 install:
