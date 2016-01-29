@@ -25,7 +25,7 @@ install:
   - cd ../..
 
   # install butter (for site building)
-  - pip install git+git://github.com/ombu/butter.git
+  - sudo pip install git+git://github.com/ombu/butter.git
 
 before_script:
 
