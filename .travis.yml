@@ -1,11 +1,15 @@
+# Setting necessary for container based builds
+# see http://docs.travis-ci.com/user/migrating-from-legacy/?utm_source=legacy-notice&utm_medium=banner&utm_campaign=legacy-upgrade
+sudo: false
+
 language: php
 
 php:
   - 5.4
 
 before_install:
-  - sudo apt-get update > /dev/null
   - git submodule update --init --recursive
+  - pip install -U setuptools
 
 install:
   # add composer's global bin directory to the path
@@ -22,7 +26,7 @@ install:
   - cd ../..
 
   # install butter (for site building)
-  - sudo pip install git+git://github.com/ombu/butter.git
+  - pip install git+git://github.com/ombu/butter.git
 
 before_script:
 
@@ -58,4 +62,4 @@ after_failure:
   - cat ~/server_debug.txt
 
 notifications:
-  irc: "irc.freenode.org#ombu"
+  # irc: "irc.freenode.org#ombu"

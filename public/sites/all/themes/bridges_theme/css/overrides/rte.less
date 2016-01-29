@@ -1,0 +1,463 @@
+.field.c {
+  .lead {
+    font-family: @font-family-sans-serif;
+    .font-size(18, 1.4);
+    font-weight: @font-weight-light;
+    font-style: italic;
+    color: @color-zodiac;
+  }
+
+  a:not(.btn):not(.cta) {
+    color: darken(@color-polo, 10);
+    border-bottom: 1px solid darken(@color-polo, 10);
+
+    &:hover, &:focus {
+      color: @color-matisse;
+      border-bottom: 3px solid @color-matisse;
+    }
+  }
+
+  h2, h3, h4, h5, h6 {
+    font-family: @font-family-sans-serif-condensed;
+    font-weight: @font-weight-regular;
+    text-transform: uppercase;
+    color: @color-prussian;
+    .font-size(30, 1.2);
+    margin: 1.5em 0 1.0em 0;
+    clear: both;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  h3 {
+    .font-size(26, 1.2);
+  }
+
+  h4 {
+    .font-size(22, 1.2);
+    color: @color-cove;
+  }
+
+  h5 {
+    .font-size(18, 1.2);
+    font-family: @font-family-sans-serif;
+    font-weight: @font-weight-black;
+    color: @color-bayoux;
+  }
+
+  h6 {
+    .font-size(14, 1.2);
+    margin-top: 2.0em;
+    font-family: @font-family-sans-serif;
+    font-weight: @font-weight-bold;
+    color: @color-cove;
+  }
+
+  hr {
+    position: relative;
+    height: 0;
+    margin: 2.0em 0;
+    padding-top: @ar-arch * 0.6;
+    border: 0;
+    // /sites/all/themes/bridges_theme/images/arches/polo.svg
+    background: transparent url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOS4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCAzMjAgMjAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDMyMCAyMCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8cGF0aCBmaWxsPSIjOEZBN0NDIiBkPSJNMzIwLDIwdi0wLjAwNEMyODMuNTExLDcuODU0LDIyNS40MjUsMCwxNjAsMFMzNi40ODksNy44NTQsMCwxOS45OTZWMjBIMzIweiIvPg0KPC9zdmc+DQo=) center center no-repeat;
+    border-bottom: 1px solid @color-polo;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 1px;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      // /sites/all/themes/bridges_theme/images/arches/white.svg
+      background: transparent url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMzIwIDIwIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAzMjAgMjAiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwYXRoIGZpbGw9IiNmZmZmZmYiIGQ9Ik0zMjAsMjB2LTAuMDA0QzI4My41MTEsNy44NTQsMjI1LjQyNSwwLDE2MCwwUzM2LjQ4OSw3Ljg1NCwwLDE5Ljk5NlYyMEgzMjB6Ii8+PC9zdmc+) center center no-repeat;
+    }
+  }
+
+  ul, ol {
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+
+    > li {
+      margin-top: 1.0em;
+      margin-bottom: 1.0em;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+
+    > li {
+      margin-left: 0;
+      position: relative;
+      margin-left: 0;
+      padding: 0 0 0 26px;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0.2em;
+        left: 0;
+        width: 10px;
+        height: 20px;
+        // /sites/all/themes/bridges_theme/images/dots/dot-inner.svg
+        background: transparent url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMTUgMzAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDE1IDMwIiB4bWw6c3BhY2U9InByZXNlcnZlIj48cGF0aCBmaWxsPSIjMjE1MDk2IiBkPSJNMCwzMFYxNC45NDYyQzAsNS4xMjU0LDcuNDQ2OCwwLDcuNDQ2OCwwUzE1LDUuMTYxMywxNSwxNS4wNTM4VjMwSDB6Ii8+PC9zdmc+) 0 0 no-repeat;
+        background-size: cover;
+        transform: rotate(90deg);
+        opacity: 0.8;
+      }
+    }
+  }
+
+  small {
+    display: block;
+    margin: 1.0em 0;
+    .font-size(12, 1.8);
+    color: @color-fossil;
+  }
+
+  figure {
+    margin: 1.0em 0 1.5em 0;
+
+    figcaption {
+      &:extend(.field.c small);
+      margin: 0;
+    }
+  }
+
+  blockquote {
+    margin: 2.0em 0;
+    padding: 0;
+    border-top: 5px solid @color-botticelli;
+    border-bottom: 2px solid @color-botticelli;
+    .font-size(26, 1.3);
+    font-family: @font-family-sans-serif-condensed;
+    font-style: italic;
+    font-weight: @font-weight-regular;
+    color: @color-bayoux;
+    text-transform: uppercase;
+
+    a:not(.btn):not(.cta) {
+      border-bottom: 0;
+    }
+  }
+
+  .btn, .cta {
+    position: relative;
+    display: inline-block;
+    padding: 0.8em 2.0em;
+    .font-size(16, 1.2);
+    font-weight: @font-weight-black;
+    font-style: italic;
+    color: @color-white;
+    text-shadow: 0 -1px 0 fade(@color-black, 50%);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: -0.05em;
+    outline: 0;
+    border-radius: 4px;
+
+    &:active {
+      transform: translate(0, 2px);
+    }
+  }
+
+  .btn {
+    background-color: @color-polo;
+    border: 0;
+    border-bottom: 2px solid darken(@color-polo, 20);
+
+    &:hover, &:focus {
+      background-color: darken(@color-polo, 10);
+      border-bottom-color: darken(@color-polo, 30);
+    }
+
+    &:active {
+      border-bottom-color: transparent;
+    }
+  }
+
+  .cta {
+    padding: 0.8em 1.5em;
+    .font-size(20, 1.2);
+    background-color: @color-emerald;
+    border-bottom: 2px solid darken(@color-emerald, 25);
+
+    &:hover, &:focus {
+      background-color: darken(@color-emerald, 15);
+      border-bottom-color: darken(@color-emerald, 30);
+    }
+
+    &:active {
+      border-bottom-color: transparent;
+    }
+  }
+
+  .file-video {
+    margin: 2.0em 0;
+  }
+
+  .file-document {
+    @icon-height: 40px;
+
+    .file-size {
+      display: none;
+    }
+
+    span.file {
+      > a {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 1.0em;
+        padding: 0.8em 15px 0.9em @icon-height + 15px;
+        .font-size(18, 1.5);
+        font-weight: @font-weight-regular;
+        background-color: @color-cove;
+        border-radius: 4px;
+        color: @color-white;
+        text-shadow: 0 -1px 0 fade(@color-black, 30%);
+        font-family: @font-family-sans-serif-condensed;
+        outline: 0;
+        border-bottom: 2px solid darken(@color-cove, 15);
+
+        &:before {
+          .bridges-icon(@glyph-code-document, @icon-height);
+          position: absolute;
+          top: 50%;
+          left: 10px;
+          margin-top: @icon-height / -2;
+          color: darken(@color-cove, 20);
+          text-shadow: 0 1px 0 fade(@color-white, 30%);
+        }
+
+        &:hover, &:focus {
+          background-color: darken(@color-cove, 10);
+          border-bottom: 2px solid darken(@color-cove, 20);
+          color: @color-white;
+
+          &:before {
+            color: @color-polo;
+            text-shadow: 0 -1px 0 fade(@color-black, 30%);
+          }
+        }
+
+        &:active {
+          transform: translate(0, 2px);
+          border-bottom-color: transparent;
+        }
+      }
+
+      img {
+        display: none;
+      }
+    }
+  }
+
+  .style-light-blue & {
+    hr {
+      &:after {
+        // /sites/all/themes/bridges_theme/images/arches/botticelli.svg
+        background: transparent url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOS4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCAzMjAgMjAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDMyMCAyMCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8cGF0aCBmaWxsPSIjZDNkY2VhIiBkPSJNMzIwLDIwdi0wLjAwNEMyODMuNTExLDcuODU0LDIyNS40MjUsMCwxNjAsMFMzNi40ODksNy44NTQsMCwxOS45OTZWMjBIMzIweiIvPg0KPC9zdmc+DQo=) center center no-repeat;
+      }
+    }
+
+    blockquote {
+      color: @color-matisse;
+      border-top-color: @color-polo;
+      border-bottom-color: @color-polo;
+    }
+  }
+
+  .style-blue & {
+    .lead {
+      color: @color-white;
+    }
+
+    h4 {
+      color: @color-white;
+    }
+
+    h5 {
+      color: fade(@color-white, 80%);
+    }
+
+    a:not(.btn):not(.cta) {
+      color: @color-white;
+      border-bottom-color: @color-white;
+
+      &:hover, &:focus {
+        color: @color-polo;
+        border-bottom-color: @color-polo;
+      }
+    }
+
+    hr {
+      &:after {
+        // /sites/all/themes/bridges_theme/images/arches/bayoux.svg
+        background: transparent url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOS4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCAzMjAgMjAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDMyMCAyMCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8cGF0aCBmaWxsPSIjNTM2NTgwIiBkPSJNMzIwLDIwdi0wLjAwNEMyODMuNTExLDcuODU0LDIyNS40MjUsMCwxNjAsMFMzNi40ODksNy44NTQsMCwxOS45OTZWMjBIMzIweiIvPg0KPC9zdmc+DQo=) center center no-repeat;
+      }
+    }
+
+    blockquote {
+      color: @color-white;
+    }
+
+    small, figure figcaption {
+      color: fade(@color-white, 50%);
+    }
+  }
+}
+
+// MEDIA RESPONSES
+// ----------------------------------------------------------------------------
+
+@media (min-width: @mq-threshold-tablet) {
+  .field.c {
+    .lead {
+      .font-size(22, 1.4);
+    }
+
+    h2 {
+      .font-size(32, 1.2);
+    }
+
+    ul {
+      > li {
+        &:before {
+          top: 0.25em;
+        }
+      }
+    }
+
+    blockquote, figure {
+      &.pull-left,
+      &.pull-right {
+        margin-top: 0.5em;
+        max-width: 400px;
+      }
+
+      &.pull-left {
+        margin-left: -@gutter-side-tablet + @gutter-side-mobile;
+        margin-right: 1.0em;
+      }
+
+      &.pull-right {
+        margin-left: 1.0em;
+        margin-right: -@gutter-side-tablet + @gutter-side-mobile;
+      }
+
+      // Don't allow RTE elements inside tile container to pull outside margins.
+      .bean-container & {
+        &.pull-left {
+          margin-left: 0;
+        }
+
+        &.pull-right {
+          margin-right: 0;
+        }
+      }
+    }
+
+    blockquote {
+      .font-size(32, 1.2);
+    }
+  }
+}
+
+@media (min-width: @mq-threshold-desktop) {
+  .field.c {
+    .lead {
+      .font-size(28, 1.4);
+    }
+
+    h2 {
+      .font-size(42, 1.2);
+    }
+
+    h3 {
+      .font-size(36, 1.2);
+    }
+
+
+    h4 {
+      .font-size(32, 1.2);
+    }
+
+    h5 {
+      .font-size(20, 1.2);
+    }
+
+    h6 {
+      .font-size(18, 1.2);
+    }
+
+    ul {
+      > li {
+        &:before {
+          top: 0.4em;
+        }
+      }
+    }
+
+    hr {
+      margin: 3.0em 0;
+      padding-top: @ar-arch * 0.5;
+    }
+
+    blockquote, figure {
+      &.pull-left {
+        margin-left: -@gutter-side-notebook + @gutter-side-mobile;
+      }
+
+      &.pull-right {
+        margin-right: -@gutter-side-notebook + @gutter-side-mobile;
+      }
+    }
+
+    .file-document {
+      @icon-height: 50px;
+
+      span.file {
+        > a {
+          .font-size(24, 1.5);
+          padding-right: 20px;
+          padding-left: @icon-height + 20px;
+
+          &:before {
+            left: 15px;
+            font-size: @icon-height;
+            line-height: 1;
+            margin-top: @icon-height / -2;
+          }
+        }
+      }
+
+      &.pull-left, &.pull-right {
+        width: auto;
+        max-width: 400px;
+        margin: 0;
+      }
+
+      &.pull-left {
+        span.file > a {
+          float: left;
+          margin-right: 1.0em;
+          margin-bottom: 0.5em;
+          margin-left: -@gutter-side-notebook + @gutter-side-mobile;
+        }
+      }
+
+      &.pull-right {
+        span.file > a {
+          float: right;
+          margin-left: 1.0em;
+          margin-bottom: 0.5em;
+        }
+      }
+    }
+  }
+}

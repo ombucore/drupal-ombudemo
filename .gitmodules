@@ -25,9 +25,6 @@
 [submodule "public/sites/all/modules/custom/beancontainer"]
 	path = public/sites/all/modules/custom/beancontainer
 	url = http://github.com/ombucore/drupal-beancontainer.git
-[submodule "public/sites/all/modules/custom/ombuslide"]
-	path = public/sites/all/modules/custom/ombuslide
-	url = http://github.com/ombucore/drupal-ombuslide.git
 [submodule "public/sites/all/modules/custom/customauthor"]
 	path = public/sites/all/modules/custom/customauthor
 	url = http://github.com/ombucore/drupal-customauthor.git
@@ -40,3 +37,15 @@
 [submodule "public/sites/all/modules/custom/tagsadmin"]
 	path = public/sites/all/modules/custom/tagsadmin
 	url = http://github.com/ombucore/drupal-tagsadmin.git
+[submodule "public/sites/all/modules/custom/ombumedia"]
+	path = public/sites/all/modules/custom/ombumedia
+	url = https://github.com/ombucore/drupal-ombumedia.git
+[submodule "public/sites/all/modules/custom/ombugallery"]
+	path = public/sites/all/modules/custom/ombugallery
+	url = https://github.com/ombucore/drupal-ombugallery.git
+[submodule "public/sites/all/modules/custom/ombudev"]
+	path = public/sites/all/modules/custom/ombudev
+	url = https://github.com/ombucore/drupal-ombudev.git
+[submodule "public/sites/all/modules/custom/field_sociallinks"]
+	path = public/sites/all/modules/custom/field_sociallinks
+	url = https://github.com/ombucore/drupal-field_sociallinks

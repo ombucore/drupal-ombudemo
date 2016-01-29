@@ -1,0 +1,41 @@
+@import 'imports.less';
+
+// THEME STYLES
+// -----------------------------------------------------------------------------
+
+@import 'base.less';
+
+// MEDIA RESPONSES
+// -----------------------------------------------------------------------------
+
+// Styles for portrait smartphone screens and wider
+@media (min-width: @mq-threshold-smartphone) {
+  @import 'responses/gte-smartphone.less';
+}
+
+// Styles for landscape smartphone screens and wider
+@media (min-width: @mq-threshold-smartphone-landscape) {
+  @import 'responses/gte-smartphone-landscape.less';
+}
+
+// Styles for portrait tablet screens and wider
+@media (min-width: @mq-threshold-tablet) {
+  @import 'responses/gte-tablet.less';
+}
+
+// Styles for notebook screens and wider
+@media (min-width: @mq-threshold-notebook) {
+  @import 'responses/gte-notebook.less';
+}
+
+// Styles for desktop screens and wider
+@media (min-width: @mq-threshold-desktop) {
+  @import 'responses/gte-desktop.less';
+}
+
+// BROWSER OVERRIDES
+// -----------------------------------------------------------------------------
+
+@import 'browsers/ie9.less';
+@import 'browsers/ie10.less';
+@import 'browsers/firefox.less';

@@ -16,6 +16,22 @@
  */
 
 /**
+ * SMTP logging -- logging is disabled
+ */
+define('SMTP_LOGGING_NONE', 0);
+
+/**
+ * SMTP logging -- all messages are logged
+ */
+define('SMTP_LOGGING_ALL', 1);
+
+/**
+ * SMTP logging -- only errors are logged
+ */
+define('SMTP_LOGGING_ERRORS', 2);
+
+
+/**
  * Implements hook_help().
  */
 function smtp_help($path, $arg) {
@@ -60,4 +76,96 @@ function smtp_mail($key, &$message, $params) {
     $message['subject'] = $params['subject'];
     $message['body'] = $params['body'];
   }
+}
+
+/**
+ * Implementation of hook_cron_queue_info().
+ */
+function smtp_cron_queue_info() {
+  $queues['smtp_send_queue'] = array(
+    'worker callback' => 'smtp_send_queue_runner',
+    'time' => 60,
+  );
+
+  $queues['smtp_failure_queue'] = array(
+    'worker callback' => 'smtp_failure_queue_runner',
+    'time' => 30,
+  );
+
+  return $queues;
+}
+
+/**
+ * smtp_send_queue queuer.
+ */
+function smtp_send_queue($mailerObj) {
+  $queue = DrupalQueue::get('smtp_send_queue');
+  $queue->createItem($mailerObj);
+}
+
+function smtp_send_queue_runner($message) {
+  $logging = variable_get('smtp_debugging', SMTP_LOGGING_ERRORS);
+
+  // Legacy for mails queued before 7.x-v1.3
+  // What was passed to the runner used to be a PHPMailer object, not a message array.
+  if (!empty($message['mailer']) && is_object($message['mailer'])) {
+    if (!$message['mailer']->Send()) {
+      if ($logging == SMTP_LOGGING_ALL || $logging == SMTP_LOGGING_ERRORS) {
+        watchdog('smtp', 'Error sending e-mail from @from to @to, will retry on cron run : !error_message.',
+          array(
+            @from => $message['from'],
+            @to => $message['to'],
+          ), WATCHDOG_ERROR);
+      }
+    }
+    return;
+  }
+
+  // Let the people know what is going on.
+  if ($logging == SMTP_LOGGING_ALL) {
+    watchdog('smtp', 'Sending mail to: @to', array('@to' => $to));
+  }
+
+  $mail_system = new SmtpMailSystem();
+  if (!$mail_system->mailWithoutQueue($message)) {
+    $params = array(
+      '@from' => $message['from'],
+      '@to' => $message['to'],
+      '!error_message' => $mailer->ErrorInfo,
+    );
+
+    if (variable_get('smtp_queue_fail', FALSE)) {
+      if ($logging == SMTP_LOGGING_ALL || $logging == SMTP_LOGGING_ERRORS) {
+        watchdog('smtp', 'Error sending e-mail from @from to @to, will retry on cron run : !error_message.', $params, WATCHDOG_ERROR);
+      }
+      smtp_failed_messages($message);
+    }
+    elseif ($logging == SMTP_LOGGING_ALL || $logging == SMTP_LOGGING_ERRORS) {
+      watchdog('smtp', 'Error sending e-mail from @from to @to : !error_message', $params, WATCHDOG_ERROR);
+    }
+  }
+}
+
+/**
+ * Store failed messages for later.
+ *
+ * @param array $new_message
+ *
+ * @return array
+ *   All messages that have been saved.
+ */
+function smtp_failed_messages($message) {
+  $queue = DrupalQueue::get('smtp_failure_queue');
+  $queue->createItem($message);
+}
+
+/**
+ * Queue runner for smtp_failure_queue.
+ *
+ * @param $message
+ *   A drupal_mail-formatted message.
+ */
+function smtp_failure_queue_runner($message) {
+  $queue = DrupalQueue::get('smtp_send_queue');
+  $queue->createItem($message);
 }

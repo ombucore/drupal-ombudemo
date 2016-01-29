@@ -110,39 +110,80 @@ function date_popup_authored_form_node_type_form_alter(&$form, &$form_state, $fo
 }
 
 /**
- * Implements hook_form_alter().
+ * Implements hook_form_BASE_FORM_ID_alter() for node_form.
+ *
+ * Replaces default Authored on field with a datepicker on node submission forms.
  */
-function date_popup_authored_form_alter(&$form, $form_state, $form_id) {
+function date_popup_authored_form_node_form_alter(&$form, $form_state, $form_id) {
+  // Date Popup Authored should modify the node submission form only if the
+  // user is allowed to modify the authoring information and it's enabled.
+  if (!($form['author']['#access'] && variable_get('date_popup_authored_enabled_' . $form['type']['#value'], 1))) {
+    return;
+  }
 
-  // Replaces default Authored on field with a datepicker on node submission forms.
-  if (strstr($form_id, '_node_form') !== FALSE) {
-    // Date Popup Authored should modify the node submission form only if the
-    // user is allowed to modify the authoring information and it's enabled.
-    if (!($form['author']['#access'] && variable_get('date_popup_authored_enabled_' . $form['type']['#value'], 1))) {
-      return;
-    }
+  $form['author']['date']['#type'] = 'date_popup';
 
-    $form['author']['date']['#type'] = 'date_popup';
+  // If there is a date already available, rewrite it to conform to
+  // Date Popup's expected format.
+  if (!empty($form['author']['date']['#default_value'])) {
+    $date = new DateObject($form['author']['date']['#default_value'], NULL, 'Y-m-d H:i:s O');
+    $form['author']['date']['#default_value'] = $date->format('Y-m-d H:i:s');
+  }
 
-    // If there is a date already available, rewrite it to conform to
-    // Date Popup's expected format.
-    if (!empty($form['author']['date']['#default_value'])) {
-      $date = new DateObject($form['author']['date']['#default_value'], NULL, 'Y-m-d H:i:s O');
-      $form['author']['date']['#default_value'] = $date->format('Y-m-d H:i:s');
-    }
+  // Set options specific to date_popup.
+  $year_range = variable_get('date_popup_authored_year_range_' . $form['type']['#value'], 3);
+  $form['author']['date']['#date_year_range'] = '-' . $year_range . ':+' . $year_range;
+  $form['author']['date']['#date_format'] = variable_get('date_popup_authored_format_' . $form['type']['#value'], variable_get('date_format_short', 'm/d/Y - H:i'));
 
-    // Set options specific to date_popup.
-    $year_range = variable_get('date_popup_authored_year_range_' . $form['type']['#value'], 3);
-    $form['author']['date']['#date_year_range'] = '-' . $year_range . ':+' . $year_range;
-    $form['author']['date']['#date_format'] = variable_get('date_popup_authored_format_' . $form['type']['#value'], 'm/d/Y - H:i');
+  // Unset options that are not relevant to date_popup
+  unset($form['author']['date']['#maxlength']);
+  unset($form['author']['date']['#description']);
 
-    // Unset options that are not relevant to date_popup
-    unset($form['author']['date']['#maxlength']);
-    unset($form['author']['date']['#description']);
+  // Add an additional validate handler after date_popup builds the element.
+  $form['author']['date']['#after_build'][] = 'date_popup_authored_element_after_build';
 
-    // We need to modify date popup's data during submit
-    // @see http://drupal.org/node/847854
-    $form['#submit'][] = 'date_popup_authored_node_form_submit';
+  // We need to modify date popup's data during submit
+  // @see http://drupal.org/node/847854
+  $form['#submit'][] = 'date_popup_authored_node_form_submit';
+}
+
+/**
+ * Implements hook_node_type_delete().
+ */
+function date_popup_authored_node_type_delete($info) {
+  // Delete format configuration when node types are deleted.
+  variable_del('date_popup_authored_enabled_' . $info->type);
+  variable_del('date_popup_authored_format_' . $info->type);
+  variable_del('date_popup_authored_year_range_' . $info->type);
+}
+
+/**
+ * Form after build handler for the date popup element.
+ */
+function date_popup_authored_element_after_build($element, &$form_state) {
+  // Add a validate handler after the one that is added by date_popup.
+  $element['#element_validate'][] = 'date_popup_authored_element_validate';
+  return $element;
+}
+
+/**
+ * Validate handler for the date popup element.
+ */
+function date_popup_authored_element_validate($element, &$form_state) {
+  if (date_hidden_element($element) || is_string($element['#value'])) {
+    return;
+  }
+
+  // If an error occurred in the validation of the date popup field the date
+  // cannot be correctly rendered as a string. In this case clear the date value
+  // to avoid subsequent errors when the node is validated.
+  // @see date_popup_validate()
+  // @see node_validate()
+  $input_exists = NULL;
+  $input = drupal_array_get_nested_value($form_state['values'], $element['#parents'], $input_exists);
+  $date = date_popup_input_date($element, $input);
+  if (is_object($date) && !empty($date->errors)) {
+    $form_state['values']['date'] = NULL;
   }
 }
 

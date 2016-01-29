@@ -18,11 +18,11 @@ function ombudemo_base_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'tiles_section',
         'settings' => array(),
         'type' => 'section_default',
-        'weight' => 0,
+        'weight' => 1,
       ),
       'grid' => array(
         'label' => 'above',
@@ -31,6 +31,12 @@ function ombudemo_base_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'title_block' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -69,7 +75,7 @@ function ombudemo_base_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_plain',
-        'weight' => 13,
+        'weight' => 3,
       ),
       'grid' => array(
         'label' => 'above',
@@ -78,6 +84,12 @@ function ombudemo_base_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'title_block' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -122,7 +134,7 @@ function ombudemo_base_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_plain',
-        'weight' => 12,
+        'weight' => 2,
       ),
       'grid' => array(
         'label' => 'above',
@@ -131,6 +143,12 @@ function ombudemo_base_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'title_block' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',

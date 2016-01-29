@@ -1140,11 +1140,11 @@ function _select2_set_exuled_for_settings() {
 
   }
 
-//   if ($select2_settings['select_2']['excludes']) {
+  if ($select2_settings['select_2']['excludes']) {
 
-//     $js = drupal_add_js($select2_settings, 'setting');
+    $js = drupal_add_js($select2_settings, 'setting');
 
-//   }
+  }
 
   return $select2_settings;
 }

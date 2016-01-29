@@ -11,24 +11,31 @@ namespace ombudemo_profile\Task;
 class AddContent extends \ProfileTasks\Task\AddContent {
   protected $menu_nodes = array(
     'header-menu' => array(
-      'Home' => array(
-        '#link' => '<front>',
-      ),
       'About' => array(
         '#file' => 'about.php',
-        '#children' => array(
-          'Our Story' => array(),
-          'Our Team' => array(),
-          'Our Values' => array(),
-        ),
+      ),
+      'Bridges' => array(
+        '#file' => 'bridges.php',
       ),
       'Contact' => array(
         '#link' => 'contact',
       ),
+      'A demo of OMBU CMS' => array(
+        '#link' => '<nolink>',
+      ),
+    ),
+    'main-menu' => array(
+      'Page 1' => array(),
+      'Page 2' => array(),
+      'Page 3' => array(),
+      'Page 4' => array(),
     ),
     'footer-menu' => array(
+      '© OMBU' => array(
+        '#link' => 'http://ombuweb.com',
+      ),
       'Terms of Use' => array(),
-      'Privacy' => array(),
+      'Privacy Policy' => array(),
     ),
   );
 
