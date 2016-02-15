@@ -148,9 +148,11 @@ function ombudemo_base_field_attach_view_alter(&$output, $context) {
  * Implements hook_node_view().
  */
 function ombudemo_base_node_view($node, $view_mode, $langcode) {
-  if (isset($node->content['field_sections-navigation'])) {
+  $visible = field_get_items('node', $node, 'field_navigation_visible');
+  if (empty($visible[0]['value'])) {
     $node->content['field_sections-navigation']['#access'] = FALSE;
   }
+
   if (isset($node->content['field_sections'])) {
     foreach (element_children($node->content['field_sections']) as $key) {
       if (isset($node->content['field_sections'][$key - 1])) {

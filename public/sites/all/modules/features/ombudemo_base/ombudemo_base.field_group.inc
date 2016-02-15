@@ -8,7 +8,7 @@
  * Implements hook_field_group_info().
  */
 function ombudemo_base_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -23,8 +23,8 @@ function ombudemo_base_field_group_info() {
     'label' => 'Categories',
     'weight' => '1',
     'children' => array(
-      0 => 'field_topics',
-      1 => 'field_tags',
+      0 => 'field_tags',
+      1 => 'field_topics',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -36,7 +36,7 @@ function ombudemo_base_field_group_info() {
       ),
     ),
   );
-  $export['group_categories|node|page|form'] = $field_group;
+  $field_groups['group_categories|node|page|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -52,6 +52,7 @@ function ombudemo_base_field_group_info() {
     'weight' => '2',
     'children' => array(
       0 => 'field_sections',
+      1 => 'field_navigation_visible',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -63,7 +64,12 @@ function ombudemo_base_field_group_info() {
       ),
     ),
   );
-  $export['group_sections|node|page|form'] = $field_group;
+  $field_groups['group_sections|node|page|form'] = $field_group;
 
-  return $export;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Categories');
+  t('Sections');
+
+  return $field_groups;
 }

@@ -10,7 +10,61 @@
 function ombudemo_base_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-page-field_sections'
+  // Exported field_instance: 'node-page-field_navigation_visible'.
+  $field_instances['node-page-field_navigation_visible'] = array(
+    'bundle' => 'page',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => 'Show single scroll navigation for this content? If left unchecked, only the sections of this content will be visible, not section navigation.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 5,
+      ),
+      'grid' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'title_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_navigation_visible',
+    'label' => 'Show Navigation?',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 36,
+    ),
+  );
+
+  // Exported field_instance: 'node-page-field_sections'.
   $field_instances['node-page-field_sections'] = array(
     'bundle' => 'page',
     'default_value' => NULL,
@@ -58,12 +112,12 @@ function ombudemo_base_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 5,
+      'weight' => 37,
     ),
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-page-field_tags'
+  // Exported field_instance: 'node-page-field_tags'.
   $field_instances['node-page-field_tags'] = array(
     'bundle' => 'page',
     'default_value' => NULL,
@@ -122,7 +176,7 @@ function ombudemo_base_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-field_topics'
+  // Exported field_instance: 'node-page-field_topics'.
   $field_instances['node-page-field_topics'] = array(
     'bundle' => 'page',
     'default_value' => NULL,
@@ -185,6 +239,8 @@ function ombudemo_base_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Sections');
+  t('Show Navigation?');
+  t('Show single scroll navigation for this content? If left unchecked, only the sections of this content will be visible, not section navigation.');
   t('Tags');
   t('Topic');
 
