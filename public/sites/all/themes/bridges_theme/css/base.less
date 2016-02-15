@@ -596,12 +596,6 @@ html.menu-open {
   }
 
   :first-child + & {
-    > .container.header {
-      h2 {
-        margin-top: 0;
-      }
-    }
-
     > .container.content {
       padding-top: 0;
     }
@@ -679,7 +673,15 @@ html.menu-open {
   }
 
   &:first-child {
-    display: none;
+    padding-top: @ar-arch;
+
+    body.front & {
+      padding-top: 0;
+    }
+
+    &.style-white {
+      display: none;
+    }
   }
 
   // Don't show arches for an adjacent sections with the same style as its
