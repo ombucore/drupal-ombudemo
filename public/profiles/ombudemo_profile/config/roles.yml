@@ -4,12 +4,14 @@ add:
         - 'view any fpo bean'
         - 'view any fpo_hero bean'
         - 'view any sociallinks bean'
+        - 'view any twitter bean'
         - 'search content'
     'authenticated user':
         - 'view any bean_cta bean'
         - 'view any fpo bean'
         - 'view any fpo_hero bean'
         - 'view any sociallinks bean'
+        - 'view any twitter bean'
         - 'search content'
     admin:
         - 'edit terms in 1'
@@ -25,3 +27,6 @@ add:
         - 'create any sociallinks bean'
         - 'delete any sociallinks bean'
         - 'edit any sociallinks bean'
+        - 'create any twitter bean'
+        - 'delete any twitter bean'
+        - 'edit any twitter bean'

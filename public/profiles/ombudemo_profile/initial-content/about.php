@@ -315,6 +315,24 @@ $bean->field_description[LANGUAGE_NONE][0] = array(
 );
 $bean->save();
 
+$bean = bean_create(array('type' => 'twitter'));
+$bean->delta = 'about-twitter';
+$bean->title = '';
+$widget = <<<EOD
+<a class="twitter-timeline" href="https://twitter.com/weareombu" data-widget-id="699304666358624256">Tweets by @weareombu</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+EOD;
+$bean->setValues(array(
+  'widgets' => array(
+    array(
+      'title' => 'OMBU Web',
+      'widget' => $widget,
+    ),
+  ),
+));
+$bean->save();
+
+
 $wrapper->field_sections[] = array(
   'value' => 'Resolution',
   'settings' => array(
@@ -329,6 +347,14 @@ $wrapper->field_sections[] = array(
         'weight' => 1,
         'width' => 10,
         'offset' => 1,
+      ),
+      array(
+        'module' => 'bean',
+        'delta' => 'about-twitter',
+        'region' => 'content',
+        'weight' => 2,
+        'width' => 4,
+        'offset' => 0,
       ),
     ),
   ),
