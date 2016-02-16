@@ -234,6 +234,15 @@ html, html.menu-open {
       // /sites/all/themes/bridges_theme/images/arches/white.svg
       background: transparent url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMzIwIDIwIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAzMjAgMjAiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwYXRoIGZpbGw9IiNmZmZmZmYiIGQ9Ik0zMjAsMjB2LTAuMDA0QzI4My41MTEsNy44NTQsMjI1LjQyNSwwLDE2MCwwUzM2LjQ4OSw3Ljg1NCwwLDE5Ljk5NlYyMEgzMjB6Ii8+PC9zdmc+) center bottom no-repeat;
     }
+
+    ul {
+      li {
+        &.active a {
+          color: @color-white;
+          background-color: @color-bondi;
+        }
+      }
+    }
   }
 
   html.fix-section-nav & {
@@ -253,7 +262,7 @@ body.has-section-nav {
     padding-left: @width-section-nav + @gutter-side-mobile;
   }
 
-  #page > [data-type="region-container"][data-name="sections"] > .field-type-tiles-section div[data-type="region"][data-name="section"] > .container {
+  #page > [data-type="region-container"][data-name="sections"] > .field-type-tiles-section > [data-type="region"][data-name="section"] > .container {
     padding-left: @width-section-nav + @gutter-side-tablet;
   }
 }

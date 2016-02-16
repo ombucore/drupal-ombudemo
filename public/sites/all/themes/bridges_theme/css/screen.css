@@ -1806,7 +1806,7 @@ aside[data-type="block"] {
 #tiles-section-navigation .links ul li a:hover,
 #tiles-section-navigation .links ul li a:focus {
   color: #011a1c;
-  background: #d6ebed;
+  background-color: #d6ebed;
 }
 [data-type="region"][data-name="section"] {
   position: relative;
@@ -2823,6 +2823,10 @@ body.front #block-bean-home-gallery {
     padding-top: 9.375%;
     background: transparent url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMzIwIDIwIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAzMjAgMjAiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwYXRoIGZpbGw9IiNmZmZmZmYiIGQ9Ik0zMjAsMjB2LTAuMDA0QzI4My41MTEsNy44NTQsMjI1LjQyNSwwLDE2MCwwUzM2LjQ4OSw3Ljg1NCwwLDE5Ljk5NlYyMEgzMjB6Ii8+PC9zdmc+) center bottom no-repeat;
   }
+  #tiles-section-navigation .links ul li.active a {
+    color: #ffffff;
+    background-color: #039ba6;
+  }
   html.fix-section-nav #tiles-section-navigation {
     position: fixed;
     top: 0;
@@ -2835,7 +2839,7 @@ body.front #block-bean-home-gallery {
   body.has-section-nav #block-system-main {
     padding-left: 195px;
   }
-  body.has-section-nav #page > [data-type="region-container"][data-name="sections"] > .field-type-tiles-section div[data-type="region"][data-name="section"] > .container {
+  body.has-section-nav #page > [data-type="region-container"][data-name="sections"] > .field-type-tiles-section > [data-type="region"][data-name="section"] > .container {
     padding-left: 220px;
   }
   #page > [data-type="region-container"][data-name="sections"] > .field-type-tiles-section > [data-type="region"][data-name="section"].width-wide > .container.content {

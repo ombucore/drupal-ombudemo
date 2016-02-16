@@ -58,7 +58,7 @@
   <![endif]-->
   <script src="<?php print url(drupal_get_path('theme', 'boots_core')) . '/js/modernizr.js'; ?>"></script>
 </head>
-  <body class="<?php print $classes; ?>" <?php print $attributes;?>>
+  <body class="<?php print $classes; ?>" <?php print $attributes;?> data-spy="scroll" data-target="#tiles-section-navigation .links" data-offset="60">
     <div id="wrap">
       <?php print $page_top; ?>
       <?php print $page; ?>
