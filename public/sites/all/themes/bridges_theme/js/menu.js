@@ -36,6 +36,14 @@
         },
         offset: -1
       });
+
+      // Configure anchor links to scroll smoothly.
+      $('a[href*=#]').on('click', function(e) {
+        e.preventDefault();
+        href = $(this).attr('href');
+        selector = href.substring(href.indexOf('#'), href.length);
+        $('html, body').animate({scrollTop: $(selector).offset().top - 40}, 500);
+      });
     },
   };
 
