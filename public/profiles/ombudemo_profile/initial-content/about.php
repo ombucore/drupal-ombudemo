@@ -9,7 +9,7 @@ use ProfileTasks\Content\Wrapper;
 
 $wrapper = new Wrapper('node', array('type' => 'page'));
 $wrapper->title = 'About';
-$wrapper->field_navigation_visible = 1;
+$wrapper->field_navigation_visible = 0;
 
 $path = drupal_get_path('profile', 'ombudemo_profile');
 
