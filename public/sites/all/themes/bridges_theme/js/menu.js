@@ -40,10 +40,28 @@
       // Configure anchor links to scroll smoothly.
       $('a[href*=#]').on('click', function(e) {
         e.preventDefault();
-        href = $(this).attr('href');
-        selector = href.substring(href.indexOf('#'), href.length);
-        $('html, body').animate({scrollTop: $(selector).offset().top - 40}, 500);
+        var href = $(this).attr('href');
+        var selector = href.substring(href.indexOf('#'), href.length);
+        var top = parseInt($(selector).offset().top) - 53;
+        var height = $(document).height();
+        var distance = $(window).scrollTop() - top;
+        var factor = Math.abs(distance / height) * 1.2;
+
+        $('html, body').animate({
+          scrollTop: top
+        }, 1500 * factor);
       });
+
+      // If page section navigation is present, add sticky behavior.
+      if ($('#tiles-section-navigation').length) {
+        var waypoint = new Waypoint({
+          element: $('#tiles-section-navigation').get(0),
+          handler: function(direction) {
+            $('html').toggleClass('fix-section-nav', (direction == 'down'));
+          },
+          offset: 0
+        });
+      }
     },
   };
 

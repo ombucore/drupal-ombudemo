@@ -13,7 +13,6 @@
         var waypoint = new Waypoint({
           element: $stinger,
           handler: function(direction) {
-            console.log('arrived!');
             $stinger.addClass('arrived', (direction == 'down'));
           },
           offset: 'bottom-in-view'
