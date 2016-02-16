@@ -55,11 +55,11 @@
       // If page section navigation is present, add sticky behavior.
       if ($('#tiles-section-navigation').length) {
         var waypoint = new Waypoint({
-          element: $('#tiles-section-navigation').get(0),
+          element: $('#block-system-main').get(0),
           handler: function(direction) {
             $('html').toggleClass('fix-section-nav', (direction == 'down'));
           },
-          offset: 0
+          offset: 63
         });
       }
     },
