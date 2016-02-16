@@ -1769,6 +1769,45 @@ aside[data-type="block"] {
   padding-left: 15px;
   padding-right: 15px;
 }
+#tiles-section-navigation {
+  margin: 1em -0.5em;
+  padding: 1.0em 0.5em;
+  border-top: 1px solid #b3dadd;
+  border-bottom: 1px solid #b3dadd;
+  font-size: 16px;
+  font-size: 1.6 rem;
+  line-height: 1.5;
+  border-radius: 0;
+  background-color: #ffffff;
+}
+#tiles-section-navigation h6 {
+  font-size: 12px;
+  font-size: 1.2 rem;
+  line-height: 1;
+  margin: 0 0 1.0em 0;
+  text-transform: uppercase;
+  color: #039ba6;
+  font-weight: 200;
+}
+#tiles-section-navigation ul {
+  list-style: none;
+  margin: 0 -0.5em;
+  padding: 0;
+}
+#tiles-section-navigation ul li a {
+  display: inline-block;
+  padding: 0.25em 0.5em;
+  font-weight: 700;
+  font-family: 'Open Sans Condensed', 'Helvetica', 'Arial', sans-serif;
+  color: #037780;
+  border-radius: 4px;
+  outline: 0;
+}
+#tiles-section-navigation ul li a:hover,
+#tiles-section-navigation ul li a:focus {
+  color: #011a1c;
+  background: #d6ebed;
+}
 [data-type="region"][data-name="section"] {
   position: relative;
 }
