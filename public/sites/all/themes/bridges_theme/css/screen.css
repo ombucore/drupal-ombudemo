@@ -1768,18 +1768,18 @@ aside[data-type="block"] {
   padding-left: 15px;
   padding-right: 15px;
 }
-#tiles-section-navigation {
+#tiles-section-navigation .links {
   margin: 1em -0.5em;
   padding: 1.0em 0.5em;
   border-top: 1px solid #b3dadd;
   border-bottom: 1px solid #b3dadd;
   font-size: 16px;
   font-size: 1.6 rem;
-  line-height: 1.5;
+  line-height: 1.4;
   border-radius: 0;
   background-color: #ffffff;
 }
-#tiles-section-navigation h6 {
+#tiles-section-navigation .links h6 {
   font-size: 12px;
   font-size: 1.2 rem;
   line-height: 1;
@@ -1788,22 +1788,23 @@ aside[data-type="block"] {
   color: #039ba6;
   font-weight: 200;
 }
-#tiles-section-navigation ul {
+#tiles-section-navigation .links ul {
   list-style: none;
   margin: 0 -0.5em;
   padding: 0;
 }
-#tiles-section-navigation ul li a {
+#tiles-section-navigation .links ul li a {
   display: inline-block;
-  padding: 0.25em 0.5em;
+  padding: 0.4em 0.5em;
+  border: 2px solid #ffffff;
   font-weight: 700;
   font-family: 'Open Sans Condensed', 'Helvetica', 'Arial', sans-serif;
   color: #037780;
   border-radius: 4px;
   outline: 0;
 }
-#tiles-section-navigation ul li a:hover,
-#tiles-section-navigation ul li a:focus {
+#tiles-section-navigation .links ul li a:hover,
+#tiles-section-navigation .links ul li a:focus {
   color: #011a1c;
   background: #d6ebed;
 }
@@ -2786,6 +2787,57 @@ body.front #block-bean-home-gallery {
   [data-type="region"][data-name="section"]:nth-child(2) .contextual-links-wrapper {
     top: 90px;
   }
+  #tiles-section-navigation {
+    z-index: 1;
+    position: absolute;
+    top: -64px;
+    left: -25px;
+    padding-top: 90px;
+    transition: transform 0.2s linear;
+  }
+  #tiles-section-navigation > .container {
+    position: relative;
+    max-width: 1480px;
+    padding: 0;
+  }
+  #tiles-section-navigation .links {
+    position: absolute;
+    top: 0;
+    left: 15px;
+    margin: 0;
+    padding: 1.0em;
+    border: 0;
+    border-radius: 5px;
+    background: #ffffff;
+    width: 180px;
+  }
+  #tiles-section-navigation .links:before {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 100%;
+    left: 1px;
+    right: 1px;
+    height: 0;
+    margin-bottom: -1px;
+    padding-top: 9.375%;
+    background: transparent url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMzIwIDIwIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAzMjAgMjAiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwYXRoIGZpbGw9IiNmZmZmZmYiIGQ9Ik0zMjAsMjB2LTAuMDA0QzI4My41MTEsNy44NTQsMjI1LjQyNSwwLDE2MCwwUzM2LjQ4OSw3Ljg1NCwwLDE5Ljk5NlYyMEgzMjB6Ii8+PC9zdmc+) center bottom no-repeat;
+  }
+  html.fix-section-nav #tiles-section-navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  html.toolbar-open #tiles-section-navigation {
+    transform: translate(0, 30px);
+  }
+  body.has-section-nav #block-system-main {
+    padding-left: 195px;
+  }
+  body.has-section-nav #page > [data-type="region-container"][data-name="sections"] > .field-type-tiles-section div[data-type="region"][data-name="section"] > .container {
+    padding-left: 220px;
+  }
   #page > [data-type="region-container"][data-name="sections"] > .field-type-tiles-section > [data-type="region"][data-name="section"].width-wide > .container.content {
     max-width: 1480px;
     padding-left: 15px;
@@ -3014,6 +3066,21 @@ body.front #block-bean-home-gallery {
     font-size: 24px;
     font-size: 2.4 rem;
     line-height: 1.2;
+  }
+  #tiles-section-navigation {
+    top: -65px;
+    left: -85px;
+    padding-top: 100px;
+  }
+  #tiles-section-navigation .links {
+    left: 30px;
+    width: 220px;
+  }
+  body.has-section-nav #block-system-main {
+    padding-left: 190px;
+  }
+  body.has-section-nav #page > [data-type="region-container"][data-name="sections"] > .field-type-tiles-section div[data-type="region"][data-name="section"] > .container {
+    padding-left: 275px;
   }
   #page > [data-type="region-container"][data-name="sections"] > .field-type-tiles-section > [data-type="region"][data-name="section"].width-wide aside[data-type="block"] .contextual-links-wrapper {
     right: 140px;
