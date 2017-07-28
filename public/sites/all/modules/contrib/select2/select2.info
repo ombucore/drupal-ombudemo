@@ -7,11 +7,10 @@ package = User interface
 configure = admin/config/user-interface/select2_settings
 
 dependencies[] = libraries (>=7.x-2.1)
-dependencies[] = jquery_update (>=7.x-2.4)
 
-; Information added by Drupal.org packaging script on 2014-12-27
-version = "7.x-1.x-dev"
+; Information added by Drupal.org packaging script on 2016-08-05
+version = "7.x-1.0+6-dev"
 core = "7.x"
 project = "select2"
-datestamp = "1419690781"
+datestamp = "1470400740"
 

@@ -1,2 +1,0 @@
-The following patches have been applied to this project:
-  - https://www.drupal.org/files/issues/2298959-5-htmlpurifier-alter_definition-7.x-2.x.patch
